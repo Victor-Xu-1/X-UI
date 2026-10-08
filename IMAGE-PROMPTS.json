@@ -1,0 +1,40 @@
+{
+  "mode": "Built-in image_gen",
+  "assets": [
+    {
+      "id": "hero",
+      "prompt": "X-Science website main hero. A breathtaking, carefully art-directed abstract scientific sculpture: translucent chartreuse glass ribbons flow around one pearl sphere and several microscopic-looking mineral beads, suggesting the connection between evidence, molecules and research agents. Deep graphite-green seamless background #171b19. Refined editorial 3D still life, tactile frosted glass, beautiful light caustics, subtle depth of field. Square composition with a strong central subject and ample breathing room at edges; designed to sit next to typography. Elegant, substantial, restrained. No text, letters, logo, computer screens, UI, charts or numeric data. This is conceptual art, not an identified molecule or experimental result.",
+      "role": "AI-generated conceptual marketing illustration, not scientific data or UI evidence"
+    },
+    {
+      "id": "synon-biomed",
+      "prompt": "Synon Biomed research agent product cover. An elegant editorial scientific 3D still life: a flowing mint-green translucent ribbon gently links an open ivory book form, a clear spherical lens, and a small branching crystalline sculpture, symbolizing conversation, evidence, tools and research artifacts. Warm pearl-white seamless studio background, mint and graphite accents, refined shadows and tactile glass/paper materials. Wide landscape 3:2 composition, generous quiet margins, one cohesive sculptural scene. No text, letters, logos, screens, UI, charts or measured data. Conceptual product artwork, not a running application or scientific result.",
+      "role": "AI-generated conceptual marketing illustration, not scientific data or UI evidence"
+    },
+    {
+      "id": "x-pharma",
+      "prompt": "X-Pharma pharmaceutical intelligence product cover. A refined editorial 3D still life: floating translucent lilac glass document layers and a small crystal prism align into an organized sculptural archive, with thin graphite filaments tracing gentle connections between them. Ivory seamless studio backdrop, soft lilac, lavender and clear glass, diffused daylight with precise natural shadows. Wide 3:2 composition, sophisticated magazine-quality science brand artwork, substantial and tactile rather than flat icons. No text, letters, logos, UI, charts, numbers or fabricated data. Abstract conceptual evidence artwork.",
+      "role": "AI-generated conceptual marketing illustration, not scientific data or UI evidence"
+    },
+    {
+      "id": "x-dde",
+      "prompt": "X-DDE connected drug discovery product cover. Sophisticated editorial scientific 3D sculpture: a pale lime ribbon folded into a pocket-like organic surface cradles a compact cluster of frosted pearl and graphite beads connected by thin rods, surrounded by a few clear glass arcs. Warm ivory seamless studio backdrop, lime-green accents, physically beautiful light, tactile ceramic and glass. Wide landscape 3:2 composition, generous margins, central sculpture. No text, letters, logos, screens, UI, measurement labels or charts. Generic conceptual molecular and pocket-inspired art, no claims of a specific chemical identity or scientific result.",
+      "role": "AI-generated conceptual marketing illustration, not scientific data or UI evidence"
+    },
+    {
+      "id": "x-synth",
+      "prompt": "X-Synth synthesis research product cover. Elegant editorial 3D sculpture illustrating transformation and branching: two small pearl ceramic ring-like objects and fine amber-glass stems converge into a more complex sculptural cluster, arranged as a quiet still life on an ivory studio surface. Warm amber, pale apricot, graphite and frosted glass, precise soft shadows, beautiful material detail. Wide landscape 3:2, airy composition, sophisticated scientific magazine style. No text, letters, logos, UI, arrows with labels, numeric data or exact reaction scheme. Conceptual synthesis-inspired artwork, not an asserted real chemical reaction.",
+      "role": "AI-generated conceptual marketing illustration, not scientific data or UI evidence"
+    },
+    {
+      "id": "x-patentsar",
+      "prompt": "X-PatentSAR patent structure and activity product cover. A compelling editorial 3D still life: a gently folded ivory paper folio opens into a translucent coral-orange lens through which several small pearl and graphite bead clusters become visible, suggesting bringing hidden chemistry out of source documents. Pearl-white seamless studio backdrop, coral and soft terracotta glass, elegant natural lighting and tactile paper texture. Wide 3:2 landscape composition, one clear central scene. No text, letters, logos, fake patent documents, screens, tables, charts or numeric data. Abstract conceptual art, not actual extraction evidence.",
+      "role": "AI-generated conceptual marketing illustration, not scientific data or UI evidence"
+    },
+    {
+      "id": "diffsbdd-workbench",
+      "prompt": "DiffSBDD Workbench local molecular design product cover. Refined editorial scientific 3D still life: an icy blue translucent organic cavity or shell curves around a small floating pearl-bead sculpture, with a few carefully arranged alternate clusters nearby implying iterative molecular design. Ivory seamless studio background, muted glacier blue, graphite and frosted glass, subtle caustics and tactile ceramic surfaces. Wide landscape 3:2 composition, beautiful detailed scientific design magazine aesthetic. No text, letters, logos, screens, UI, numeric data or charts. Generic conceptual molecular-design artwork, not an identified protein, binding pose or model result.",
+      "role": "AI-generated conceptual marketing illustration, not scientific data or UI evidence"
+    }
+  ]
+}
