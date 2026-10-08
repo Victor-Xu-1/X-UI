@@ -6,7 +6,7 @@ import { escape } from './layout.mjs';
 
 const stages = [
   ['x-pharma', 'x-patentsar'], ['x-science', 'x-dde'],
-  ['x-dde', 'diffsbdd-workbench'], ['x-synth'],
+  ['x-dde'], ['x-synth'],
 ];
 
 export function workflowExplorer(lang) {

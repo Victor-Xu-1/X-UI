@@ -10,7 +10,6 @@ export const glyph = (id) => {
     'x-dde': '<ellipse cx="24" cy="24" rx="20" ry="8"/><ellipse cx="24" cy="24" rx="20" ry="8" transform="rotate(60 24 24)"/><ellipse cx="24" cy="24" rx="20" ry="8" transform="rotate(120 24 24)"/><circle cx="24" cy="24" r="3"/>',
     'x-synth': '<path d="M24 7v12m0 0L10 30m14-11 14 11M10 30v9m28-9v9"/><circle cx="24" cy="6" r="4"/><circle cx="10" cy="30" r="4"/><circle cx="38" cy="30" r="4"/>',
     'x-patentsar': '<path d="M8 7h23l9 9v25H8zM30 7v10h10M15 25h18M15 32h11"/><path d="m16 16 4-4 4 4-4 4-4-4Z"/>',
-    'diffsbdd-workbench': '<path d="M8 23c0-10 7-17 16-17 9 0 16 7 16 17S34 42 24 42 8 34 8 23Z"/><path d="M15 24c0-6 4-11 9-11s9 5 9 11-4 11-9 11-9-5-9-11Z"/><circle cx="24" cy="24" r="3"/>',
   };
   return `<svg class="product-glyph" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${paths[id] || paths['x-dde']}</svg>`;
 };

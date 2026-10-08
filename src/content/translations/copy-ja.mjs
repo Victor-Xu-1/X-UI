@@ -1,6 +1,6 @@
 export default {
   lang: 'ja', title: 'X-Science — 科学ソフトウェアと研究エージェント',
-  description: 'Victor Xu が開発するオープンソースの科学ソフトウェアと研究エージェント。X-Science、X-Pharma、X-DDE、X-Synth、X-PatentSAR、DiffSBDD Workbench をご紹介します。',
+  description: 'Victor Xu が開発するオープンソースの科学ソフトウェアと研究エージェント。X-Science、X-Pharma、X-DDE、X-Synth、X-PatentSAR をご紹介します。',
   nav: ['ソフトウェア', '研究ワークフロー', '開発者について'], explore: '製品を見る', github: 'GitHub で見る',
   heroLabel: '独立開発。科学から生まれる。', heroLines: ['科学を、', '前へ。'],
   heroText: '実際の研究のためのソフトウェアとエージェント。エビデンス、分子、ツール、人をつなぎ、研究の問いを次の一歩へ。',

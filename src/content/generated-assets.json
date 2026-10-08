@@ -58,15 +58,5 @@
     "originalSha256": "be7805aa3b4079a6fb63d6d228a9ae18d632e84b7d522ecbddf573f0af91724b",
     "original": "../generated-images/x-patentsar.png",
     "role": "AI-generated concept art; not scientific data or application evidence"
-  },
-  "diffsbdd-workbench": {
-    "file": "generated/diffsbdd-workbench.webp",
-    "width": 1200,
-    "height": 800,
-    "bytes": 108886,
-    "sha256": "e4778fae73485b309076f174d3ed57f4b60252dfb4f1edcba17a8d9140957c39",
-    "originalSha256": "222ffe5d6bc10308c84fb358625d9e176fcb6555620ee6b2f68f88303818432a",
-    "original": "../generated-images/diffsbdd-workbench.png",
-    "role": "AI-generated concept art; not scientific data or application evidence"
   }
 }

@@ -1,6 +1,6 @@
 export default {
   lang: 'de', title: 'X-Science — Wissenschaftliche Software und Forschungsagenten',
-  description: 'Open-Source-Software und Forschungsagenten von Victor Xu: X-Science, X-Pharma, X-DDE, X-Synth, X-PatentSAR und DiffSBDD Workbench.',
+  description: 'Open-Source-Software und Forschungsagenten von Victor Xu: X-Science, X-Pharma, X-DDE, X-Synth und X-PatentSAR.',
   nav: ['Software & Agenten', 'Forschungsabläufe', 'Über mich'], explore: 'Software entdecken', github: 'Auf GitHub ansehen',
   heroLabel: 'UNABHÄNGIG ENTWICKELT. AUS DER FORSCHUNG.', heroLines: ['Wissenschaft', 'weiterdenken.'],
   heroText: 'Software und Agenten für konkrete Forschungsfragen. Evidenz, Moleküle, Werkzeuge und Menschen verbinden — damit aus jeder Frage ein nächster Schritt werden kann.',

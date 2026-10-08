@@ -116,29 +116,7 @@ export const products = [
     steps: [text('上传专利 PDF', 'Upload a patent PDF'), text('提取与核对证据', 'Extract and review evidence'), text('整理结构—活性表', 'Build structure–activity tables')],
     boundary: text('当前生产适配器面向 WIPO 专利 PDF。正式完成要求核心 QA 通过；不确定、冲突或低质量原文需人工复核。性质预测是后续研究指标。', 'The production adapter targets WIPO patent PDFs. Formal completion requires core QA; uncertain, conflicting or low-quality source material needs review. Predicted properties are follow-on research metrics.'),
   },
-  {
-    id: 'diffsbdd-workbench', name: 'DiffSBDD Workbench', category: 'discovery', color: '#b8cfe5',
-    repository: repo('diffsbdd-workbench'), license: 'MIT',
-    docs: `${repo('diffsbdd-workbench')}#安装`, guide: `${repo('diffsbdd-workbench')}#能做什么`,
-    revision: '55f365b195d126ec25f7e7ae00ff253fd4491dac',
-    label: text('本地分子设计', 'Local molecular design'),
-    headline: text('在结合口袋中，\n探索新的分子。', 'Explore new molecules\ninside the pocket.'),
-    summary: text('基于官方 DiffSBDD 模型的本地工作台。生成口袋条件分子，编辑结构、检查三维姿势，并继续下一轮设计。', 'A local workbench for official DiffSBDD models. Generate pocket-conditioned molecules, edit structures, inspect 3D poses and continue the next design round.'),
-    tags: ['Local GPU', 'DiffSBDD', 'Molecular design'],
-    audience: text('药物化学与结构导向分子设计人员', 'Medicinal chemists and structure-based molecular designers'),
-    environment: text('Linux / WSL2；兼容的 NVIDIA CUDA GPU', 'Linux / WSL2; a compatible NVIDIA CUDA GPU'),
-    features: [
-      text('口袋条件生成、片段生长与分子多样化', 'Pocket-conditioned generation, fragment growth and diversification'),
-      text('在二维画布编辑结构，在三维空间检查姿势', 'Edit structures in 2D and inspect their poses in 3D'),
-      text('进行 QED / SA 优化与相互作用分析', 'Explore QED / SA optimization and interaction analysis'),
-      text('保存本地设计、导出 SDF 与高清科学图', 'Save local designs and export SDF and high-resolution scientific figures'),
-    ],
-    steps: [text('准备蛋白与口袋', 'Prepare the protein and pocket'), text('生成与编辑分子', 'Generate and edit molecules'), text('检查并保存设计', 'Inspect and save designs')],
-    boundary: text('独立社区工作台，与 DiffSBDD 原作者无隶属关系。官方模型与第三方组件保留各自许可；QED / SA 改善不代表结合活性提高。', 'An independent community workbench with no affiliation to the original DiffSBDD authors. Official models and components retain their licenses; improved QED / SA does not establish improved binding activity.'),
-    image: 'diffsbdd-workbench.png', imageKind: 'screenshot', imageWidth: 1536, imageHeight: 1226,
-    caption: text('公开仓库中的实际工作台截图，使用公开 DiffSBDD 示例。', 'Actual workbench screenshot from the public repository, using the public DiffSBDD example.'),
-    imageSource: `${repo('diffsbdd-workbench')}/blob/55f365b195d126ec25f7e7ae00ff253fd4491dac/README.md`,
-  },
+
 ];
 
 export const observedAt = '2026-10-08';

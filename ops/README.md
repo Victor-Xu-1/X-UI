@@ -7,10 +7,10 @@ The owner's Beijing host is reserved for a private backup until the owner has
 completed ICP filing. Keep its private server inventory outside this repository.
 These scripts deploy static website files; they do not deploy the promoted agents.
 
-The owner currently selected HTTP and deferred accepting the certificate-authority
-agreement. HTTP mode serves the canonical site and redirects all other website
-domains to it, preserving paths and queries. TLS configuration is prepared for a
-future approved certificate issuance; it is not active.
+The public primary uses HTTPS. One trusted certificate covers all six website
+names. HTTP entries and HTTPS aliases redirect to `https://x-science.ai`, preserving
+paths and queries. The initial bootstrap HTTP template remains available for
+first-time ACME setup; current production uses the TLS template.
 
 Before changing a server, inspect its OS, free disk, TCP listeners, active services,
 firewall and SELinux status. Retain the baseline locally. Preserve WireGuard on
@@ -61,6 +61,21 @@ Use Certbot webroot `/var/lib/x-science/acme`, retain its renewal configuration,
 enable the installed renewal timer, and install an nginx configuration-test/reload
 deploy hook. Verify renewal with a focused dry run. The TLS template listens only
 on TCP443 and does not enable QUIC on the WireGuard UDP port.
+
+Install the repository's scoped renewal hook after successful first issuance:
+
+```bash
+install -d -m 0755 /etc/letsencrypt/renewal-hooks/deploy
+install -m 0755 ops/renew-nginx.sh /etc/letsencrypt/renewal-hooks/deploy/x-science-nginx
+systemctl enable --now certbot-renew.timer
+certbot renew --cert-name x-science.ai --dry-run --run-deploy-hooks
+```
+
+The hook acts only on the `x-science.ai` certificate lineage. It checks certificate
+expiry and nginx configuration before reloading nginx; failures stop the reload.
+The dry run keeps the active production certificate and exercises the hook only
+after successful staging validation. TLS starts with a one-day HSTS policy on
+each covered host; unrelated subdomains and browser preload lists are excluded.
 
 On the Beijing backup, use the same checked archive and stage privately:
 

@@ -6,7 +6,7 @@ import ko from './translations/copy-ko.mjs';
 export const copy = {
   zh: {
     lang: 'zh-CN', title: 'X-Science — 科学软件与研究 Agent',
-    description: '探索 Victor Xu 开发的开源科学软件与研究 Agent：X-Science、X-Pharma、X-DDE、X-Synth、X-PatentSAR 与 DiffSBDD Workbench。',
+    description: '探索 Victor Xu 开发的开源科学软件与研究 Agent：X-Science、X-Pharma、X-DDE、X-Synth 与 X-PatentSAR。',
     nav: ['软件与 Agent', '研究工作流', '关于'], explore: '探索产品', github: '在 GitHub 查看',
     heroLabel: '独立开发 · 科学驱动', heroLines: ['让科学，', '继续向前。'],
     heroText: '为真实研究打造的软件与 Agent。连接证据、分子、工具与人，让每一个研究问题都能走向下一步。',
@@ -41,7 +41,7 @@ export const copy = {
   },
   en: {
     lang: 'en', title: 'X-Science — Scientific software & research agents',
-    description: 'Explore open-source scientific software and research agents built by Victor Xu: X-Science, X-Pharma, X-DDE, X-Synth, X-PatentSAR and DiffSBDD Workbench.',
+    description: 'Explore open-source scientific software and research agents built by Victor Xu: X-Science, X-Pharma, X-DDE, X-Synth, and X-PatentSAR.',
     nav: ['Software & agents', 'Research workflows', 'About'], explore: 'Explore the software', github: 'Explore on GitHub',
     heroLabel: 'INDEPENDENTLY BUILT. SCIENCE DRIVEN.', heroLines: ['Move science', 'forward.'],
     heroText: 'Software and agents for real research. Connecting evidence, molecules, tools and people, so every question can lead somewhere new.',

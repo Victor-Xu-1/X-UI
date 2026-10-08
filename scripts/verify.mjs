@@ -44,6 +44,7 @@ for (const path of paths) {
   assert.ok(!html.includes('pharma-intelligence-platform') && !html.includes('synon-biomed-v0.1.0'), 'Private repositories must not be exposed'); checks++;
   assert.ok(!html.includes('Synon Biomed'), `${path} uses retired display branding`); checks++;
   assert.ok(!html.includes('github.com/Victor-Xu-1/synon-biomed/'), `${path} uses a retired repository link`); checks++;
+  assert.ok(!/diffsbdd/i.test(html), `${path} contains an excluded product`); checks++;
   if (path.includes('/products/')) { assert.match(html, /class="product-hero-art">.*?loading="eager" fetchpriority="high"/s, `${path} must prioritize its first-screen artwork`); checks++; }
 }
 const researchAgent = products.find(product => product.id === 'x-science');
@@ -55,7 +56,7 @@ for (const lang of languages) {
   const html = await readFile(resolve(root, '.' + productPath(researchAgent, lang), 'index.html'), 'utf8');
   assert.ok(html.includes('<img class="product-glyph" src="/assets/logo.png"')); checks++;
 }
-assert.equal(new Set(products.map((p) => p.id)).size, 6); checks++;
+assert.deepEqual(products.map((p) => p.id), ['x-science', 'x-pharma', 'x-dde', 'x-synth', 'x-patentsar']); checks++;
 assert.ok((await stat(resolve(root, 'assets/social.png'))).size > 1000); checks++;
 const software = JSON.parse(await readFile(resolve(root, '../package.json'), 'utf8'));
 const siteInfo = JSON.parse(await readFile(resolve(root, 'site-info.json'), 'utf8'));
@@ -71,6 +72,7 @@ assert.equal(siteInfo.siteOrigin, siteOrigin); checks++;
 assert.equal(siteInfo.sourceRepository, sourceRepository); checks++;
 assert.equal(siteInfo.sourceLicense, 'MIT'); checks++;
 assert.equal(software.homepage, siteOrigin); checks++;
+assert.equal(new URL(siteOrigin).protocol, 'https:'); checks++;
 assert.equal(software.license, 'MIT'); checks++;
 assert.ok(defaultHome.includes(`property="og:image" content="${siteOrigin}/assets/social.png"`)); checks++;
 console.log(`PASS: ${checks} generated-page, metadata, accessibility and local-link checks across ${paths.length} pages.`);
