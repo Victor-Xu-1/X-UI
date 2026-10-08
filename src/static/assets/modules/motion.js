@@ -39,7 +39,7 @@ export function initMotion() {
     });
   }
 
-  const hero = document.querySelector('.hero-visual');
+  const hero = document.querySelector('.hero-visual, .product-hero-art');
   if (!hero || !matchMedia('(pointer: fine)').matches) return;
   let bounds;
   let pointerFrame = 0;

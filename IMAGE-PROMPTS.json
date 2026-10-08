@@ -1,35 +1,130 @@
 {
-  "mode": "Built-in image_gen",
+  "schemaVersion": 1,
+  "source": "native image_gen.imagegen",
+  "mode": "generate",
+  "conceptual": true,
+  "evidenceBoundary": "Conceptual biomedical artwork; not identified structures, application screenshots, or scientific results.",
+  "logoUnchanged": true,
+  "products": [
+    "X-Science",
+    "X-Pharma",
+    "X-DDE",
+    "X-Synth",
+    "X-PatentSAR"
+  ],
   "assets": [
     {
-      "id": "hero",
-      "prompt": "X-Science website main hero. A breathtaking, carefully art-directed abstract scientific sculpture: translucent chartreuse glass ribbons flow around one pearl sphere and several microscopic-looking mineral beads, suggesting the connection between evidence, molecules and research agents. Deep graphite-green seamless background #171b19. Refined editorial 3D still life, tactile frosted glass, beautiful light caustics, subtle depth of field. Square composition with a strong central subject and ample breathing room at edges; designed to sit next to typography. Elegant, substantial, restrained. No text, letters, logo, computer screens, UI, charts or numeric data. This is conceptual art, not an identified molecule or experimental result.",
-      "role": "AI-generated conceptual marketing illustration, not scientific data or UI evidence"
+      "key": "hero",
+      "filename": "hero.png",
+      "prompt": "Use case: stylized-concept.\nAsset type: editorial biomedical illustration for a premium scientific software website.\nArt direction: restrained, sophisticated, contemporary; light ivory-white / very pale cool-gray ground, crisp natural microtexture, physical optical depth, generous negative space, accents in deep teal, cobalt and warm amber-orange. A coherent series photographed/rendered with soft diffuse daylight and precise macro detail. It should feel editorial and scientific, not a decorative toy still life.\nConstraints: conceptual illustration only, not a representation of an identified protein, named molecule, clinical result, experimental assay or fabricated data. No text, no lettering, no numbers, no logo, no watermark, no interface, no chart, no labels. Avoid lime green, shiny pearl-bead piles, plastic balls, grids, document piles, paper scraps, neon holograms, fake dashboards.\nPrimary request: Create a striking wide biomedical hero image, landscape 3:2, for a clean split-screen landing page.\nSubject: a close, immersive view into a translucent folded cellular membrane, its flowing irregular organic surfaces and fine branching filaments connecting several naturally imperfect small cell forms. One luminous amber-orange cell interior provides a quiet focal point, with restrained cobalt and teal details deeper in the translucent tissue.\nComposition: an elegant asymmetrical organic formation, occupying the central and lower-right area, ample pale background around it; fluid sweeping diagonal silhouette, distinguishable at small size, no circular pedestal or product stand. Macro photographic realism with delicate transparent layers, convincing wet membrane texture and subtle volumetric scatter. Interesting topology and material detail rather than a pile of spherical objects.",
+      "status": "complete",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 2370470,
+      "sha256": "4aae4f59f288050cd4e19d98d1eaa5c7efafa572bfe5b90c89d668321ad16cdb",
+      "visualInspection": {
+        "passed": true,
+        "notes": "Native displayed output inspected: pale clean composition, organic tissue texture, restrained teal and amber, no text/logo/fake UI/results."
+      },
+      "original": "../generated-images-redesign/hero.png"
     },
     {
-      "id": "synon-biomed",
-      "prompt": "Synon Biomed research agent product cover. An elegant editorial scientific 3D still life: a flowing mint-green translucent ribbon gently links an open ivory book form, a clear spherical lens, and a small branching crystalline sculpture, symbolizing conversation, evidence, tools and research artifacts. Warm pearl-white seamless studio background, mint and graphite accents, refined shadows and tactile glass/paper materials. Wide landscape 3:2 composition, generous quiet margins, one cohesive sculptural scene. No text, letters, logos, screens, UI, charts or measured data. Conceptual product artwork, not a running application or scientific result.",
-      "role": "AI-generated conceptual marketing illustration, not scientific data or UI evidence"
+      "key": "x-science",
+      "filename": "x-science.png",
+      "prompt": "Use case: stylized-concept.\nAsset type: editorial biomedical illustration for a premium scientific software website.\nArt direction: restrained, sophisticated, contemporary; light ivory-white / very pale cool-gray ground, crisp natural microtexture, physical optical depth, generous negative space, accents in deep teal, cobalt and warm amber-orange. A coherent series photographed/rendered with soft diffuse daylight and precise macro detail. It should feel editorial and scientific, not a decorative toy still life.\nConstraints: conceptual illustration only, not a representation of an identified protein, named molecule, clinical result, experimental assay or fabricated data. No text, no lettering, no numbers, no logo, no watermark, no interface, no chart, no labels. Avoid lime green, shiny pearl-bead piles, plastic balls, grids, document piles, paper scraps, neon holograms, fake dashboards.\nPrimary request: landscape 3:2 product editorial cover for a general biomedical research agent.\nSubject: an intimate microscopy-inspired cross-section of living tissue: pale translucent irregular cells with folded membranes and organic nuclei embedded among fine dark-teal capillary-like strands and a few tiny amber-orange details. The material is moist, porous and biologically varied, not manufactured smooth spheres.\nComposition: flowing tissue enters from the lower-left and recedes toward the upper-right, with breathing space and a strong clearly readable silhouette; high-detail focus on the foreground membrane, softer depth behind. A credible biological research atmosphere, elegant editorial macro optical rendering.",
+      "status": "complete",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 2605851,
+      "sha256": "ce0ab5d2058e6075610d203bfa8673d057b6a2847ceb08a57e902dc022f93f19",
+      "visualInspection": {
+        "passed": true,
+        "notes": "Native displayed output inspected: pale clean composition, organic tissue texture, restrained teal and amber, no text/logo/fake UI/results."
+      },
+      "original": "../generated-images-redesign/x-science.png"
     },
     {
-      "id": "x-pharma",
-      "prompt": "X-Pharma pharmaceutical intelligence product cover. A refined editorial 3D still life: floating translucent lilac glass document layers and a small crystal prism align into an organized sculptural archive, with thin graphite filaments tracing gentle connections between them. Ivory seamless studio backdrop, soft lilac, lavender and clear glass, diffused daylight with precise natural shadows. Wide 3:2 composition, sophisticated magazine-quality science brand artwork, substantial and tactile rather than flat icons. No text, letters, logos, UI, charts, numbers or fabricated data. Abstract conceptual evidence artwork.",
-      "role": "AI-generated conceptual marketing illustration, not scientific data or UI evidence"
+      "key": "x-pharma",
+      "filename": "x-pharma.png",
+      "prompt": "Use case: stylized-concept.\nAsset type: editorial biomedical illustration for a premium scientific software website.\nArt direction: restrained, sophisticated, contemporary; light ivory-white / very pale cool-gray ground, crisp natural microtexture, physical optical depth, generous negative space, accents in deep teal, cobalt and warm amber-orange. A coherent series photographed/rendered with soft diffuse daylight and precise macro detail. It should feel editorial and scientific, not a decorative toy still life.\nConstraints: conceptual illustration only, not a representation of an identified protein, named molecule, clinical result, experimental assay or fabricated data. No text, no lettering, no numbers, no logo, no watermark, no interface, no chart, no labels. Avoid lime green, shiny pearl-bead piles, plastic balls, grids, document piles, paper scraps, neon holograms, fake dashboards.\nPrimary request: landscape 3:2 product editorial cover for pharmaceutical research intelligence.\nSubject: a real-looking transparent microfluidic glass chip viewed closely at a low oblique angle on a pale lab-white background. Precisely etched branching microchannels carry tiny warm amber and cobalt fluid streams meeting at one clear mixing junction. Faint natural glass reflections, sharp fluid menisci, microscopic air bubbles and fine machined channel texture.\nComposition: one chip partially cropped, geometry simple and purposeful, clean diagonal channels crossing the frame with generous pale air at the edges. Editorial science macro photography, exceptional material clarity, no text or printed markings, no plotted results.",
+      "status": "complete",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 2031309,
+      "sha256": "23efcd363edbaa3978191757253a7bfa7c7886f233f7611d5304cf57eaeaa6d7",
+      "visualInspection": {
+        "passed": true,
+        "notes": "Inspected native displayed output: glass microfluidic junction, clear amber/blue fluids, pale backdrop, no text or claimed analytical output."
+      },
+      "original": "../generated-images-redesign/x-pharma.png"
     },
     {
-      "id": "x-dde",
-      "prompt": "X-DDE connected drug discovery product cover. Sophisticated editorial scientific 3D sculpture: a pale lime ribbon folded into a pocket-like organic surface cradles a compact cluster of frosted pearl and graphite beads connected by thin rods, surrounded by a few clear glass arcs. Warm ivory seamless studio backdrop, lime-green accents, physically beautiful light, tactile ceramic and glass. Wide landscape 3:2 composition, generous margins, central sculpture. No text, letters, logos, screens, UI, measurement labels or charts. Generic conceptual molecular and pocket-inspired art, no claims of a specific chemical identity or scientific result.",
-      "role": "AI-generated conceptual marketing illustration, not scientific data or UI evidence"
+      "key": "x-dde",
+      "filename": "x-dde.png",
+      "prompt": "Use case: stylized-concept.\nAsset type: editorial biomedical illustration for a premium scientific software website.\nArt direction: restrained, sophisticated, contemporary; light ivory-white / very pale cool-gray ground, crisp natural microtexture, physical optical depth, generous negative space, accents in deep teal, cobalt and warm amber-orange. A coherent series photographed/rendered with soft diffuse daylight and precise macro detail. It should feel editorial and scientific, not a decorative toy still life.\nConstraints: conceptual illustration only, not a representation of an identified protein, named molecule, clinical result, experimental assay or fabricated data. No text, no lettering, no numbers, no logo, no watermark, no interface, no chart, no labels. Avoid lime green, shiny pearl-bead piles, plastic balls, grids, document piles, paper scraps, neon holograms, fake dashboards.\nPrimary request: landscape 3:2 product editorial cover for structure-based drug discovery software.\nSubject: a richly textured folded protein-like molecular surface in deep desaturated teal and translucent blue, seen very close; a warm amber organic fragment rests inside an accessible cleft. Surface has intricate ridges and soft molecular granularity, with subtle pale secondary-structure-like ribbons barely visible through part of the surface. This is an invented conceptual protein interaction, not an actual identified structure or docking result.\nComposition: the cleft is the focal point at center-right, a broad sculptural molecular surface curves diagonally through the frame; leave clean pale background at top-left and edges. Soft studio daylight, very high-quality physical depth, believable translucence, no ball-and-stick toy pile.",
+      "status": "complete",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 2356380,
+      "sha256": "62facc3aa2c2dbab34e121b429a475a096ff619b11c174b956ae9289bf21df66",
+      "visualInspection": {
+        "passed": true,
+        "notes": "Inspected native displayed output: conceptual folded protein surface and amber fragment, strong focal cleft, no identified structure or claimed docking evidence."
+      },
+      "original": "../generated-images-redesign/x-dde.png"
     },
     {
-      "id": "x-synth",
-      "prompt": "X-Synth synthesis research product cover. Elegant editorial 3D sculpture illustrating transformation and branching: two small pearl ceramic ring-like objects and fine amber-glass stems converge into a more complex sculptural cluster, arranged as a quiet still life on an ivory studio surface. Warm amber, pale apricot, graphite and frosted glass, precise soft shadows, beautiful material detail. Wide landscape 3:2, airy composition, sophisticated scientific magazine style. No text, letters, logos, UI, arrows with labels, numeric data or exact reaction scheme. Conceptual synthesis-inspired artwork, not an asserted real chemical reaction.",
-      "role": "AI-generated conceptual marketing illustration, not scientific data or UI evidence"
+      "key": "x-synth",
+      "filename": "x-synth.png",
+      "prompt": "Use case: stylized-concept.\nAsset type: editorial biomedical illustration for a premium scientific software website.\nArt direction: restrained, sophisticated, contemporary; light ivory-white / very pale cool-gray ground, crisp natural microtexture, physical optical depth, generous negative space, accents in deep teal, cobalt and warm amber-orange. A coherent series photographed/rendered with soft diffuse daylight and precise macro detail. It should feel editorial and scientific, not a decorative toy still life.\nConstraints: conceptual illustration only, not a representation of an identified protein, named molecule, clinical result, experimental assay or fabricated data. No text, no lettering, no numbers, no logo, no watermark, no interface, no chart, no labels. Avoid lime green, shiny pearl-bead piles, plastic balls, grids, document piles, paper scraps, neon holograms, fake dashboards.\nPrimary request: landscape 3:2 product editorial cover for organic chemistry and synthetic route research software.\nSubject: a close editorial macro view of a transparent curved glass reaction conduit, containing a sharply defined amber-orange liquid band merging into a fine clear stream. Minute reaction bubbles and translucent organic crystalline filaments suspended in the fluid create rich authentic chemistry texture. A second slender teal-filled conduit crosses softly behind, forming a simple elegant synthesis junction.\nComposition: one continuous glass loop arcs diagonally across a pale neutral background, tight material-focused crop, high visual clarity, ample white air, extremely realistic glass refraction and meniscus detail. No equipment labels, no laboratory brand, no molecule diagrams, no fake performance evidence.",
+      "status": "complete",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 2308960,
+      "sha256": "38099705033b3758269ea709ff886347d8b84363ee87787f11585358e3e0f5db",
+      "visualInspection": {
+        "passed": true,
+        "notes": "Inspected native displayed output: transparent reaction conduits and crystal/meniscus detail, pale neutral ground, no branding or scientific result claim."
+      },
+      "original": "../generated-images-redesign/x-synth.png"
     },
     {
-      "id": "x-patentsar",
-      "prompt": "X-PatentSAR patent structure and activity product cover. A compelling editorial 3D still life: a gently folded ivory paper folio opens into a translucent coral-orange lens through which several small pearl and graphite bead clusters become visible, suggesting bringing hidden chemistry out of source documents. Pearl-white seamless studio backdrop, coral and soft terracotta glass, elegant natural lighting and tactile paper texture. Wide 3:2 landscape composition, one clear central scene. No text, letters, logos, fake patent documents, screens, tables, charts or numeric data. Abstract conceptual art, not actual extraction evidence.",
-      "role": "AI-generated conceptual marketing illustration, not scientific data or UI evidence"
+      "key": "x-patentsar",
+      "filename": "x-patentsar.png",
+      "prompt": "Use case: stylized-concept.\nAsset type: editorial biomedical illustration for a premium scientific software website.\nArt direction: restrained, sophisticated, contemporary; light ivory-white / very pale cool-gray ground, crisp natural microtexture, physical optical depth, generous negative space, accents in deep teal, cobalt and warm amber-orange. A coherent series photographed/rendered with soft diffuse daylight and precise macro detail. It should feel editorial and scientific, not a decorative toy still life.\nConstraints: conceptual illustration only, not a representation of an identified protein, named molecule, clinical result, experimental assay or fabricated data. No text, no lettering, no numbers, no logo, no watermark, no interface, no chart, no labels. Avoid lime green, shiny pearl-bead piles, plastic balls, grids, document piles, paper scraps, neon holograms, fake dashboards.\nPrimary request: landscape 3:2 product editorial cover for chemistry patent evidence and structure–activity relationship exploration.\nSubject: several distinct intricate organic microcrystal forms and porous chemically inspired branching structures embedded in a thin translucent amber material plane, with one structurally related variation in desaturated cobalt. These have precise sharp crystalline facets mixed with irregular molecular-scale branching and surface detail, suggesting comparison of related chemical forms without showing invented measurement data.\nComposition: organized but natural material relationships, a close macro oblique view, one prominent branching microcrystal in foreground, only a few variations receding gently in depth. Pale white-gray laboratory ground and quiet amber highlights. No paper, no documents, no file icons, no plot, no graph, no annotated molecules, no spheres arranged as a diagram.",
+      "status": "complete",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 2591764,
+      "sha256": "f2a92ddd03e454c0a0c4a77a2418839a7635d4e78f8f821534a48ee0bfbd1cdb",
+      "visualInspection": {
+        "passed": true,
+        "notes": "Inspected native displayed output: amber and cobalt branching microcrystal variations, fine material detail, no documents, labels, charts or claimed SAR measurements."
+      },
+      "original": "../generated-images-redesign/x-patentsar.png"
+    },
+    {
+      "key": "science-editorial",
+      "filename": "science-editorial.png",
+      "prompt": "Use case: stylized-concept.\nAsset type: editorial biomedical illustration for a premium scientific software website.\nArt direction: restrained, sophisticated, contemporary; light ivory-white / very pale cool-gray ground, crisp natural microtexture, physical optical depth, generous negative space, accents in deep teal, cobalt and warm amber-orange. A coherent series photographed/rendered with soft diffuse daylight and precise macro detail. It should feel editorial and scientific, not a decorative toy still life.\nConstraints: conceptual illustration only, not a representation of an identified protein, named molecule, clinical result, experimental assay or fabricated data. No text, no lettering, no numbers, no logo, no watermark, no interface, no chart, no labels. Avoid lime green, shiny pearl-bead piles, plastic balls, grids, document piles, paper scraps, neon holograms, fake dashboards.\nPrimary request: wide landscape 3:1 editorial research narrative band for a premium biomedical website.\nSubject: a sweeping microscopy-inspired landscape of fine fibrous extracellular tissue surrounding a translucent cellular organoid. Irregular branching fibers and folded semi-transparent membrane sheets create a layered terrain in restrained teal, pale blue and ivory, with tiny localized amber-orange cellular details. Dense truthful-looking organic microtexture, not a photograph claimed as actual data.\nComposition: cinematic horizontal macro crop, tissue flows from left to right with a gently illuminated quiet clearing near the middle; balanced visual rhythm across the full width, no isolated object on a pedestal, diffuse white background and moderate depth of field. High-end science editorial concept, tactile and visually rich.",
+      "status": "complete",
+      "width": 2172,
+      "height": 724,
+      "bytes": 3064486,
+      "sha256": "1e0971e815e6639f4c88cb311ff66ea57dfcf3027508331b73b03398bd42acb2",
+      "visualInspection": {
+        "passed": true,
+        "notes": "Inspected native displayed output: continuous fibrous tissue and cellular organoid composition across a 3:1 band, detailed membranes, no text or empirical-evidence claim."
+      },
+      "original": "../generated-images-redesign/science-editorial.png"
     }
-  ]
+  ],
+  "generatedAt": "2026-10-08T16:45:18.172Z",
+  "validation": {
+    "allSevenAssetsSaved": true,
+    "originalLogoNotModified": true,
+    "excludedProductNotGenerated": true,
+    "allNativeOutputsVisuallyInspected": true,
+    "noWebsiteSourceOrGitModified": true
+  }
 }

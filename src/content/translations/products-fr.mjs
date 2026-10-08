@@ -6,7 +6,6 @@ export default {
     features: ['Organiser les échanges, les entrées et les fichiers produits dans le contexte du projet', 'Examiner les structures, séquences, alignements, notebooks et tableaux pris en charge', 'Choisir experts, Skills, connecteurs et environnements selon la tâche', 'Suivre l’exécution, examiner les livrables et poursuivre l’étude'],
     steps: ['Poser une question de recherche', 'Choisir les matériaux et outils', 'Examiner les livrables'],
     boundary: 'Les parcours disponibles dépendent des modèles, connecteurs, environnements et permissions configurés. La destination des données dépend du déploiement ; les chercheurs doivent vérifier les conclusions scientifiques.',
-    caption: 'Illustration conceptuelle du produit issue du dépôt public ; ni capture d’interface ni résultat scientifique.',
   },
   'x-pharma': {
     label: 'Information pharmaceutique & preuves', headline: 'Des informations\naux connaissances sourcées.',

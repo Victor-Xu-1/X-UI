@@ -20,15 +20,17 @@ may reboot the instance even when displayed in an Agent management page.
 
 On the AlmaLinux primary, install nginx from the configured official distribution
 repository if missing (`dnf install nginx`). Do not perform a whole-system update.
-Download the content-addressed archive listed by the preview site's
-`/_transfer/manifest.json`, retain its exact SHA-256 receipt, and stage it:
+Download the content-addressed static and operations archives and manifest from
+the reviewed GitHub Release. The synchronized Sites preview can be blocked by
+Cloudflare on anonymous artifact downloads; do not bypass that challenge. Retain
+the exact manifest/SHA-256 receipt and stage the same checked static tree:
 
 ```bash
 install -d -m 0755 /var/www
 python3 ops/release.py --archive /var/lib/x-science/RELEASE.tar.gz \
   --sha256 RECEIPT_SHA256 --root /var/www/x-science --role primary
-bash ops/activate.sh http /var/www/x-science/releases/RELEASE_ID
-curl --fail -H 'Host: x-science.ai' http://127.0.0.1/site-info.json
+bash ops/activate.sh tls /var/www/x-science/releases/RELEASE_ID
+curl --fail --resolve x-science.ai:443:127.0.0.1 https://x-science.ai/site-info.json
 ```
 
 The release command rejects wrong hashes, traversal paths, links, duplicate

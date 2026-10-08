@@ -25,7 +25,7 @@ export function initNavigation() {
     if (language?.open && !language.contains(event.target)) language.open = false;
     if (!navigation.contains(event.target) && !toggle.contains(event.target)) setNavigation(false);
   });
-  matchMedia('(min-width: 621px)').addEventListener('change', event => {
+  matchMedia('(min-width: 961px)').addEventListener('change', event => {
     if (event.matches) setNavigation(false);
   });
 }

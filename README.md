@@ -17,8 +17,8 @@ VPS redirects legacy `/en/` URLs to their canonical English routes.
 The research agent is now **X-Science**, with its canonical source at
 `Victor-Xu-1/X-Science` and product pages under `/products/x-science/`.
 Nginx redirects the former `synon-biomed` product routes in every language to
-the current route, preserving query parameters. Historical asset filenames and
-the recorded original image-generation prompts retain their provenance.
+the current route, preserving query parameters. The five-product catalog excludes
+DiffSBDD Workbench. Earlier artwork is retained in Git history and prior releases.
 
 The public deployment uses HTTPS with a trusted certificate covering the three
 apex names and their three `www` entries. `src/content/site.mjs` owns the public
@@ -28,11 +28,12 @@ deploying.
 
 ## Run and maintain
 
-Node.js 22 or newer is the only runtime dependency. No package installation is required.
+Node.js 22 or newer builds the static website. No package installation is required.
 
 ```powershell
 node scripts/build.mjs
 node scripts/verify.mjs
+node scripts/verify-assets.mjs
 node scripts/preview.mjs
 ```
 
@@ -42,9 +43,20 @@ Product facts were reviewed against public GitHub READMEs and release metadata o
 
 ## Assets
 
-`ASSET-NOTICES.json` records origins, pinned revisions, roles, licenses and SHA-256. Downloaded screenshots are preserved without altering interface text or scientific data. Six original images were created with the native image-generation tool: one brand hero and five product concepts. Their prompts are in `IMAGE-PROMPTS.json`; their checked-in WebP derivatives total about 470 KB, and original PNGs are delivered in the neighboring `generated-images` folder. All generated images have visible concept labels in each language. Product concepts are generic editorial illustrations, not identified molecules, interface captures or scientific evidence. No remote fonts, analytics, tracking scripts or third-party runtime are loaded.
+`ASSET-NOTICES.json` records origins, pinned revisions, roles, licenses and SHA-256.
+Seven fresh images were created with the native image-generation tool: a hero,
+five product concepts and a wide editorial visual. Portable prompts and original
+hashes are in `IMAGE-PROMPTS.json`; the WebP derivatives total 1,485,804 bytes.
+Original PNGs are retained in the neighboring `generated-images-redesign` folder.
+Concepts carry translated labels. The genuine X-DDE capture retains its original
+pixels, caption, revision and Apache-2.0 notice. Images never stand in for measured
+results or live software execution.
 
-To restore the two pinned repository images:
+Inter 4.1 and 3Dmol.js 2.5.5 are served locally, with complete license notices.
+The molecular viewer is loaded only when its section enters view. No remote font,
+CDN script, analytics or tracking service is requested by the website.
+
+To restore the pinned genuine repository capture:
 
 ```powershell
 node scripts/fetch-assets.mjs
@@ -55,6 +67,41 @@ The committed `src/static/assets/social.png` is the website's original sharing v
 
 The official X-Science logo was supplied by the user on 2026-10-08. Its original transparent PNG is preserved as `src/static/assets/logo.png`; browser and touch icons are size derivatives. The same asset appears in the header, footer and sharing artwork. The previous provisional X-shaped mark was removed.
 
+## Molecular exploration
+
+The home page and X-DDE product page include one persistent 3Dmol viewer per
+document. `src/content/structure-provenance.json` owns the three unmodified RCSB
+PDB examples, their exact bytes/hashes, experimental resolution and citations.
+`structures.mjs` derives the UI catalog; `structure-copy.mjs` owns translated
+labels. The local files are 1UBQ (ubiquitin), 4HHB (deoxyhemoglobin) and 2LYZ
+(hen egg-white lysozyme). Their coordinates are reference examples, independent
+of the promoted applications. Crystallographic waters are hidden; deposited heme
+cofactors are displayed. Author chain IDs and chemical element names stay intact.
+
+The adapter uses orthographic projection, deposited secondary-structure records,
+moderate cartoon quality, capped outlines and bounded framing. Colors distinguish
+secondary structure, author chains or elements; the same palette owns the on-page
+and exported legends. Users can rotate, zoom, reset, change representation or
+background and download a genuine PNG with PDB identity and legend. Arrow keys
+rotate the focused structure; +/− zoom. Automatic rotation pauses offscreen,
+in hidden tabs, after manual manipulation and under reduced-motion preferences.
+
+PNG capture reuses the current renderer, caps physical dimensions at 2400 pixels
+per edge and limits pixel allocation before adding the attribution footer. It
+restores the live canvas and view in `finally`; it never creates another renderer
+or regenerates surfaces. The checked-in real-coordinate poster supports no-JS
+visits. Surface workers finish before another model/style can mutate their data.
+Fetches have a 20-second deadline, verify exact SHA-256 and expose an explicit
+error/retry state. WebGL loss uses an explicit source-link/reload path. The pinned
+renderer supports OffscreenCanvas, so context checks use its public renderer API.
+
+The managed CSP permits local scripts and `worker-src 'self' blob:` for surface
+workers; it does not permit script eval or an external CDN. Preview reads this
+same CSP from the managed nginx include. When updating a dependency or PDB file,
+review its official source/license, refresh provenance, verify exact bytes and
+render the changed representations before deployment. Do not overwrite genuine
+coordinates with generated imagery or describe camera rotation as molecular dynamics.
+
 ## Hosting and repository governance
 
 `.openai/hosting.json` binds this checkout to its Sites project and declares `dist/` as the generated static output. Never substitute or regenerate its project ID during an update. Use the Sites skill source helper to synchronize the reviewed source, run any remaining build checks, create a matching archive and deploy a saved version. Credentials belong only in session memory and hidden stdin, never in the repository or commands.
@@ -63,7 +110,13 @@ Windows hosting helpers require Git Bash rather than the Windows `bash.exe` WSL 
 
 Allowed root entries: `src`, `scripts`, `ops`, `licenses`, `.github`, `.openai`, `.gitignore`, `.gitattributes`, `package.json`, `README.md`, `QUALITY.md`, `LICENSE`, `THIRD-PARTY-NOTICES.md`, `ASSET-NOTICES.json`, `IMAGE-PROMPTS.json`, and ignored `dist`. Site identity and content belong to this website; original software repositories remain read-only. No database, model runtime or competing implementation is introduced.
 
-The production domain is `x-science.ai`. For the user's selected VPS hosting, its A record must point to the verified public web server. The Sites alias remains a preview and deployment-download origin; Sites validation records apply only if that hosting target is selected for the custom domain. Preserve mail MX/TXT and unrelated subdomains. Verify public DNS, the actual server response and HTTPS after propagation.
+The production domain is `x-science.ai`. Its selected VPS A record points to the
+verified web server. The existing Sites alias remains a synchronized preview.
+Cloudflare may block anonymous mirror downloads; production transport uses the
+same checked content-addressed artifacts published in GitHub Releases. Sites
+validation records apply only when Sites is selected for the custom domain.
+Preserve mail MX/TXT, nameservers and unrelated subdomains. Verify public DNS,
+the actual server response and HTTPS after propagation.
 
 The owner's additional domains, `xscience.si` and `xsci.si`, are configured as brand entry points that redirect to the canonical site. The shared VPS configuration covers all three apex names and their `www` entries, preserving language and product paths in each redirect. Verify their DNS and actual redirects before declaring the entry points active.
 
@@ -75,6 +128,12 @@ For a VPS deployment, use the public IPv4 address of the verified web server as 
 
 `node scripts/verify.mjs` checks all 36 affected pages, complete translation dictionaries, metadata, structured data, local links, image alternatives and exclusion of private-repository links. Browser acceptance checks six-language desktop/mobile layouts, language changes that preserve product identity, filters, mobile navigation, console errors and image loading in actual Google Chrome. Test evidence stays outside the source checkout. No tests are run against the promoted software repositories.
 
+`node scripts/verify-assets.mjs` checks fresh artwork, complete molecular copy,
+exact PDB/vendor/font bytes, served license notices, poster provenance and the
+generated molecular contracts. The detailed Chrome matrix also covers all nine
+structure/representation combinations, unchanged coordinates, full rotation,
+high-DPR export, loading/failure/retry, context loss and reduced motion.
+
 [QUALITY.md](QUALITY.md) owns the page/module/state review matrix. The GitHub
 workflow checks this website's build, generated pages and deployment archive.
 After `node scripts/package-transfer.mjs`, run `python scripts/check-release.py`
@@ -83,3 +142,9 @@ unsafe archives, role boundaries and retained-release compatibility. Python 3.9
 or newer is needed only for release checks and VPS staging.
 
 Before publication, build from the reviewed source revision, synchronize that exact revision and retain the saved version ID. For a site update, redeploy the previous verified saved version to roll back. DNS changes can be reverted using the pre-change record receipt; do not change nameservers or unrelated records. A successful build or hosted alias does not prove that custom-domain DNS/TLS has become active.
+
+Each completed optimization round proceeds through focused checks, GitHub
+publication, production deployment and verification of its actual changed
+experience on all three domain entry points. A local preview does not complete
+an optimization delivery. Prior verified VPS release directories remain available
+for rollback; the owner has deferred the Beijing backup for this delivery.
