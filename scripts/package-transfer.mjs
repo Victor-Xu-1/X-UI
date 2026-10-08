@@ -1,0 +1,22 @@
+import { readFile, writeFile, mkdir, copyFile } from 'node:fs/promises';
+import { createHash } from 'node:crypto';
+import { spawnSync } from 'node:child_process';
+import { dirname, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
+const software = JSON.parse(await readFile(resolve(root, 'package.json'), 'utf8'));
+const dist = resolve(root, 'dist');
+const scratch = resolve(root, '.sites-runtime');
+const download = resolve(dist, '_transfer');
+await mkdir(scratch, { recursive: true });
+const archive = resolve(scratch, 'x-science-transfer.tar.gz');
+const result = spawnSync('tar', ['-czf', archive, '--exclude=./_transfer', '-C', dist, '.'], { stdio: 'inherit' });
+if (result.status !== 0) throw new Error('Unable to package the verified static website');
+const bytes = await readFile(archive);
+const sha256 = createHash('sha256').update(bytes).digest('hex');
+const filename = `x-science-${software.version}-${sha256.slice(0,12)}.tar.gz`;
+await mkdir(download, { recursive: true });
+await copyFile(archive, resolve(download, filename));
+await writeFile(resolve(download, 'manifest.json'), JSON.stringify({ version: software.version, filename, sha256, bytes: bytes.length, contains: 'Only public website pages and assets; no source credentials or server data.' }, null, 2) + '\n');
+console.log(JSON.stringify({ filename, sha256, bytes: bytes.length }));

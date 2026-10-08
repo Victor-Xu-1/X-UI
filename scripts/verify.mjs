@@ -38,4 +38,7 @@ for (const path of paths) {
 }
 assert.equal(new Set(products.map((p) => p.id)).size, 6); checks++;
 assert.ok((await stat(resolve(root, 'assets/social.png'))).size > 1000); checks++;
+const software = JSON.parse(await readFile(resolve(root, '../package.json'), 'utf8'));
+const siteInfo = JSON.parse(await readFile(resolve(root, 'site-info.json'), 'utf8'));
+assert.equal(siteInfo.version, software.version); checks++;
 console.log(`PASS: ${checks} generated-page, metadata, accessibility and local-link checks across ${paths.length} pages.`);

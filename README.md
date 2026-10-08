@@ -39,7 +39,9 @@ Windows hosting helpers require Git Bash rather than the Windows `bash.exe` WSL 
 
 Allowed root entries: `src`, `scripts`, `.openai`, `.gitignore`, `package.json`, `README.md`, `ASSET-NOTICES.json`, `IMAGE-PROMPTS.json`, and ignored `dist`. Site identity and content belong to this website; original software repositories remain read-only. No database, model runtime or competing implementation is introduced.
 
-The custom domain is `x-science.ai`. DNS records must come from the Sites custom-domain response. Preserve MX, mail TXT and unrelated subdomains. Replacing a registrar parking record is separate from adding certificate or ownership validation records. Verify the domain's native active/TLS state and public HTTPS after propagation.
+The production domain is `x-science.ai`. For the user's selected VPS hosting, its A record must point to the verified public web server. The Sites alias remains a preview and deployment-download origin; Sites validation records apply only if that hosting target is selected for the custom domain. Preserve mail MX/TXT and unrelated subdomains. Verify public DNS, the actual server response and HTTPS after propagation.
+
+For a VPS deployment, use the public IPv4 address of the verified web server as the domain's A record. `node scripts/package-transfer.mjs` creates a content-addressed, SHA-256-checked archive of the same generated pages, plus `dist/_transfer/manifest.json`; it excludes its own transfer directory. This optional public download is a deployment transport, not another website implementation. The VPS serves the extracted static tree through its own web server. Keep server credentials and runtime data outside source; use a dedicated release directory and atomic current symlink. Preserve existing services and validate the web-server configuration before reloading it.
 
 ## Verification and rollback
 

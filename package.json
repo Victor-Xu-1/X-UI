@@ -1,12 +1,13 @@
 {
   "name": "x-science-website",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "type": "module",
   "engines": { "node": ">=22" },
   "scripts": {
     "build": "node scripts/build.mjs",
     "preview": "node scripts/preview.mjs",
-    "verify": "node scripts/verify.mjs"
+    "verify": "node scripts/verify.mjs",
+    "package:transfer": "node scripts/package-transfer.mjs"
   }
 }
