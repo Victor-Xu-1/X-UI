@@ -9,6 +9,7 @@ import { interactionCopy } from '../src/content/interaction-copy.mjs';
 import { siteOrigin, sourceRepository } from '../src/content/site.mjs';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '../dist');
+const software = JSON.parse(await readFile(resolve(root, '../package.json'), 'utf8'));
 const paths = languages.flatMap((lang) => [languagePath(lang), ...products.map((p) => productPath(p, lang))]);
 let checks = 0;
 for (const lang of languages) {
@@ -34,7 +35,7 @@ for (const path of paths) {
   const jsonld = html.match(/<script type="application\/ld\+json">(.*?)<\/script>/s);
   assert.ok(JSON.parse(jsonld[1])['@type']); checks++;
   for (const [, url] of html.matchAll(/(?:href|src)="(\/[^\"]*)"/g)) {
-    const clean = url.split('#')[0];
+    const clean = url.split(/[?#]/)[0];
     if (!clean) continue;
     const filename = resolve(root, '.' + clean, ...(clean.endsWith('/') ? ['index.html'] : []));
     assert.ok((await stat(filename)).isFile(), `${path}: missing ${clean}`); checks++;
@@ -54,11 +55,10 @@ assert.ok(!products.some(product => product.id === 'synon-biomed')); checks++;
 for (const lang of languages) {
   assert.equal(productPath(researchAgent, lang), languagePath(lang) + 'products/x-science/'); checks++;
   const html = await readFile(resolve(root, '.' + productPath(researchAgent, lang), 'index.html'), 'utf8');
-  assert.ok(html.includes('<img class="product-glyph" src="/assets/logo.png"')); checks++;
+  assert.ok(html.includes(`<img class="product-glyph" src="/assets/logo.png?v=${software.version}"`)); checks++;
 }
 assert.deepEqual(products.map((p) => p.id), ['x-science', 'x-pharma', 'x-dde', 'x-synth', 'x-patentsar']); checks++;
 assert.ok((await stat(resolve(root, 'assets/social.png'))).size > 1000); checks++;
-const software = JSON.parse(await readFile(resolve(root, '../package.json'), 'utf8'));
 const siteInfo = JSON.parse(await readFile(resolve(root, 'site-info.json'), 'utf8'));
 assert.equal(siteInfo.version, software.version); checks++;
 assert.equal(defaultLanguage, 'en'); checks++;

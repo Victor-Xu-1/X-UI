@@ -1,4 +1,4 @@
-import { mkdir, rm, cp, writeFile, readFile } from 'node:fs/promises';
+import { mkdir, rm, cp, writeFile, readFile, readdir } from 'node:fs/promises';
 import { dirname, resolve, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { copy } from '../src/content/copy.mjs';
@@ -19,12 +19,22 @@ await Promise.all(products.filter((p) => p.image).map((p) => readFile(resolve(ro
 await rm(output, { recursive: true, force: true });
 await mkdir(output, { recursive: true });
 await cp(resolve(root, 'src/static'), output, { recursive: true });
+// Release-specific resource URLs keep earlier browser caches out of a new UI.
+const firstPartyModules = ['assets/app.js', ...(await readdir(resolve(output, 'assets/modules'))).filter(name => name.endsWith('.js')).map(name => `assets/modules/${name}`)];
+for (const file of firstPartyModules) {
+  const target = resolve(output, file);
+  const source = await readFile(target, 'utf8');
+  await writeFile(target, source.replace(/(^import\s.*?from\s+['"])(\.\/[^'"]+\.js)(['"])/gm, `$1$2?v=${software.version}$3`));
+}
 const urls = [];
+function releaseResources(html) {
+  return html.replace(/((?:href|src)="\/assets\/[^"?]+)(")/g, `$1?v=${software.version}$2`);
+}
 async function page(path, html) {
   const destination = resolve(output, '.' + path);
   if (!destination.startsWith(output + sep) && destination !== output) throw new Error('Page path escapes the output directory');
   await mkdir(destination, { recursive: true });
-  await writeFile(resolve(destination, 'index.html'), html);
+  await writeFile(resolve(destination, 'index.html'), releaseResources(html));
   urls.push(path);
 }
 for (const lang of languages) {
@@ -32,7 +42,7 @@ for (const lang of languages) {
   for (const product of products) await page(productPath(product, lang), productPage(product, lang));
 }
 const notFound = layout({ lang: 'en', path: '/404.html', title: 'Page not found | X-Science', body: `<section class="not-found"><div class="container"><p>404 · X-SCIENCE</p><h1>${copy.en.notFound}</h1><a class="button button-dark" href="/">${copy.en.goHome}</a></div></section>` });
-await writeFile(resolve(output, '404.html'), notFound.replace('<head>', '<head><meta name="robots" content="noindex">'));
+await writeFile(resolve(output, '404.html'), releaseResources(notFound.replace('<head>', '<head><meta name="robots" content="noindex">')));
 await writeFile(resolve(output, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${siteOrigin}/sitemap.xml\n`);
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${urls.map((path) => `<url><loc>${siteOrigin}${path}</loc><lastmod>${observedAt}</lastmod></url>`).join('')}</urlset>\n`;
 await writeFile(resolve(output, 'sitemap.xml'), sitemap);

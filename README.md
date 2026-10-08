@@ -148,3 +148,9 @@ publication, production deployment and verification of its actual changed
 experience on all three domain entry points. A local preview does not complete
 an optimization delivery. Prior verified VPS release directories remain available
 for rollback; the owner has deferred the Beijing backup for this delivery.
+
+Built HTML uses the package version on asset URLs, and first-party module imports
+receive that same version during the build. Vendored code, fonts, images and PDB
+bytes remain unmodified. The managed server requires cache revalidation, so a
+returning visitor receives the current document and its matching resources after
+a normal refresh. Coordinate fetches revalidate before exact SHA-256 checking.
