@@ -1,5 +1,5 @@
 export default {
-  'synon-biomed': {
+  'x-science': {
     label: 'Agent de recherche biomédicale', headline: 'Faire avancer la recherche.\nGarder les preuves en vue.',
     summary: 'Reliez les échanges de recherche, la littérature, les outils scientifiques et les livrables du projet. Gardez ensemble la question et ses preuves.',
     audience: 'Chercheurs biomédicaux, spécialistes du calcul scientifique et équipes de R&D', environment: 'Ubuntu / WSL ; fournisseurs de modèles et environnements scientifiques à configurer',

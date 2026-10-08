@@ -9,11 +9,11 @@ const repo = (name) => `https://github.com/Victor-Xu-1/${name}`;
 
 export const products = [
   {
-    id: 'synon-biomed', name: 'Synon Biomed', category: 'agents', color: '#a9d5bb',
-    repository: repo('synon-biomed'), license: 'AGPL-3.0-only',
-    docs: `${repo('synon-biomed')}/blob/main/docs/getting-started.md`,
-    guide: `${repo('synon-biomed')}/blob/main/docs/product/README.md`,
-    revision: 'b13d523be0cec4c4b811fc54397d46f2f562447d',
+    id: 'x-science', name: 'X-Science', category: 'agents', color: '#a9d5bb',
+    repository: repo('X-Science'), license: 'AGPL-3.0-only',
+    docs: `${repo('X-Science')}/blob/main/docs/getting-started.md`,
+    guide: `${repo('X-Science')}/blob/main/docs/product/README.md`,
+    revision: '4104d0723080b7406dba464de2de92af06060522',
     label: text('生物医药研究 Agent', 'Biomedical research agent'),
     headline: text('让研究推进，\n让证据始终可见。', 'Research forward.\nEvidence in view.'),
     summary: text('将研究讨论、文献、科学工具和项目产物连接起来。围绕问题开展工作，带着证据继续研究。', 'Connect research conversations, literature, scientific tools and project artifacts. Keep the question and its evidence together.'),
@@ -30,7 +30,7 @@ export const products = [
     boundary: text('可用工作流取决于实际模型、连接器、环境和权限配置。自托管的数据去向由配置决定，科学结论需要研究者复核。', 'Available workflows depend on configured models, connectors, environments and permissions. Data destinations depend on deployment choices; researchers review scientific conclusions.'),
     image: 'synon-concept.png', imageKind: 'concept', imageWidth: 2020, imageHeight: 778,
     caption: text('来自公开仓库的产品概念插画；不是实际界面或科学结果。', 'Product concept illustration from the public repository; not an application screenshot or scientific result.'),
-    imageSource: `${repo('synon-biomed')}/blob/b13d523be0cec4c4b811fc54397d46f2f562447d/docs/assets/README.md`,
+    imageSource: `${repo('X-Science')}/blob/b13d523be0cec4c4b811fc54397d46f2f562447d/docs/assets/README.md`,
   },
   {
     id: 'x-pharma', name: 'X-Pharma', category: 'intelligence', color: '#c6bef4',

@@ -5,7 +5,7 @@ import { arrow } from './icons.mjs';
 import { escape } from './layout.mjs';
 
 const stages = [
-  ['x-pharma', 'x-patentsar'], ['synon-biomed', 'x-dde'],
+  ['x-pharma', 'x-patentsar'], ['x-science', 'x-dde'],
   ['x-dde', 'diffsbdd-workbench'], ['x-synth'],
 ];
 

@@ -1,5 +1,5 @@
 export default {
-  'synon-biomed': {
+  'x-science': {
     label: '生物医学研究エージェント', headline: '研究を前へ。\nエビデンスを見える形に。',
     summary: '研究の対話、文献、科学ツール、プロジェクトの成果物をつなぐワークスペース。問いと根拠を一緒に保ち、研究を進めます。',
     audience: '生物医学の研究者、計算科学者、研究開発チーム', environment: 'Ubuntu / WSL。モデル提供元と科学計算環境の設定が必要',

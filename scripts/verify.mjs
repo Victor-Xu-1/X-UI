@@ -42,6 +42,17 @@ for (const path of paths) {
   for (const [, attributes] of html.matchAll(/<img\b([^>]+)>/g)) { assert.match(attributes, attributes.includes('aria-hidden="true"') ? /alt=""/ : /alt="[^\"]+"/); checks++; }
   assert.ok(!html.includes('http://localhost') && !html.includes('127.0.0.1'), 'Local development URLs must not reach production'); checks++;
   assert.ok(!html.includes('pharma-intelligence-platform') && !html.includes('synon-biomed-v0.1.0'), 'Private repositories must not be exposed'); checks++;
+  assert.ok(!html.includes('Synon Biomed'), `${path} uses retired display branding`); checks++;
+  assert.ok(!html.includes('github.com/Victor-Xu-1/synon-biomed/'), `${path} uses a retired repository link`); checks++;
+}
+const researchAgent = products.find(product => product.id === 'x-science');
+assert.equal(researchAgent?.name, 'X-Science'); checks++;
+assert.equal(researchAgent.repository, 'https://github.com/Victor-Xu-1/X-Science'); checks++;
+assert.ok(!products.some(product => product.id === 'synon-biomed')); checks++;
+for (const lang of languages) {
+  assert.equal(productPath(researchAgent, lang), languagePath(lang) + 'products/x-science/'); checks++;
+  const html = await readFile(resolve(root, '.' + productPath(researchAgent, lang), 'index.html'), 'utf8');
+  assert.ok(html.includes('<img class="product-glyph" src="/assets/logo.png"')); checks++;
 }
 assert.equal(new Set(products.map((p) => p.id)).size, 6); checks++;
 assert.ok((await stat(resolve(root, 'assets/social.png'))).size > 1000); checks++;

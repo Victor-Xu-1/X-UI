@@ -1,6 +1,6 @@
 export default {
   lang: 'fr', title: 'X-Science — Logiciels scientifiques et agents de recherche',
-  description: 'Découvrez les logiciels scientifiques et agents de recherche open source de Victor Xu : Synon Biomed, X-Pharma, X-DDE, X-Synth, X-PatentSAR et DiffSBDD Workbench.',
+  description: 'Découvrez les logiciels scientifiques et agents de recherche open source de Victor Xu : X-Science, X-Pharma, X-DDE, X-Synth, X-PatentSAR et DiffSBDD Workbench.',
   nav: ['Logiciels & agents', 'Parcours de recherche', 'À propos'], explore: 'Découvrir les logiciels', github: 'Voir sur GitHub',
   heroLabel: 'DÉVELOPPEMENT INDÉPENDANT. INSPIRÉ PAR LA SCIENCE.', heroLines: ['Faire avancer', 'la science.'],
   heroText: 'Des logiciels et des agents pour la recherche concrète. Relier les preuves, les molécules, les outils et les personnes, pour que chaque question ouvre une nouvelle voie.',

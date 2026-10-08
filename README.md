@@ -14,6 +14,12 @@ own language prefixes. The native language selector preserves the product route.
 `src/content/locales.mjs` owns the default-language setting and route mapping. The
 VPS redirects legacy `/en/` URLs to their canonical English routes.
 
+The research agent is now **X-Science**, with its canonical source at
+`Victor-Xu-1/X-Science` and product pages under `/products/x-science/`.
+Nginx redirects the former `synon-biomed` product routes in every language to
+the current route, preserving query parameters. Historical asset filenames and
+the recorded original image-generation prompts retain their provenance.
+
 The owner selected HTTP for the current public deployment and deferred creating
 a certificate-authority account. `src/content/site.mjs` owns the public origin
 used by canonical links, sharing images, hreflang, robots and the sitemap. Change

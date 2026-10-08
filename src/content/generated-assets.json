@@ -9,7 +9,7 @@
     "original": "../generated-images/hero.png",
     "role": "AI-generated concept art; not scientific data or application evidence"
   },
-  "synon-biomed": {
+  "x-science": {
     "file": "generated/synon-biomed.webp",
     "width": 1200,
     "height": 800,

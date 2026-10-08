@@ -1,5 +1,5 @@
 export default {
-  'synon-biomed': {
+  'x-science': {
     label: 'Biomedizinischer Forschungsagent', headline: 'Forschung voranbringen.\nEvidenz im Blick behalten.',
     summary: 'Verbinden Sie Forschungsgespräche, Literatur, wissenschaftliche Werkzeuge und Projektartefakte. Forschungsfrage und Belege bleiben zusammen.',
     audience: 'Biomedizinische Forschende, Fachleute für wissenschaftliches Rechnen und F&E-Teams', environment: 'Ubuntu / WSL; Modellanbieter und wissenschaftliche Umgebungen konfigurieren',

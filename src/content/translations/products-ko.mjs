@@ -1,5 +1,5 @@
 export default {
-  'synon-biomed': {
+  'x-science': {
     label: '생의학 연구 에이전트', headline: '연구를 앞으로.\n근거는 늘 보이도록.',
     summary: '연구 대화, 문헌, 과학 도구, 프로젝트 결과물을 연결합니다. 질문과 근거를 함께 보존하며 연구를 이어갑니다.',
     audience: '생의학 연구자, 계산과학자, 연구개발 팀', environment: 'Ubuntu / WSL. 모델 제공자와 과학 실행 환경 설정 필요',

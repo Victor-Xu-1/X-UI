@@ -4,8 +4,8 @@ export const star = '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><pa
 export const mark = '<img class="brand-mark" src="/assets/logo.png" width="40" height="40" alt="" aria-hidden="true">';
 
 export const glyph = (id) => {
+  if (id === 'x-science') return '<img class="product-glyph" src="/assets/logo.png" width="48" height="48" alt="" aria-hidden="true">';
   const paths = {
-    'synon-biomed': '<path d="M24 38V13m0 17L10 20m14 5 14-10M10 20v-9m28 4V6M24 20 13 8"/><circle cx="24" cy="11" r="3"/><circle cx="10" cy="8" r="3"/><circle cx="38" cy="5" r="3"/>',
     'x-pharma': '<path d="M10 6h22v27H10zM16 13h10M16 19h10M16 25h6M18 33v7h22V13h-8"/>',
     'x-dde': '<ellipse cx="24" cy="24" rx="20" ry="8"/><ellipse cx="24" cy="24" rx="20" ry="8" transform="rotate(60 24 24)"/><ellipse cx="24" cy="24" rx="20" ry="8" transform="rotate(120 24 24)"/><circle cx="24" cy="24" r="3"/>',
     'x-synth': '<path d="M24 7v12m0 0L10 30m14-11 14 11M10 30v9m28-9v9"/><circle cx="24" cy="6" r="4"/><circle cx="10" cy="30" r="4"/><circle cx="38" cy="30" r="4"/>',

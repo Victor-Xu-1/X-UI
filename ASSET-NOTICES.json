@@ -25,12 +25,12 @@
     },
     {
       "file": "synon-concept.png",
-      "repository": "Victor-Xu-1/synon-biomed",
+      "repository": "Victor-Xu-1/X-Science",
       "revision": "b13d523be0cec4c4b811fc54397d46f2f562447d",
       "path": "docs/assets/research-workspace-concept.png",
       "license": "AGPL-3.0-only; see source repository for component terms",
       "kind": "AI-generated editorial concept illustration; not an interface or a scientific result",
-      "source": "https://github.com/Victor-Xu-1/synon-biomed/blob/b13d523be0cec4c4b811fc54397d46f2f562447d/docs/assets/research-workspace-concept.png",
+      "source": "https://github.com/Victor-Xu-1/X-Science/blob/b13d523be0cec4c4b811fc54397d46f2f562447d/docs/assets/research-workspace-concept.png",
       "sha256": "3ef5acd36ced7850bad80135dfca7393acb98626c8f77a8abe809e4068a19b7b",
       "size": 1784982
     }
@@ -46,7 +46,7 @@
       "original": "../generated-images/hero.png",
       "role": "AI-generated concept art; not scientific data or application evidence"
     },
-    "synon-biomed": {
+    "x-science": {
       "file": "generated/synon-biomed.webp",
       "width": 1200,
       "height": 800,
