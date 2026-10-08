@@ -22,6 +22,8 @@ def stage(archive, expected_sha256, root, role):
     if not re.fullmatch(r"[0-9]+\.[0-9]+\.[0-9]+", version):
         raise ValueError("Invalid website version")
     root = Path(root).resolve()
+    if not root.parent.is_dir():
+        raise ValueError("Deployment parent directory must exist: " + str(root.parent))
     marker = root / ".x-science-managed.json"
     if root.exists() and any(root.iterdir()) and not marker.is_file():
         raise ValueError("Existing directory is not managed by X-Science: " + str(root))
@@ -36,6 +38,7 @@ def stage(archive, expected_sha256, root, role):
         marker.write_text(json.dumps({"role": role, "schema": 1}) + "\n")
     releases = root / "releases"
     releases.mkdir(mode=mode, exist_ok=True)
+    releases.chmod(mode)
     release = releases / (version + "-" + digest[:12])
     if release.exists():
         raise ValueError("Release already exists; inspect its receipt before reusing it")
@@ -44,12 +47,14 @@ def stage(archive, expected_sha256, root, role):
     temporary.replace(release)
     archives = root / "archives"
     archives.mkdir(mode=mode, exist_ok=True)
+    archives.chmod(mode)
     retained = archives / (release.name + ".tar.gz")
     shutil.copyfile(archive, retained)
     retained.chmod(0o600 if private else 0o644)
     receipt = {
         "version": version, "role": role, "sha256": digest,
         "release": str(release), "archive": str(retained),
+        "defaultLanguage": metadata.get("defaultLanguage", "zh"),
         "languages": metadata["languages"], "pageCount": metadata["pageCount"],
         "stagedAt": datetime.now(timezone.utc).isoformat(),
         "status": "staged; not yet activated",

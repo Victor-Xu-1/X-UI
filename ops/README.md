@@ -3,8 +3,8 @@
 The public primary is the overseas host `174.137.49.222`. `x-science.ai` is the
 canonical website; `xscience.si` and `xsci.si` redirect to the same brand, preserving
 language/product paths. Each domain's `www` name also redirects to the canonical site.
-The Beijing host
-`115.190.116.251` stores a private backup until the owner has completed ICP filing.
+The owner's Beijing host is reserved for a private backup until the owner has
+completed ICP filing. Keep its private server inventory outside this repository.
 These scripts deploy static website files; they do not deploy the promoted agents.
 
 Before changing a server, inspect its OS, free disk, TCP listeners, active services,
@@ -19,6 +19,7 @@ Download the content-addressed archive listed by the preview site's
 `/_transfer/manifest.json`, retain its exact SHA-256 receipt, and stage it:
 
 ```bash
+install -d -m 0755 /var/www
 python3 ops/release.py --archive /var/lib/x-science/RELEASE.tar.gz \
   --sha256 RECEIPT_SHA256 --root /var/www/x-science --role primary
 bash ops/activate.sh http /var/www/x-science/releases/RELEASE_ID

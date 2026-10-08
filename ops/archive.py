@@ -2,7 +2,7 @@
 
 import hashlib
 import json
-from pathlib import Path, PurePosixPath
+from pathlib import Path, PurePosixPath, PureWindowsPath
 import shutil
 import tarfile
 
@@ -19,7 +19,7 @@ def inspect_archive(archive, expected_sha256):
     with tarfile.open(archive, "r:gz") as source:
         for member in source.getmembers():
             path = PurePosixPath(member.name)
-            if path.is_absolute() or ".." in path.parts or "\\" in member.name:
+            if path.is_absolute() or PureWindowsPath(member.name).drive or ".." in path.parts or "\\" in member.name:
                 raise ValueError("Unsafe archive path: " + member.name)
             if not member.isdir() and not member.isfile():
                 raise ValueError("Links and special files are not permitted")
@@ -36,9 +36,14 @@ def inspect_archive(archive, expected_sha256):
         if "site-info.json" not in paths:
             raise ValueError("Missing website release metadata")
         metadata = json.load(source.extractfile(files["site-info.json"]))
+        root_language = metadata.get("defaultLanguage")
+        if root_language is None and metadata.get("version") == "1.0.1":
+            root_language = "zh"  # Explicit compatibility with the retained initial release.
+        if root_language not in metadata["languages"]:
+            raise ValueError("Missing or invalid default language")
         expected_pages = set()
         for language in metadata["languages"]:
-            prefix = "" if language == "zh" else language + "/"
+            prefix = "" if language == root_language else language + "/"
             expected_pages.add(prefix + "index.html")
             for product in metadata["products"]:
                 expected_pages.add(prefix + "products/" + product["id"] + "/index.html")
@@ -53,6 +58,7 @@ def unpack(archive, destination, entries, private):
     destination = Path(destination)
     directory_mode, file_mode = (0o700, 0o600) if private else (0o755, 0o644)
     destination.mkdir(mode=directory_mode)
+    destination.chmod(directory_mode)
     with tarfile.open(archive, "r:gz") as source:
         for member, path in entries:
             target = destination.joinpath(*path.parts)
@@ -64,3 +70,6 @@ def unpack(archive, destination, entries, private):
                     shutil.copyfileobj(incoming, output)
                 target.chmod(file_mode)
             target.parent.chmod(directory_mode)
+    for directory in destination.rglob("*"):
+        if directory.is_dir():
+            directory.chmod(directory_mode)

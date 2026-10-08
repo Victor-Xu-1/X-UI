@@ -3,7 +3,7 @@ import { readFile, stat } from 'node:fs/promises';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { products, productPath } from '../src/content/products.mjs';
-import { locales, languages, languagePath } from '../src/content/locales.mjs';
+import { locales, languages, languagePath, defaultLanguage } from '../src/content/locales.mjs';
 import { copy } from '../src/content/copy.mjs';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '../dist');
@@ -41,4 +41,11 @@ assert.ok((await stat(resolve(root, 'assets/social.png'))).size > 1000); checks+
 const software = JSON.parse(await readFile(resolve(root, '../package.json'), 'utf8'));
 const siteInfo = JSON.parse(await readFile(resolve(root, 'site-info.json'), 'utf8'));
 assert.equal(siteInfo.version, software.version); checks++;
+assert.equal(defaultLanguage, 'en'); checks++;
+assert.equal(siteInfo.defaultLanguage, 'en'); checks++;
+assert.equal(languagePath('en'), '/'); checks++;
+assert.equal(languagePath('zh'), '/zh/'); checks++;
+const defaultHome = await readFile(resolve(root, 'index.html'), 'utf8');
+assert.match(defaultHome, /<html lang="en">/); checks++;
+assert.ok(defaultHome.includes('hreflang="x-default" href="https://x-science.ai/"')); checks++;
 console.log(`PASS: ${checks} generated-page, metadata, accessibility and local-link checks across ${paths.length} pages.`);

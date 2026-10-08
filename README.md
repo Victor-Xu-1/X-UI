@@ -1,6 +1,18 @@
-# X-Science website
+# X-UI · X-Science website
 
 A public portfolio for scientific software and research agents built by Victor Xu. The website has 42 indexable pages: a home page and six product pages in Chinese, English, Japanese, German, French and Korean. It does not run the promoted scientific applications or accept research data.
+
+The official source repository is [Victor-Xu-1/X-UI](https://github.com/Victor-Xu-1/X-UI).
+Original website code, documentation and artwork are [MIT licensed](LICENSE).
+Unmodified reused assets retain their original licenses and attribution; see
+[THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md). The promoted software keeps its
+own repository's license.
+
+English is the default language: `/` and `/products/.../` serve English. Chinese
+uses `/zh/` and `/zh/products/.../`; Japanese, German, French and Korean keep their
+own language prefixes. The native language selector preserves the product route.
+`src/content/locales.mjs` owns the default-language setting and route mapping. The
+VPS redirects legacy `/en/` URLs to their canonical English routes.
 
 ## Run and maintain
 
@@ -37,7 +49,7 @@ The official X-Science logo was supplied by the user on 2026-10-08. Its original
 
 Windows hosting helpers require Git Bash rather than the Windows `bash.exe` WSL launcher. Prepend `C:\Program Files\Git\bin` to the helper process's PATH, and set that process's `TAR_OPTIONS=--force-local` so GNU tar treats Windows drive-letter archive paths as local files. Keep these overrides local to the helper process; do not change global PATH or WSL settings. The native packager still performs its normal source/manifest, file-tree and archive checks.
 
-Allowed root entries: `src`, `scripts`, `ops`, `.openai`, `.gitignore`, `package.json`, `README.md`, `ASSET-NOTICES.json`, `IMAGE-PROMPTS.json`, and ignored `dist`. Site identity and content belong to this website; original software repositories remain read-only. No database, model runtime or competing implementation is introduced.
+Allowed root entries: `src`, `scripts`, `ops`, `licenses`, `.openai`, `.gitignore`, `.gitattributes`, `package.json`, `README.md`, `LICENSE`, `THIRD-PARTY-NOTICES.md`, `ASSET-NOTICES.json`, `IMAGE-PROMPTS.json`, and ignored `dist`. Site identity and content belong to this website; original software repositories remain read-only. No database, model runtime or competing implementation is introduced.
 
 The production domain is `x-science.ai`. For the user's selected VPS hosting, its A record must point to the verified public web server. The Sites alias remains a preview and deployment-download origin; Sites validation records apply only if that hosting target is selected for the custom domain. Preserve mail MX/TXT and unrelated subdomains. Verify public DNS, the actual server response and HTTPS after propagation.
 
