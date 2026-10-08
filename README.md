@@ -1,6 +1,6 @@
 # X-UI · X-Science website
 
-A public portfolio for scientific software and research agents built by Victor Xu. The website has 42 indexable pages: a home page and six product pages in Chinese, English, Japanese, German, French and Korean. It does not run the promoted scientific applications or accept research data.
+A public portfolio for scientific software and research agents built by Victor Xu. The website has 36 indexable pages: a home page and five product pages in Chinese, English, Japanese, German, French and Korean. It does not run the promoted scientific applications or accept research data.
 
 The official source repository is [Victor-Xu-1/X-UI](https://github.com/Victor-Xu-1/X-UI).
 Original website code, documentation and artwork are [MIT licensed](LICENSE).
@@ -20,10 +20,11 @@ Nginx redirects the former `synon-biomed` product routes in every language to
 the current route, preserving query parameters. Historical asset filenames and
 the recorded original image-generation prompts retain their provenance.
 
-The owner selected HTTP for the current public deployment and deferred creating
-a certificate-authority account. `src/content/site.mjs` owns the public origin
-used by canonical links, sharing images, hreflang, robots and the sitemap. Change
-it to HTTPS only after TLS is enabled and verified, then rebuild and redeploy.
+The public deployment uses HTTPS with a trusted certificate covering the three
+apex names and their three `www` entries. `src/content/site.mjs` owns the public
+origin used by canonical links, sharing images, hreflang, robots and the sitemap.
+Keep it synchronized with the verified production protocol when rebuilding and
+deploying.
 
 ## Run and maintain
 
@@ -41,9 +42,9 @@ Product facts were reviewed against public GitHub READMEs and release metadata o
 
 ## Assets
 
-`ASSET-NOTICES.json` records origins, pinned revisions, roles, licenses and SHA-256. Downloaded screenshots are preserved without altering interface text or scientific data. Seven new images were created with the native image-generation tool: one brand hero and six product concepts. Their prompts are in `IMAGE-PROMPTS.json`; their checked-in WebP derivatives total about 570 KB, and original PNGs are delivered in the neighboring `generated-images` folder. All generated images have visible concept labels in each language. Product concepts are generic editorial illustrations, not identified molecules, interface captures or scientific evidence. No remote fonts, analytics, tracking scripts or third-party runtime are loaded.
+`ASSET-NOTICES.json` records origins, pinned revisions, roles, licenses and SHA-256. Downloaded screenshots are preserved without altering interface text or scientific data. Six original images were created with the native image-generation tool: one brand hero and five product concepts. Their prompts are in `IMAGE-PROMPTS.json`; their checked-in WebP derivatives total about 470 KB, and original PNGs are delivered in the neighboring `generated-images` folder. All generated images have visible concept labels in each language. Product concepts are generic editorial illustrations, not identified molecules, interface captures or scientific evidence. No remote fonts, analytics, tracking scripts or third-party runtime are loaded.
 
-To restore the three pinned repository images:
+To restore the two pinned repository images:
 
 ```powershell
 node scripts/fetch-assets.mjs
@@ -72,7 +73,7 @@ For a VPS deployment, use the public IPv4 address of the verified web server as 
 
 ## Verification and rollback
 
-`node scripts/verify.mjs` checks all 42 affected pages, complete translation dictionaries, metadata, structured data, local links, image alternatives and exclusion of private-repository links. Browser acceptance checks six-language desktop/mobile layouts, language changes that preserve product identity, filters, mobile navigation, console errors and image loading in actual Google Chrome. Test evidence stays outside the source checkout. No tests are run against the promoted software repositories.
+`node scripts/verify.mjs` checks all 36 affected pages, complete translation dictionaries, metadata, structured data, local links, image alternatives and exclusion of private-repository links. Browser acceptance checks six-language desktop/mobile layouts, language changes that preserve product identity, filters, mobile navigation, console errors and image loading in actual Google Chrome. Test evidence stays outside the source checkout. No tests are run against the promoted software repositories.
 
 [QUALITY.md](QUALITY.md) owns the page/module/state review matrix. The GitHub
 workflow checks this website's build, generated pages and deployment archive.

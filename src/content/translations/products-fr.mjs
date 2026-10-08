@@ -41,13 +41,5 @@ export default {
     steps: ['Importer un brevet PDF', 'Extraire et vérifier les preuves', 'Créer les tableaux structure–activité'],
     boundary: 'L’adaptateur de production cible les brevets PDF de l’OMPI. La validation formelle exige la réussite du QA central ; les sources incertaines, contradictoires ou de faible qualité doivent être examinées. Les propriétés prédites servent aux recherches ultérieures.',
   },
-  'diffsbdd-workbench': {
-    label: 'Conception moléculaire locale', headline: 'Explorer de nouvelles molécules\ndans la poche de liaison.',
-    summary: 'Un espace local pour les modèles officiels DiffSBDD. Générez des molécules conditionnées par la poche, modifiez les structures, examinez les poses 3D et poursuivez la conception.',
-    audience: 'Chimistes médicinaux et chercheurs en conception moléculaire fondée sur la structure', environment: 'Linux / WSL2 ; GPU NVIDIA compatible CUDA',
-    features: ['Génération conditionnée par la poche, croissance de fragments et diversification', 'Modifier les structures en 2D et examiner leurs poses en 3D', 'Explorer l’optimisation QED / SA et l’analyse des interactions', 'Enregistrer localement les conceptions et exporter SDF et figures haute résolution'],
-    steps: ['Préparer la protéine et la poche', 'Générer et modifier les molécules', 'Examiner et enregistrer les conceptions'],
-    boundary: 'Projet communautaire indépendant, sans affiliation avec les auteurs de DiffSBDD. Les modèles officiels et composants conservent leurs licences. Une amélioration QED / SA ne démontre pas une meilleure activité de liaison.',
-    caption: 'Capture réelle du dépôt public, utilisant l’exemple public DiffSBDD.',
-  },
+
 };

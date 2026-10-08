@@ -9,13 +9,13 @@ as an external reference; automated checks do not judge creative excellence.
 ## Page and state matrix
 
 Every matrix row applies to all six languages: English, Chinese, Japanese,
-German, French and Korean. This covers 42 indexable pages, plus an English 404.
+German, French and Korean. This covers 36 indexable pages, plus an English 404.
 Default English is served at `/`; the central locale dictionary owns routing.
 
 | Page/module | States to inspect | Evidence required |
 | --- | --- | --- |
 | Home × 6 | First visit, localized hero, concepts, source links, author/contact | Chrome desktop/mobile captures; factual and visual review |
-| Product × 6 × 6 | Hero, audience, environment, license, capabilities, steps, scope, related products | Render each route; inspect long translations and genuine/concept image labels |
+| Product × 5 × 6 | Hero, audience, environment, license, capabilities, steps, scope, related products | Render each route; inspect long translations and genuine/concept image labels |
 | Global navigation | Desktop, mobile closed/open, Escape, outside click, resize | Keyboard and pointer behavior; accessible names and focus |
 | Language menu | Six options, current language, Escape, outside click, product-preserving switch | Actual destination URL and document language |
 | Catalog | All, each category, search, combined search/filter, Unicode, zero results, reset | Visible products and live count; empty-state recovery; query treated as text |
@@ -23,7 +23,7 @@ Default English is served at `/`; the central locale dictionary owns routing.
 | Image viewer | Loading, loaded, failure, original link, close, Escape, focus wrap/restore | Real image pixels and source caption; controlled failed/delayed requests |
 | Product section navigation | Each anchor, active location, sticky header, back to top | Heading remains visible; same product route retained |
 | Motion | Reveal, pointer response, reading progress, reduced-motion changes | Real scroll/pointer state; reduced motion and touch remain usable |
-| No JavaScript | Six products, all workflow stages, native menus and image/source links | Browser context with JavaScript disabled |
+| No JavaScript | Five products, all workflow stages, native menus and image/source links | Browser context with JavaScript disabled |
 | 404 | Missing route, English recovery link, noindex | Actual 404 response and usable return link |
 
 ## Review procedure

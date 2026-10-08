@@ -1,6 +1,6 @@
 export default {
   lang: 'ko', title: 'X-Science — 과학 소프트웨어와 연구 에이전트',
-  description: 'Victor Xu가 개발한 오픈 소스 과학 소프트웨어와 연구 에이전트: X-Science, X-Pharma, X-DDE, X-Synth, X-PatentSAR, DiffSBDD Workbench를 소개합니다.',
+  description: 'Victor Xu가 개발한 오픈 소스 과학 소프트웨어와 연구 에이전트: X-Science, X-Pharma, X-DDE, X-Synth, X-PatentSAR를 소개합니다.',
   nav: ['소프트웨어와 에이전트', '연구 워크플로', '개발자 소개'], explore: '제품 살펴보기', github: 'GitHub에서 보기',
   heroLabel: '독립적인 개발. 과학에서 출발.', heroLines: ['과학을,', '더 앞으로.'],
   heroText: '실제 연구를 위한 소프트웨어와 에이전트. 근거, 분자, 도구, 사람을 연결해 연구의 질문이 다음 단계로 이어지도록 돕습니다.',

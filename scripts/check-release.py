@@ -35,7 +35,8 @@ class ReleaseChecks(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             receipt = stage(ARCHIVE, SHA, Path(tmp) / 'backup', 'backup')
             release = Path(receipt['release'])
-            self.assertEqual(42, len(list(release.rglob('index.html'))))
+            self.assertEqual(36, len(list(release.rglob('index.html'))))
+            self.assertFalse((release / 'products/diffsbdd-workbench').exists())
             self.assertEqual(6, len(receipt['languages']))
             self.assertEqual('en', receipt['defaultLanguage'])
             self.assertIn('<html lang="en">', (release / 'index.html').read_text(encoding='utf-8'))

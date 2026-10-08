@@ -41,13 +41,5 @@ export default {
     steps: ['Patent-PDF hochladen', 'Extrahieren und Belege prüfen', 'Struktur–Aktivitäts-Tabellen erstellen'],
     boundary: 'Der Produktionsadapter unterstützt WIPO-Patent-PDFs. Ein formaler Abschluss setzt bestandene Kern-QA voraus; unsicheres, widersprüchliches oder minderwertiges Quellenmaterial muss geprüft werden. Vorhergesagte Eigenschaften sind nachgelagerte Forschungskennzahlen.',
   },
-  'diffsbdd-workbench': {
-    label: 'Lokales Moleküldesign', headline: 'Neue Moleküle\nin der Bindungstasche erkunden.',
-    summary: 'Eine lokale Arbeitsumgebung für offizielle DiffSBDD-Modelle. Moleküle mit Bindungstaschen als Bedingung erzeugen, Strukturen bearbeiten, 3D-Posen prüfen und weiterentwickeln.',
-    audience: 'Medizinische Chemiker und Forschende im strukturbasierten Moleküldesign', environment: 'Linux / WSL2; eine kompatible NVIDIA-CUDA-GPU',
-    features: ['Generierung mit Bindungstaschen, Fragmentwachstum und Diversifizierung', 'Strukturen in 2D bearbeiten und ihre Posen in 3D prüfen', 'QED / SA-Optimierung und Interaktionsanalyse erkunden', 'Entwürfe lokal speichern sowie SDF und hochauflösende wissenschaftliche Abbildungen exportieren'],
-    steps: ['Protein und Bindungstasche vorbereiten', 'Moleküle erzeugen und bearbeiten', 'Entwürfe prüfen und speichern'],
-    boundary: 'Ein unabhängiges Community-Projekt ohne Verbindung zu den ursprünglichen DiffSBDD-Autoren. Offizielle Modelle und Komponenten behalten ihre Lizenzen. Bessere QED / SA-Werte belegen keine höhere Bindungsaktivität.',
-    caption: 'Echte Arbeitsumgebung aus dem öffentlichen Repository mit dem öffentlichen DiffSBDD-Beispiel.',
-  },
+
 };

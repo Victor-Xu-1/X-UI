@@ -1,5 +1,5 @@
 // Public deployment identity. Change to HTTPS only after TLS is enabled and verified.
-export const siteOrigin = 'http://x-science.ai';
+export const siteOrigin = 'https://x-science.ai';
 export const sourceRepository = 'https://github.com/Victor-Xu-1/X-UI';
 
 const origin = new URL(siteOrigin);

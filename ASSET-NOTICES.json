@@ -13,17 +13,6 @@
       "size": 122293
     },
     {
-      "file": "diffsbdd-workbench.png",
-      "repository": "Victor-Xu-1/diffsbdd-workbench",
-      "revision": "55f365b195d126ec25f7e7ae00ff253fd4491dac",
-      "path": "docs/workbench.png",
-      "license": "MIT",
-      "kind": "Actual workbench capture using the public DiffSBDD example",
-      "source": "https://github.com/Victor-Xu-1/diffsbdd-workbench/blob/55f365b195d126ec25f7e7ae00ff253fd4491dac/docs/workbench.png",
-      "sha256": "605c24319f354e02576b98056a4fda4af961e3fce574c7b8366d8a79bdde1158",
-      "size": 155250
-    },
-    {
       "file": "synon-concept.png",
       "repository": "Victor-Xu-1/X-Science",
       "revision": "b13d523be0cec4c4b811fc54397d46f2f562447d",
@@ -94,16 +83,6 @@
       "sha256": "0ca9f69bc8da2cfee21455a993dba8e96469c2d783162ca1522e95aa149e5846",
       "originalSha256": "be7805aa3b4079a6fb63d6d228a9ae18d632e84b7d522ecbddf573f0af91724b",
       "original": "../generated-images/x-patentsar.png",
-      "role": "AI-generated concept art; not scientific data or application evidence"
-    },
-    "diffsbdd-workbench": {
-      "file": "generated/diffsbdd-workbench.webp",
-      "width": 1200,
-      "height": 800,
-      "bytes": 108886,
-      "sha256": "e4778fae73485b309076f174d3ed57f4b60252dfb4f1edcba17a8d9140957c39",
-      "originalSha256": "222ffe5d6bc10308c84fb358625d9e176fcb6555620ee6b2f68f88303818432a",
-      "original": "../generated-images/diffsbdd-workbench.png",
       "role": "AI-generated concept art; not scientific data or application evidence"
     }
   },
