@@ -43,7 +43,17 @@ export function initImageViewer() {
       pending.src = link.href;
     });
   });
-  dialog.querySelector('.viewer-close').addEventListener('click', () => dialog.close());
+  function finishClose() {
+    cancelLoad(); document.body.classList.remove('viewer-open');
+    if (returnFocus?.isConnected) returnFocus.focus({ preventScroll: true });
+  }
+  function closeViewer() {
+    dialog.close(); finishClose();
+  }
+  dialog.querySelector('.viewer-close').addEventListener('click', closeViewer);
+  dialog.addEventListener('cancel', event => {
+    event.preventDefault(); closeViewer();
+  });
   dialog.addEventListener('keydown', event => {
     if (event.key !== 'Tab') return;
     const controls = [...dialog.querySelectorAll('button:not([disabled]), a[href]')];
@@ -58,10 +68,9 @@ export function initImageViewer() {
   dialog.addEventListener('click', event => {
     if (event.target !== dialog) return;
     const bounds = dialog.getBoundingClientRect();
-    if (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom) dialog.close();
+    if (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom) closeViewer();
   });
   dialog.addEventListener('close', () => {
-    cancelLoad(); document.body.classList.remove('viewer-open');
-    if (returnFocus?.isConnected) returnFocus.focus({ preventScroll: true });
+    if (!dialog.open) finishClose();
   });
 }
