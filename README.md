@@ -33,6 +33,8 @@ The committed `src/static/assets/social.png` is the website's original sharing v
 
 `.openai/hosting.json` binds this checkout to its Sites project and declares `dist/` as the generated static output. Never substitute or regenerate its project ID during an update. Use the Sites skill source helper to synchronize the reviewed source, run any remaining build checks, create a matching archive and deploy a saved version. Credentials belong only in session memory and hidden stdin, never in the repository or commands.
 
+Windows hosting helpers require Git Bash rather than the Windows `bash.exe` WSL launcher. Prepend `C:\Program Files\Git\bin` to the helper process's PATH, and set that process's `TAR_OPTIONS=--force-local` so GNU tar treats Windows drive-letter archive paths as local files. Keep these overrides local to the helper process; do not change global PATH or WSL settings. The native packager still performs its normal source/manifest, file-tree and archive checks.
+
 Allowed root entries: `src`, `scripts`, `.openai`, `.gitignore`, `package.json`, `README.md`, `ASSET-NOTICES.json`, `IMAGE-PROMPTS.json`, and ignored `dist`. Site identity and content belong to this website; original software repositories remain read-only. No database, model runtime or competing implementation is introduced.
 
 The custom domain is `x-science.ai`. DNS records must come from the Sites custom-domain response. Preserve MX, mail TXT and unrelated subdomains. Replacing a registrar parking record is separate from adding certificate or ownership validation records. Verify the domain's native active/TLS state and public HTTPS after propagation.
