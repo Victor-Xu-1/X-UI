@@ -1,0 +1,53 @@
+# Frontend quality and acceptance
+
+The design objective is the craft expected of Awwwards, Webby Awards and FWA
+work. It is an objective for continued review, not an award or certification.
+Evaluate content, navigation, visual design, functionality, useful interaction
+and the overall experience. Use [the Webby judging criteria](https://www.webbyawards.com/judging-criteria/)
+as an external reference; automated checks do not judge creative excellence.
+
+## Page and state matrix
+
+Every matrix row applies to all six languages: English, Chinese, Japanese,
+German, French and Korean. This covers 42 indexable pages, plus an English 404.
+Default English is served at `/`; the central locale dictionary owns routing.
+
+| Page/module | States to inspect | Evidence required |
+| --- | --- | --- |
+| Home × 6 | First visit, localized hero, concepts, source links, author/contact | Chrome desktop/mobile captures; factual and visual review |
+| Product × 6 × 6 | Hero, audience, environment, license, capabilities, steps, scope, related products | Render each route; inspect long translations and genuine/concept image labels |
+| Global navigation | Desktop, mobile closed/open, Escape, outside click, resize | Keyboard and pointer behavior; accessible names and focus |
+| Language menu | Six options, current language, Escape, outside click, product-preserving switch | Actual destination URL and document language |
+| Catalog | All, each category, search, combined search/filter, Unicode, zero results, reset | Visible products and live count; empty-state recovery; query treated as text |
+| Workflow explorer | Four stages, active panel, related links, arrows/Home/End, Tab | Correct independent products, selected state and keyboard focus |
+| Image viewer | Loading, loaded, failure, original link, close, Escape, focus wrap/restore | Real image pixels and source caption; controlled failed/delayed requests |
+| Product section navigation | Each anchor, active location, sticky header, back to top | Heading remains visible; same product route retained |
+| Motion | Reveal, pointer response, reading progress, reduced-motion changes | Real scroll/pointer state; reduced motion and touch remain usable |
+| No JavaScript | Six products, all workflow stages, native menus and image/source links | Browser context with JavaScript disabled |
+| 404 | Missing route, English recovery link, noindex | Actual 404 response and usable return link |
+
+## Review procedure
+
+1. Build and run the page-integrity checks. Missing content, translations, assets
+   or route metadata must fail before publication.
+2. Inspect the affected modules in actual Google Chrome, at 1440 px and 390 px;
+   inspect all six home pages at 320 px and long product text at tablet widths.
+3. Test the interactions in the matrix with keyboard and pointer. Include empty,
+   error, loading and recovery states when the component has them.
+4. Review screenshots for typography, spacing, hierarchy, contrast, framing and
+   truthful imagery. Preserve real interface screenshots without altering data.
+5. Commit and deploy the exact reviewed source. Repeat the changed user path on
+   the public domains and verify version, language, images, HTTPS and redirects.
+
+Store timestamped reports, screenshots, deployment receipts and limitations
+outside source. Record the exact source revision and environment with evidence.
+Passing a local test, GitHub CI or the hosted mirror does not establish VPS TLS,
+DNS, private-backup health, scientific validity or an award outcome.
+
+## Implementation ownership
+
+`src/content/` owns facts, translations and locale paths; templates consume them.
+`src/static/assets/modules/` owns separate navigation, catalog, workflow, viewer
+and motion enhancements. `app.js` initializes these modules. Shared styling is
+split by page and interaction responsibility. The website adds no scientific
+execution, remote analytics, fake live results or duplicate runtime framework.

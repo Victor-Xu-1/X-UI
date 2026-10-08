@@ -5,12 +5,18 @@ import { fileURLToPath } from 'node:url';
 import { products, productPath } from '../src/content/products.mjs';
 import { locales, languages, languagePath, defaultLanguage } from '../src/content/locales.mjs';
 import { copy } from '../src/content/copy.mjs';
+import { interactionCopy } from '../src/content/interaction-copy.mjs';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '../dist');
 const paths = languages.flatMap((lang) => [languagePath(lang), ...products.map((p) => productPath(p, lang))]);
 let checks = 0;
 for (const lang of languages) {
   assert.deepEqual(Object.keys(copy[lang]).sort(), Object.keys(copy.en).sort(), `${lang} must translate the complete shared UI`); checks++;
+  assert.deepEqual(Object.keys(interactionCopy[lang]).sort(), Object.keys(interactionCopy.en).sort(), `${lang} must translate every interaction`); checks++;
+  for (const [key, value] of Object.entries(interactionCopy[lang])) {
+    if (Array.isArray(value)) assert.equal(value.length, interactionCopy.en[key].length, `${lang}.${key} has missing items`);
+    for (const text of Array.isArray(value) ? value : [value]) { assert.ok(typeof text === 'string' && text.trim(), `${lang}.${key} is empty`); checks++; }
+  }
   for (const product of products) {
     for (const field of ['label', 'headline', 'summary', 'audience', 'environment', 'boundary']) { assert.ok(product[field][lang]?.trim(), `${lang}: ${product.id}.${field}`); checks++; }
     for (const item of [...product.features, ...product.steps]) { assert.ok(item[lang]?.trim()); checks++; }

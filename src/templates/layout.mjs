@@ -3,6 +3,7 @@ import { languagePath, productPath } from '../content/products.mjs';
 import { mark, external, star } from './icons.mjs';
 import { locales, languages, defaultLanguage } from '../content/locales.mjs';
 import { languageMenu } from './language-menu.mjs';
+import { imageViewer } from './image-viewer.mjs';
 
 export const escape = (value) => String(value).replace(/[&<>"']/g, (character) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[character]);
 export const multiline = (value) => escape(value).replaceAll('\n', '<br>');
@@ -25,11 +26,13 @@ export function layout({ lang, body, title, description, path, product }) {
 <link rel="canonical" href="${canonical}">${alternates}<link rel="alternate" hreflang="x-default" href="https://x-science.ai${product ? productPath(product, defaultLanguage) : languagePath(defaultLanguage)}">
 <meta property="og:type" content="website"><meta property="og:title" content="${escape(siteTitle)}"><meta property="og:description" content="${escape(siteDescription)}"><meta property="og:url" content="${canonical}"><meta property="og:site_name" content="X-Science"><meta property="og:image" content="https://x-science.ai/assets/social.png"><meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="/assets/styles/base.css"><link rel="stylesheet" href="/assets/styles/home.css"><link rel="stylesheet" href="/assets/styles/product.css"><link rel="stylesheet" href="/assets/styles/responsive.css">
+<link rel="stylesheet" href="/assets/styles/interactions.css">
 <script type="application/ld+json">${JSON.stringify(data).replaceAll('<', '\\u003c')}</script>
 <script type="module" src="/assets/app.js"></script></head>
 <body class="${product ? 'product-page' : 'home-page'}" data-language="${lang}">
 <a class="skip-link" href="#main">${c.skip}</a>
 <header class="site-header"><div class="container header-inner">
+  <div class="reading-progress" aria-hidden="true"></div>
   <a class="brand" href="${home}" aria-label="X-Science ${locales[lang].homeLabel}">${mark}<span>X-Science<span class="brand-dot">.</span></span></a>
   <button class="menu-toggle" type="button" aria-label="${c.menu}" data-open-label="${c.menu}" data-close-label="${c.closeMenu}" aria-expanded="false" aria-controls="main-nav"><span></span><span></span></button>
   <nav id="main-nav" class="main-nav" aria-label="${c.navigationLabel}">
@@ -42,6 +45,7 @@ export function layout({ lang, body, title, description, path, product }) {
 <footer class="site-footer"><div class="container"><div class="footer-main">
   <div><a class="brand" href="${home}">${mark}<span>X-Science.</span></a><p>${c.footerText}</p></div>
   <div class="footer-links"><a href="${home}#software">${c.footerNav[0]}</a>${externalLink('https://github.com/Victor-Xu-1/X-UI', 'X-UI · MIT')}${externalLink('https://github.com/Victor-Xu-1', 'GitHub')}${externalLink('https://www.linkedin.com/in/victor-xu-416797427', 'LinkedIn')}</div>
-</div><div class="footer-bottom"><span>© 2026 X-Science · Victor Xu</span><span>${c.licenseNote}</span><a href="${home}#main" aria-label="${locales[lang].topLabel}">${star}</a></div></div></footer>
+</div><div class="footer-bottom"><span>© 2026 X-Science · Victor Xu</span><span>${c.licenseNote}</span><a href="#main" aria-label="${locales[lang].topLabel}">${star}</a></div></div></footer>
+${imageViewer(lang)}
 </body></html>`;
 }
