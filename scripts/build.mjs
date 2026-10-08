@@ -28,7 +28,7 @@ for (const file of firstPartyModules) {
 }
 const urls = [];
 function releaseResources(html) {
-  return html.replace(/((?:href|src)="\/assets\/[^"?]+)(")/g, `$1?v=${software.version}$2`);
+  return html.replace(/((?:href|src|content)="(?:https:\/\/[^/\"]+)?\/assets\/[^"?]+)(")/g, `$1?v=${software.version}$2`);
 }
 async function page(path, html) {
   const destination = resolve(output, '.' + path);

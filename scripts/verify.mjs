@@ -74,5 +74,5 @@ assert.equal(siteInfo.sourceLicense, 'MIT'); checks++;
 assert.equal(software.homepage, siteOrigin); checks++;
 assert.equal(new URL(siteOrigin).protocol, 'https:'); checks++;
 assert.equal(software.license, 'MIT'); checks++;
-assert.ok(defaultHome.includes(`property="og:image" content="${siteOrigin}/assets/social.png"`)); checks++;
+assert.ok(defaultHome.includes(`property="og:image" content="${siteOrigin}/assets/social.png?v=${software.version}"`)); checks++;
 console.log(`PASS: ${checks} generated-page, metadata, accessibility and local-link checks across ${paths.length} pages.`);
