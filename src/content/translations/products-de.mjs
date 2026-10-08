@@ -6,7 +6,6 @@ export default {
     features: ['Gespräche, Eingaben und Ausgabedateien im Projektkontext organisieren', 'Unterstützte Strukturen, Sequenzen, Alignments, Notebooks und Tabellen prüfen', 'Experten, Skills, Konnektoren und Rechenumgebungen passend zur Aufgabe wählen', 'Ausführung verfolgen, Artefakte prüfen und die Untersuchung fortsetzen'],
     steps: ['Eine Forschungsfrage stellen', 'Material und Werkzeuge wählen', 'Artefakte prüfen'],
     boundary: 'Verfügbare Abläufe hängen von konfigurierten Modellen, Konnektoren, Umgebungen und Berechtigungen ab. Datenziele ergeben sich aus der Konfiguration; wissenschaftliche Schlussfolgerungen werden von Forschenden geprüft.',
-    caption: 'Produktillustration aus dem öffentlichen Repository; keine echte Oberfläche und kein wissenschaftliches Ergebnis.',
   },
   'x-pharma': {
     label: 'Pharma-Informationen & Evidenz', headline: 'Aus Informationen\nwerden belegte Erkenntnisse.',

@@ -3,6 +3,7 @@ import { initCatalog } from './modules/catalog.js';
 import { initWorkflow } from './modules/workflow.js';
 import { initImageViewer } from './modules/image-viewer.js';
 import { initMotion } from './modules/motion.js';
+import { initProteinViewer } from './modules/protein-viewer.js';
 
 document.documentElement.classList.add('has-script');
 document.querySelectorAll('[data-script-only]').forEach(element => { element.hidden = false; });
@@ -11,3 +12,4 @@ initCatalog();
 initWorkflow();
 initImageViewer();
 initMotion();
+initProteinViewer();

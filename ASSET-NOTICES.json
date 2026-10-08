@@ -1,5 +1,5 @@
 {
-  "originalAssets": "Original website SVG graphics and code: Victor Xu, 2026. Product artwork is explanatory, not molecular data.",
+  "originalAssets": "Original website code, artwork and coordinate render presentation: Victor Xu, 2026. Scientific coordinates retain their source provenance.",
   "reusedAssets": [
     {
       "file": "x-dde-structure.jpg",
@@ -11,79 +11,78 @@
       "source": "https://github.com/Victor-Xu-1/X-DDE/blob/be94cc2dfcbea1bd09e63a19a4820c7278792733/docs/images/structure-and-pocket.jpg",
       "sha256": "4e7a8883713e130df68424688347678632435f0c3526cddeff3ecd5023411ef2",
       "size": 122293
-    },
-    {
-      "file": "synon-concept.png",
-      "repository": "Victor-Xu-1/X-Science",
-      "revision": "b13d523be0cec4c4b811fc54397d46f2f562447d",
-      "path": "docs/assets/research-workspace-concept.png",
-      "license": "AGPL-3.0-only; see source repository for component terms",
-      "kind": "AI-generated editorial concept illustration; not an interface or a scientific result",
-      "source": "https://github.com/Victor-Xu-1/X-Science/blob/b13d523be0cec4c4b811fc54397d46f2f562447d/docs/assets/research-workspace-concept.png",
-      "sha256": "3ef5acd36ced7850bad80135dfca7393acb98626c8f77a8abe809e4068a19b7b",
-      "size": 1784982
     }
   ],
   "generatedAssets": {
     "hero": {
-      "file": "generated/hero.webp",
-      "width": 1254,
-      "height": 1254,
-      "bytes": 133166,
-      "sha256": "15ac08f5c0b7703a5aff8840e6bea58f8c0512bf7b710dabda878f187f97d927",
-      "originalSha256": "36cca8f0ffc90a5cf8aa9c62c4c8df2112cb77ea5722ad19dc74739a3230bef9",
-      "original": "../generated-images/hero.png",
-      "role": "AI-generated concept art; not scientific data or application evidence"
+      "file": "editorial/hero.webp",
+      "width": 1440,
+      "height": 960,
+      "bytes": 196870,
+      "sha256": "af848566919970d0f55be819575949c5d87efc9aa06d5b3499d7195c922a81f1",
+      "originalSha256": "4aae4f59f288050cd4e19d98d1eaa5c7efafa572bfe5b90c89d668321ad16cdb",
+      "original": "../generated-images-redesign/hero.png",
+      "role": "Native AI-generated concept visual; not identified structures, application captures or experimental evidence"
     },
     "x-science": {
-      "file": "generated/synon-biomed.webp",
-      "width": 1200,
-      "height": 800,
-      "bytes": 73996,
-      "sha256": "96cf0d11070e7fa84e8e2925843a1b0a50b55e6d9c240e7df2ee276d4db9a37a",
-      "originalSha256": "d65690893b79f813570237c3d1970ff4bd6b4496772cee25a4b2c5a2d3e882db",
-      "original": "../generated-images/synon-biomed.png",
-      "role": "AI-generated concept art; not scientific data or application evidence"
+      "file": "editorial/x-science.webp",
+      "width": 1440,
+      "height": 960,
+      "bytes": 233546,
+      "sha256": "73354e4b0a021368d1c9783e736b91e2fc8948e05b3b6b79a49d0d43993f9a48",
+      "originalSha256": "ce0ab5d2058e6075610d203bfa8673d057b6a2847ceb08a57e902dc022f93f19",
+      "original": "../generated-images-redesign/x-science.png",
+      "role": "Native AI-generated concept visual; not identified structures, application captures or experimental evidence"
     },
     "x-pharma": {
-      "file": "generated/x-pharma.webp",
-      "width": 1200,
-      "height": 800,
-      "bytes": 48718,
-      "sha256": "3cda690a27bb5dc0956ddd94eab0e577f2af545168b1e20fd91eb2c0c5ed6567",
-      "originalSha256": "1aa99293ed438f75b342d1adf1b3809e56078817126a5fd45cb3c09383855404",
-      "original": "../generated-images/x-pharma.png",
-      "role": "AI-generated concept art; not scientific data or application evidence"
+      "file": "editorial/x-pharma.webp",
+      "width": 1440,
+      "height": 960,
+      "bytes": 114168,
+      "sha256": "b604775db64f5ca36ceee022992063e4f321a62d2de3ac13afd14a045cc4e4e5",
+      "originalSha256": "23efcd363edbaa3978191757253a7bfa7c7886f233f7611d5304cf57eaeaa6d7",
+      "original": "../generated-images-redesign/x-pharma.png",
+      "role": "Native AI-generated concept visual; not identified structures, application captures or experimental evidence"
     },
     "x-dde": {
-      "file": "generated/x-dde.webp",
-      "width": 1200,
-      "height": 800,
-      "bytes": 61654,
-      "sha256": "bb082d7fcafb89bd604c7ec2d4d3d8954d8cae1a806e178d82c1f6c5eff56678",
-      "originalSha256": "d7c5153c40fc971408e02ded6392d82384e7478de82640f44b9b9d1cf03162e8",
-      "original": "../generated-images/x-dde.png",
-      "role": "AI-generated concept art; not scientific data or application evidence"
+      "file": "editorial/x-dde.webp",
+      "width": 1440,
+      "height": 960,
+      "bytes": 190118,
+      "sha256": "b66cde4ccb5f9995975b218bab9dc149060506f4e7c331952288e94dd4a8616e",
+      "originalSha256": "62facc3aa2c2dbab34e121b429a475a096ff619b11c174b956ae9289bf21df66",
+      "original": "../generated-images-redesign/x-dde.png",
+      "role": "Native AI-generated concept visual; not identified structures, application captures or experimental evidence"
     },
     "x-synth": {
-      "file": "generated/x-synth.webp",
-      "width": 1200,
-      "height": 800,
-      "bytes": 76322,
-      "sha256": "7e1cdedf95d3a78794bc01c82427b7f786e4a37134705d5661189a067a7869b2",
-      "originalSha256": "389c6dd1aa4f8a16989a3780a27b780add45c1f350f9174d6cf7d0bc7ad4b7e5",
-      "original": "../generated-images/x-synth.png",
-      "role": "AI-generated concept art; not scientific data or application evidence"
+      "file": "editorial/x-synth.webp",
+      "width": 1440,
+      "height": 960,
+      "bytes": 182326,
+      "sha256": "bc851545f8e6dcd499666aaff995bf2833871ec7363e5bd7088cec75c08739da",
+      "originalSha256": "38099705033b3758269ea709ff886347d8b84363ee87787f11585358e3e0f5db",
+      "original": "../generated-images-redesign/x-synth.png",
+      "role": "Native AI-generated concept visual; not identified structures, application captures or experimental evidence"
     },
     "x-patentsar": {
-      "file": "generated/x-patentsar.webp",
-      "width": 1200,
-      "height": 800,
-      "bytes": 78332,
-      "sha256": "0ca9f69bc8da2cfee21455a993dba8e96469c2d783162ca1522e95aa149e5846",
-      "originalSha256": "be7805aa3b4079a6fb63d6d228a9ae18d632e84b7d522ecbddf573f0af91724b",
-      "original": "../generated-images/x-patentsar.png",
-      "role": "AI-generated concept art; not scientific data or application evidence"
+      "file": "editorial/x-patentsar.webp",
+      "width": 1440,
+      "height": 960,
+      "bytes": 276586,
+      "sha256": "2166749fb6f0d30be24a3f2c39a25d42afcdf6cdd551c4996bb87638bd97732f",
+      "originalSha256": "f2a92ddd03e454c0a0c4a77a2418839a7635d4e78f8f821534a48ee0bfbd1cdb",
+      "original": "../generated-images-redesign/x-patentsar.png",
+      "role": "Native AI-generated concept visual; not identified structures, application captures or experimental evidence"
+    },
+    "science-editorial": {
+      "file": "editorial/science-editorial.webp",
+      "width": 1800,
+      "height": 600,
+      "bytes": 292190,
+      "sha256": "f9f422e31e54a42a8f6c33ed2fcae4348aeed04e2d4deb517741bb90fbbdc6de",
+      "originalSha256": "1e0971e815e6639f4c88cb311ff66ea57dfcf3027508331b73b03398bd42acb2",
+      "original": "../generated-images-redesign/science-editorial.png",
+      "role": "Native AI-generated concept visual; not identified structures, application captures or experimental evidence"
     }
   },
   "generatedPrompts": "IMAGE-PROMPTS.json",
@@ -94,5 +93,77 @@
     "width": 660,
     "height": 660,
     "transparent": true
+  },
+  "thirdPartyAssets": [
+    {
+      "file": "vendor/3dmol-2.5.5/3Dmol-min.js",
+      "name": "3Dmol.js",
+      "version": "2.5.5",
+      "source": "https://github.com/3dmol/3Dmol.js/tree/c26e390544b6388f86e50387cd4565759b4da0df",
+      "license": "BSD-3-Clause and incorporated upstream notices",
+      "bytes": 537792,
+      "sha256": "f7cc78921ae72e7623e89cdd111434f58c2efddd2ffda1cd212644b406fb8016"
+    },
+    {
+      "file": "vendor/3dmol-2.5.5/3Dmol-min.js.LICENSE.txt",
+      "name": "3Dmol.js",
+      "version": "2.5.5",
+      "source": "https://github.com/3dmol/3Dmol.js/tree/c26e390544b6388f86e50387cd4565759b4da0df",
+      "license": "BSD-3-Clause and incorporated upstream notices",
+      "bytes": 120,
+      "sha256": "ae3bfc688d0c9687b76e0ecc7fece0b393bcb4acf2aee09e19dda697eaa10b16"
+    },
+    {
+      "file": "vendor/3dmol-2.5.5/LICENSE.txt",
+      "name": "3Dmol.js",
+      "version": "2.5.5",
+      "source": "https://github.com/3dmol/3Dmol.js/tree/c26e390544b6388f86e50387cd4565759b4da0df",
+      "license": "BSD-3-Clause and incorporated upstream notices",
+      "bytes": 4283,
+      "sha256": "4c6eaaed856f3f28a3b1a98e74f4a8a71618de7d51ea4155c29f6f793bcef861"
+    },
+    {
+      "file": "vendor/3dmol-2.5.5/EDTSurf-LICENSE.txt",
+      "name": "3Dmol.js",
+      "version": "2.5.5",
+      "source": "https://github.com/3dmol/3Dmol.js/tree/c26e390544b6388f86e50387cd4565759b4da0df",
+      "license": "BSD-3-Clause and incorporated upstream notices",
+      "bytes": 628,
+      "sha256": "dd80027c827c2b42ea68700a317bcb06abe30f39eab2e50caa9738d14e9d2329"
+    },
+    {
+      "file": "fonts/inter-variable.woff2",
+      "name": "Inter",
+      "version": "4.1",
+      "source": "https://github.com/rsms/inter/tree/e3a3d4c57d5ecc01453a575621882a384c1995a3",
+      "license": "SIL-OFL-1.1",
+      "bytes": 352240,
+      "sha256": "693b77d4f32ee9b8bfc995589b5fad5e99adf2832738661f5402f9978429a8e3"
+    },
+    {
+      "file": "fonts/OFL.txt",
+      "name": "Inter",
+      "version": "4.1",
+      "source": "https://github.com/rsms/inter/tree/e3a3d4c57d5ecc01453a575621882a384c1995a3",
+      "license": "SIL-OFL-1.1",
+      "bytes": 4380,
+      "sha256": "262481e844521b326f5ecd053e59b98c8b2da78c8ee1bdbb6e8174305e54935a"
+    }
+  ],
+  "referenceCoordinates": {
+    "manifest": "src/content/structure-provenance.json",
+    "source": "https://www.rcsb.org",
+    "usagePolicy": "https://www.rcsb.org/pages/usage-policy",
+    "license": "CC0-1.0",
+    "ids": [
+      "1UBQ",
+      "4HHB",
+      "2LYZ"
+    ],
+    "role": "Unmodified published experimental reference coordinates, not generated product results"
+  },
+  "coordinatePoster": {
+    "manifest": "src/content/structure-poster.json",
+    "role": "Genuine local coordinate rendering using the same pinned viewer and visual preset as the interactive default"
   }
 }

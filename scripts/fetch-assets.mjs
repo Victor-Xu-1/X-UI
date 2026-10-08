@@ -6,7 +6,6 @@ import { dirname, resolve } from 'node:path';
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const assets = [
   { file: 'x-dde-structure.jpg', repository: 'Victor-Xu-1/X-DDE', revision: 'be94cc2dfcbea1bd09e63a19a4820c7278792733', path: 'docs/images/structure-and-pocket.jpg', license: 'Apache-2.0', kind: 'Actual interface capture; v0.4.49 public BRD4–JQ1 example' },
-  { file: 'synon-concept.png', repository: 'Victor-Xu-1/X-Science', revision: 'b13d523be0cec4c4b811fc54397d46f2f562447d', path: 'docs/assets/research-workspace-concept.png', license: 'AGPL-3.0-only; see source repository for component terms', kind: 'AI-generated editorial concept illustration; not an interface or a scientific result' },
 ];
 const directory = resolve(root, 'src/static/assets/media');
 await mkdir(directory, { recursive: true });

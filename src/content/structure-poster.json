@@ -1,0 +1,16 @@
+{
+  "file": "assets/structures/1UBQ-preview.webp",
+  "pdbId": "1UBQ",
+  "coordinateSha256": "d4a6812d8951cf6594e6a0763f089e35f5a80b62acb3c117b2c5565228a7b161",
+  "renderer": "3Dmol.js 2.5.5",
+  "representation": "cartoon",
+  "projection": "orthographic",
+  "background": "#f3f6f8",
+  "role": "Genuine rendering of unmodified published coordinates; no product computation",
+  "width": 1000,
+  "height": 673,
+  "bytes": 34964,
+  "sha256": "08131298052757c91dd2826c4854c35326539a98e58e5269804a19e30f47bc6b",
+  "capturedAt": "2026-10-08T17:56:24.664Z",
+  "sourceRenderSha256": "b8f648b508e3911279ba226f38d3941bbdd3e9126bc9d861a21cabb94b94eb62"
+}

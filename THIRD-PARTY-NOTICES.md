@@ -13,9 +13,21 @@ in [ASSET-NOTICES.json](ASSET-NOTICES.json).
 | Asset under `src/static/assets/media/` | Source | License |
 | --- | --- | --- |
 | `x-dde-structure.jpg` | [X-DDE, pinned public capture](https://github.com/Victor-Xu-1/X-DDE/blob/be94cc2dfcbea1bd09e63a19a4820c7278792733/docs/images/structure-and-pocket.jpg) | [Apache-2.0](licenses/X-DDE-LICENSE.txt) |
-| `synon-concept.png` | [X-Science, pinned concept artwork](https://github.com/Victor-Xu-1/X-Science/blob/b13d523be0cec4c4b811fc54397d46f2f562447d/docs/assets/research-workspace-concept.png) | [AGPL-3.0-only, source repository terms](licenses/synon-biomed-LICENSE.txt) |
 
-Actual interface captures are identified as captures in every language.
-`synon-concept.png` and the six original generated WebP illustrations are
-identified as conceptual artwork. They are not scientific results or live
-interface evidence. No third-party source code is vendored in this project.
+The genuine capture is identified in every language. Seven fresh native-generated
+WebP illustrations are labeled conceptual; they are not scientific results or
+live interface evidence. Prior unused artwork was removed from the current tree
+after replacement checks and remains recoverable in Git and prior releases.
+
+| Vendored asset | Official source | Retained license |
+| --- | --- | --- |
+| `assets/vendor/3dmol-2.5.5/3Dmol-min.js` | [3Dmol.js, pinned official source](https://github.com/3dmol/3Dmol.js/tree/c26e390544b6388f86e50387cd4565759b4da0df) and verified `3dmol@2.5.5` package | [BSD-3-Clause and incorporated GLmol/Three.js/jQuery notices](licenses/3Dmol-2.5.5-LICENSE.txt), [EDTSurf source notice](licenses/3Dmol-2.5.5-EDTSurf-LICENSE.txt) |
+| `assets/fonts/inter-variable.woff2` | [Inter 4.1, pinned official source](https://github.com/rsms/inter/tree/e3a3d4c57d5ecc01453a575621882a384c1995a3) | [SIL Open Font License 1.1](licenses/Inter-4.1-LICENSE.txt) |
+| `assets/structures/1UBQ.pdb`, `4HHB.pdb`, `2LYZ.pdb` | Unmodified experimental reference coordinates from [RCSB PDB](https://www.rcsb.org/pages/usage-policy) | CC0 1.0; retain PDB IDs, primary citations and provenance |
+
+Full runtime/font notices are also served beside the browser assets. Exact hashes,
+official source revisions, file origins and citations are in `ASSET-NOTICES.json`
+and its referenced structure manifests. The 1UBQ poster and downloaded PNGs are
+genuine coordinate renders with PDB source identity, separate from the generated
+editorial concepts. MIT covers this website's original presentation code and
+artwork and does not replace these upstream terms.

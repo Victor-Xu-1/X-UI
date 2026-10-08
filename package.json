@@ -1,6 +1,6 @@
 {
   "name": "x-ui",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "private": true,
   "license": "MIT",
   "description": "The multilingual X-Science software and research-agent website",
@@ -11,7 +11,7 @@
   "scripts": {
     "build": "node scripts/build.mjs",
     "preview": "node scripts/preview.mjs",
-    "verify": "node scripts/verify.mjs",
+    "verify": "node scripts/verify.mjs && node scripts/verify-assets.mjs",
     "package:transfer": "node scripts/package-transfer.mjs"
   }
 }

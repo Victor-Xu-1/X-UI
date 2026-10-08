@@ -23,6 +23,9 @@ Default English is served at `/`; the central locale dictionary owns routing.
 | Image viewer | Loading, loaded, failure, original link, close, Escape, focus wrap/restore | Real image pixels and source caption; controlled failed/delayed requests |
 | Product section navigation | Each anchor, active location, sticky header, back to top | Heading remains visible; same product route retained |
 | Motion | Reveal, pointer response, reading progress, reduced-motion changes | Real scroll/pointer state; reduced motion and touch remain usable |
+| Protein viewer on home/X-DDE × 6 | Lazy/loading/ready, three structures × three representations, full rotation, reset/zoom, backgrounds, PNG export, source/legend, error/retry, unavailable/context loss | Actual local WebGL pixels, exact deposited coordinates, bounded/unclipped views, single-instance lifecycle; no generated molecular results |
+| Molecular motion/export | Visible/offscreen/hidden tab, user pause, reduced-motion changes, keyboard, mobile resize, high DPR | Rotation really stops; control states agree; PNG pixels/source/legend are valid and canvas/view restore exactly |
+| Molecular failure/recovery | Script/PDB request failure, corrupt exact bytes, timeout, async surface work, page hide/return, WebGL loss | Source link remains available; explicit accessible status, disabled controls, bounded requests and intentional retry; no competing renderer |
 | No JavaScript | Five products, all workflow stages, native menus and image/source links | Browser context with JavaScript disabled |
 | 404 | Missing route, English recovery link, noindex | Actual 404 response and usable return link |
 
@@ -38,6 +41,13 @@ Default English is served at `/`; the central locale dictionary owns routing.
    truthful imagery. Preserve real interface screenshots without altering data.
 5. Commit and deploy the exact reviewed source. Repeat the changed user path on
    the public domains and verify version, language, images, HTTPS and redirects.
+
+Every completed optimization round includes production deployment and affected
+public-path acceptance. Generated artwork, genuine UI captures and deposited
+coordinate renders have distinct provenance. Inspect all nine molecular views
+for silhouette, chain/fold distinction, clipping, representation and chemical
+context. Treat journal-figure quality as a rendering objective, not external
+publication acceptance, new experimental evidence or molecular dynamics.
 
 Store timestamped reports, screenshots, deployment receipts and limitations
 outside source. Record the exact source revision and environment with evidence.

@@ -11,3 +11,8 @@ export function productArt(product, lang, { priority = false } = {}) {
   if (!asset) throw new Error(`Missing artwork for ${product.id}`);
   return `<div class="product-art"><img src="/assets/media/${asset.file}" width="${asset.width}" height="${asset.height}" alt="${product.name} — ${copy[lang].generatedLabel}" loading="${priority ? 'eager' : 'lazy'}"${priority ? ' fetchpriority="high"' : ''}><span class="art-caption">${copy[lang].generatedLabel}</span></div>`;
 }
+
+export function editorialArt(lang) {
+  const asset = assets['science-editorial'];
+  return `<img src="/assets/media/${asset.file}" width="${asset.width}" height="${asset.height}" loading="lazy" alt="${copy[lang].generatedLabel} — X-Science">`;
+}

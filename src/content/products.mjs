@@ -9,7 +9,7 @@ const repo = (name) => `https://github.com/Victor-Xu-1/${name}`;
 
 export const products = [
   {
-    id: 'x-science', name: 'X-Science', category: 'agents', color: '#a9d5bb',
+    id: 'x-science', name: 'X-Science', category: 'agents',
     repository: repo('X-Science'), license: 'AGPL-3.0-only',
     docs: `${repo('X-Science')}/blob/main/docs/getting-started.md`,
     guide: `${repo('X-Science')}/blob/main/docs/product/README.md`,
@@ -28,12 +28,9 @@ export const products = [
     ],
     steps: [text('提出研究问题', 'Ask a research question'), text('选择材料与工具', 'Choose material and tools'), text('检查研究产物', 'Review the artifacts')],
     boundary: text('可用工作流取决于实际模型、连接器、环境和权限配置。自托管的数据去向由配置决定，科学结论需要研究者复核。', 'Available workflows depend on configured models, connectors, environments and permissions. Data destinations depend on deployment choices; researchers review scientific conclusions.'),
-    image: 'synon-concept.png', imageKind: 'concept', imageWidth: 2020, imageHeight: 778,
-    caption: text('来自公开仓库的产品概念插画；不是实际界面或科学结果。', 'Product concept illustration from the public repository; not an application screenshot or scientific result.'),
-    imageSource: `${repo('X-Science')}/blob/b13d523be0cec4c4b811fc54397d46f2f562447d/docs/assets/README.md`,
   },
   {
-    id: 'x-pharma', name: 'X-Pharma', category: 'intelligence', color: '#c6bef4',
+    id: 'x-pharma', name: 'X-Pharma', category: 'intelligence',
     repository: repo('X-Pharma'), license: 'Apache-2.0',
     docs: `${repo('X-Pharma')}#安装`, guide: `${repo('X-Pharma')}/blob/main/docs/architecture.md`,
     revision: '635e5b28d1ceda06eb8ddc29dd568077f5e36a1d',
@@ -53,7 +50,7 @@ export const products = [
     boundary: text('当前为开发版本。真实数据许可、企业身份、LLM/OCR 与商业生产条件由各部署分别确认；Apache-2.0 不包含第三方数据授权。', 'A development release. Data licenses, enterprise identity, LLM/OCR and production readiness are evaluated per deployment; Apache-2.0 does not grant third-party data access.'),
   },
   {
-    id: 'x-dde', name: 'X-DDE', category: 'discovery', color: '#d5eca0',
+    id: 'x-dde', name: 'X-DDE', category: 'discovery',
     repository: repo('X-DDE'), license: 'Apache-2.0',
     docs: `${repo('X-DDE')}#快速开始`, guide: `${repo('X-DDE')}#能完成哪些工作`,
     revision: 'be94cc2dfcbea1bd09e63a19a4820c7278792733',
@@ -77,7 +74,7 @@ export const products = [
     imageSource: `${repo('X-DDE')}/blob/be94cc2dfcbea1bd09e63a19a4820c7278792733/docs/images/README.md`,
   },
   {
-    id: 'x-synth', name: 'X-Synth', category: 'chemistry', color: '#edc69c',
+    id: 'x-synth', name: 'X-Synth', category: 'chemistry',
     repository: repo('X-Synth'), license: 'Apache-2.0',
     docs: `${repo('X-Synth')}#安装`, guide: `${repo('X-Synth')}/blob/main/docs/workspace-workflows.md`,
     revision: '28915552a4007a009878df2b5fed9936bb710cbe',
@@ -97,7 +94,7 @@ export const products = [
     boundary: text('当前已集成的路线生成引擎为 ASKCOS。模型评分、目录采购证据和实验可行性分别判断；生成路线仍需化学与实验复核。', 'ASKCOS is the currently integrated route-generation engine. Model scores, catalog procurement evidence and experimental feasibility are evaluated separately; routes require chemical and experimental review.'),
   },
   {
-    id: 'x-patentsar', name: 'X-PatentSAR', category: 'chemistry', color: '#f1b5a0',
+    id: 'x-patentsar', name: 'X-PatentSAR', category: 'chemistry',
     repository: repo('X-PatentSAR'), license: 'Apache-2.0',
     docs: `${repo('X-PatentSAR')}#web-工作台`, guide: `${repo('X-PatentSAR')}#支持范围`,
     revision: '78d9e02c7c08fe8ba4dd401100c6c9deb19fc566',

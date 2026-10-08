@@ -1,0 +1,385 @@
+{
+  "vendor": {
+    "package_name": "3dmol",
+    "package_version": "2.5.5",
+    "archive_bytes": 4231158,
+    "archive_sha256": "26d91c5036d4efe78fc032c22cb692fea92bbb3cb1e65d20bf3869673fb3d8f5",
+    "npm_integrity_matches": true,
+    "npm_sha1_matches": true,
+    "npm_integrity": "sha512-kqNHouGqq3YfW58174tdERvm0XYTmP0tavQKOqIw1ouc2OJ7epkXEFrtEkVXV0clBZT2Ze2xHRC/qxX0u0qCdw==",
+    "tarball_url": "https://registry.npmjs.org/3dmol/-/3dmol-2.5.5.tgz",
+    "outputs": [
+      {
+        "path": "vendor/3Dmol-2.5.5.min.js",
+        "tar_member": "package/build/3Dmol-min.js",
+        "bytes": 537792,
+        "sha256": "f7cc78921ae72e7623e89cdd111434f58c2efddd2ffda1cd212644b406fb8016"
+      },
+      {
+        "path": "vendor/3Dmol-2.5.5.min.js.LICENSE.txt",
+        "tar_member": "package/build/3Dmol-min.js.LICENSE.txt",
+        "bytes": 120,
+        "sha256": "ae3bfc688d0c9687b76e0ecc7fece0b393bcb4acf2aee09e19dda697eaa10b16"
+      },
+      {
+        "path": "vendor/3Dmol-2.5.5.package.LICENSE",
+        "tar_member": "package/LICENSE",
+        "bytes": 4283,
+        "sha256": "4c6eaaed856f3f28a3b1a98e74f4a8a71618de7d51ea4155c29f6f793bcef861"
+      },
+      {
+        "path": "metadata/3dmol-2.5.5.package.json",
+        "tar_member": "package/package.json",
+        "bytes": 2965,
+        "sha256": "2f63f83a80edf5bd6a5564653a531365de38150c94dfb2e270486ebed0970746"
+      },
+      {
+        "path": "notes/ProteinSurface4-2.5.5.ts",
+        "tar_member": "package/src/ProteinSurface4.ts",
+        "bytes": 65266,
+        "sha256": "481ca47e03210c53fe19f0ec595c6789ea2f5bc8194e162459648002b62450c0"
+      },
+      {
+        "path": "notes/Renderer-2.5.5.ts",
+        "tar_member": "package/src/WebGL/Renderer.ts",
+        "bytes": 71726,
+        "sha256": "116f330d627e6eb216d7ffcd6f1d704523bc523df3f94956b480274f4a414572"
+      }
+    ],
+    "bundle_gzip_bytes": 156450,
+    "inter_woff2_valid": true,
+    "downloaded_code_executed": false
+  },
+  "structures": [
+    {
+      "id": "1UBQ",
+      "pdb_path": "structures/1UBQ.pdb",
+      "source_url": "https://files.rcsb.org/download/1UBQ.pdb",
+      "record_url": "https://www.rcsb.org/structure/1UBQ",
+      "bytes": 78570,
+      "sha256": "d4a6812d8951cf6594e6a0763f089e35f5a80b62acb3c117b2c5565228a7b161",
+      "title": "STRUCTURE OF UBIQUITIN REFINED AT 1.8 ANGSTROMS RESOLUTION",
+      "experimental_method": [
+        "X-RAY DIFFRACTION"
+      ],
+      "resolution_angstrom": [
+        1.8
+      ],
+      "total_atom_records": 660,
+      "atom_records": 602,
+      "hetatm_records": 58,
+      "protein_chains": {
+        "A": 602
+      },
+      "modeled_residues_per_protein_chain": {
+        "A": 76
+      },
+      "nonpolymer_atom_records_by_residue": {
+        "HOH": 58
+      },
+      "deposited_model_count": 1,
+      "revision": {
+        "data_content_type": "Structure model",
+        "major_revision": 1,
+        "minor_revision": 3,
+        "ordinal": 4,
+        "revision_date": "2024-02-14T00:00:00.000+00:00"
+      },
+      "primary_citation": {
+        "country": "UK",
+        "id": "primary",
+        "journal_abbrev": "J.Mol.Biol.",
+        "journal_id_ASTM": "JMOBAK",
+        "journal_id_CSD": "0070",
+        "journal_id_ISSN": "0022-2836",
+        "journal_volume": "194",
+        "page_first": "531",
+        "page_last": "544",
+        "pdbx_database_id_DOI": "10.1016/0022-2836(87)90679-6",
+        "pdbx_database_id_PubMed": 3041007,
+        "rcsb_ORCID_identifiers": [
+          "?",
+          "?",
+          "?"
+        ],
+        "rcsb_authors": [
+          "Vijay-Kumar, S.",
+          "Bugg, C.E.",
+          "Cook, W.J."
+        ],
+        "rcsb_journal_abbrev": "J Mol Biol",
+        "title": "Structure of ubiquitin refined at 1.8 A resolution.",
+        "year": 1987
+      },
+      "protein_entities": [
+        {
+          "entity_id": "1",
+          "name": "UBIQUITIN",
+          "protein_chain_ids": [
+            "A"
+          ],
+          "sequence_length": 76,
+          "organisms": [
+            {
+              "scientific_name": "Homo sapiens",
+              "ncbi_taxonomy_id": 9606
+            }
+          ],
+          "source_api_url": "https://data.rcsb.org/rest/v1/core/polymer_entity/1UBQ/1"
+        }
+      ],
+      "coordinate_bounds_angstrom": {
+        "x": [
+          14.882,
+          45.747
+        ],
+        "y": [
+          13.048,
+          46.814
+        ],
+        "z": [
+          -1.744,
+          36.251
+        ]
+      },
+      "data_license": "CC0-1.0",
+      "license_source_url": "https://www.rcsb.org/pages/usage-policy",
+      "provenance_statement": "Unmodified RCSB PDB experimental structure coordinates, used as a visualization example; not an output of X-Science or its software products.",
+      "unmodified": true,
+      "atom_count_matches_rcsb_api": true,
+      "displayed_elements": [
+        "C",
+        "N",
+        "O",
+        "S"
+      ]
+    },
+    {
+      "id": "4HHB",
+      "pdb_path": "structures/4HHB.pdb",
+      "source_url": "https://files.rcsb.org/download/4HHB.pdb",
+      "record_url": "https://www.rcsb.org/structure/4HHB",
+      "bytes": 473850,
+      "sha256": "abf382e0fd84b53bd4c08b373d37c0d7fe9fbe1a9a9c3851b2f5f2fbbe627101",
+      "title": "THE CRYSTAL STRUCTURE OF HUMAN DEOXYHAEMOGLOBIN AT 1.74 ANGSTROMS RESOLUTION",
+      "experimental_method": [
+        "X-RAY DIFFRACTION"
+      ],
+      "resolution_angstrom": [
+        1.74
+      ],
+      "total_atom_records": 4779,
+      "atom_records": 4384,
+      "hetatm_records": 395,
+      "protein_chains": {
+        "A": 1069,
+        "B": 1123,
+        "C": 1069,
+        "D": 1123
+      },
+      "modeled_residues_per_protein_chain": {
+        "A": 141,
+        "B": 146,
+        "C": 141,
+        "D": 146
+      },
+      "nonpolymer_atom_records_by_residue": {
+        "HEM": 172,
+        "HOH": 221,
+        "PO4": 2
+      },
+      "deposited_model_count": 1,
+      "revision": {
+        "data_content_type": "Structure model",
+        "major_revision": 4,
+        "minor_revision": 3,
+        "ordinal": 9,
+        "revision_date": "2026-08-12T00:00:00.000+00:00"
+      },
+      "primary_citation": {
+        "country": "UK",
+        "id": "primary",
+        "journal_abbrev": "J.Mol.Biol.",
+        "journal_id_ASTM": "JMOBAK",
+        "journal_id_CSD": "0070",
+        "journal_id_ISSN": "0022-2836",
+        "journal_volume": "175",
+        "page_first": "159",
+        "page_last": "174",
+        "pdbx_database_id_DOI": "10.1016/0022-2836(84)90472-8",
+        "pdbx_database_id_PubMed": 6726807,
+        "rcsb_ORCID_identifiers": [
+          "?",
+          "?",
+          "?",
+          "?"
+        ],
+        "rcsb_authors": [
+          "Fermi, G.",
+          "Perutz, M.F.",
+          "Shaanan, B.",
+          "Fourme, R."
+        ],
+        "rcsb_journal_abbrev": "J Mol Biol",
+        "title": "The crystal structure of human deoxyhaemoglobin at 1.74 A resolution",
+        "year": 1984
+      },
+      "protein_entities": [
+        {
+          "entity_id": "1",
+          "name": "Hemoglobin subunit alpha",
+          "protein_chain_ids": [
+            "A",
+            "C"
+          ],
+          "sequence_length": 141,
+          "organisms": [
+            {
+              "scientific_name": "Homo sapiens",
+              "ncbi_taxonomy_id": 9606
+            }
+          ],
+          "source_api_url": "https://data.rcsb.org/rest/v1/core/polymer_entity/4HHB/1"
+        },
+        {
+          "entity_id": "2",
+          "name": "Hemoglobin subunit beta",
+          "protein_chain_ids": [
+            "B",
+            "D"
+          ],
+          "sequence_length": 146,
+          "organisms": [
+            {
+              "scientific_name": "Homo sapiens",
+              "ncbi_taxonomy_id": 9606
+            }
+          ],
+          "source_api_url": "https://data.rcsb.org/rest/v1/core/polymer_entity/4HHB/2"
+        }
+      ],
+      "coordinate_bounds_angstrom": {
+        "x": [
+          -24.242,
+          46.081
+        ],
+        "y": [
+          -15.297,
+          41.915
+        ],
+        "z": [
+          10.19,
+          70.977
+        ]
+      },
+      "data_license": "CC0-1.0",
+      "license_source_url": "https://www.rcsb.org/pages/usage-policy",
+      "provenance_statement": "Unmodified RCSB PDB experimental structure coordinates, used as a visualization example; not an output of X-Science or its software products.",
+      "unmodified": true,
+      "atom_count_matches_rcsb_api": true,
+      "displayed_elements": [
+        "C",
+        "FE",
+        "N",
+        "O",
+        "S"
+      ]
+    },
+    {
+      "id": "2LYZ",
+      "pdb_path": "structures/2LYZ.pdb",
+      "source_url": "https://files.rcsb.org/download/2LYZ.pdb",
+      "record_url": "https://www.rcsb.org/structure/2LYZ",
+      "bytes": 133569,
+      "sha256": "722b8b6fb7d465ee577ad5af676f94c5a857360f1bee50559ce9c67af6399965",
+      "title": "Real-space refinement of the structure of hen egg-white lysozyme",
+      "experimental_method": [
+        "X-RAY DIFFRACTION"
+      ],
+      "resolution_angstrom": [
+        2
+      ],
+      "total_atom_records": 1102,
+      "atom_records": 1001,
+      "hetatm_records": 101,
+      "protein_chains": {
+        "A": 1001
+      },
+      "modeled_residues_per_protein_chain": {
+        "A": 129
+      },
+      "nonpolymer_atom_records_by_residue": {
+        "HOH": 101
+      },
+      "deposited_model_count": 1,
+      "revision": {
+        "data_content_type": "Structure model",
+        "major_revision": 1,
+        "minor_revision": 4,
+        "ordinal": 5,
+        "revision_date": "2024-10-23T00:00:00.000+00:00"
+      },
+      "primary_citation": {
+        "country": "UK",
+        "id": "primary",
+        "journal_abbrev": "J.Mol.Biol.",
+        "journal_id_ASTM": "JMOBAK",
+        "journal_id_CSD": "0070",
+        "journal_id_ISSN": "0022-2836",
+        "journal_volume": "82",
+        "page_first": "371",
+        "page_last": "391",
+        "pdbx_database_id_DOI": "10.1016/0022-2836(74)90598-1",
+        "pdbx_database_id_PubMed": 4856347,
+        "rcsb_authors": [
+          "Diamond, R."
+        ],
+        "rcsb_journal_abbrev": "J Mol Biol",
+        "title": "Real-space refinement of the structure of hen egg-white lysozyme.",
+        "year": 1974
+      },
+      "protein_entities": [
+        {
+          "entity_id": "1",
+          "name": "HEN EGG WHITE LYSOZYME",
+          "protein_chain_ids": [
+            "A"
+          ],
+          "sequence_length": 129,
+          "organisms": [
+            {
+              "scientific_name": "Gallus gallus",
+              "ncbi_taxonomy_id": 9031
+            }
+          ],
+          "source_api_url": "https://data.rcsb.org/rest/v1/core/polymer_entity/2LYZ/1"
+        }
+      ],
+      "coordinate_bounds_angstrom": {
+        "x": [
+          -18.237,
+          21.502
+        ],
+        "y": [
+          2.991,
+          40.137
+        ],
+        "z": [
+          -2.616,
+          40.946
+        ]
+      },
+      "data_license": "CC0-1.0",
+      "license_source_url": "https://www.rcsb.org/pages/usage-policy",
+      "provenance_statement": "Unmodified RCSB PDB experimental structure coordinates, used as a visualization example; not an output of X-Science or its software products.",
+      "unmodified": true,
+      "atom_count_matches_rcsb_api": true,
+      "displayed_elements": [
+        "C",
+        "N",
+        "O",
+        "S"
+      ]
+    }
+  ]
+}
