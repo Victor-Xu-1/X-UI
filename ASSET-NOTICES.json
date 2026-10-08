@@ -107,5 +107,13 @@
       "role": "AI-generated concept art; not scientific data or application evidence"
     }
   },
-  "generatedPrompts": "IMAGE-PROMPTS.json"
+  "generatedPrompts": "IMAGE-PROMPTS.json",
+  "userLogo": {
+    "file": "src/static/assets/logo.png",
+    "source": "Official X-Science logo supplied by the user on 2026-10-08",
+    "sha256": "50d0950f73f819864be63f2ad0cba239e7e64e2a1fe2acd1002fecb30cc64bb9",
+    "width": 660,
+    "height": 660,
+    "transparent": true
+  }
 }

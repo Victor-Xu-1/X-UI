@@ -21,7 +21,7 @@ export function layout({ lang, body, title, description, path, product }) {
 <html lang="${c.lang}"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>${escape(siteTitle)}</title><meta name="description" content="${escape(siteDescription)}">
-<meta name="theme-color" content="#171b19"><link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<meta name="theme-color" content="#171b19"><link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon.png"><link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
 <link rel="canonical" href="${canonical}">${alternates}<link rel="alternate" hreflang="x-default" href="https://x-science.ai${product ? productPath(product, 'en') : '/en/'}">
 <meta property="og:type" content="website"><meta property="og:title" content="${escape(siteTitle)}"><meta property="og:description" content="${escape(siteDescription)}"><meta property="og:url" content="${canonical}"><meta property="og:site_name" content="X-Science"><meta property="og:image" content="https://x-science.ai/assets/social.png"><meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="/assets/styles/base.css"><link rel="stylesheet" href="/assets/styles/home.css"><link rel="stylesheet" href="/assets/styles/product.css"><link rel="stylesheet" href="/assets/styles/responsive.css">

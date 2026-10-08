@@ -32,7 +32,7 @@ for (const path of paths) {
     const filename = resolve(root, '.' + clean, ...(clean.endsWith('/') ? ['index.html'] : []));
     assert.ok((await stat(filename)).isFile(), `${path}: missing ${clean}`); checks++;
   }
-  for (const [, attributes] of html.matchAll(/<img\b([^>]+)>/g)) { assert.match(attributes, /alt="[^\"]+"/); checks++; }
+  for (const [, attributes] of html.matchAll(/<img\b([^>]+)>/g)) { assert.match(attributes, attributes.includes('aria-hidden="true"') ? /alt=""/ : /alt="[^\"]+"/); checks++; }
   assert.ok(!html.includes('http://localhost') && !html.includes('127.0.0.1'), 'Local development URLs must not reach production'); checks++;
   assert.ok(!html.includes('pharma-intelligence-platform') && !html.includes('synon-biomed-v0.1.0'), 'Private repositories must not be exposed'); checks++;
 }

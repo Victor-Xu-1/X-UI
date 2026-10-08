@@ -1,7 +1,7 @@
 export const arrow = '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 export const external = '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 export const star = '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m12 2 2.2 7.8L22 12l-7.8 2.2L12 22l-2.2-7.8L2 12l7.8-2.2L12 2Z" fill="currentColor"/></svg>';
-export const mark = '<svg class="brand-mark" viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M7 7h8l18 26h-8L7 7Z" fill="currentColor"/><path d="M25 7h8L15 33H7L25 7Z" fill="currentColor"/><circle cx="33" cy="7" r="4" fill="var(--lime)"/></svg>';
+export const mark = '<img class="brand-mark" src="/assets/logo.png" width="40" height="40" alt="" aria-hidden="true">';
 
 export const glyph = (id) => {
   const paths = {

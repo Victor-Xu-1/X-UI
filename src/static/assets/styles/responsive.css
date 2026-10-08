@@ -65,7 +65,7 @@
   .header-inner { min-height:70px; height:auto; flex-wrap:wrap; padding-block:17px; }
   .has-script .header-inner { height:70px; flex-wrap:nowrap; padding-block:0; }
   .brand { font-size:21px; gap:9px; }
-  .brand-mark { width:27px; height:27px; }
+  .brand-mark { width:36px; height:36px; }
   .menu-toggle { display:none; }
   .has-script .menu-toggle { display:block; }
   .main-nav { display:flex; width:100%; position:static; padding:10px 0; flex-direction:column; align-items:stretch; gap:2px; font-size:14px; background:var(--ink); border-bottom:1px solid #4c5841; }
