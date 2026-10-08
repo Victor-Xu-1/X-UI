@@ -16,7 +16,7 @@ export function productPage(product, lang) {
     <div class="product-hero-grid"><div><p class="eyebrow">${escape(product.label[lang])}</p><div class="product-name">${glyph(product.id)}<span>${escape(product.name)}</span></div><h1>${multiline(product.headline[lang])}</h1><p class="product-lead">${escape(product.summary[lang])}</p>
       <div class="hero-actions">${externalLink(product.release?.url || product.docs, product.release ? c.releases : c.install, 'button button-lime', arrow)}${externalLink(product.repository, c.source, 'button button-outline')}</div>
       <div class="product-license">${c.openSource} · ${product.license}${product.release ? ` · ${product.release.version}` : ''}</div>
-    </div><div class="product-hero-art">${productArt(product, lang)}</div></div>
+    </div><div class="product-hero-art">${productArt(product, lang, { priority: true })}</div></div>
   </div></section>
   <section class="product-facts"><div class="container facts-grid"><div><span>${c.audience}</span><p>${escape(product.audience[lang])}</p></div><div><span>${c.environment}</span><p>${escape(product.environment[lang])}</p></div><div><span>${c.license}</span><p>${product.license}</p></div></div></section>
   <nav class="product-section-nav" aria-label="${ui.sectionNavigation}"><div class="container">${['capabilities', 'getting-started', 'before-you-choose'].map((id,i) => `<a href="#${id}" data-section-link>${ui.sectionLabels[i]}</a>`).join('')}</div></nav>

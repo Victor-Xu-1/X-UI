@@ -6,8 +6,8 @@ export function heroArt(lang) {
   return `<img class="hero-image" src="/assets/media/${asset.file}" width="${asset.width}" height="${asset.height}" alt="${copy[lang].heroAlt}" fetchpriority="high">`;
 }
 
-export function productArt(product, lang) {
+export function productArt(product, lang, { priority = false } = {}) {
   const asset = assets[product.id];
   if (!asset) throw new Error(`Missing artwork for ${product.id}`);
-  return `<div class="product-art"><img src="/assets/media/${asset.file}" width="${asset.width}" height="${asset.height}" alt="${product.name} — ${copy[lang].generatedLabel}" loading="lazy"><span class="art-caption">${copy[lang].generatedLabel}</span></div>`;
+  return `<div class="product-art"><img src="/assets/media/${asset.file}" width="${asset.width}" height="${asset.height}" alt="${product.name} — ${copy[lang].generatedLabel}" loading="${priority ? 'eager' : 'lazy'}"${priority ? ' fetchpriority="high"' : ''}><span class="art-caption">${copy[lang].generatedLabel}</span></div>`;
 }
