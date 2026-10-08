@@ -1,6 +1,6 @@
 import { copy } from '../content/copy.mjs';
 import { languagePath, productPath } from '../content/products.mjs';
-import { mark, external, star } from './icons.mjs';
+import { mark, external, arrow } from './icons.mjs';
 import { locales, languages, defaultLanguage } from '../content/locales.mjs';
 import { languageMenu } from './language-menu.mjs';
 import { imageViewer } from './image-viewer.mjs';
@@ -46,7 +46,7 @@ export function layout({ lang, body, title, description, path, product }) {
 <footer class="site-footer"><div class="container"><div class="footer-main">
   <div><a class="brand" href="${home}">${mark}<span>X-Science.</span></a><p>${c.footerText}</p></div>
   <div class="footer-links"><a href="${home}#software">${c.footerNav[0]}</a>${externalLink(sourceRepository, 'X-UI · MIT')}${externalLink('https://github.com/Victor-Xu-1', 'GitHub')}${externalLink('https://www.linkedin.com/in/victor-xu-416797427', 'LinkedIn')}</div>
-</div><div class="footer-bottom"><span>© 2026 X-Science · Victor Xu</span><span>${c.licenseNote}</span><a href="#main" aria-label="${locales[lang].topLabel}">${star}</a></div></div></footer>
+</div><div class="footer-bottom"><span>© 2026 X-Science · Victor Xu</span><span>${c.licenseNote}</span><a href="#main" aria-label="${locales[lang].topLabel}">${arrow}</a></div></div></footer>
 ${imageViewer(lang)}
 </body></html>`;
 }

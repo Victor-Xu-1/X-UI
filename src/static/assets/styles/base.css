@@ -9,7 +9,7 @@ button { font:inherit; cursor:pointer; }
 img,svg { max-width:100%; }
 img { display:block; width:100%; height:auto; }
 button,a { -webkit-tap-highlight-color:transparent; }
-button:focus-visible,a:focus-visible,summary:focus-visible { outline:3px solid #7fa147; outline-offset:5px; }
+button:focus-visible,a:focus-visible,summary:focus-visible { outline:3px solid #66814a; outline-offset:5px; }
 ::selection { color:var(--ink); background:var(--lime); }
 [hidden] { display:none!important; }
 h1,h2,h3,p,figure { margin:0; }
