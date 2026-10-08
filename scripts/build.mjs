@@ -7,6 +7,7 @@ import { homePage } from '../src/templates/home.mjs';
 import { productPage } from '../src/templates/product.mjs';
 import { layout } from '../src/templates/layout.mjs';
 import { languages, languagePath, defaultLanguage } from '../src/content/locales.mjs';
+import { siteOrigin, sourceRepository } from '../src/content/site.mjs';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const output = resolve(root, 'dist');
@@ -32,8 +33,8 @@ for (const lang of languages) {
 }
 const notFound = layout({ lang: 'en', path: '/404.html', title: 'Page not found | X-Science', body: `<section class="not-found"><div class="container"><p>404 · X-SCIENCE</p><h1>${copy.en.notFound}</h1><a class="button button-dark" href="/">${copy.en.goHome}</a></div></section>` });
 await writeFile(resolve(output, '404.html'), notFound.replace('<head>', '<head><meta name="robots" content="noindex">'));
-await writeFile(resolve(output, 'robots.txt'), 'User-agent: *\nAllow: /\nSitemap: https://x-science.ai/sitemap.xml\n');
-const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${urls.map((path) => `<url><loc>https://x-science.ai${path}</loc><lastmod>${observedAt}</lastmod></url>`).join('')}</urlset>\n`;
+await writeFile(resolve(output, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${siteOrigin}/sitemap.xml\n`);
+const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${urls.map((path) => `<url><loc>${siteOrigin}${path}</loc><lastmod>${observedAt}</lastmod></url>`).join('')}</urlset>\n`;
 await writeFile(resolve(output, 'sitemap.xml'), sitemap);
-await writeFile(resolve(output, 'site-info.json'), JSON.stringify({ name: 'X-Science', version: software.version, defaultLanguage, languages, contentReviewedAt: observedAt, pageCount: urls.length, products: products.map(({ id, revision }) => ({ id, revision })) }, null, 2) + '\n');
+await writeFile(resolve(output, 'site-info.json'), JSON.stringify({ name: 'X-Science', version: software.version, siteOrigin, sourceRepository, sourceLicense: software.license, defaultLanguage, languages, contentReviewedAt: observedAt, pageCount: urls.length, products: products.map(({ id, revision }) => ({ id, revision })) }, null, 2) + '\n');
 console.log(`Built ${urls.length} pages in ${languages.length} languages, 404, sitemap and local assets in ${output}`);

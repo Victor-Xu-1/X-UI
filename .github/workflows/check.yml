@@ -19,4 +19,5 @@ jobs:
           node scripts/verify.mjs
           node scripts/package-transfer.mjs
           python3 scripts/check-release.py
+          python3 scripts/check-firewall.py
           bash -n ops/activate.sh

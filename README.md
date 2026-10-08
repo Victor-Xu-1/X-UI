@@ -14,6 +14,11 @@ own language prefixes. The native language selector preserves the product route.
 `src/content/locales.mjs` owns the default-language setting and route mapping. The
 VPS redirects legacy `/en/` URLs to their canonical English routes.
 
+The owner selected HTTP for the current public deployment and deferred creating
+a certificate-authority account. `src/content/site.mjs` owns the public origin
+used by canonical links, sharing images, hreflang, robots and the sitemap. Change
+it to HTTPS only after TLS is enabled and verified, then rebuild and redeploy.
+
 ## Run and maintain
 
 Node.js 22 or newer is the only runtime dependency. No package installation is required.

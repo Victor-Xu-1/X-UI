@@ -4,6 +4,7 @@ import { mark, external, star } from './icons.mjs';
 import { locales, languages, defaultLanguage } from '../content/locales.mjs';
 import { languageMenu } from './language-menu.mjs';
 import { imageViewer } from './image-viewer.mjs';
+import { siteOrigin, sourceRepository } from '../content/site.mjs';
 
 export const escape = (value) => String(value).replace(/[&<>"']/g, (character) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[character]);
 export const multiline = (value) => escape(value).replaceAll('\n', '<br>');
@@ -12,8 +13,8 @@ export const externalLink = (url, label, classes = '', icon = external) => `<a c
 export function layout({ lang, body, title, description, path, product }) {
   const c = copy[lang];
   const home = languagePath(lang);
-  const alternates = languages.map((target) => `<link rel="alternate" hreflang="${locales[target].html}" href="https://x-science.ai${product ? productPath(product, target) : languagePath(target)}">`).join('');
-  const canonical = `https://x-science.ai${path}`;
+  const alternates = languages.map((target) => `<link rel="alternate" hreflang="${locales[target].html}" href="${siteOrigin}${product ? productPath(product, target) : languagePath(target)}">`).join('');
+  const canonical = `${siteOrigin}${path}`;
   const siteTitle = title || c.title;
   const siteDescription = description || c.description;
   const data = { '@context': 'https://schema.org', '@type': product ? 'SoftwareApplication' : 'WebSite', name: product?.name || 'X-Science', url: canonical, description: siteDescription, inLanguage: c.lang };
@@ -23,8 +24,8 @@ export function layout({ lang, body, title, description, path, product }) {
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>${escape(siteTitle)}</title><meta name="description" content="${escape(siteDescription)}">
 <meta name="theme-color" content="#171b19"><link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon.png"><link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
-<link rel="canonical" href="${canonical}">${alternates}<link rel="alternate" hreflang="x-default" href="https://x-science.ai${product ? productPath(product, defaultLanguage) : languagePath(defaultLanguage)}">
-<meta property="og:type" content="website"><meta property="og:title" content="${escape(siteTitle)}"><meta property="og:description" content="${escape(siteDescription)}"><meta property="og:url" content="${canonical}"><meta property="og:site_name" content="X-Science"><meta property="og:image" content="https://x-science.ai/assets/social.png"><meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="${canonical}">${alternates}<link rel="alternate" hreflang="x-default" href="${siteOrigin}${product ? productPath(product, defaultLanguage) : languagePath(defaultLanguage)}">
+<meta property="og:type" content="website"><meta property="og:title" content="${escape(siteTitle)}"><meta property="og:description" content="${escape(siteDescription)}"><meta property="og:url" content="${canonical}"><meta property="og:site_name" content="X-Science"><meta property="og:image" content="${siteOrigin}/assets/social.png"><meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="/assets/styles/base.css"><link rel="stylesheet" href="/assets/styles/home.css"><link rel="stylesheet" href="/assets/styles/product.css"><link rel="stylesheet" href="/assets/styles/responsive.css">
 <link rel="stylesheet" href="/assets/styles/interactions.css">
 <script type="application/ld+json">${JSON.stringify(data).replaceAll('<', '\\u003c')}</script>
@@ -44,7 +45,7 @@ export function layout({ lang, body, title, description, path, product }) {
 <main id="main">${body}</main>
 <footer class="site-footer"><div class="container"><div class="footer-main">
   <div><a class="brand" href="${home}">${mark}<span>X-Science.</span></a><p>${c.footerText}</p></div>
-  <div class="footer-links"><a href="${home}#software">${c.footerNav[0]}</a>${externalLink('https://github.com/Victor-Xu-1/X-UI', 'X-UI · MIT')}${externalLink('https://github.com/Victor-Xu-1', 'GitHub')}${externalLink('https://www.linkedin.com/in/victor-xu-416797427', 'LinkedIn')}</div>
+  <div class="footer-links"><a href="${home}#software">${c.footerNav[0]}</a>${externalLink(sourceRepository, 'X-UI · MIT')}${externalLink('https://github.com/Victor-Xu-1', 'GitHub')}${externalLink('https://www.linkedin.com/in/victor-xu-416797427', 'LinkedIn')}</div>
 </div><div class="footer-bottom"><span>© 2026 X-Science · Victor Xu</span><span>${c.licenseNote}</span><a href="#main" aria-label="${locales[lang].topLabel}">${star}</a></div></div></footer>
 ${imageViewer(lang)}
 </body></html>`;

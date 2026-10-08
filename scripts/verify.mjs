@@ -6,6 +6,7 @@ import { products, productPath } from '../src/content/products.mjs';
 import { locales, languages, languagePath, defaultLanguage } from '../src/content/locales.mjs';
 import { copy } from '../src/content/copy.mjs';
 import { interactionCopy } from '../src/content/interaction-copy.mjs';
+import { siteOrigin, sourceRepository } from '../src/content/site.mjs';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '../dist');
 const paths = languages.flatMap((lang) => [languagePath(lang), ...products.map((p) => productPath(p, lang))]);
@@ -26,7 +27,7 @@ for (const path of paths) {
   const html = await readFile(resolve(root, '.' + path, 'index.html'), 'utf8');
   assert.equal((html.match(/<h1[ >]/g) || []).length, 1, `${path} must have one h1`); checks++;
   assert.match(html, /<meta name="description" content="[^\"]+"/, `${path} needs a description`); checks++;
-  assert.match(html, /rel="canonical" href="https:\/\/x-science\.ai\//); checks++;
+  assert.ok(html.includes(`rel="canonical" href="${siteOrigin}${path}"`)); checks++;
   for (const lang of languages) { assert.ok(html.includes(`hreflang="${locales[lang].html}"`)); checks++; }
   assert.equal((html.match(/data-language-target=/g) || []).length, languages.length); checks++;
   assert.ok(!html.includes('undefined') && !html.includes('null</'), `${path} contains missing translations`); checks++;
@@ -53,5 +54,11 @@ assert.equal(languagePath('en'), '/'); checks++;
 assert.equal(languagePath('zh'), '/zh/'); checks++;
 const defaultHome = await readFile(resolve(root, 'index.html'), 'utf8');
 assert.match(defaultHome, /<html lang="en">/); checks++;
-assert.ok(defaultHome.includes('hreflang="x-default" href="https://x-science.ai/"')); checks++;
+assert.ok(defaultHome.includes(`hreflang="x-default" href="${siteOrigin}/"`)); checks++;
+assert.equal(siteInfo.siteOrigin, siteOrigin); checks++;
+assert.equal(siteInfo.sourceRepository, sourceRepository); checks++;
+assert.equal(siteInfo.sourceLicense, 'MIT'); checks++;
+assert.equal(software.homepage, siteOrigin); checks++;
+assert.equal(software.license, 'MIT'); checks++;
+assert.ok(defaultHome.includes(`property="og:image" content="${siteOrigin}/assets/social.png"`)); checks++;
 console.log(`PASS: ${checks} generated-page, metadata, accessibility and local-link checks across ${paths.length} pages.`);

@@ -7,6 +7,11 @@ The owner's Beijing host is reserved for a private backup until the owner has
 completed ICP filing. Keep its private server inventory outside this repository.
 These scripts deploy static website files; they do not deploy the promoted agents.
 
+The owner currently selected HTTP and deferred accepting the certificate-authority
+agreement. HTTP mode serves the canonical site and redirects all other website
+domains to it, preserving paths and queries. TLS configuration is prepared for a
+future approved certificate issuance; it is not active.
+
 Before changing a server, inspect its OS, free disk, TCP listeners, active services,
 firewall and SELinux status. Retain the baseline locally. Preserve WireGuard on
 UDP443, SSH and OpenClaw. Do not reboot, reinstall, reset credentials or flush
@@ -39,6 +44,13 @@ and unrelated subdomains. Open only TCP80/TCP443 in the existing firewall if
 needed; verify the active zone, update runtime and permanent service rules, and
 preserve all other rules without a global reload. Never claim DNS or HTTPS
 completion from a localhost response.
+
+For the verified AlmaLinux primary, `python3 ops/persist-web-firewall.py` adds
+only the already active website TCP80/TCP443 rule to the existing WireGuard nft
+ruleset. It requires the expected include/input-chain marker, rejects conflicting
+rules, tests a staged file with `nft -c`, preserves a private backup and replaces
+the file atomically. It never restarts nftables, flushes rules or alters the live
+tunnel. `scripts/check-firewall.py` tests only this additive transformation.
 
 Issue one ACME certificate covering the three apex names and their three `www`
 names only after authoritative DNS and HTTP validation are correct. Use an existing
