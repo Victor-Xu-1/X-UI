@@ -15,10 +15,12 @@ for (const [url, expected] of Object.entries(manifest.files)) {
   assert.equal(bytes.length, expected.bytes);
   assert.equal(createHash('sha256').update(bytes).digest('hex'), expected.sha256);
 }
-for (const url of [manifest.app, manifest.css, manifest.font, ...manifest.preloads]) {
+for (const url of [manifest.app, manifest.css, ...manifest.preloads]) {
   assert.ok(manifest.files[url], `Unidentified runtime asset: ${url}`);
   assert.ok(html.includes(`"${url}"`), `Missing critical resource: ${url}`);
 }
+assert.ok(!html.includes('as="font"'), 'The large font must not outrank core interaction code');
+assert.ok((await readFile(resolve(dist, '.' + manifest.css), 'utf8')).includes(manifest.font.split('/').pop()));
 assert.equal((html.match(/rel="stylesheet"/g) || []).length, 1);
 assert.match(html, /type="module" blocking="render"/);
 const app = manifest.outputs[manifest.app];

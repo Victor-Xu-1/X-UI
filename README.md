@@ -197,7 +197,7 @@ an optimization delivery. Prior verified VPS release directories remain availabl
 for rollback; the owner has deferred the Beijing backup for this delivery.
 
 The modular source is compiled by pinned esbuild into one stylesheet and a small
-core JavaScript graph. Shared critical code is preloaded; the protein controller
+core JavaScript graph. Only the small critical code is preloaded at high priority; the protein controller
 is imported only near a molecular view, after the first paint. All source modules
 remain separately maintained; unbundled first-party scripts/styles are removed
 from the public build. `asset-manifest.json` owns every generated URL, byte length
@@ -210,8 +210,8 @@ publishes verified fingerprinted assets into the managed append-only shared stor
 old documents can still fetch their original chunks after an upgrade or rollback.
 No existing bytes are overwritten. HTTP/2 multiplexes remaining requests without
 using UDP443. Coordinate fetches use their exact digest in the URL and still
-verify the complete bytes before parsing. Images use the same fingerprint URL for initial loading and retry. The font
-preload matches the stylesheet URL exactly. Keyboard focus settles ancestor
+verify the complete bytes before parsing. Images use the same fingerprint URL for initial loading and retry. The full font is requested by the stylesheet with `font-display:swap`; it is
+not preloaded ahead of the much smaller core scripts on a slow connection. Keyboard focus settles ancestor
 animations; pointer focus preserves the pressed control's position until click.
 
 Performance acceptance measures cold/repeat navigation, first contentful paint,

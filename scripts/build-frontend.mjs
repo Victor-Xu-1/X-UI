@@ -26,7 +26,7 @@ export async function buildFrontend(root, output) {
   const imports = outputs.find(([file]) => file === app)[1].imports.filter(item => item.kind === 'import-statement').map(item => publicPath(item.path));
   const font = outputs.find(([file]) => file.endsWith('.woff2'))?.[0];
   if (!font) throw new Error('Missing bundled font');
-  const manifest = { schema: 1, app: urls['/assets/app.js'], css: urls['/assets/styles/site.css'], preloads: imports, font: publicPath(font), assets: urls, outputs: {} };
+  const manifest = { schema: 1, app: urls['/assets/app.js'], css: urls['/assets/styles/site.css'], preloads: [publicPath(app), ...imports], font: publicPath(font), assets: urls, outputs: {} };
   for (const [file, info] of outputs) manifest.outputs[publicPath(file)] = { bytes: info.bytes, entryPoint: info.entryPoint, imports: info.imports.map(item => ({ kind: item.kind, path: publicPath(item.path) })) };
   manifest.files = {};
   for (const name of await readdir(resolve(output, 'assets/build'))) {
@@ -36,7 +36,7 @@ export async function buildFrontend(root, output) {
   await writeFile(resolve(output, 'asset-manifest.json'), JSON.stringify(manifest, null, 2) + '\n');
   // Only the compiled application is served, never a competing unbundled path.
   for (const path of ['assets/app.js', 'assets/modules', 'assets/styles']) await rm(resolve(output, path), { recursive: true, force: true });
-  const preload = imports.map(url => `<link rel="modulepreload" href="${url}">`).join('') + `<link rel="preload" href="${manifest.font}" as="font" type="font/woff2" crossorigin>`;
+  const preload = manifest.preloads.map(url => `<link rel="modulepreload" href="${url}" fetchpriority="high">`).join('');
   return html => {
     const rewritten = html.replace(/\/assets\/[^\s"'<>]+/g, url => url.endsWith('.pdb') ? url : urls[url] || url);
     return rewritten.replace('<meta charset="utf-8">', '<meta charset="utf-8">' + preload);
