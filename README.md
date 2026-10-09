@@ -52,7 +52,7 @@ Concepts carry translated labels. The genuine X-DDE capture retains its original
 pixels, caption, revision and Apache-2.0 notice. Images never stand in for measured
 results or live software execution.
 
-Inter 4.1 and 3Dmol.js 2.5.5 are served locally, with complete license notices.
+Inter 4.1, 3Dmol.js 2.5.5 and Three.js 0.186.1 are served locally, with complete license notices.
 The molecular viewer is loaded only when its section enters view. No remote font,
 CDN script, analytics or tracking service is requested by the website.
 
@@ -66,6 +66,55 @@ node scripts/build.mjs
 The committed `src/static/assets/social.png` is the website's original sharing visual. Do not replace actual screenshots with generated imagery. Original website code and artwork: copyright 2026 Victor Xu. Reused product assets retain their source licenses; consult the referenced repositories before redistribution.
 
 The official X-Science logo was supplied by the user on 2026-10-08. Its original transparent PNG is preserved as `src/static/assets/logo.png`; browser and touch icons are size derivatives. The same asset appears in the header, footer and sharing artwork. The previous provisional X-shaped mark was removed.
+
+## Concept scenes and workflow explanations
+
+Every home and product page has an interactive biomedical concept, with five
+distinct presets: connected research, evidence networks, structure space,
+synthesis branches and source mapping. Product cards can borrow the same canvas
+for a preview. A document owns one persistent Three renderer; switching hosts or
+presets disposes the previous owned geometry and preserves static image access.
+The procedural membrane, inner folds, source panes and moving signals are
+explicitly conceptual. They do not represent experimental coordinates, computed
+results, real-time data, live application execution or molecular dynamics.
+
+`cinematic.js` owns activation, loading, controls and visibility. The separately
+loaded `cinematic-scene.js` moves one placeholder canvas and sends bounded
+commands to one module worker; `cinematic-renderer.js` owns Three in that worker,
+and `cinematic-geometry.js` owns finite geometry and its disposal. The exact
+official Three ESM pair is pinned in
+`vendor/three-0.186.1`; its approximately 417 KB gzip cost is deferred until the
+hero enters view or a visitor selects a preview. Main text, actions and generated
+posters appear independently. No remote loader or additional framework is used.
+The original 93,048-byte CubeUV lighting atlas is prefetched only for an active
+scene and verified by exact bytes, dimensions and SHA-256. Its pinned room spec,
+linear color/orientation contract and provenance live in
+`src/content/scene-environment.json`. Offline prefiltering preserves the material
+and removes expensive visitor-side PMREM preparation; parallel shader preparation
+finishes before drawing. The optional `node scripts/bake-lighting.mjs <external
+output-directory>` generator requires external Chrome, Playwright and Sharp dev
+tools (optionally set `X_UI_RUNTIME_NODE_MODULES`); the normal build requires no
+package installation. Regeneration never overwrites committed assets and may
+vary with GPU FP16 rounding, so recheck the emitted image and its hash.
+
+The scene bounds physical allocation to 1.6 million pixels, DPR to 1.5, and
+cadence to 60 draws/second on wide views and 30 on narrow views. Automatic motion stops out of view,
+in hidden documents, on user pause or under OS reduced-motion preferences.
+Manual drag/arrow-key movement pauses local animation; reset and static-image
+controls stay available. A 20-second import/lighting deadline, 25-second worker
+command deadline and explicit reload state handle failed or unavailable 3D.
+Worker termination stops application work on timeout, context loss or disposal;
+it does not promise immediate cancellation of GPU-driver internal work.
+Browsers without the worker/WebGL facilities retain the labeled image path.
+
+`motion-policy.js` is the single authority for OS preferences and the saved
+site-wide pause choice. Concept scenes, actual-coordinate rotation and CSS flow
+traces subscribe to it. The product workflow explorer gives three keyboard
+accessible stages, each explaining real starting material, review points and
+the official guide. Shared abstract SVG diagrams illustrate these explanations;
+the website performs no scientific calculation or uploads. Without JavaScript,
+all explanations, images and source links remain available. All controls and
+explanations have six complete locale dictionaries.
 
 ## Molecular exploration
 

@@ -7,7 +7,7 @@
 .hero-description { max-width:490px; margin-top:28px; font-size:18px; line-height:1.65; color:var(--muted); }
 .hero-actions { display:flex; flex-wrap:wrap; align-items:center; gap:12px; margin-top:34px; }
 .hero-visual { position:relative; min-width:0; }
-.hero-visual img { aspect-ratio:1.12; object-fit:cover; object-position:63% center; border-radius:6px; transform:translate(var(--pointer-x,0),var(--pointer-y,0)) scale(1.035); transition:transform .45s; }
+.hero-visual img { aspect-ratio:1.12; object-fit:cover; object-position:63% center; border-radius:6px;  }
 .concept-label { display:inline-block; margin-top:15px; color:var(--muted); font-size:11px; letter-spacing:.015em; }
 .hero-bottom { display:flex; align-items:center; justify-content:space-between; padding-block:22px; border-top:1px solid var(--line); color:var(--muted); font-size:12px; }
 .hero-bottom a { display:flex; align-items:center; gap:12px; min-height:38px; color:var(--ink); }

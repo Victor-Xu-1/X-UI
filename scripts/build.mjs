@@ -24,7 +24,7 @@ const firstPartyModules = ['assets/app.js', ...(await readdir(resolve(output, 'a
 for (const file of firstPartyModules) {
   const target = resolve(output, file);
   const source = await readFile(target, 'utf8');
-  await writeFile(target, source.replace(/(^import\s.*?from\s+['"])(\.\/[^'"]+\.js)(['"])/gm, `$1$2?v=${software.version}$3`));
+  await writeFile(target, source.replace(/((?:from\s+|import\(\s*)['"])(\.\/[^'"]+\.js)(['"])/g, `$1$2?v=${software.version}$3`));
 }
 const urls = [];
 function releaseResources(html) {

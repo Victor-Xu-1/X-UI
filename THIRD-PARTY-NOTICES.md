@@ -21,6 +21,7 @@ after replacement checks and remains recoverable in Git and prior releases.
 
 | Vendored asset | Official source | Retained license |
 | --- | --- | --- |
+| `assets/vendor/three-0.186.1/three.module.js`, `three.core.js` | [Three.js 0.186.1, pinned official source](https://github.com/mrdoob/three.js/tree/9b4a2ac29c63ccb43fd51c5661f2f873ac2c39b8) and SHA-512 verified npm archive | [MIT](licenses/Three-0.186.1-LICENSE.txt) |
 | `assets/vendor/3dmol-2.5.5/3Dmol-min.js` | [3Dmol.js, pinned official source](https://github.com/3dmol/3Dmol.js/tree/c26e390544b6388f86e50387cd4565759b4da0df) and verified `3dmol@2.5.5` package | [BSD-3-Clause and incorporated GLmol/Three.js/jQuery notices](licenses/3Dmol-2.5.5-LICENSE.txt), [EDTSurf source notice](licenses/3Dmol-2.5.5-EDTSurf-LICENSE.txt) |
 | `assets/fonts/inter-variable.woff2` | [Inter 4.1, pinned official source](https://github.com/rsms/inter/tree/e3a3d4c57d5ecc01453a575621882a384c1995a3) | [SIL Open Font License 1.1](licenses/Inter-4.1-LICENSE.txt) |
 | `assets/structures/1UBQ.pdb`, `4HHB.pdb`, `2LYZ.pdb` | Unmodified experimental reference coordinates from [RCSB PDB](https://www.rcsb.org/pages/usage-policy) | CC0 1.0; retain PDB IDs, primary citations and provenance |

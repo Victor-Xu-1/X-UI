@@ -3,6 +3,7 @@ import { loadStructure } from './structure-data.js';
 import { ProteinScene } from './protein-scene.js';
 import { downloadProteinImage } from './protein-export.js';
 import { proteinLegend } from './protein-presets.js';
+import { motionAllowed, subscribeMotion } from './motion-policy.js';
 
 export function initProteinViewer() {
   document.querySelectorAll('[data-protein-viewer]').forEach(mountProteinViewer);
@@ -23,7 +24,6 @@ function mountProteinViewer(root) {
   const backgroundButton = root.querySelector('[data-protein-background]');
   const exportButton = root.querySelector('[data-protein-export]');
   const exportStatus = root.querySelector('[data-protein-export-status]');
-  const reduced = matchMedia('(prefers-reduced-motion: reduce)');
   const wanted = { id: structures[0].id, representation: 'cartoon' };
   const cache = new Map();
   let scene;
@@ -33,7 +33,7 @@ function mountProteinViewer(root) {
   let started = false;
   let failedContext = false;
   let reloadRequired = false;
-  let spinWanted = !reduced.matches;
+  let spinWanted = motionAllowed();
   let activeId;
   let appliedRepresentation;
   let controller;
@@ -41,6 +41,7 @@ function mountProteinViewer(root) {
 
   function setPhase(phase) {
     root.dataset.phase = phase;
+    if (phase === 'ready') root.dataset.poster = 'hidden';
     root.setAttribute('aria-busy', String(phase === 'loading'));
     statusLayer.hidden = phase === 'ready';
     status.textContent = phase === 'unsupported' ? copy.structureUnsupported : phase === 'error' ? copy.structureError : copy.structureLoading;
@@ -51,13 +52,13 @@ function mountProteinViewer(root) {
     syncSpin();
   }
   function syncSpin() {
-    const enabled = !!scene && root.dataset.phase === 'ready' && visible && !document.hidden && spinWanted && !reduced.matches;
+    const enabled = !!scene && root.dataset.phase === 'ready' && visible && !document.hidden && spinWanted && motionAllowed();
     scene?.spin(enabled);
     root.dataset.spinning = String(enabled);
     spinButton.setAttribute('aria-pressed', String(enabled));
-    spinButton.querySelector('[data-spin-label]').textContent = spinWanted && !reduced.matches ? copy.pause : copy.spin;
-    spinButton.disabled = reduced.matches || root.dataset.phase !== 'ready';
-    root.querySelector('[data-protein-motion-note]').hidden = !reduced.matches;
+    spinButton.querySelector('[data-spin-label]').textContent = spinWanted && motionAllowed() ? copy.pause : copy.spin;
+    spinButton.disabled = !motionAllowed() || root.dataset.phase !== 'ready';
+    root.querySelector('[data-protein-motion-note]').hidden = motionAllowed();
   }
   function updateIdentity(model) {
     root.querySelector('[data-protein-id]').textContent = model.id;
@@ -179,7 +180,7 @@ function mountProteinViewer(root) {
   const contextLost = () => { failedContext = true; setPhase('unsupported'); };
   canvas.addEventListener('webglcontextlost', contextLost, true);
   canvas.addEventListener('protein-context-lost', contextLost);
-  reduced.addEventListener('change', () => { if (reduced.matches) spinWanted = false; syncSpin(); });
+  subscribeMotion(syncSpin);
   document.addEventListener('visibilitychange', syncSpin);
   addEventListener('pagehide', () => { controller?.abort(); scene?.spin(false); });
   addEventListener('pageshow', syncSpin);

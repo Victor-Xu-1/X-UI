@@ -6,9 +6,11 @@ import { dirname, resolve } from 'node:path';
 import { languages, languagePath } from '../src/content/locales.mjs';
 import { products, productPath } from '../src/content/products.mjs';
 import { redesignCopy } from '../src/content/redesign-copy.mjs';
+import { cinematicCopy } from '../src/content/cinematic-copy.mjs';
 import { structureCatalog, structureLabels } from '../src/content/structures.mjs';
 import provenance from '../src/content/structure-provenance.json' with { type: 'json' };
 import poster from '../src/content/structure-poster.json' with { type: 'json' };
+import lighting from '../src/content/scene-environment.json' with { type:'json' };
 import artwork from '../src/content/generated-assets.json' with { type: 'json' };
 import notices from '../ASSET-NOTICES.json' with { type: 'json' };
 
@@ -35,6 +37,7 @@ async function exact(file, expectedBytes, expectedHash) {
 
 for (const language of languages) {
   complete(redesignCopy[language], redesignCopy.en, `redesign.${language}`);
+  complete(cinematicCopy[language], cinematicCopy.en, `cinematic.${language}`);
   complete(structureLabels[language], structureLabels.en, `structures.${language}`);
 }
 assert.deepEqual(Object.keys(artwork).sort(), ['hero', ...products.map(product => product.id), 'science-editorial'].sort()); checks++;
@@ -68,12 +71,18 @@ for (const model of structureCatalog) {
   assert.ok(provenance.structures.find(item => item.id === model.id).primary_citation); checks++;
 }
 await exact(poster.file, poster.bytes, poster.sha256);
+await exact(lighting.asset.file.slice(1),lighting.asset.bytes,lighting.asset.sha256);
+assert.equal(lighting.asset.mapping,'CubeUVReflectionMapping');checks++;
+assert.equal(lighting.asset.colorSpace,'LinearSRGBColorSpace');checks++;
+assert.equal(lighting.asset.flipY,false);checks++;
 assert.equal(poster.pdbId, structureCatalog[0].id); checks++;
 assert.equal(poster.coordinateSha256, structureCatalog[0].sha256); checks++;
 assert.equal(poster.renderer, '3Dmol.js 2.5.5'); checks++;
 
 for (const language of languages) for (const path of [languagePath(language), ...products.map(product => productPath(product, language))]) {
   const html = await readFile(resolve(dist, '.' + path, 'index.html'), 'utf8');
+  const conceptPayload = JSON.parse(html.match(/<script type="application\/json" data-cinematic-copy>(.*?)<\/script>/s)[1]);
+  assert.deepEqual(conceptPayload.environment,lighting.asset);checks++;
   const expected = !path.includes('/products/') || path.endsWith('/products/x-dde/');
   assert.equal((html.match(/data-protein-viewer /g) || []).length, expected ? 1 : 0, `${path}: viewer placement`); checks++;
   if (!expected) continue;

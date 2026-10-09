@@ -9,7 +9,7 @@ for (const [, value] of html.matchAll(/(?:src|href)="(\/assets\/[^\"]+)"/g)) ass
 let imports = 0;
 for (const file of ['app.js', ...(await readdir(resolve(root, 'dist/assets/modules'))).map(name => 'modules/' + name)]) {
   const source = await readFile(resolve(root, 'dist/assets', file), 'utf8');
-  for (const [, value] of source.matchAll(/from ['"](\.\/[^'"]+\.js[^'"]*)['"]/g)) {
+  for (const [, value] of source.matchAll(/(?:from\s+|import\(\s*)['"](\.\/[^'"]+\.js[^'"]*)['"]/g)) {
     assert.equal(new URL(value, 'https://x-science.ai').searchParams.get('v'), software.version); imports++;
   }
 }

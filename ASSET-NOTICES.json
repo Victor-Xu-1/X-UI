@@ -7,7 +7,7 @@
       "revision": "be94cc2dfcbea1bd09e63a19a4820c7278792733",
       "path": "docs/images/structure-and-pocket.jpg",
       "license": "Apache-2.0",
-      "kind": "Actual interface capture; v0.4.49 public BRD4–JQ1 example",
+      "kind": "Actual interface capture; v0.4.49 public BRD4鈥揓Q1 example",
       "source": "https://github.com/Victor-Xu-1/X-DDE/blob/be94cc2dfcbea1bd09e63a19a4820c7278792733/docs/images/structure-and-pocket.jpg",
       "sha256": "4e7a8883713e130df68424688347678632435f0c3526cddeff3ecd5023411ef2",
       "size": 122293
@@ -148,6 +148,33 @@
       "license": "SIL-OFL-1.1",
       "bytes": 4380,
       "sha256": "262481e844521b326f5ecd053e59b98c8b2da78c8ee1bdbb6e8174305e54935a"
+    },
+    {
+      "file": "vendor/three-0.186.1/three.module.js",
+      "name": "Three.js",
+      "version": "0.186.1",
+      "source": "https://github.com/mrdoob/three.js/tree/9b4a2ac29c63ccb43fd51c5661f2f873ac2c39b8",
+      "license": "MIT",
+      "bytes": 662772,
+      "sha256": "9052042d676cb0fdc1ddfefe193053f34b7ac0513a616fdac4535d49987812ea"
+    },
+    {
+      "file": "vendor/three-0.186.1/three.core.js",
+      "name": "Three.js",
+      "version": "0.186.1",
+      "source": "https://github.com/mrdoob/three.js/tree/9b4a2ac29c63ccb43fd51c5661f2f873ac2c39b8",
+      "license": "MIT",
+      "bytes": 1458113,
+      "sha256": "9edde002b066a9a05676a6127f67735b62baf399bdea529f2f7e31657da769e6"
+    },
+    {
+      "file": "vendor/three-0.186.1/LICENSE.txt",
+      "name": "Three.js",
+      "version": "0.186.1",
+      "source": "https://github.com/mrdoob/three.js/tree/9b4a2ac29c63ccb43fd51c5661f2f873ac2c39b8",
+      "license": "MIT",
+      "bytes": 1081,
+      "sha256": "8b378ebe60e2fe500158cb0ac71cb5e8b7d92953c2abcc63a0eb90499653b5bc"
     }
   ],
   "referenceCoordinates": {
@@ -165,5 +192,11 @@
   "coordinatePoster": {
     "manifest": "src/content/structure-poster.json",
     "role": "Genuine local coordinate rendering using the same pinned viewer and visual preset as the interactive default"
+  },
+  "sceneLighting": {
+    "manifest": "src/content/scene-environment.json",
+    "generator": "scripts/bake-lighting.mjs",
+    "role": "Original prefiltered procedural illumination, independent of scientific data",
+    "license": "MIT"
   }
 }
