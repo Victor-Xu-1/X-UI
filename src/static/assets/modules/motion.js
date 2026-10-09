@@ -30,16 +30,12 @@ export function initMotion() {
         }
       });
     }, { threshold: 0.08, rootMargin: '0px 0px 28px 0px' });
-    document.querySelectorAll('.section-head, .product-card, .about-grid, .capability, .product-explorer').forEach(element => {
+    document.querySelectorAll('.section-head, .product-card, .about-grid, .capability, .use-case-explorer, .research-intro, .proof-copy, .selection-note-inner, .contact-inner').forEach(element => {
       if (motionAllowed() && element.getBoundingClientRect().top > innerHeight) element.classList.add('will-reveal');
       observer.observe(element);
     });
     subscribeMotion(allowed => {
       if (!allowed) document.querySelectorAll('.will-reveal').forEach(element => element.classList.remove('will-reveal'));
     });
-    const visualObserver = new IntersectionObserver(entries => {
-      entries.forEach(entry => { entry.target.dataset.motionVisible = String(entry.isIntersecting); });
-    }, { threshold: .12 });
-    document.querySelectorAll('[data-motion-visual]').forEach(element => visualObserver.observe(element));
   }
 }

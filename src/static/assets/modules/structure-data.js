@@ -6,7 +6,7 @@ export async function loadStructure(metadata, signal) {
   const response = await fetch(metadata.file, { signal: boundedSignal, cache: 'no-cache' });
   if (!response.ok) throw new Error(`structure_http_${response.status}`);
   const data = await response.arrayBuffer();
-  if (data.byteLength !== metadata.bytes || data.byteLength > 1024 * 1024) throw new Error('structure_size_mismatch');
+  if (data.byteLength !== metadata.bytes || data.byteLength > 8 * 1024 * 1024) throw new Error('structure_size_mismatch');
   const digest = await crypto.subtle.digest('SHA-256', data);
   const hash = [...new Uint8Array(digest)].map(byte => byte.toString(16).padStart(2, '0')).join('');
   if (hash !== metadata.sha256) throw new Error('structure_hash_mismatch');

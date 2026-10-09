@@ -1,16 +1,41 @@
 {
-  "file": "assets/structures/1UBQ-preview.webp",
-  "pdbId": "1UBQ",
-  "coordinateSha256": "d4a6812d8951cf6594e6a0763f089e35f5a80b62acb3c117b2c5565228a7b161",
+  "file": "assets/structures/5FQD-preview.webp",
+  "pdbId": "5FQD",
+  "coordinateSha256": "cc474aa498a5151d63a7d86c196ed83d1f386bfc94b9b27b04f5ba429210e26d",
   "renderer": "3Dmol.js 2.5.5",
   "representation": "cartoon",
+  "displayView": "interface",
+  "selection": {
+    "or": [
+      {
+        "chain": [
+          "B",
+          "C"
+        ],
+        "hetflag": false
+      },
+      {
+        "chain": "B",
+        "resi": 1438,
+        "resn": "LVY",
+        "hetflag": true
+      },
+      {
+        "chain": "B",
+        "resi": 1437,
+        "resn": "ZN",
+        "hetflag": true
+      }
+    ]
+  },
+  "displayedAtoms": 5511,
   "projection": "orthographic",
-  "background": "#f3f6f8",
+  "background": "#ffffff",
   "role": "Genuine rendering of unmodified published coordinates; no product computation",
-  "width": 1000,
-  "height": 673,
-  "bytes": 34964,
-  "sha256": "08131298052757c91dd2826c4854c35326539a98e58e5269804a19e30f47bc6b",
-  "capturedAt": "2026-10-08T17:56:24.664Z",
-  "sourceRenderSha256": "b8f648b508e3911279ba226f38d3941bbdd3e9126bc9d861a21cabb94b94eb62"
+  "width": 1600,
+  "height": 800,
+  "bytes": 123662,
+  "sha256": "08d5b74dfd537d4c84ac9abb22a90b555e1c447902345acb0891e214ad86ad4c",
+  "capturedAt": "2026-10-09T04:57:57.150Z",
+  "sourceRenderSha256": "a06ecde6a16d045e32402279b2c4cd72cabb82fdd9987af175061878d5d1335b"
 }

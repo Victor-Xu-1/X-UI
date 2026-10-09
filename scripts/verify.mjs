@@ -46,7 +46,10 @@ for (const path of paths) {
   assert.ok(!html.includes('Synon Biomed'), `${path} uses retired display branding`); checks++;
   assert.ok(!html.includes('github.com/Victor-Xu-1/synon-biomed/'), `${path} uses a retired repository link`); checks++;
   assert.ok(!/diffsbdd/i.test(html), `${path} contains an excluded product`); checks++;
-  if (path.includes('/products/')) { assert.match(html, /class="product-hero-art">.*?loading="eager" fetchpriority="high"/s, `${path} must prioritize its first-screen artwork`); checks++; }
+  if (path.includes('/products/')) {
+    assert.match(html, /class="product-hero-art">.*?loading="eager" fetchpriority="high"/s, `${path} must prioritize its first-screen artwork`); checks++;
+    assert.equal((html.match(/data-use-case-panel /g)||[]).length,3,`${path} needs three concrete use cases`);checks++;
+  }
 }
 const researchAgent = products.find(product => product.id === 'x-science');
 assert.equal(researchAgent?.name, 'X-Science'); checks++;

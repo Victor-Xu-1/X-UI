@@ -1,81 +1,54 @@
-import { proteinPalette, proteinOrientations, proteinViewerSettings, fittingZoom } from './protein-presets.js';
+import { proteinPalette,proteinViewerSettings,fittingZoom } from './protein-presets.js';
 import { settleSurface } from './protein-surface.js';
+import { ligandSelection,chainColorScheme } from './protein-selection.js';
 
-// One persistent renderer per full document. The pinned library has no destroy API.
+// A document owns one persistent renderer; all controls reuse its deposited model.
 export class ProteinScene {
-  constructor(library, element) {
-    this.library = library;
-    this.element = element;
-    this.viewer = library.createViewer(element, proteinViewerSettings);
-    if (!this.viewer) throw new Error('webgl_unavailable');
-    this.context = this.viewer.getRenderer().getContext();
-    if (!this.context || this.context.isContextLost()) throw new Error('webgl_unavailable');
-    // Modern Chrome uses an OffscreenCanvas with a bitmap presentation canvas.
-    this.context.canvas.addEventListener('webglcontextlost', () => {
-      this.viewer.spin(false);
-      element.dispatchEvent(new Event('protein-context-lost'));
-    });
-    this.initialView = null;
-    this.size = [element.clientWidth, element.clientHeight];
+  constructor(library,element) {
+    this.library=library;this.element=element;this.viewer=library.createViewer(element,proteinViewerSettings);
+    if(!this.viewer)throw new Error('webgl_unavailable');
+    this.context=this.viewer.getRenderer().getContext();
+    if(!this.context||this.context.isContextLost())throw new Error('webgl_unavailable');
+    this.context.canvas.addEventListener('webglcontextlost',()=>{this.viewer.spin(false);element.dispatchEvent(new Event('protein-context-lost'));});
+    this.size=[element.clientWidth,element.clientHeight];
   }
-
-  load(text, metadata) {
-    this.viewer.spin(false);
-    this.viewer.removeAllSurfaces();
-    this.viewer.removeAllModels();
-    const model = this.viewer.addModel(text, 'pdb', { keepH: true, cartoonQuality: 10, noComputeSecondaryStructure: true });
-    if (model.selectedAtoms({}).length !== metadata.atomCount) throw new Error('structure_atom_count_mismatch');
-    this.model = model;
-    this.viewer.setStyle({}, {});
-    const neutral = [...this.viewer.getView()];
-    neutral.splice(4, 4, 0, 0, 0, 1);
-    this.viewer.setView(neutral);
-    for (const [axis, angle] of proteinOrientations[metadata.id]) this.viewer.rotate(angle, axis);
-    this.frame();
-    this.initialView = [...this.viewer.getView()];
-    this.chains = [...new Set(model.selectedAtoms({ hetflag: false }).map(atom => atom.chain))].sort();
+  load(text,metadata) {
+    this.viewer.spin(false);this.viewer.removeAllSurfaces();this.viewer.removeAllLabels();this.viewer.removeAllModels();
+    this.model=this.viewer.addModel(text,'pdb',{keepH:false,altLoc:'A',cartoonQuality:10,noComputeSecondaryStructure:true});
+    if(this.model.selectedAtoms({}).length!==metadata.atomCount)throw new Error('structure_atom_count_mismatch');
+    this.metadata=metadata;
+    if(this.model.selectedAtoms(ligandSelection(metadata)).length!==metadata.ligand.atomCount)throw new Error('ligand_atom_count_mismatch');
+    for(const data of Object.values(metadata.views))if(this.model.selectedAtoms(data.selection).length!==data.atomCount)throw new Error('display_selection_mismatch');
+    this.viewer.setStyle({},{});
+    const neutral=[...this.viewer.getView()];neutral.splice(4,4,...metadata.quaternion);this.viewer.setView(neutral);
+    this.selection=metadata.views.interface.selection;
+    this.frame();this.initialView=[...this.viewer.getView()];
   }
-
   frame() {
-    this.viewer.zoomTo({ hetflag: false });
-    this.viewer.zoom(fittingZoom(this.element.clientWidth, this.element.clientHeight));
-    this.viewer.render();
-    const atoms = [...this.model.selectedAtoms({ hetflag: false }), ...this.model.selectedAtoms({ resn: 'HEM' })];
-    const points = this.viewer.modelToScreen(atoms);
-    const xs = points.map(point => point.x), ys = points.map(point => point.y);
-    const spanX = Math.max(...xs) - Math.min(...xs), spanY = Math.max(...ys) - Math.min(...ys);
-    const fill = Math.min(this.element.clientWidth * .74 / spanX, this.element.clientHeight * .74 / spanY);
-    if (Number.isFinite(fill) && fill > 0) this.viewer.zoom(Math.max(.75, Math.min(1.9, fill)));
+    this.viewer.zoomTo(this.selection);
+    this.viewer.zoom(fittingZoom(this.element.clientWidth,this.element.clientHeight));this.viewer.render();
+    const points=this.viewer.modelToScreen(this.model.selectedAtoms(this.selection));
+    const xs=points.map(point=>point.x),ys=points.map(point=>point.y);
+    const fill=Math.min(this.element.clientWidth*.86/(Math.max(...xs)-Math.min(...xs)),this.element.clientHeight*.8/(Math.max(...ys)-Math.min(...ys)));
+    if(Number.isFinite(fill)&&fill>0)this.viewer.zoom(Math.max(.5,Math.min(2.2,fill)));
   }
-
   async represent(kind) {
-    this.viewer.spin(false);
-    this.viewer.removeAllSurfaces();
-    this.viewer.setStyle({}, {});
-    if (kind === 'atoms') {
-      this.viewer.setStyle({ hetflag: false }, { stick: { radius: .11, colorscheme: 'Jmol' }, sphere: { scale: .22, colorscheme: 'Jmol' } });
-    } else if (kind === 'surface') {
-      const colorscheme = this.chains.length === 1 ? { prop: 'ss', map: proteinPalette.secondary } : this.chainScheme();
-      this.viewer.setStyle({ hetflag: false }, { sphere: { hidden: true, colorscheme } });
-      // Workers read the atom colors. Await completion before removing models/surfaces.
-      await settleSurface(this.viewer.addSurface(this.library.SurfaceType.VDW, { opacity: 1, colorscheme }, { hetflag: false }));
-    } else {
-      const colorscheme = this.chains.length === 1 ? { prop: 'ss', map: proteinPalette.secondary } : this.chainScheme();
-      this.viewer.setStyle({ hetflag: false }, { cartoon: { colorscheme, arrows: true, thickness: .35, opacity: 1 } });
-    }
-    // Deposited heme cofactors remain visible; crystallographic waters are omitted.
-    this.viewer.addStyle({ resn: 'HEM' }, { stick: { radius: .16, colorscheme: 'Jmol' }, sphere: { scale: .23, colorscheme: 'Jmol' } });
+    this.viewer.spin(false);this.viewer.removeAllSurfaces();this.viewer.setStyle({},{});
+    const protein={and:[this.selection,{hetflag:false}]},colorscheme=chainColorScheme(this.metadata);
+    if(kind==='surface'){
+      this.viewer.setStyle(protein,{sphere:{hidden:true,colorscheme}});
+      await settleSurface(this.viewer.addSurface(this.library.SurfaceType.VDW,{opacity:.56,colorscheme},protein));
+    }else this.viewer.setStyle(protein,{cartoon:{colorscheme,arrows:true,thickness:.3,opacity:1}});
+    const colors={prop:'elem',map:{C:proteinPalette.ligand,N:'#4264b8',O:'#d45351',S:'#b0983c'}};
+    this.viewer.setStyle(ligandSelection(this.metadata),{stick:{radius:.27,colorscheme:colors},sphere:{scale:.28,colorscheme:colors}});
+    if(this.metadata.id==='5FQD')this.viewer.setStyle({resn:'ZN',chain:'B',resi:1437},{sphere:{radius:.8,color:proteinPalette.zinc}});
+    this.element.dataset.displayedAtoms=String(this.model.selectedAtoms(this.selection).length);
     this.viewer.render();
   }
-
-  chainScheme() { return { prop: 'chain', map: Object.fromEntries(this.chains.map((chain, i) => [chain, proteinPalette.chains[i]])) }; }
-
   background(light) {
-    this.viewer.setBackgroundColor(light ? proteinPalette.light : proteinPalette.dark);
-    this.viewer.setViewStyle({ style: 'outline', width: .025, color: light ? '#395262' : '#071019', maxpixels: 1.1 });
-    this.viewer.render();
+    this.viewer.setBackgroundColor(light?proteinPalette.light:proteinPalette.dark);
+    this.viewer.setViewStyle({style:'outline',width:.009,color:light?'#718b94':'#0b121a',maxpixels:.55});this.viewer.render();
   }
-
   capture() {
     const view = [...this.viewer.getView()];
     const width = this.element.clientWidth, height = this.element.clientHeight;
@@ -104,14 +77,10 @@ export class ProteinScene {
     }
   }
 
-  spin(enabled) { this.viewer.spin(enabled ? 'y' : false, .14); }
-  reset() { if (this.initialView) { this.viewer.setView([...this.initialView]); this.frame(); this.viewer.render(); } }
-  rotate(angle, axis) { this.viewer.rotate(angle, axis); this.viewer.render(); }
-  zoom(factor) { this.viewer.zoom(factor); this.viewer.render(); }
-  resize() {
-    const size = [this.element.clientWidth, this.element.clientHeight];
-    this.viewer.resize();
-    if (this.model && size.some((value, i) => value !== this.size[i])) { this.frame(); this.viewer.render(); }
-    this.size = size;
-  }
+
+  spin(enabled){this.viewer.spin(enabled?'vy':false,.085);}
+  reset(){if(this.initialView){this.viewer.setView([...this.initialView]);this.frame();this.viewer.render();}}
+  rotate(angle,axis){this.viewer.rotate(angle,axis);this.viewer.render();}
+  zoom(factor){this.viewer.zoom(factor);this.viewer.render();}
+  resize(){const size=[this.element.clientWidth,this.element.clientHeight];this.viewer.resize();if(this.model&&size.some((v,i)=>v!==this.size[i])){this.frame();this.viewer.render();}this.size=size;}
 }

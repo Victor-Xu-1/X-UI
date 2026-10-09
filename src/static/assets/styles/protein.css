@@ -1,109 +1,44 @@
-.protein-section { background:#12161b; color:white; }
-.protein-intro { display:flex; justify-content:space-between; align-items:flex-end; gap:70px; margin-bottom:45px; }
-.protein-intro .eyebrow { color:#b3bdc9; margin-bottom:20px; }
-.protein-intro h2 { max-width:750px; font-size:clamp(36px,4.4vw,62px); }
-.protein-intro>p { max-width:360px; color:#b3bdc9; font-size:16px; }
-.protein-workspace { display:grid; grid-template-columns:300px minmax(0,1fr); border:1px solid #38414b; border-radius:10px; overflow:hidden; background:#171d24; }
-.protein-sidebar { padding:30px; border-right:1px solid #38414b; }
-.protein-source-label { color:#b3bdc9; font-size:11px; margin-bottom:25px; }
-.protein-controls { margin:0; padding:0; border:0; min-width:0; }
-.protein-select-label,.representation-group>span { display:block; color:#c8d0d9; font-size:12px; }
-.protein-select-label select { display:block; width:100%; min-width:0; min-height:45px; margin-top:10px; padding:9px 11px; color:white; background:#222a34; border:1px solid #485563; border-radius:6px; font-size:12px; }
-.representation-group { margin-top:20px; }
-.representation-buttons { display:flex; gap:5px; margin-top:11px; }
-.representation-buttons button { min-height:44px; flex:1; min-width:0; padding:8px 5px; border:1px solid #485563; border-radius:5px; background:transparent; color:#d3dbe4; font-size:12px; }
-.representation-buttons button[aria-pressed="true"] { background:#dce7ee; border-color:#dce7ee; color:#17202a; }
-.protein-motion-controls { display:flex; flex-direction:column; gap:10px; margin-top:18px; }
-.protein-motion-controls button,.protein-figure-controls button { display:flex; align-items:center; justify-content:space-between; gap:12px; min-height:44px; padding:8px 12px; border:1px solid #485563; border-radius:5px; color:#e0e6ed; background:transparent; font-size:12px; }
-.protein-figure-controls { display:grid; gap:10px; margin-top:10px; }
-.protein-figure-controls button[aria-pressed="true"] { border-color:#b3c6d4; }
-.protein-export-status { position:absolute; top:52px; left:26px; right:26px; width:fit-content; max-width:75%; padding:9px 12px; background:#222b35ed; border:1px solid #536273; border-radius:6px; color:#d3dde5; font-size:12px; z-index:4; pointer-events:none; }
-.protein-spin .spin-symbol { font-size:21px; }
-.protein-spin [data-spin-label] { margin-right:auto; }
-.protein-controls:disabled { opacity:.55; }
-.protein-motion-controls button:hover,.representation-buttons button:hover { border-color:#b3c6d4; }
-.protein-identity { padding-top:28px; margin-top:26px; border-top:1px solid #38414b; }
-.protein-id { display:block; color:#f5ad85; font-size:11px; letter-spacing:.12em; }
-.protein-identity h3 { margin-top:10px; font-size:28px; letter-spacing:-.035em; }
-.protein-identity p { margin-top:8px; font-size:12px; color:#b3bdc9; font-style:italic; }
-.protein-metrics { display:grid; gap:11px; margin:24px 0 16px; }
-.protein-metrics>div { display:flex; align-items:center; justify-content:space-between; gap:16px; }
-.protein-metrics dt { font-size:11px; color:#b3bdc9; }
-.protein-metrics dd { margin:0; font-size:13px; color:#e3eaf1; font-variant-numeric:tabular-nums; }
-.protein-record { color:#f5ad85; font-size:12px; }
-.protein-stage { position:relative; min-width:0; min-height:540px; background:#12161b; }
-.protein-canvas { position:absolute; inset:40px 0 88px; min-width:0; min-height:360px; cursor:grab; }
+.protein-section { min-width:0; color:var(--ink); background:white; }
+.protein-stage { position:relative; min-width:0; height:440px; background:white; }
+.protein-canvas { position:absolute; inset:28px 0 70px; min-width:0; cursor:grab; touch-action:pan-y; }
 .protein-canvas:active { cursor:grabbing; }
 .protein-canvas canvas { display:block; }
-.protein-poster { position:absolute; inset:40px 0 88px; width:100%; height:calc(100% - 128px); object-fit:contain; }
-
-.protein-stage-top,.protein-stage-bottom { position:absolute; display:flex; justify-content:space-between; align-items:center; gap:24px; left:26px; right:26px; z-index:2; pointer-events:none; }
-.protein-stage-top { top:19px; color:#aebac8; font-size:10px; letter-spacing:.025em; }
-.protein-stage-top>span:first-child { font-size:11px; letter-spacing:.12em; color:#e9eff5; }
-.protein-stage-bottom { bottom:17px; color:#c3ceda; }
-.protein-stage-bottom p { font-size:11px; }
-.protein-zoom { display:flex; gap:7px; pointer-events:auto; }
-.protein-zoom button { display:grid; place-items:center; width:44px; height:44px; background:#222b35; color:white; border:1px solid #536273; border-radius:50%; font-size:21px; }
-.protein-legend { position:absolute; bottom:68px; left:26px; right:26px; display:flex; justify-content:center; gap:18px; flex-wrap:wrap; color:#c3ceda; font-size:11px; pointer-events:none; }
-.protein-legend>span { display:inline-flex; align-items:center; gap:7px; }
-.protein-swatch { width:8px; height:8px; border-radius:50%; flex-shrink:0; }
-[data-background="light"] .protein-stage { background:#f3f6f8; }
-[data-background="light"] .protein-stage-top,[data-background="light"] .protein-stage-bottom,[data-background="light"] .protein-legend { color:#496172; }
-[data-background="light"] .protein-stage-top>span:first-child { color:#253e50; }
-[data-background="light"] .protein-zoom button { background:#fff; color:#253e50; border-color:#a6b5c0; }
-[data-background="light"] .protein-export-status { background:#fffffff0; color:#395262; border-color:#a6b5c0; }
-.protein-status-layer { position:absolute; inset:70px 25px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:18px; z-index:3; background:#12161bea; text-align:center; }
-.protein-status-layer p { max-width:390px; font-size:14px; color:#d0dbe5; }
-.protein-loader { width:30px; height:30px; border:1px solid #415366; border-top-color:#e6eff7; border-radius:50%; animation:protein-loading 1.1s linear infinite; }
-.protein-retry { min-height:42px; padding:9px 18px; background:#dce7ee; color:#17202a; border:0; border-radius:999px; font-size:12px; }
+.protein-poster { position:absolute; inset:28px 0 70px; width:100%; height:calc(100% - 98px); object-fit:contain; }
+.protein-poster-note { position:absolute; top:35px; left:18px; color:#5b7279; font-size:10px; }
+[data-poster="hidden"] .protein-poster,[data-poster="hidden"] .protein-poster-note { display:none; }
+.protein-stage-top,.protein-stage-bottom { position:absolute; display:flex; justify-content:space-between; align-items:center; gap:18px; left:12px; right:12px; z-index:2; pointer-events:none; color:#637078; font-size:10px; }
+.protein-stage-top { top:0; }
+.protein-stage-top>span:first-child { color:#235b61; letter-spacing:.12em; }
+.protein-stage-bottom { bottom:0; }
+.protein-stage-bottom p { font-size:10px; max-width:75%; }
+.protein-zoom { display:flex; gap:4px; pointer-events:auto; }
+.protein-zoom button { display:grid; place-items:center; width:44px; height:44px; border:0; background:transparent; color:inherit; font-size:23px; }
+.protein-status-layer { position:absolute; inset:auto 18px 98px; z-index:3; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px; padding:18px; background:#fffffff5; color:#405961; text-align:center; font-size:13px; }
+.protein-loader { width:21px; height:21px; border:1px solid #c2d1d4; border-top-color:#328a91; border-radius:50%; animation:protein-loading 1.1s linear infinite; }
+.protein-retry { min-height:44px; padding:9px 18px; border:0; border-radius:999px; background:#e6f0f0; color:#244f58; font-size:12px; }
 [data-phase="error"] .protein-loader,[data-phase="unsupported"] .protein-loader { display:none; }
-.protein-caption { display:flex; justify-content:space-between; gap:28px; margin-top:20px; font-size:11px; color:#adb8c6; }
-.protein-caption>p:first-child { max-width:850px; }
-.protein-motion-note { max-width:260px; }
-.protein-noscript { margin-top:22px; font-size:13px; color:#d2dbe5; }
-.protein-noscript>div { display:flex; gap:25px; flex-wrap:wrap; margin-top:14px; }
+.protein-controls { margin:0; padding:0; border:0; min-width:0; }
+.protein-controls:disabled { opacity:.55; }
+.protein-primary-controls { display:flex; gap:14px; align-items:center; justify-content:space-between; margin-top:15px; }
+.protein-primary-controls select { min-width:0; max-width:72%; min-height:44px; border:0; border-bottom:1px solid var(--line); border-radius:0; padding:8px 24px 8px 0; font-size:12px; color:var(--ink); background:white; }
+.protein-spin { display:inline-flex; gap:6px; align-items:center; min-height:44px; border:0; padding:8px 0; background:none; font-size:11px; color:#46636b; }
+.protein-options { margin-top:8px; }
+.protein-options summary { display:flex; align-items:center; min-height:44px; cursor:pointer; font-size:11px; color:var(--muted); list-style:none; gap:5px; }
+.protein-options summary::-webkit-details-marker { display:none; }
+.protein-options summary>span { margin-left:auto; font-size:19px; transition:transform .2s; }
+.protein-options[open] summary>span { transform:rotate(45deg); }
+.protein-options-inner { padding-block:14px; }
+.representation-group>span { font-size:11px; color:var(--muted); }
+.representation-buttons,.protein-figure-controls { display:flex; flex-wrap:wrap; gap:10px 18px; margin-top:8px; }
+.representation-buttons button,.protein-figure-controls button { min-height:44px; border:0; border-bottom:1px solid var(--line); padding:8px 0; font-size:12px; background:none; color:#435d66; }
+.representation-buttons button[aria-pressed="true"] { border-color:#328a91; color:#1c5d64; }
+.protein-motion-note,.protein-noscript { color:var(--muted); font-size:10px; margin-top:12px; }
+.protein-export-status { position:absolute; top:36px; left:18px; right:18px; z-index:4; padding:12px; background:#fffffff5; color:#395c66; font-size:12px; }
+[data-background="dark"] .protein-stage { background:#101c24; }
+[data-background="dark"] .protein-stage-top,[data-background="dark"] .protein-stage-bottom { color:#c6dbe3; }
+.has-script .protein-section:not([data-phase="ready"]) .protein-canvas { visibility:hidden; }
+.protein-section[data-poster="hidden"]:not([data-phase="ready"]) .protein-status-layer { inset:35px 18px 85px; }
 html:not(.has-script) .protein-controls,html:not(.has-script) .protein-status-layer,html:not(.has-script) .protein-zoom,html:not(.has-script) .protein-stage-bottom,html:not(.has-script) .protein-canvas { display:none; }
 @keyframes protein-loading { to { transform:rotate(360deg); } }
-@media(max-width:1100px) { .protein-workspace { grid-template-columns:260px minmax(0,1fr); } .protein-sidebar { padding:24px; } .protein-stage { min-height:520px; } }
-@media(max-width:760px) {
-  .protein-intro { display:block; }
-  .protein-intro>p { max-width:560px; margin-top:24px; }
-  .protein-workspace { grid-template-columns:1fr; }
-  .protein-stage { grid-row:1; min-height:420px; }
-  .protein-canvas { inset:40px 0 85px; min-height:290px; }
-  .protein-sidebar { border-right:0; border-top:1px solid #38414b; padding:24px; }
-  .protein-source-label { margin-bottom:18px; }
-  .protein-controls { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
-  .representation-group { margin-top:0; }
-  .protein-motion-controls { grid-column:1/-1; flex-direction:row; margin-top:0; }
-  .protein-motion-controls button { flex:1; }
-  .protein-figure-controls { grid-column:1/-1; grid-template-columns:1fr 1fr; margin-top:0; }
-  .protein-identity { margin-top:22px; padding-top:22px; }
-  .protein-metrics { max-width:450px; }
-  .protein-caption { display:block; }
-  .protein-motion-note { margin-top:14px; max-width:none; }
-}
-@media(max-width:520px) {
-  .protein-intro h2 { font-size:37px; }
-  .protein-intro { margin-bottom:32px; }
-  .protein-stage { min-height:355px; }
-  .protein-canvas { min-height:230px; }
-  .protein-stage-top,.protein-stage-bottom { left:16px; right:16px; gap:10px; }
-  .protein-stage-top>span:last-child { max-width:180px; text-align:right; }
-  .protein-stage-bottom p { max-width:185px; font-size:10px; }
-  .protein-sidebar { padding:21px; }
-  .protein-controls { grid-template-columns:1fr; gap:20px; }
-  .protein-motion-controls { grid-column:auto; }
-  .protein-figure-controls { grid-column:auto; }
-  .protein-legend { left:16px; right:16px; gap:12px; font-size:10px; }
-}
-
-/* Loading keeps source identity and displayed coordinate pixels consistent. */
-.protein-poster-note { position:absolute; top:55px; left:26px; z-index:2; color:#597482; font-size:11px; }
-.has-script .protein-poster { display:block; }
-[data-poster="hidden"] .protein-poster,[data-poster="hidden"] .protein-poster-note { display:none; }
-.protein-status-layer { inset:auto 25px 130px; background:#0d202be8; padding:17px; border-radius:8px; border:1px solid #3c5667; }
-.protein-loader { width:19px; height:19px; }
-
-.has-script .protein-section:not([data-phase="ready"]) .protein-canvas,.has-script .protein-section:not([data-phase="ready"]) .protein-legend { visibility:hidden; }
-.protein-section[data-poster="hidden"]:not([data-phase="ready"]) .protein-status-layer { inset:70px 25px; }
+@media(max-width:760px) { .protein-stage { height:410px; } }
+@media(max-width:520px) { .protein-stage { height:345px; } .protein-primary-controls { flex-wrap:wrap; gap:4px 16px; } .protein-primary-controls select { max-width:100%; } }

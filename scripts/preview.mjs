@@ -22,8 +22,9 @@ const server = http.createServer(async (request, response) => {
       response.end(bytes);
     } catch (error) {
       if (error.code !== 'ENOENT') throw error;
+      const missingPage = await readFile(resolve(root, '404.html'));
       response.writeHead(404, { ...headers, 'Content-Type': 'text/html; charset=utf-8' });
-      response.end(await readFile(resolve(root, '404.html')));
+      response.end(missingPage);
     }
   } catch (error) {
     console.error(`Preview error: ${error.code || error.name}`);

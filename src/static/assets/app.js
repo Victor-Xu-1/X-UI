@@ -6,7 +6,7 @@ import { initMotion } from './modules/motion.js';
 import { initProteinViewer } from './modules/protein-viewer.js';
 import { initMotionPolicy } from './modules/motion-policy.js';
 import { initImageMotion } from './modules/image-motion.js';
-import { initProductExplorer } from './modules/product-explorer.js';
+import { initUseCases } from './modules/use-cases.js';
 
 document.documentElement.classList.add('has-script');
 document.querySelectorAll('[data-script-only]').forEach(element => { element.hidden = false; });
@@ -18,4 +18,4 @@ initImageViewer();
 initMotion();
 initProteinViewer();
 initImageMotion();
-initProductExplorer();
+initUseCases();
