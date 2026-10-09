@@ -8,7 +8,7 @@ const port = Number(process.env.PORT || 18427);
 const nginx = await readFile(resolve(root, '../ops/nginx/site-common.conf'), 'utf8');
 const csp = nginx.match(/add_header Content-Security-Policy "([^"]+)" always;/)?.[1];
 if (!csp) throw new Error('The managed production CSP is required for preview');
-const headers = { 'Content-Security-Policy': csp, 'X-Content-Type-Options': 'nosniff', 'X-Frame-Options': 'DENY', 'Referrer-Policy': 'strict-origin-when-cross-origin', 'Cache-Control': 'no-store' };
+const headers = { 'Content-Security-Policy': csp, 'X-Content-Type-Options': 'nosniff', 'X-Frame-Options': 'DENY', 'Referrer-Policy': 'strict-origin-when-cross-origin', 'Cache-Control': 'no-cache' };
 const types = { '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.svg': 'image/svg+xml', '.webp': 'image/webp', '.png': 'image/png', '.jpg': 'image/jpeg', '.json': 'application/json', '.xml': 'application/xml', '.txt': 'text/plain; charset=utf-8', '.pdb': 'chemical/x-pdb', '.woff2': 'font/woff2' };
 const server = http.createServer(async (request, response) => {
   try {
@@ -18,7 +18,8 @@ const server = http.createServer(async (request, response) => {
     try {
       if ((await stat(target)).isDirectory()) target = resolve(target, 'index.html');
       const bytes = await readFile(target);
-      response.writeHead(200, { ...headers, 'Content-Type': types[extname(target)] || 'application/octet-stream' });
+      const cache = /^\/assets\/build\/[^/]+-[A-Za-z0-9]{8,16}\.[a-z0-9]+$/.test(pathname) ? 'public, max-age=31536000, immutable' : 'no-cache';
+      response.writeHead(200, { ...headers, 'Cache-Control': cache, 'Content-Type': types[extname(target)] || 'application/octet-stream' });
       response.end(bytes);
     } catch (error) {
       if (error.code !== 'ENOENT') throw error;

@@ -26,15 +26,7 @@ export function layout({ lang, body, title, description, path, product }) {
 <meta name="theme-color" content="#ffffff"><link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon.png"><link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
 <link rel="canonical" href="${canonical}">${alternates}<link rel="alternate" hreflang="x-default" href="${siteOrigin}${product ? productPath(product, defaultLanguage) : languagePath(defaultLanguage)}">
 <meta property="og:type" content="website"><meta property="og:title" content="${escape(siteTitle)}"><meta property="og:description" content="${escape(siteDescription)}"><meta property="og:url" content="${canonical}"><meta property="og:site_name" content="X-Science"><meta property="og:image" content="${siteOrigin}/assets/social.png"><meta name="twitter:card" content="summary_large_image">
-<link rel="stylesheet" href="/assets/styles/base.css"><link rel="stylesheet" href="/assets/styles/home.css"><link rel="stylesheet" href="/assets/styles/product.css">
-<link rel="stylesheet" href="/assets/styles/interactions.css">
-<link rel="stylesheet" href="/assets/styles/protein.css">
-<link rel="stylesheet" href="/assets/styles/experience.css">
-<link rel="stylesheet" href="/assets/styles/use-cases.css">
-<link rel="stylesheet" href="/assets/styles/responsive.css">
-<link rel="stylesheet" href="/assets/styles/editorial.css">
-<link rel="stylesheet" href="/assets/styles/atmosphere.css">
-<link rel="stylesheet" href="/assets/styles/choreography.css">
+<link rel="stylesheet" href="/assets/styles/site.css">
 <script type="application/ld+json">${JSON.stringify(data).replaceAll('<', '\\u003c')}</script>
 <script type="module" blocking="render" src="/assets/app.js"></script></head>
 <body class="${product ? 'product-page' : 'home-page'}" data-language="${lang}">

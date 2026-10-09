@@ -6,7 +6,7 @@ export async function loadProteinLibrary() {
     pending = new Promise((resolve, reject) => {
       const script = document.createElement('script');
       const deadline = setTimeout(() => { script.remove(); reject(new Error('library_timeout')); }, 20_000);
-      script.src = '/assets/vendor/3dmol-xscience/3Dmol-min.js';
+      script.src = __PROTEIN_LIBRARY_URL__;
       script.async = true;
       script.onload = () => {
         clearTimeout(deadline);

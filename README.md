@@ -28,9 +28,10 @@ deploying.
 
 ## Run and maintain
 
-Node.js 22 or newer builds the static website. No package installation is required.
+Node.js 22 or newer builds the static website. Install the pinned build dependency with `npm ci --ignore-scripts`; `package-lock.json` is the dependency authority. The deployed website has no Node server or runtime package dependency.
 
 ```powershell
+npm ci --ignore-scripts
 node scripts/build.mjs
 node scripts/verify.mjs
 node scripts/verify-assets.mjs
@@ -155,7 +156,7 @@ skips the transition, and navigation remains usable without JavaScript.
 
 Windows hosting helpers require Git Bash rather than the Windows `bash.exe` WSL launcher. Prepend `C:\Program Files\Git\bin` to the helper process's PATH, and set that process's `TAR_OPTIONS=--force-local` so GNU tar treats Windows drive-letter archive paths as local files. Keep these overrides local to the helper process; do not change global PATH or WSL settings. The native packager still performs its normal source/manifest, file-tree and archive checks.
 
-Allowed root entries: `src`, `scripts`, `ops`, `licenses`, `.github`, `.openai`, `.gitignore`, `.gitattributes`, `package.json`, `README.md`, `QUALITY.md`, `LICENSE`, `THIRD-PARTY-NOTICES.md`, `ASSET-NOTICES.json`, `IMAGE-PROMPTS.json`, and ignored `dist`. Site identity and content belong to this website; original software repositories remain read-only. No database, model runtime or competing implementation is introduced.
+Allowed root entries: `src`, `scripts`, `ops`, `licenses`, `.github`, `.openai`, `.gitignore`, `.gitattributes`, `package.json`, `package-lock.json`, `README.md`, `QUALITY.md`, `LICENSE`, `THIRD-PARTY-NOTICES.md`, `ASSET-NOTICES.json`, `IMAGE-PROMPTS.json`, and ignored `dist`. Site identity and content belong to this website; original software repositories remain read-only. No database, model runtime or competing implementation is introduced.
 
 The production domain is `x-science.ai`. Its selected VPS A record points to the
 verified web server. The historic Sites project is currently unavailable to the connected account and is not asserted to be a synchronized preview.
@@ -195,8 +196,27 @@ experience on all three domain entry points. A local preview does not complete
 an optimization delivery. Prior verified VPS release directories remain available
 for rollback; the owner has deferred the Beijing backup for this delivery.
 
-Built HTML uses the package version on asset URLs, and first-party module imports
-receive that same version during the build. Vendored code, fonts, images and PDB
-bytes remain unmodified. The managed server requires cache revalidation, so a
-returning visitor receives the current document and its matching resources after
-a normal refresh. Coordinate fetches revalidate before exact SHA-256 checking.
+The modular source is compiled by pinned esbuild into one stylesheet and a small
+core JavaScript graph. Shared critical code is preloaded; the protein controller
+is imported only near a molecular view, after the first paint. All source modules
+remain separately maintained; unbundled first-party scripts/styles are removed
+from the public build. `asset-manifest.json` owns every generated URL, byte length
+and SHA-256. The original logo is retained for provenance; small brand placements
+use the existing 180 px transparent derivative.
+
+Fingerprint URLs under `/assets/build/` have one-year immutable caching. HTML,
+metadata and canonical provenance files require revalidation. Activation first
+publishes verified fingerprinted assets into the managed append-only shared store;
+old documents can still fetch their original chunks after an upgrade or rollback.
+No existing bytes are overwritten. HTTP/2 multiplexes remaining requests without
+using UDP443. Coordinate fetches use their exact digest in the URL and still
+verify the complete bytes before parsing. Images use the same fingerprint URL for initial loading and retry. The font
+preload matches the stylesheet URL exactly. Keyboard focus settles ancestor
+animations; pointer focus preserves the pressed control's position until click.
+
+Performance acceptance measures cold/repeat navigation, first contentful paint,
+long tasks and real input-to-paint events on desktop and a throttled mobile lab
+profile. Keep interaction feedback below 200 ms in the exercised profile and
+compare before/after on the same public host. Lab samples are not field INP or a
+guarantee for every network/device. Required build checks enforce core bundle
+size, one stylesheet, lazy 3D, content hashes and no unbundled competing path.

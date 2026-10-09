@@ -4,6 +4,7 @@ import { ProteinScene } from './protein-scene.js';
 import { downloadProteinImage } from './protein-export.js';
 import { motionAllowed, subscribeMotion } from './motion-policy.js';
 import { mountMolecularAtmosphere } from './molecular-atmosphere.js';
+import { yieldForInput } from './yield-task.js';
 
 export function initProteinViewer() {
   document.querySelectorAll('[data-protein-viewer]').forEach(root=>root.dataset.proteinMode==='ambient'?mountMolecularAtmosphere(root):mountProteinViewer(root));
@@ -67,10 +68,17 @@ function mountProteinViewer(root) {
     let surfaceAttempted = false;
     const model = structures.find(item => item.id === snapshot.id);
     if (!model) { busy = false; setPhase('error'); return; }
+    const job = new AbortController();
+    controller = job;
     setPhase('loading');
     exportStatus.hidden = true;
     try {
-      const library = await loadProteinLibrary();
+      const [library, text] = await Promise.all([
+        loadProteinLibrary(),
+        activeId === model.id ? null : cache.get(model.id) || loadStructure(model, job.signal),
+      ]);
+      await yieldForInput(job.signal);
+      if (failedContext || reloadRequired) return;
       if (!scene) {
         if (constructorAttempted) { setPhase('unsupported'); return; }
         constructorAttempted = true;
@@ -78,21 +86,22 @@ function mountProteinViewer(root) {
         catch { failedContext = true; setPhase('unsupported'); return; }
       }
       if (activeId !== model.id) {
-        controller = new AbortController();
-        let text = cache.get(model.id);
-        if (!text) { text = await loadStructure(model, controller.signal); cache.set(model.id, text); }
+        cache.set(model.id, text);
         scene.load(text, model);
         activeId = model.id;
       }
+      await yieldForInput(job.signal);
       // Surface work settles before another selection/style is allowed to mutate models.
       surfaceAttempted = true;
       await scene.represent(snapshot.representation);
+      job.signal.throwIfAborted();
       if (failedContext) return;
       appliedRepresentation = snapshot.representation;
       select.value = model.id;
       representationButtons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.representation === snapshot.representation)));
       setPhase('ready');
     } catch {
+      job.abort();
       // An aborted page-hide fetch must remain recoverable if the document returns.
       if (surfaceAttempted) { reloadRequired = true; root.dataset.recovery = 'reload'; }
       setPhase('error');

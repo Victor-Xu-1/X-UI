@@ -25,6 +25,9 @@ done
 if [[ "$mode" == tls ]]; then
     [[ -r /etc/letsencrypt/live/x-science.ai/fullchain.pem && -r /etc/letsencrypt/live/x-science.ai/privkey.pem ]] || exit 1
 fi
+if [[ -f "$release/asset-manifest.json" ]]; then
+    python3 "$source_dir/publish-assets.py" "$release"
+fi
 previous=$(readlink /var/www/x-science/current || true)
 rollback() {
     for target in "${targets[@]}"; do
