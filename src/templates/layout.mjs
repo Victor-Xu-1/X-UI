@@ -8,7 +8,7 @@ import { siteOrigin, sourceRepository } from '../content/site.mjs';
 import { motionControl } from './image-experience.mjs';
 
 export const escape = (value) => String(value).replace(/[&<>"']/g, (character) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[character]);
-export const multiline = (value) => escape(value).replaceAll('\n', '<br>');
+export const headlineLines = (value) => String(value).split('\n').map(line => `<span class="headline-line">${escape(line)}</span>`).join('');
 export const externalLink = (url, label, classes = '', icon = external) => `<a class="${escape(classes)}" href="${escape(url)}" target="_blank" rel="noopener noreferrer">${escape(label)}${icon}</a>`;
 
 export function layout({ lang, body, title, description, path, product }) {

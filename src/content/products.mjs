@@ -105,7 +105,7 @@ export const products = [
     environment: {"zh":"Linux / WSL2；DECIMER 与 RDKit","en":"Linux / WSL2; DECIMER and RDKit"},
     features: [{"zh":"将结构、编号与原始活性读数汇入同一张表","en":"Bring structures, identifiers and original activity readings into one table"},{"zh":"根据来源位置核对结构与活性的对应关系","en":"Check structure–activity assignments against their source locations"},{"zh":"修正结构与记录，同时保留证据与版本","en":"Correct structures and records while preserving evidence and versions"},{"zh":"导出 Excel、SDF、结构裁图与 QA 报告","en":"Export Excel, SDF, structure crops and QA reports"}],
     steps: [{"zh":"上传支持范围内的专利 PDF","en":"Upload a supported patent PDF"},{"zh":"对照原文核对提取结果","en":"Check the extraction against the source"},{"zh":"导出结构—活性产物","en":"Export the structure–activity outputs"}],
-    boundary: {"zh":"当前生产适配器面向 WIPO 专利 PDF。正式完成要求核心 QA 通过；不确定、冲突或低质量原文需人工复核。性质预测是后续研究指标。","en":"The production adapter targets WIPO patent PDFs. Formal completion requires core QA; uncertain, conflicting or low-quality source material needs review. Predicted properties are follow-on research metrics."},
+    boundary: {"zh": "面向 WIPO 专利 PDF。使用导出表格前，应核对质量提示，并回到原文确认不确定的结构、冲突的活性数据或不清晰的扫描内容。性质预测需作为独立研究结果进一步复核。", "en": "WIPO patent PDFs are supported. Before using an exported table, resolve quality flags and review uncertain structures, conflicting activity values or unclear source pages. Interpret property predictions separately as research estimates."},
   }
 ];
 
