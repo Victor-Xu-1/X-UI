@@ -26,9 +26,9 @@ Default English is served at `/`; the central locale dictionary owns routing.
 | Shared motion preference | OS reduction, user pause/resume, refresh, visible/offscreen/hidden states | Image animation timelines stop; genuine PDB rotation and CSS traces agree; accurate reason labels |
 | Biomedical imagery × 6 | Subject relevance, blended edges, loading/error/retry, pause/pointer/offscreen/no JS | Original native provenance; real image pixels and accurate labels; no generated results |
 | Product use cases × 5 × 6 | Three problem/benefit/next-step panels, official guide, arrows/Home/End, focus, no JS | Complete localized facts, single shared tab contract; no pretend scientific execution |
-| Protein viewer on home/X-DDE × 6 | Lazy/loading/ready, three molecular-glue references, interface/context ribbon and surface views, annotated ligand close-ups, full rotation, reset/zoom, backgrounds, PNG export, source/legend, error/retry, unavailable/context loss | Actual local WebGL pixels, exact deposited coordinates, bounded/unclipped views, single-instance lifecycle; no generated molecular results |
-| Molecular motion/export | Visible/offscreen/hidden tab, user pause, reduced-motion changes, keyboard, mobile resize, high DPR | Rotation really stops; control states agree; PNG pixels/source/legend are valid and canvas/view restore exactly |
-| Molecular failure/recovery | Script/PDB request failure, corrupt exact bytes, timeout, async surface work, page hide/return, WebGL loss | Source link remains available; explicit accessible status, disabled controls, bounded requests and intentional retry; no competing renderer |
+| Molecular illustration on home/X-DDE × 6 | Lazy/loading/ready, three generically named forms, ribbon/surface, full rotation, reset/zoom, backgrounds, PNG export, error/retry, unavailable/context loss | Actual WebGL pixels, exact source coordinates and bounded views; no visible target/protein/interaction identity in text, alt, ARIA, labels or exports |
+| Molecular motion/export | Visible/offscreen/hidden tab, user pause, reduced-motion changes, keyboard, mobile resize, high DPR | Rotation really stops; control states agree; PNG pixels and generic caption/filename are valid; canvas/view restore exactly |
+| Molecular failure/recovery | Script/coordinate request failure, corrupt exact bytes, timeout, async surface work, page hide/return, WebGL loss | Genuine still illustration and explicit recovery; accessible status, disabled controls, bounded requests and intentional retry; no competing renderer |
 | No JavaScript | Five products, all workflow stages, native menus and image/source links | Browser context with JavaScript disabled |
 | 404 | Missing route, English recovery link, noindex | Actual 404 response and usable return link |
 
@@ -48,8 +48,9 @@ Default English is served at `/`; the central locale dictionary owns routing.
 Every completed optimization round includes production deployment and affected
 public-path acceptance. Generated artwork, genuine UI captures and deposited
 coordinate renders have distinct provenance. Inspect every meaningful molecular view
-for silhouette, chain/fold distinction, clipping, representation and chemical
-context. Treat journal-figure quality as a rendering objective, not external
+for silhouette, form distinction, clipping and representation. Keep scientific
+provenance in source manifests, outside the illustrative public UI. Treat
+journal-figure quality as a rendering objective, not external
 publication acceptance, new experimental evidence or molecular dynamics.
 
 Store timestamped reports, screenshots, deployment receipts and limitations
