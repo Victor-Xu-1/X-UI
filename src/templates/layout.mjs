@@ -34,8 +34,9 @@ export function layout({ lang, body, title, description, path, product }) {
 <link rel="stylesheet" href="/assets/styles/responsive.css">
 <link rel="stylesheet" href="/assets/styles/editorial.css">
 <link rel="stylesheet" href="/assets/styles/atmosphere.css">
+<link rel="stylesheet" href="/assets/styles/choreography.css">
 <script type="application/ld+json">${JSON.stringify(data).replaceAll('<', '\\u003c')}</script>
-<script type="module" src="/assets/app.js"></script></head>
+<script type="module" blocking="render" src="/assets/app.js"></script></head>
 <body class="${product ? 'product-page' : 'home-page'}" data-language="${lang}">
 <a class="skip-link" href="#main">${c.skip}</a>
 <header class="site-header"><div class="container header-inner">

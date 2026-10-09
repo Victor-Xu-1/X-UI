@@ -126,6 +126,29 @@ each original shader literal exactly once. It emits one runtime bundle, with no
 runtime source patches or second renderer. See the vendor notice for derivation
 and material semantics. Both molecular consumers use protein-material.js.
 
+## Motion and navigation architecture
+
+`motion-policy.js` owns the persisted pause preference and OS reduced-motion
+setting. `ui-animation.js` owns interruptible Web Animations and measured-height
+transitions; cancellation, blur, page hide and viewport changes settle to the
+real DOM state. No animation owns business selection or keeps a hidden clone.
+`reveal-motion.js` sequences first entrances, `catalog-motion.js` reflows the real
+filtered cards, and `active-marker.js` measures selection and section underlines.
+The old CSS reveal and tab-panel animations have been retired.
+
+`tabset.js` is the single keyboard, ARIA and hash authority for workflow and use
+case tabs. Direct panel hashes restore selection; clicks add history entries,
+arrow/Home/End keys replace the current entry, and browser back/forward restores
+the corresponding panel. Entering a panel with the keyboard settles ancestor
+animations so focused links remain readable during a height change.
+
+Same-origin document navigation uses the browser View Transition API where
+supported; links retain their ordinary URLs and navigation behavior. The main
+module is render-blocking to initialize motion policy and the `pagereveal`
+listener before the first render. This prevents an incoming-document opt-in race;
+it does not wait for molecular data or generated artwork. Paused/reduced motion
+skips the transition, and navigation remains usable without JavaScript.
+
 ## Hosting and repository governance
 
 `.openai/hosting.json` binds this checkout to its Sites project and declares `dist/` as the generated static output. Never substitute or regenerate its project ID during an update. Production releases use the GitHub release archives and existing VPS workflow below. The historic Sites binding is retained as metadata; it is not a production publishing dependency. Credentials belong only in session memory and hidden stdin, never in the repository or commands.

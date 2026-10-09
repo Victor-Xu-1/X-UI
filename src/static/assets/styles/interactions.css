@@ -23,7 +23,7 @@
 .workflow-step h3 { margin-top:26px; font-size:21px; letter-spacing:-.025em; }
 .stage-button { display:block; min-height:45px; }
 .step-products { display:flex; flex-wrap:wrap; gap:12px; margin-top:15px; font-size:12px; color:var(--muted); }
-.has-script .workflow-step { min-height:158px; transition:background .2s,border-color .2s; }
+.has-script .workflow-step { min-height:158px; }
 .has-script .workflow-step.stage-active { background:#e8ecef; border-color:var(--ink); }
 .stage-active .step-top { color:var(--ink); }
 .stage-panel { display:grid; grid-template-columns:1fr 1fr; gap:70px; padding:36px 5px 0; }
@@ -44,6 +44,3 @@
 .product-section-nav a { min-height:56px; padding-block:17px; border-bottom:2px solid transparent; color:var(--muted); font-size:13px; white-space:nowrap; }
 .product-section-nav a:hover,.product-section-nav a[aria-current] { color:var(--ink); border-bottom-color:var(--accent); }
 .product-page section[id] { scroll-margin-top:62px; }
-.section-head,.about-grid,.capability,.proof-copy,.use-case-explorer,.research-intro,.selection-note-inner,.contact-inner { transition:opacity .55s,translate .55s; }
-.product-card { transition:opacity .55s,translate .55s; }
-.will-reveal { opacity:0; translate:0 22px; }

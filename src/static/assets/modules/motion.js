@@ -1,8 +1,11 @@
-import { motionAllowed, subscribeMotion } from './motion-policy.js';
+import { initReveals } from './reveal-motion.js';
+import { activeMarker } from './active-marker.js';
 export function initMotion() {
   const progress = document.querySelector('.reading-progress');
   const sectionLinks = [...document.querySelectorAll('[data-section-link]')];
   const sections = sectionLinks.map(link => document.querySelector(link.getAttribute('href')));
+  const marker=sectionLinks.length?activeMarker(sectionLinks[0].parentElement):null;
+  let active=-2;
   let frame = 0;
   function updateScroll() {
     frame = 0;
@@ -15,27 +18,12 @@ export function initMotion() {
       if (i === current) link.setAttribute('aria-current', 'location');
       else link.removeAttribute('aria-current');
     });
+    if(current!==active){marker?.(sectionLinks[current],active!==-2);active=current;}
   }
   function scheduleScroll() { if (!frame) frame = requestAnimationFrame(updateScroll); }
   addEventListener('scroll', scheduleScroll, { passive: true });
   addEventListener('resize', scheduleScroll, { passive: true });
   updateScroll();
 
-  if ('IntersectionObserver' in window) {
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting || !motionAllowed()) {
-          entry.target.classList.remove('will-reveal');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.08, rootMargin: '0px 0px 28px 0px' });
-    document.querySelectorAll('.section-head, .product-card, .about-grid, .capability, .use-case-explorer, .research-intro, .proof-copy, .selection-note-inner, .contact-inner').forEach(element => {
-      if (motionAllowed() && element.getBoundingClientRect().top > innerHeight) element.classList.add('will-reveal');
-      observer.observe(element);
-    });
-    subscribeMotion(allowed => {
-      if (!allowed) document.querySelectorAll('.will-reveal').forEach(element => element.classList.remove('will-reveal'));
-    });
-  }
+  initReveals();
 }

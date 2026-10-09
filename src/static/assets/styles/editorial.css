@@ -32,7 +32,6 @@
 .main-nav>a:not(.nav-github)::after { content:''; position:absolute; bottom:6px; left:0; right:0; height:1px; transform:scaleX(0); transform-origin:left; transition:transform .22s; background:currentColor; }
 .main-nav>a:not(.nav-github) { position:relative; }
 .main-nav>a:hover::after,.main-nav>a:focus-visible::after { transform:scaleX(1); }
-.stage-panel:not([hidden]) { animation:editorial-arrive .4s ease both; }
 .proof-grid { grid-template-columns:.55fr 1.45fr; gap:60px; }
 .proof-copy .text-link { gap:10px; }
 .capability:hover>span { color:#27757c; }
@@ -44,5 +43,5 @@
 @media(max-width:960px) { .main-nav>a:not(.nav-github)::after { bottom:3px; } }
 @media(max-width:760px) { .hero-grid,.product-hero-grid:has([data-protein-viewer]),.proof-grid { grid-template-columns:1fr; gap:38px; } .hero-copy { padding-top:0; } .hero h1 { font-size:clamp(44px,7.2vw,61px); } .hero-visual.hero-molecular { width:100%; } .contact-art { inset:25% -30% 0 10%; opacity:.45; } .contact-inner>div { max-width:570px; } }
 @media(max-width:520px) { .hero-grid { padding-top:38px; } .hero h1 { font-size:43px; } .hero-actions .button { min-height:48px; } .contact-section { min-height:430px; } .contact-art figcaption { display:none; } .contact-inner h2 { font-size:36px; } }
-[data-motion="paused"] .stage-panel,[data-motion="paused"] .language-options { animation:none; }
-@media(prefers-reduced-motion:reduce) { .stage-panel,.language-options { animation:none!important; } }
+[data-motion="paused"] .language-options { animation:none; }
+@media(prefers-reduced-motion:reduce) { .language-options { animation:none!important; } }

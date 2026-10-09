@@ -19,9 +19,9 @@ Default English is served at `/`; the central locale dictionary owns routing.
 | Global navigation | Desktop, mobile closed/open, Escape, outside click, resize | Keyboard and pointer behavior; accessible names and focus |
 | Language menu | Six options, current language, Escape, outside click, product-preserving switch | Actual destination URL and document language |
 | Catalog | All, each category, search, combined search/filter, Unicode, zero results, reset | Visible products and live count; empty-state recovery; query treated as text |
-| Workflow explorer | Four stages, active panel, related links, arrows/Home/End, Tab | Correct independent products, selected state and keyboard focus |
+| Workflow explorer | Four stages, active panel, related links, arrows/Home/End, Tab, direct hash and back/forward | Correct independent products; one selected panel and marker; focused links unclipped while changing height |
 | Product section navigation | Each anchor, active location, sticky header, back to top | Heading remains visible; same product route retained |
-| Motion | Reveal, pointer response, reading progress, reduced-motion changes | Real scroll/pointer state; reduced motion and touch remain usable |
+| Motion | Sequenced hero/section entrances, real-card filter reflow, measured tab heights, sliding markers, menu/hover/press feedback and same-origin document transitions | Multi-frame progression; fast reversal; keyboard focus during height changes; pause, blur, resize, no JS and reduced motion settle immediately |
 | Shared motion preference | OS reduction, user pause/resume, refresh, visible/offscreen/hidden states | Image animation timelines stop; genuine PDB rotation and CSS traces agree; accurate reason labels |
 | Biomedical imagery × 6 | Subject relevance, blended edges, loading/error/retry, pause/pointer/offscreen/no JS | Original native provenance; real image pixels and accurate labels; no generated results |
 | Product use cases × 5 × 6 | Three problem/benefit/next-step panels, official guide, arrows/Home/End, focus, no JS | Complete localized facts, single shared tab contract; no pretend scientific execution |
