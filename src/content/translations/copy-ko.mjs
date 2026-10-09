@@ -18,7 +18,6 @@ export default {
   "details": "지원하는 작업 살펴보기",
   "count": "개 제품",
   "openSource": "오픈 소스",
-  "actualCaption": "실제 화면 · X-DDE v0.4.49 · 공개 BRD4–JQ1 연구 예제",
   "workflowNote": "각 제품은 별도로 설정해야 합니다. 도구 사이로 자료를 전달할 때 파일 형식과 과학적 방법을 확인하세요.",
   "workflowSteps": [
     "근거 탐색",
@@ -49,7 +48,6 @@ export default {
   "releases": "릴리스 받기",
   "guide": "문서 살펴보기",
   "boundaryTitle": "지원 범위와 요구 사항",
-  "imageSource": "이미지 출처와 설명",
   "next": "계속 탐색하기",
   "nextTitle": "관련 작업을 위한 도구.",
   "facts": "제품 범위는 공개 출처 문서에 설명되어 있습니다 · 검토일 2026-10-08.",
@@ -58,7 +56,6 @@ export default {
   "languageLabel": "언어 선택",
   "navigationLabel": "주요 메뉴",
   "filterLabel": "연구 분야로 제품 필터링",
-  "fullImage": "전체 이미지 보기",
   "generatedLabel": "AI 생성 콘셉트 이미지",
   "heroAlt": "X-Science 과학 소프트웨어와 연구 에이전트"
 };

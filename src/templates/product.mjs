@@ -15,7 +15,7 @@ export function productPage(product, lang) {
   const d = redesignCopy[lang];
   const sections = [['capabilities', ui.sectionLabels[0]], ['use-cases', ui.sectionLabels[1]], ['before-you-choose', ui.sectionLabels[2]]];
   const related = products.filter((p) => p.id !== product.id).sort((a, b) => Number(b.category === product.category) - Number(a.category === product.category)).slice(0, 2);
-  const image = product.imageKind === 'screenshot' ? `<figure class="product-capture"><a class="image-zoom-link" data-image-viewer href="/assets/media/${product.image}" target="_blank" rel="noopener noreferrer" aria-label="${c.fullImage}"><img src="/assets/media/${product.image}" alt="${escape(product.caption[lang])}" loading="lazy" width="${product.imageWidth}" height="${product.imageHeight}"><span class="image-zoom-label">${c.fullImage}<span aria-hidden="true">↗</span></span></a><figcaption>${escape(product.caption[lang])} ${externalLink(product.imageSource, c.imageSource)}</figcaption></figure>` : '';
+  const image = product.id === 'x-dde' ? `<div class="product-feature-art">${imageExperience(lang,{id:'x-dde',compact:true})}</div>` : '';
   const body = `<section class="product-hero"><div class="container">
     <a class="back-link" href="${languagePath(lang)}#software">${arrow}${c.back}</a>
     <div class="product-hero-grid"><div><p class="eyebrow">${escape(product.label[lang])}</p><div class="product-name">${glyph(product.id)}<span>${escape(product.name)}</span></div><h1>${headlineLines(product.headline[lang])}</h1><p class="product-lead">${escape(product.summary[lang])}</p>

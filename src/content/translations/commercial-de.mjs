@@ -13,22 +13,22 @@ export default {
   motionResume: 'Bewegung fortsetzen',
   products: {
     'x-science': [
-      { problem: 'Eine Frage zu einem Target verteilt sich auf Publikationen, Notizen und Gespräche.', benefit: 'Halten Sie die Frage, Quellen und nächste Arbeiten in einem Projekt zusammen.', nextStep: 'Erstellen Sie ein Projekt für ein Target oder eine Publikation und ergänzen Sie relevante Materialien.' },
+      { problem: 'Die Materialien zu einer Forschungsfrage verteilen sich auf Publikationen, Notizen und Gespräche.', benefit: 'Halten Sie die Frage, Quellen und nächste Arbeiten in einem Projekt zusammen.', nextStep: 'Erstellen Sie ein Projekt zu einer Forschungsfrage oder Publikation und ergänzen Sie relevante Materialien.' },
       { problem: 'Eine wissenschaftliche Datei muss vor der Methodenwahl verstanden werden.', benefit: 'Prüfen Sie unterstützte Strukturen, Sequenzen und Tabellen im Kontext der Forschungsdiskussion.', nextStep: 'Öffnen Sie eine unterstützte Eingabedatei und wählen Sie passende Werkzeuge.' },
       { problem: 'Eine Antwort braucht überprüfbare Dateien und Ausführungsnachweise.', benefit: 'Verfolgen Sie Werkzeugmeldungen und prüfen Sie die entstandenen Dateien vor der nächsten Untersuchung.', nextStep: 'Konfigurieren Sie die erforderliche Umgebung und beginnen Sie mit einer kleinen, klaren Aufgabe.' }
     ],
     'x-pharma': [
-      { problem: 'Informationen zu Targets, Wirkstoffen und Studien sind auf mehrere Quellen verteilt.', benefit: 'Untersuchen Sie zusammengehörige Einträge und vergleichen Sie Pharma-Informationen in der Workbench.', nextStep: 'Wählen Sie ein Target oder einen Wirkstoff und verbinden Sie zugelassene Quellen.' },
+      { problem: 'Wirkstoff-, Forschungs- und Patentinformationen sind auf mehrere Quellen verteilt.', benefit: 'Untersuchen Sie zusammengehörige Einträge und vergleichen Sie Pharma-Informationen in der Workbench.', nextStep: 'Wählen Sie einen Wirkstoff oder eine Patentserie und verbinden Sie zugelassene Quellen.' },
       { problem: 'Eine relevante Aussage lässt sich schwer zum Originaleintrag zurückverfolgen.', benefit: 'Quellenpositionen und Datenversionen bleiben mit den verwalteten Datensätzen verbunden.', nextStep: 'Öffnen Sie ein Profil und prüfen Sie die Belege hinter den Einträgen.' },
       { problem: 'Menschen und Agenten benötigen einen einheitlichen Zugang zu Pharma-Daten.', benefit: 'Workbench und MCP nutzen dieselben Fachdienste und Berechtigungsregeln.', nextStep: 'Konfigurieren Sie autorisierte Daten und verbinden Sie einen MCP-Client mit diesen Diensten.' }
     ],
     'x-dde': [
-      { problem: 'Eine Kandidatentabelle zeigt den molekularen Kontext eines Scores nicht.', benefit: 'Verknüpfen Sie Kandidaten mit ihren 2D-Strukturen und 3D-Ergebnissen zur direkten Prüfung.', nextStep: 'Beginnen Sie mit einer Targetstruktur und untersuchen Sie einen Kandidaten im Arbeitsbereich.' },
+      { problem: 'Eine Kandidatentabelle zeigt den molekularen Kontext eines Scores nicht.', benefit: 'Verknüpfen Sie Kandidaten mit ihren 2D-Strukturen und 3D-Ergebnissen zur direkten Prüfung.', nextStep: 'Beginnen Sie mit einer Molekülstrukturdatei und untersuchen Sie einen Kandidaten im Arbeitsbereich.' },
       { problem: 'Eine Forschungsaufgabe beginnt mit zu vielen unbekannten Einstellungen.', benefit: 'Bereiten Sie Eingaben schrittweise vor, wählen Sie eine Methode und prüfen Sie deren tatsächliche Ausgaben.', nextStep: 'Wählen Sie eine Aufgabe und bestätigen Sie die nötige wissenschaftliche Engine und Eingaben.' },
       { problem: 'Beim Übergang zwischen Aufgaben geht der Bezug zu Originalmaterialien verloren.', benefit: 'Originaldateien, abgeleitete Versionen und Aufgabenherkunft bleiben verbunden.', nextStep: 'Wählen Sie die passende Ergebnisversion als Material für die nächste Forschungsaufgabe.' }
     ],
     'x-synth': [
-      { problem: 'Für ein Zielmolekül werden prüfbare Synthesewege gesucht.', benefit: 'Erkunden Sie ASKCOS-Retrosynthesevorschläge ausgehend von der Zielstruktur.', nextStep: 'Zeichnen oder importieren Sie das Ziel und wählen Sie eine Suchstrategie.' },
+      { problem: 'Für ein Molekül werden prüfbare Synthesewege gesucht.', benefit: 'Erkunden Sie ASKCOS-Retrosynthesevorschläge ausgehend von der Molekülstruktur.', nextStep: 'Zeichnen oder importieren Sie eine Molekülstruktur und wählen Sie eine Suchstrategie.' },
       { problem: 'Ein Synthesevorschlag hängt von Ausgangsstoffen mit unklarer Beschaffung ab.', benefit: 'Vergleichen Sie Strukturen mit Bestandsaufnahmen und prüfen Sie Beschaffungsbelege.', nextStep: 'Prüfen Sie die Ausgangsstoffe eines Weges anhand des konfigurierten Katalogs.' },
       { problem: 'Alternative Wege sollen gemeinsam diskutiert und dokumentiert werden.', benefit: 'Bearbeiten Sie Wegkopien und exportieren Sie Wegdiagramme, Materialien und Forschungsaufzeichnungen.', nextStep: 'Prüfen Sie die Schritte einer Wegkopie und exportieren Sie diese zur chemischen Bewertung.' }
     ],

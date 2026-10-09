@@ -1,4 +1,4 @@
-# X-UI · X-Science website
+# X-UI 路 X-Science website
 
 A public portfolio for scientific software and research agents built by Victor Xu. The website has 36 indexable pages: a home page and five product pages in Chinese, English, Japanese, German, French and Korean. It does not run the promoted scientific applications or accept research data.
 
@@ -37,7 +37,7 @@ node scripts/verify-assets.mjs
 node scripts/preview.mjs
 ```
 
-Open the printed loopback URL. Stop the preview with Ctrl+C. `src/content/products.mjs` is the authoritative product catalog. `src/content/locales.mjs` defines the six routes; shared copy and product translations are modular dictionaries under `src/content/`. A language change preserves the current product, and every page exposes all six `hreflang` alternatives. Missing translations fail verification rather than silently falling back. Templates and styles are separated by responsibility. Links, native language menus and product pages remain usable without JavaScript. Separate enhancement modules provide combined search/filters, a keyboard-accessible workflow explorer, image viewing with loading/error recovery, product section navigation and motion that honors reduced-motion preferences.
+Open the printed loopback URL. Stop the preview with Ctrl+C. `src/content/products.mjs` is the authoritative product catalog. `src/content/locales.mjs` defines the six routes; shared copy and product translations are modular dictionaries under `src/content/`. A language change preserves the current product, and every page exposes all six `hreflang` alternatives. Missing translations fail verification rather than silently falling back. Templates and styles are separated by responsibility. Links, native language menus and product pages remain usable without JavaScript. Separate enhancement modules provide combined search/filters, a keyboard-accessible workflow explorer, image loading/error recovery, product section navigation and motion that honors reduced-motion preferences.
 
 Product facts were reviewed against public GitHub READMEs and release metadata on 2026-10-08. Pins record that reviewed state; links to installation guides use the maintained main branch. Recheck the public source and release assets before changing a product claim, version, environment or download link. The X-Synth README identifies ASKCOS as its currently integrated route-generation engine. Private repositories and the upstream MarkushGrapher fork are excluded from the collection.
 
@@ -50,22 +50,14 @@ structural biology, medicinal chemistry and patent comparison. Portable generati
 and revision prompts are in `IMAGE-PROMPTS.json`; the WebP delivery assets total
 317,326 bytes. Original selected PNGs are retained in the neighboring
 `generated-images-biomedical` folder.
-Concepts carry translated labels. The genuine X-DDE capture retains its original
-pixels, caption, revision and Apache-2.0 notice. Images never stand in for measured
-results or live software execution.
+Concepts carry translated labels and do not represent measured results or live
+software execution. The former named research screenshot, its fetch helper and
+unused lightbox were retired from distribution; their unmodified originals and
+license context remain recoverable in Git history. Public marketing copy,
+captions, placeholders, metadata and accessibility labels omit target/disease
+terminology and named research examples in all six languages.
 
-Inter 4.1 and 3Dmol.js 2.5.5 are served locally, with complete license notices.
-The molecular viewer is loaded only when its section enters view. No remote font,
-CDN script, analytics or tracking service is requested by the website.
-
-To restore the pinned genuine repository capture:
-
-```powershell
-node scripts/fetch-assets.mjs
-node scripts/build.mjs
-```
-
-The committed `src/static/assets/social.png` is the website's original sharing visual. Do not replace actual screenshots with generated imagery. Original website code and artwork: copyright 2026 Victor Xu. Reused product assets retain their source licenses; consult the referenced repositories before redistribution.
+The committed social image remains original X-Science sharing artwork.
 
 The official X-Science logo was supplied by the user on 2026-10-08. Its original transparent PNG is preserved as `src/static/assets/logo.png`; browser and touch icons are size derivatives. The same asset appears in the header, footer and sharing artwork. The previous provisional X-shaped mark was removed.
 
@@ -73,70 +65,70 @@ The official X-Science logo was supplied by the user on 2026-10-08. Its original
 
 The home page and each product describe practical research problems, useful
 outputs and a next step into the official guide. The five source revisions,
-licenses and genuine capture identities remain pinned in products.mjs. Three
+licenses and source revisions remain pinned in products.mjs. Three
 six-language use cases per product are owned by commercial-copy.mjs and its
 locale modules. tabset.js supplies the shared keyboard contract for product
 cases and the home workflow explorer. Selectors explain use; they do not run
 scientific software or upload research data.
 
 Six meaningful biomedical illustrations use pale page-compatible backgrounds,
-soft CSS edge masks and slow image/pointer/light motion. Genuine software
-captures and deposited-coordinate renders remain unmasked. image-experience.mjs
+soft CSS edge masks and slow image/pointer/light motion. Deposited-coordinate renders remain unmasked. image-experience.mjs
 and image-motion.js own one image enhancement path with explicit error/retry.
 The global motion-policy.js persists pause and respects system reduced motion;
 image movement and protein rotation stop offscreen and in hidden documents.
-Navigation, section reveals, use-case changes, focus and image viewing have
+Navigation, section reveals, use-case changes, focus and navigation have
 purposeful motion without replacing functional states. The retired gallery,
 abstract node diagrams and previous standalone Three implementation remain
 recoverable in Git history, with no competing active implementation.
 
-## Molecular exploration
+## Molecular presentation
 
-The home and X-DDE hero each embed one persistent 3Dmol.js 2.5.5 renderer in the
-white page. structure-provenance.json owns exact RCSB source bytes and scientific
-identity. The references are 5FQD (CRBN/CK1α/S-lenalidomide, 2.45 Å), 6Q0R
-(split DCAF15/RBM39/E7820, 2.90 Å), and 1FAP (FKBP12/mTOR FRB/rapamycin, 2.70 Å).
-The 1FAP example illustrates induced proximity, not ligase-mediated degradation.
-No coordinate is generated or moved by the website. Camera rotation is not
-molecular dynamics or an experimental result from the promoted products.
+Home and X-DDE each own one persistent 3Dmol.js 2.5.5 renderer with the X-Science studio shader fork, sharing
+ProteinScene and the same bounded, hash-verified coordinate loader. Scientific
+identity, immutable source bytes and upstream citations belong to
+structure-provenance.json, not the public marketing presentation.
 
-The curated selections retain author chains B/C plus LVY B1438 and Zn B1437
-for 5FQD; B/C/D plus O6M B302 for 6Q0R; A/B plus RAP A108 for 1FAP.
-The public presentation is strictly illustrative: generic form names, ribbon
-and translucent-surface styles, rotation, zoom and export. It contains no
-target/protein names, interaction descriptions, residue labels, scientific
-parameter panels or identifying image captions. Source provenance remains in
-this repository for maintenance; unused analysis controls have been removed.
+The homepage is a noninteractive ambient animation: no local controls, labels,
+legends, dropdowns, keyboard focus or mouse gestures. Blue and gold ribbons,
+a translucent envelope and view-dependent studio highlights form its visual style.
+The compact two-part homepage composition is selected by ambient-poster.json.
+The view rotates on multiple axes. A coordinate bounding sphere reserves room
+for every orientation, with an explicit depth slab and resize-aware fitting.
+A white studio background blends into the page through a soft outer mask;
+mouse input is disabled. Global user
+pause, system reduced motion, document visibility and offscreen state govern it.
+An unavailable animation keeps its genuine static poster and displays a short
+localized status; refresh provides a fresh bounded attempt without hidden loops.
 
-Raw files retain waters, hydrogens and unselected copies/additives. The parser
-uses keepH:false and altLoc:A; full parsed counts are 23,544 / 10,249 / 1,727.
-The 1FAP raw file has 2,154 atom records including 427 hydrogens. Source and
-displayed counts are explicitly distinct. Runtime asserts parser, ligand and
-display-selection counts; a bounded 8 MiB fetch ceiling and exact bytes/SHA-256
-checks protect these larger source files. Fetches have a 20-second deadline.
+X-DDE retains its generic three-form selector, ribbon/surface controls, zoom,
+background and actual PNG export. It has no public biological identity or
+interaction annotations. Exports carry only a generic caption and brand. Both
+modes use unmodified coordinates; camera motion is visual illustration, not
+molecular dynamics or an experimental product result.
 
-One controller serializes representation changes and surface work. Surface
-workers have a 30-second readiness deadline; failed worker/context states use
-an explicit recovery path. During loading/error, stale coordinate pixels are
-hidden. The genuine coordinate poster and explicit retry remain available.
-The pinned renderer supports OffscreenCanvas; context checks use its public
-renderer API. No second renderer is created by retries or PNG export.
+The immutable coordinate files retain source records. Parser and selection
+counts, exact byte length and SHA-256 are checked before rendering. Coordinate
+fetches have a 20-second deadline and 8 MiB ceiling; surface work has a 30-second
+deadline. Nginx serves chemical/x-pdb with gzip. Static posters are actual renders
+of the corresponding presentation, recorded in structure-poster.json and
+ambient-poster.json. The original coordinate and license authority is unchanged.
 
-PNG export uses the actual rendered view, bounded high-resolution dimensions,
-a localized generic illustration caption and the X-Science brand. It deliberately omits target, protein, residue, interaction and experimental annotations. It restores
-the view and canvas in finally. The scientific figure target is a
-visual standard; no journal acceptance or new biological evidence is claimed.
+The renderer fork is limited to four reviewable GLSL sources under src/vendor/3dmol.
+The build verifies the pinned upstream bundle and shader hashes and replaces
+each original shader literal exactly once. It emits one runtime bundle, with no
+runtime source patches or second renderer. See the vendor notice for derivation
+and material semantics. Both molecular consumers use protein-material.js.
 
 ## Hosting and repository governance
 
-`.openai/hosting.json` binds this checkout to its Sites project and declares `dist/` as the generated static output. Never substitute or regenerate its project ID during an update. Use the Sites skill source helper to synchronize the reviewed source, run any remaining build checks, create a matching archive and deploy a saved version. Credentials belong only in session memory and hidden stdin, never in the repository or commands.
+`.openai/hosting.json` binds this checkout to its Sites project and declares `dist/` as the generated static output. Never substitute or regenerate its project ID during an update. Production releases use the GitHub release archives and existing VPS workflow below. The historic Sites binding is retained as metadata; it is not a production publishing dependency. Credentials belong only in session memory and hidden stdin, never in the repository or commands.
 
 Windows hosting helpers require Git Bash rather than the Windows `bash.exe` WSL launcher. Prepend `C:\Program Files\Git\bin` to the helper process's PATH, and set that process's `TAR_OPTIONS=--force-local` so GNU tar treats Windows drive-letter archive paths as local files. Keep these overrides local to the helper process; do not change global PATH or WSL settings. The native packager still performs its normal source/manifest, file-tree and archive checks.
 
 Allowed root entries: `src`, `scripts`, `ops`, `licenses`, `.github`, `.openai`, `.gitignore`, `.gitattributes`, `package.json`, `README.md`, `QUALITY.md`, `LICENSE`, `THIRD-PARTY-NOTICES.md`, `ASSET-NOTICES.json`, `IMAGE-PROMPTS.json`, and ignored `dist`. Site identity and content belong to this website; original software repositories remain read-only. No database, model runtime or competing implementation is introduced.
 
 The production domain is `x-science.ai`. Its selected VPS A record points to the
-verified web server. The existing Sites alias remains a synchronized preview.
+verified web server. The historic Sites project is currently unavailable to the connected account and is not asserted to be a synchronized preview.
 Cloudflare may block anonymous mirror downloads; production transport uses the
 same checked content-addressed artifacts published in GitHub Releases. Sites
 validation records apply only when Sites is selected for the custom domain.

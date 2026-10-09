@@ -3,7 +3,7 @@ export default {
     "Von Publikationen und Molekülen",
     "zum nächsten Forschungsschritt."
   ],
-  "heroText": "Finden Sie Werkzeuge zur Target-Recherche, zur Strukturprüfung, zum Vergleich von Synthesewegen und zur Aufbereitung von Patentchemie als nutzbare Daten.",
+  "heroText": "Finden Sie Werkzeuge, um Forschungsbelege zu ordnen, Molekülstrukturen zu prüfen, Synthesewege zu vergleichen und Patentchemie in nutzbare Daten zu überführen.",
   "heroEyebrow": "Open-Source-Werkzeuge für die biomedizinische Forschung",
   "heroCta": "Forschungswerkzeug finden",
   "secondaryCta": "Forschungsagenten entdecken",
@@ -33,7 +33,7 @@ export default {
   "methodologySteps": [
     {
       "title": "Das Forschungsbild aufbauen",
-      "text": "Bringen Sie Literatur, Target-Informationen und Patentbelege in eine prüfbare Form."
+      "text": "Führen Sie Literatur, Forschungseinträge und Patentbelege in einer prüfbaren Form zusammen."
     },
     {
       "title": "Mit dem Molekül arbeiten",
@@ -44,9 +44,9 @@ export default {
       "text": "Vergleichen Sie Ausgaben und erhalten Sie Dateien, Quellen und Methodengrenzen für die Prüfung."
     }
   ],
-  "proofEyebrow": "Software im Einsatz",
-  "proofTitle": "Kandidaten im Kontext prüfen.",
-  "proofText": "Sehen Sie eine echte X-DDE-Struktur- und Taschenansicht aus dem öffentlichen BRD4–JQ1-Beispiel. Öffnen Sie die vollständige Aufnahme und lesen Sie, wie Strukturen und Ergebnisse verbunden werden.",
+  "proofEyebrow": "Verbundene Forschungsabläufe",
+  "proofTitle": "Von Strukturen zur nächsten Aufgabe.",
+  "proofText": "Erfahren Sie, wie X-DDE Moleküldateien ordnet, Kandidatentabellen mit 2D-/3D-Ergebnissen verknüpft und ausgewählte Materialien in die nächste Forschungsaufgabe übernimmt. Der Workflow-Leitfaden hilft beim Einstieg.",
   "creatorEyebrow": "Forscher und Entwickler",
   "creatorTitle": "Werkzeuge aus der Forschungspraxis.",
   "creatorText": "Victor Xu ist Wirkstoffforscher und unabhängiger Entwickler von KI-Werkzeugen. Er arbeitet in medizinischer Chemie, AIDD / CADD, PROTACs und molekularen Klebstoffen.",

@@ -1,0 +1,17 @@
+X-Science studio shader fork (xscience-gloss-1)
+Based on 3Dmol.js 2.5.5, pinned upstream bundle and GLSL hashes in manifest.json.
+Copyright 2026 Victor Xu for the studio shading changes, licensed under MIT.
+Upstream BSD-3-Clause, EDTSurf and incorporated notices remain in this directory.
+
+Changes: interpolate view-space normals in the Lambert and double-sided Lambert
+shaders; add soft studio specular highlights, ambient fill and a subtle rim.
+No deposited coordinates, geometry, camera controls or parser behavior changed.
+Original opacity-squared alpha, fog, wireframe and AO semantics are retained.
+This is illustrative studio lighting, not a physically based scientific simulation.
+
+Source: https://github.com/Victor-Xu-1/X-UI/tree/main/src/vendor/3dmol
+Build: scripts/build-protein-renderer.mjs verifies the immutable upstream inputs
+and replaces four exact shader string literals at build time. Only the resulting
+bundle is shipped. No runtime patches, external shader fetches or extra renderer.
+To update upstream, replace the pinned inputs, re-establish unique literal matches,
+review all four shaders and licenses, and verify both molecular consumers in Chrome.

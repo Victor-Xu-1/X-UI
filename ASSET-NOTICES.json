@@ -1,18 +1,6 @@
 {
   "originalAssets": "Original website code, artwork and coordinate render presentation: Victor Xu, 2026. Scientific coordinates retain their source provenance.",
-  "reusedAssets": [
-    {
-      "file": "x-dde-structure.jpg",
-      "repository": "Victor-Xu-1/X-DDE",
-      "revision": "be94cc2dfcbea1bd09e63a19a4820c7278792733",
-      "path": "docs/images/structure-and-pocket.jpg",
-      "license": "Apache-2.0",
-      "kind": "Actual interface capture; v0.4.49 public BRD4–JQ1 example",
-      "source": "https://github.com/Victor-Xu-1/X-DDE/blob/be94cc2dfcbea1bd09e63a19a4820c7278792733/docs/images/structure-and-pocket.jpg",
-      "sha256": "4e7a8883713e130df68424688347678632435f0c3526cddeff3ecd5023411ef2",
-      "size": 122293
-    }
-  ],
+  "reusedAssets": [],
   "generatedAssets": {
     "hero": {
       "file": "editorial/hero.webp",
@@ -92,16 +80,17 @@
   },
   "thirdPartyAssets": [
     {
-      "file": "vendor/3dmol-2.5.5/3Dmol-min.js",
-      "name": "3Dmol.js",
+      "file": "vendor/3dmol-xscience/3Dmol-min.js",
+      "name": "3Dmol.js with X-Science studio shaders",
       "version": "2.5.5",
       "source": "https://github.com/3dmol/3Dmol.js/tree/c26e390544b6388f86e50387cd4565759b4da0df",
       "license": "BSD-3-Clause and incorporated upstream notices",
-      "bytes": 537792,
-      "sha256": "f7cc78921ae72e7623e89cdd111434f58c2efddd2ffda1cd212644b406fb8016"
+      "bytes": 539013,
+      "sha256": "6bced2592b16ebdf793f0dde5b3e2b9dd8df5f53c41a76402f5b71c31b73b006",
+      "modification": "Four GLSL sources; reproducible build from pinned upstream inputs in src/vendor/3dmol/manifest.json"
     },
     {
-      "file": "vendor/3dmol-2.5.5/3Dmol-min.js.LICENSE.txt",
+      "file": "vendor/3dmol-xscience/3Dmol-min.js.LICENSE.txt",
       "name": "3Dmol.js",
       "version": "2.5.5",
       "source": "https://github.com/3dmol/3Dmol.js/tree/c26e390544b6388f86e50387cd4565759b4da0df",
@@ -110,7 +99,7 @@
       "sha256": "ae3bfc688d0c9687b76e0ecc7fece0b393bcb4acf2aee09e19dda697eaa10b16"
     },
     {
-      "file": "vendor/3dmol-2.5.5/LICENSE.txt",
+      "file": "vendor/3dmol-xscience/LICENSE.txt",
       "name": "3Dmol.js",
       "version": "2.5.5",
       "source": "https://github.com/3dmol/3Dmol.js/tree/c26e390544b6388f86e50387cd4565759b4da0df",
@@ -119,7 +108,7 @@
       "sha256": "4c6eaaed856f3f28a3b1a98e74f4a8a71618de7d51ea4155c29f6f793bcef861"
     },
     {
-      "file": "vendor/3dmol-2.5.5/EDTSurf-LICENSE.txt",
+      "file": "vendor/3dmol-xscience/EDTSurf-LICENSE.txt",
       "name": "3Dmol.js",
       "version": "2.5.5",
       "source": "https://github.com/3dmol/3Dmol.js/tree/c26e390544b6388f86e50387cd4565759b4da0df",
@@ -144,6 +133,15 @@
       "license": "SIL-OFL-1.1",
       "bytes": 4380,
       "sha256": "262481e844521b326f5ecd053e59b98c8b2da78c8ee1bdbb6e8174305e54935a"
+    },
+    {
+      "file": "vendor/3dmol-xscience/NOTICE.txt",
+      "name": "X-Science studio shader notice",
+      "version": "xscience-gloss-1",
+      "source": "https://github.com/Victor-Xu-1/X-UI/tree/main/src/vendor/3dmol",
+      "license": "MIT modifications with retained upstream licenses",
+      "bytes": 1174,
+      "sha256": "3039e532cf9dd1e4f69c28ab804baf775de8dda9f2c91a14286aec4c95bd1ea2"
     }
   ],
   "referenceCoordinates": {
@@ -161,5 +159,9 @@
   "coordinatePoster": {
     "manifest": "src/content/structure-poster.json",
     "role": "Genuine local coordinate rendering using the same pinned viewer and visual preset as the interactive default"
+  },
+  "ambientCoordinatePoster": {
+    "manifest": "src/content/ambient-poster.json",
+    "role": "Genuine local coordinate render using the same studio material and initial view as the homepage animation"
   }
 }

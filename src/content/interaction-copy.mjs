@@ -6,7 +6,7 @@ import ko from './translations/interaction-ko.mjs';
 export const interactionCopy = {
   en: {
   "search": "Find a tool for your research task",
-  "searchPlaceholder": "Search targets, structures, synthesis or patents…",
+  "searchPlaceholder": "Search evidence, structures, synthesis or patents…",
   "searchHint": "Search by task or filter by research area.",
   "emptyTitle": "No matching tools",
   "emptyText": "Try a broader search or clear the filters to see all five products.",
@@ -19,16 +19,11 @@ export const interactionCopy = {
   "chooseStage": "Where do you need support?",
   "stageTools": "Tools for this research task",
   "stageDescriptions": [
-    "Investigate a target or a patent series. Organize sourced pharmaceutical records or extract chemistry and activity from a supported patent PDF.",
+    "Investigate research records or a patent series. Organize sourced pharmaceutical information or extract chemistry and activity from a supported patent PDF.",
     "Understand your starting material. Inspect supported scientific files and organize the question before selecting an analysis.",
     "Examine candidates in molecular context. Use guided tasks and linked 2D / 3D results to review structures and outputs.",
-    "Compare route suggestions for a target molecule. Review reactions, starting materials and procurement evidence before experimental assessment."
+    "Compare route suggestions for a molecule. Review reactions, starting materials and procurement evidence before experimental assessment."
   ],
-  "closeImage": "Close image",
-  "loadingImage": "Loading the full image…",
-  "imageError": "The image could not load. Open the original file to try again.",
-  "openOriginal": "Open original image",
-  "imageTitle": "Full image",
   "sectionNavigation": "On this page",
   "sectionLabels": [
     "Capabilities",
@@ -38,7 +33,7 @@ export const interactionCopy = {
 },
   zh: {
   "search": "寻找适合当前任务的工具",
-  "searchPlaceholder": "搜索靶点、结构、合成或专利…",
+  "searchPlaceholder": "搜索证据、结构、合成或专利…",
   "searchHint": "按任务搜索，或按研究方向筛选。",
   "emptyTitle": "没有匹配的工具",
   "emptyText": "试试更宽泛的关键词，或清除筛选查看全部五个产品。",
@@ -51,16 +46,11 @@ export const interactionCopy = {
   "chooseStage": "哪个研究环节需要支持？",
   "stageTools": "适合这个研究任务的工具",
   "stageDescriptions": [
-    "调研一个靶点或专利系列。整理有出处的医药记录，或从支持的专利 PDF 中提取结构与活性。",
+    "调研研究记录或专利系列。整理有出处的医药信息，或从支持的专利 PDF 中提取结构与活性。",
     "理解手中的研究材料。查看支持的科学文件，明确问题，再选择分析方法。",
     "结合分子背景检查候选。通过分步任务与联动的二维、三维结果，复核结构和输出。",
-    "比较目标分子的路线建议。审查反应、起始原料与采购证据，为实验评估做准备。"
+    "比较分子的合成路线建议。审查反应、起始原料与采购证据，为实验评估做准备。"
   ],
-  "closeImage": "关闭图片",
-  "loadingImage": "正在加载完整图片…",
-  "imageError": "图片加载失败。可打开原始文件重试。",
-  "openOriginal": "打开原始图片",
-  "imageTitle": "完整图片",
   "sectionNavigation": "页面内容",
   "sectionLabels": [
     "产品能力",

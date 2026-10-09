@@ -36,6 +36,7 @@
 .protein-export-status { position:absolute; top:36px; left:18px; right:18px; z-index:4; padding:12px; background:#fffffff5; color:#395c66; font-size:12px; }
 [data-background="dark"] .protein-stage { background:#101c24; }
 [data-background="dark"] .protein-stage-top,[data-background="dark"] .protein-stage-bottom { color:#c6dbe3; }
+[data-background="dark"] .protein-stage-top>span:first-child { color:#c6dbe3; }
 .has-script .protein-section:not([data-phase="ready"]) .protein-canvas { visibility:hidden; }
 .protein-section[data-poster="hidden"]:not([data-phase="ready"]) .protein-status-layer { inset:35px 18px 85px; }
 html:not(.has-script) .protein-controls,html:not(.has-script) .protein-status-layer,html:not(.has-script) .protein-zoom,html:not(.has-script) .protein-stage-bottom,html:not(.has-script) .protein-canvas { display:none; }

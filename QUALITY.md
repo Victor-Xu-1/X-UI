@@ -20,13 +20,14 @@ Default English is served at `/`; the central locale dictionary owns routing.
 | Language menu | Six options, current language, Escape, outside click, product-preserving switch | Actual destination URL and document language |
 | Catalog | All, each category, search, combined search/filter, Unicode, zero results, reset | Visible products and live count; empty-state recovery; query treated as text |
 | Workflow explorer | Four stages, active panel, related links, arrows/Home/End, Tab | Correct independent products, selected state and keyboard focus |
-| Image viewer | Loading, loaded, failure, original link, close, Escape, focus wrap/restore | Real image pixels and source caption; controlled failed/delayed requests |
 | Product section navigation | Each anchor, active location, sticky header, back to top | Heading remains visible; same product route retained |
 | Motion | Reveal, pointer response, reading progress, reduced-motion changes | Real scroll/pointer state; reduced motion and touch remain usable |
 | Shared motion preference | OS reduction, user pause/resume, refresh, visible/offscreen/hidden states | Image animation timelines stop; genuine PDB rotation and CSS traces agree; accurate reason labels |
 | Biomedical imagery × 6 | Subject relevance, blended edges, loading/error/retry, pause/pointer/offscreen/no JS | Original native provenance; real image pixels and accurate labels; no generated results |
 | Product use cases × 5 × 6 | Three problem/benefit/next-step panels, official guide, arrows/Home/End, focus, no JS | Complete localized facts, single shared tab contract; no pretend scientific execution |
-| Molecular illustration on home/X-DDE × 6 | Lazy/loading/ready, three generically named forms, ribbon/surface, full rotation, reset/zoom, backgrounds, PNG export, error/retry, unavailable/context loss | Actual WebGL pixels, exact source coordinates and bounded views; no visible target/protein/interaction identity in text, alt, ARIA, labels or exports |
+| Homepage ambient scene × 6 | Automatic multi-axis rotation; no buttons, menus, captions, pointer gestures or focusable widgets; responsive fit, reduced motion and failure poster | Real camera changes; full rotation bounds; generic accessible name; no visible surrounding UI |
+| All public copy and imagery | All six languages, metadata, labels, placeholders, captions, active panels and visible image text | No target/disease terminology or named research examples; no retired named capture URLs |
+| X-DDE molecular illustration × 6 | Lazy/loading/ready, three generically named forms, ribbon/surface, full rotation, reset/zoom, backgrounds, PNG export, error/retry, unavailable/context loss | Actual WebGL pixels, exact source coordinates and bounded views; no visible target/protein/interaction identity in text, alt, ARIA, labels or exports |
 | Molecular motion/export | Visible/offscreen/hidden tab, user pause, reduced-motion changes, keyboard, mobile resize, high DPR | Rotation really stops; control states agree; PNG pixels and generic caption/filename are valid; canvas/view restore exactly |
 | Molecular failure/recovery | Script/coordinate request failure, corrupt exact bytes, timeout, async surface work, page hide/return, WebGL loss | Genuine still illustration and explicit recovery; accessible status, disabled controls, bounded requests and intentional retry; no competing renderer |
 | No JavaScript | Five products, all workflow stages, native menus and image/source links | Browser context with JavaScript disabled |
@@ -46,8 +47,7 @@ Default English is served at `/`; the central locale dictionary owns routing.
    the public domains and verify version, language, images, HTTPS and redirects.
 
 Every completed optimization round includes production deployment and affected
-public-path acceptance. Generated artwork, genuine UI captures and deposited
-coordinate renders have distinct provenance. Inspect every meaningful molecular view
+public-path acceptance. Generated artwork and deposited-coordinate renders have distinct provenance. Inspect every meaningful molecular view
 for silhouette, form distinction, clipping and representation. Keep scientific
 provenance in source manifests, outside the illustrative public UI. Treat
 journal-figure quality as a rendering objective, not external
@@ -90,7 +90,7 @@ products, contact and footer across all six languages; inspect long labels and
 320 px layouts. Remove dead controls, unused diagrams and construction language.
 Keep scope/licensing/source facts that inform a real adoption decision.
 
-The public 3D review checks a purely illustrative display: generic form names,
+The public 3D review checks a purely illustrative display. Home is a control-free ambient scene; X-DDE keeps generic form controls. Both have
 no target/protein/interaction descriptions, no residue labels, no scientific
 parameter panels and no identifying export caption or filename. Source manifests
 retain real coordinate provenance. Inspect both representations and full rotation

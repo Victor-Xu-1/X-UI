@@ -20,13 +20,13 @@ export default {
   },
   "x-pharma": {
     "label": "Information pharmaceutique et preuves",
-    "headline": "Comprendre la cible.\nRetrouver les preuves.",
-    "summary": "Étudiez médicaments, cibles, essais, brevets et transactions à travers des fiches reliées et des données sourcées. Donnez aux chercheurs et agents accès à l’information pharmaceutique avec ses preuves.",
+    "headline": "Relier les informations.\nRetrouver les preuves.",
+    "summary": "Reliez les données sur les médicaments, la recherche, les brevets et les transactions en gardant leurs sources et versions visibles. Chercheurs et agents peuvent rechercher, comparer et vérifier les informations pharmaceutiques dans un même espace.",
     "audience": "Équipes de développement de médicaments, d’information pharmaceutique et de données",
     "environment": "Linux x86-64 / WSL2 ; Docker et services de données",
     "boundary": "Version de développement. Les licences de données, l’identité d’entreprise, les LLM / OCR et la préparation à la production sont évalués pour chaque déploiement. Apache-2.0 n’accorde pas l’accès aux données tierces.",
     "features": [
-      "Comparer les médicaments, cibles, essais, brevets et transactions liés",
+      "Comparer les données liées sur les médicaments, la recherche, les brevets et les transactions",
       "Examiner les emplacements sources et versions des données derrière un fait",
       "Constituer des données de recherche par une ingestion autorisée et une revue",
       "Utiliser les mêmes services métier et droits dans l’espace de recherche ou par MCP"
@@ -40,11 +40,10 @@ export default {
   "x-dde": {
     "label": "Découverte de médicaments visuelle",
     "headline": "Voir la molécule.\nRelier la prochaine tâche.",
-    "summary": "Préparez cibles, structures et candidats pour les petites molécules, biomédicaments, criblages et DEL. Comparez les candidats dans des tableaux reliés aux résultats 2D / 3D, puis réutilisez les données choisies dans la tâche suivante.",
+    "summary": "Préparez les structures moléculaires et les données des candidats pour la recherche sur les petites molécules, les produits biologiques, le criblage et les DEL. Comparez les candidats à travers des tableaux liés et des résultats 2D / 3D, puis réutilisez les éléments choisis dans la tâche suivante.",
     "audience": "Chimistes médicinaux, chercheurs en biomédicaments et spécialistes du calcul scientifique",
     "environment": "Windows / Linux / WSL ; installation séparée des moteurs scientifiques",
     "boundary": "L’exécution dépend du moteur, des modèles, des entrées et du matériel sélectionnés. La confiance du modèle, la géométrie, les scores de docking et l’activité mesurée sont des indicateurs distincts.",
-    "caption": "Interface réelle X-DDE v0.4.49 : structures et poches de l’exemple public BRD4–JQ1.",
     "features": [
       "Préparer les entrées par étapes et choisir explicitement la méthode",
       "Examiner un candidat avec les tableaux moléculaires et les résultats 2D / 3D reliés",
@@ -52,7 +51,7 @@ export default {
       "Relier les sorties aux fichiers originaux, versions dérivées et entrées des tâches"
     ],
     "steps": [
-      "Préparer la cible et les entrées",
+      "Préparer les structures et les fichiers d’entrée",
       "Exécuter la tâche de recherche choisie",
       "Comparer les candidats et choisir la suite"
     ]
@@ -60,18 +59,18 @@ export default {
   "x-synth": {
     "label": "Rétrosynthèse et recherche en synthèse",
     "headline": "Comparer les voies.\nPlanifier à partir de la structure.",
-    "summary": "Dessinez une cible, explorez les suggestions ASKCOS et examinez les réactions avec les informations sur les matières premières. Réunissez les voies alternatives et les notes pour une évaluation chimique.",
+    "summary": "Dessinez une structure moléculaire, explorez les suggestions ASKCOS et examinez les réactions avec les preuves sur les matières premières. Gardez les voies alternatives et les notes de recherche ensemble pour l’évaluation chimique.",
     "audience": "Chercheurs en chimie médicinale, en synthèse et en chimie des procédés",
     "environment": "Linux / WSL ; modèles ASKCOS et données de stock configurés",
     "boundary": "ASKCOS est le moteur de génération de voies actuellement intégré. Les scores des modèles, les preuves de catalogue et la faisabilité expérimentale sont évalués séparément. Les voies nécessitent une vérification chimique et expérimentale.",
     "features": [
-      "Dessiner ou importer une cible et comparer les stratégies de recherche",
+      "Dessiner ou importer une structure moléculaire et comparer les stratégies de recherche",
       "Examiner ensemble réactions, matières premières et références de conditions",
       "Vérifier les informations d’approvisionnement par structure contre les instantanés de stock",
       "Modifier des copies de voies et exporter schémas, matières et notes"
     ],
     "steps": [
-      "Confirmer la structure cible",
+      "Confirmer la structure moléculaire",
       "Chercher et comparer les voies",
       "Examiner les matières et étapes de réaction"
     ]

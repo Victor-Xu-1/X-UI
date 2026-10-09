@@ -20,13 +20,13 @@ export default {
   },
   "x-pharma": {
     "label": "Pharma-Informationen und Evidenz",
-    "headline": "Das Target verstehen.\nDie Belege verfolgen.",
-    "summary": "Untersuchen Sie Wirkstoffe, Targets, Studien, Patente und Transaktionen anhand verbundener Profile und belegter Einträge. Forschende und Agenten erhalten Zugang zu Pharma-Informationen mit sichtbarer Evidenz.",
+    "headline": "Informationen verbinden.\nBelege zurückverfolgen.",
+    "summary": "Verknüpfen Sie Wirkstoff-, Forschungs-, Patent- und Transaktionseinträge und behalten Sie Quellen sowie Datenversionen im Blick. Forschende und Agenten können Pharma-Informationen in einer Workbench suchen, vergleichen und prüfen.",
     "audience": "Teams für Wirkstoffentwicklung, Pharma-Informationen und Daten",
     "environment": "Linux x86-64 / WSL2; Docker und Datendienste",
     "boundary": "Eine Entwicklungsversion. Datenlizenzen, Unternehmensidentität, LLM / OCR und Produktionsreife werden pro Installation geprüft. Apache-2.0 gewährt keinen Zugriff auf Daten Dritter.",
     "features": [
-      "Zusammengehörige Wirkstoffe, Targets, Studien, Patente und Transaktionen vergleichen",
+      "Zusammengehörige Wirkstoff-, Forschungs-, Patent- und Transaktionseinträge vergleichen",
       "Quellenpositionen und Datenversionen hinter Fakten prüfen",
       "Forschungsdaten durch autorisierte Aufnahme und Prüfung aufbauen",
       "Dieselben Fachdienste und Berechtigungen in der Workbench oder über MCP nutzen"
@@ -40,11 +40,10 @@ export default {
   "x-dde": {
     "label": "Visuelle Wirkstoffforschung",
     "headline": "Das Molekül sehen.\nDie nächste Aufgabe verbinden.",
-    "summary": "Bereiten Sie Targets, Strukturen und Kandidaten für kleine Moleküle, Biologika, Screening und DEL vor. Vergleichen Sie Kandidaten in verknüpften Tabellen und 2D-/3D-Ergebnissen und nutzen Sie gewähltes Material in der nächsten Aufgabe.",
+    "summary": "Bereiten Sie Molekülstrukturen und Kandidatendaten für kleine Moleküle, Biologika, Screening und DEL vor. Vergleichen Sie Kandidaten in verknüpften Tabellen und 2D-/3D-Ergebnissen und nutzen Sie gewähltes Material in der nächsten Aufgabe.",
     "audience": "Forschende in medizinischer Chemie, Biologika und wissenschaftlichem Rechnen",
     "environment": "Windows / Linux / WSL; separate Installation wissenschaftlicher Engines",
     "boundary": "Die Ausführung hängt von Engine, Modellen, Eingaben und Hardware ab. Modellkonfidenz, Geometrie, Docking-Scores und experimentell gemessene Aktivität haben unterschiedliche Bedeutungen.",
-    "caption": "Echte X-DDE-Oberfläche v0.4.49: Strukturen und Bindungstaschen aus dem öffentlichen BRD4–JQ1-Beispiel.",
     "features": [
       "Eingaben schrittweise vorbereiten und Methoden ausdrücklich wählen",
       "Kandidaten über verknüpfte Molekültabellen und 2D-/3D-Ergebnisse prüfen",
@@ -52,7 +51,7 @@ export default {
       "Ergebnisse auf Originaldateien, abgeleitete Versionen und Eingaben zurückführen"
     ],
     "steps": [
-      "Target und Eingaben vorbereiten",
+      "Strukturen und Eingabedateien vorbereiten",
       "Gewählte Forschungsaufgabe ausführen",
       "Kandidaten vergleichen und den nächsten Schritt wählen"
     ]
@@ -60,18 +59,18 @@ export default {
   "x-synth": {
     "label": "Retrosynthese und Syntheseforschung",
     "headline": "Wege vergleichen.\nVon der Struktur aus planen.",
-    "summary": "Zeichnen Sie ein Ziel, erkunden Sie ASKCOS-Vorschläge und prüfen Sie Reaktionen zusammen mit Belegen zu Ausgangsstoffen. Halten Sie Alternativen und Forschungsaufzeichnungen für die chemische Bewertung zusammen.",
+    "summary": "Zeichnen Sie eine Molekülstruktur, erkunden Sie ASKCOS-Vorschläge und prüfen Sie Reaktionen zusammen mit Belegen zu Ausgangsstoffen. Halten Sie Alternativen und Forschungsaufzeichnungen für die chemische Bewertung zusammen.",
     "audience": "Forschende in medizinischer, synthetischer und Prozesschemie",
     "environment": "Linux / WSL; konfigurierte ASKCOS-Modelle und Bestandsdaten",
     "boundary": "ASKCOS ist die aktuell integrierte Engine zur Routengenerierung. Modellscores, Katalogbelege zur Beschaffung und experimentelle Machbarkeit werden getrennt bewertet; Routen müssen chemisch und experimentell geprüft werden.",
     "features": [
-      "Ein Ziel zeichnen oder importieren und Suchstrategien vergleichen",
+      "Eine Molekülstruktur zeichnen oder importieren und Suchstrategien vergleichen",
       "Reaktionen, Ausgangsstoffe und Bedingungsreferenzen gemeinsam prüfen",
       "Strukturbezogene Beschaffungsbelege mit Bestandsaufnahmen abgleichen",
       "Wegkopien bearbeiten und Diagramme, Materialien und Aufzeichnungen exportieren"
     ],
     "steps": [
-      "Zielstruktur bestätigen",
+      "Molekülstruktur bestätigen",
       "Wege suchen und vergleichen",
       "Ausgangsstoffe und Reaktionsschritte prüfen"
     ]

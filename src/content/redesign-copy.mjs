@@ -9,7 +9,7 @@ export const redesignCopy = {
     "From papers and molecules",
     "to your next research step."
   ],
-  "heroText": "Find the tools to investigate a target, inspect molecular structures, compare synthesis routes and turn patent chemistry into usable data.",
+  "heroText": "Find tools to organize research evidence, inspect molecular structures, compare synthesis routes and turn patent chemistry into usable data.",
   "heroEyebrow": "Open-source tools for biomedical research",
   "heroCta": "Find your research tool",
   "secondaryCta": "Explore the research agent",
@@ -39,7 +39,7 @@ export const redesignCopy = {
   "methodologySteps": [
     {
       "title": "Build the research picture",
-      "text": "Bring literature, target information and patent evidence into a form you can inspect."
+      "text": "Bring literature, research records and patent evidence into a form you can inspect."
     },
     {
       "title": "Work with the molecule",
@@ -50,9 +50,9 @@ export const redesignCopy = {
       "text": "Compare outputs and retain the files, sources and method limits needed for review."
     }
   ],
-  "proofEyebrow": "The software in use",
-  "proofTitle": "Inspect a candidate in context.",
-  "proofText": "See an actual X-DDE structure-and-pocket view from the public BRD4–JQ1 example. Open the full capture, then read how the workspace connects structures and results.",
+  "proofEyebrow": "Connected research workflows",
+  "proofTitle": "From structures to the next task.",
+  "proofText": "Explore how X-DDE organizes molecular files, connects candidate tables with 2D / 3D results and carries selected material into the next research task. Read the workflow guide to choose a starting point.",
   "creatorEyebrow": "Researcher & developer",
   "creatorTitle": "Tools shaped by research work.",
   "creatorText": "Victor Xu is a drug discovery researcher and independent AI tool developer working across medicinal chemistry, AIDD / CADD, PROTACs and molecular glues.",
@@ -67,7 +67,7 @@ export const redesignCopy = {
     "从文献与分子，",
     "走向下一步研究。"
   ],
-  "heroText": "找到能支持当前工作的工具：调研靶点、检查分子结构、比较合成路线，把专利化学信息整理成可用数据。",
+  "heroText": "找到支持当前工作的工具：整理研究证据、检查分子结构、比较合成路线，把专利化学信息转为可用数据。",
   "heroEyebrow": "面向生物医药研究的开源工具",
   "heroCta": "寻找适合的研究工具",
   "secondaryCta": "了解研究 Agent",
@@ -97,7 +97,7 @@ export const redesignCopy = {
   "methodologySteps": [
     {
       "title": "建立研究全景",
-      "text": "把文献、靶点信息与专利证据整理成可以检查的材料。"
+      "text": "把文献、研究记录与专利证据整理成可以检查的材料。"
     },
     {
       "title": "围绕分子开展工作",
@@ -108,9 +108,9 @@ export const redesignCopy = {
       "text": "比较输出，保留复核所需的文件、来源与方法适用范围。"
     }
   ],
-  "proofEyebrow": "实际软件使用",
-  "proofTitle": "结合分子背景，查看候选。",
-  "proofText": "查看 X-DDE 中 BRD4–JQ1 公开案例的真实结构与口袋视图。打开完整截图，再了解工作空间如何连接结构和结果。",
+  "proofEyebrow": "贯通研究工作流",
+  "proofTitle": "从结构整理到下一项研究。",
+  "proofText": "了解 X-DDE 如何整理分子文件、联动候选表格与二维、三维结果，并把选定材料用于下一项研究。阅读工作流程指南，选择适合的起点。",
   "creatorEyebrow": "研究者与开发者",
   "creatorTitle": "围绕研究工作，开发工具。",
   "creatorText": "Victor Xu 是药物发现研究者与独立 AI 工具开发者，研究涉及药物化学、AIDD / CADD、PROTAC 与分子胶。",

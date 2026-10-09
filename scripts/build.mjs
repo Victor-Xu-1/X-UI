@@ -8,6 +8,7 @@ import { productPage } from '../src/templates/product.mjs';
 import { layout } from '../src/templates/layout.mjs';
 import { languages, languagePath, defaultLanguage } from '../src/content/locales.mjs';
 import { siteOrigin, sourceRepository } from '../src/content/site.mjs';
+import { buildProteinRenderer } from './build-protein-renderer.mjs';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const output = resolve(root, 'dist');
@@ -19,6 +20,7 @@ await Promise.all(products.filter((p) => p.image).map((p) => readFile(resolve(ro
 await rm(output, { recursive: true, force: true });
 await mkdir(output, { recursive: true });
 await cp(resolve(root, 'src/static'), output, { recursive: true });
+await buildProteinRenderer(output);
 // Release-specific resource URLs keep earlier browser caches out of a new UI.
 const firstPartyModules = ['assets/app.js', ...(await readdir(resolve(output, 'assets/modules'))).filter(name => name.endsWith('.js')).map(name => `assets/modules/${name}`)];
 for (const file of firstPartyModules) {

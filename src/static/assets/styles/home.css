@@ -40,10 +40,6 @@
 .proof-copy h2 { font-size:clamp(34px,3.7vw,52px); }
 .proof-copy>p { margin-top:24px; max-width:400px; color:var(--muted); font-size:17px; }
 .proof-copy .text-link { margin-top:20px; }
-.workbench-figure { min-width:0; }
-.workbench-figure img { width:100%; max-height:470px; object-fit:contain; background:white; }
-.workbench-figure figcaption { display:flex; align-items:center; gap:8px; padding-top:13px; color:var(--muted); font-size:11px; }
-.capture-dot { width:6px; height:6px; background:#315a74; border-radius:50%; flex-shrink:0; }
 .about-section { border-top:1px solid var(--line); }
 .about-grid { display:grid; grid-template-columns:1fr 1fr; gap:90px; align-items:start; }
 .about-grid .eyebrow { color:var(--muted); margin-bottom:19px; }

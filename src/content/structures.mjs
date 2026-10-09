@@ -1,9 +1,9 @@
 import provenance from './structure-provenance.json' with { type:'json' };
 import { glueCopy } from './glue-copy.mjs';
 const groups={
-  '5FQD':[{name:'CRBN',chains:['B'],color:'#328a91'},{name:'CK1α',chains:['C'],color:'#c3874f'},{name:'DDB1 ΔBPB',chains:['A'],color:'#a6b6bf'}],
-  '6Q0R':[{name:'DCAF15',chains:['B','C'],color:'#328a91'},{name:'RBM39 RRM2',chains:['D'],color:'#c3874f'},{name:'DDB1 ΔBPB',chains:['A'],color:'#a6b6bf'},{name:'DDA1',chains:['E'],color:'#8895bb'}],
-  '1FAP':[{name:'FKBP12',chains:['A'],color:'#328a91'},{name:'mTOR FRB',chains:['B'],color:'#c3874f'}]
+  '5FQD':[{name:'CRBN',chains:['B'],color:'#168cdd'},{name:'CK1伪',chains:['C'],color:'#e8a813'},{name:'DDB1 螖BPB',chains:['A'],color:'#a8cfe6'}],
+  '6Q0R':[{name:'DCAF15',chains:['B','C'],color:'#168cdd'},{name:'RBM39 RRM2',chains:['D'],color:'#e8a813'},{name:'DDB1 螖BPB',chains:['A'],color:'#a8cfe6'},{name:'DDA1',chains:['E'],color:'#edcd70'}],
+  '1FAP':[{name:'FKBP12',chains:['A'],color:'#168cdd'},{name:'mTOR FRB',chains:['B'],color:'#e8a813'}]
 };
 export const structureCatalog=provenance.structures.map(entry=>{
   if(!groups[entry.id]||entry.resolution_angstrom.length!==1)throw new Error('Unverified structural identity');
