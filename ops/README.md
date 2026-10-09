@@ -109,3 +109,7 @@ The server serves this directory with explicit MIME types and inherited security
 headers. Only fingerprint paths receive long caching; HTML remains `no-cache`.
 HTTP/2 runs on TLS TCP443 and does not change WireGuard's UDP443 listener. Focused
 publication checks are `python3 scripts/check-asset-store.py`.
+
+The transfer packager normalizes deployment text to Unix LF in an owned temporary
+staging directory. Release checks inspect the archive itself for portable shell
+line endings, including packages created from a Windows checkout.
