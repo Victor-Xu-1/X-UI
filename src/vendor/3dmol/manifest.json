@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "forkId": "xscience-gloss-1",
+  "upstream": {
+    "package": "3dmol",
+    "version": "2.5.5",
+    "tarball": "https://registry.npmjs.org/3dmol/-/3dmol-2.5.5.tgz",
+    "archiveSha256": "26d91c5036d4efe78fc032c22cb692fea92bbb3cb1e65d20bf3869673fb3d8f5",
+    "bundle": "upstream/3Dmol-min.js",
+    "bytes": 537792,
+    "sha256": "f7cc78921ae72e7623e89cdd111434f58c2efddd2ffda1cd212644b406fb8016"
+  },
+  "patches": [
+    {
+      "id": "lambert.vert",
+      "source": "upstream/shaders/lambert.vert",
+      "replacement": "shaders/lambert.vert",
+      "sourceBytes": 1005,
+      "sourceSha256": "48466d37cd1a2c2035e097c4c2ecc8072d1aa7afc8ab94d2ebc7126d35b505f8"
+    },
+    {
+      "id": "lambert.frag",
+      "source": "upstream/shaders/lambert.frag",
+      "replacement": "shaders/lambert.frag",
+      "sourceBytes": 884,
+      "sourceSha256": "654b4983cd168989a36a0c7cf53bb2946ba46d9aed20b15ec8acf26588e7f6c7"
+    },
+    {
+      "id": "lambertdouble.vert",
+      "source": "upstream/shaders/lambertdouble.vert",
+      "replacement": "shaders/lambertdouble.vert",
+      "sourceBytes": 1215,
+      "sourceSha256": "407b7cc416ea43fd54da3435b4030741a04d0b4a7b18a4045373cdc414b06637"
+    },
+    {
+      "id": "lambertdouble.frag",
+      "source": "upstream/shaders/lambertdouble.frag",
+      "replacement": "shaders/lambertdouble.frag",
+      "sourceBytes": 1016,
+      "sourceSha256": "e19864d4be9708934bdc12e263f9a285f1faa0dac3c2ae566e9dd04d01afe3c8"
+    }
+  ],
+  "output": "assets/vendor/3dmol-xscience/3Dmol-min.js",
+  "invariants": [
+    "One 3Dmol renderer and unchanged deposited coordinates/geometry",
+    "Build-time replacement only; no runtime shader monkey patch",
+    "Preserve opacity-squared alpha, AO, fog and wireframe behavior"
+  ],
+  "notices": [
+    "LICENSE.txt",
+    "EDTSurf-LICENSE.txt",
+    "3Dmol-min.js.LICENSE.txt",
+    "NOTICE.txt"
+  ]
+}

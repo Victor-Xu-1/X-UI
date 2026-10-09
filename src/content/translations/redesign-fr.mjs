@@ -3,7 +3,7 @@ export default {
     "Des articles et des molécules",
     "à la prochaine étape de recherche."
   ],
-  "heroText": "Trouvez les outils pour étudier une cible, examiner les structures moléculaires, comparer les voies de synthèse et transformer la chimie des brevets en données utilisables.",
+  "heroText": "Trouvez les outils pour organiser les preuves de recherche, examiner les structures moléculaires, comparer les voies de synthèse et transformer la chimie des brevets en données utilisables.",
   "heroEyebrow": "Outils open source pour la recherche biomédicale",
   "heroCta": "Trouver votre outil de recherche",
   "secondaryCta": "Découvrir l’agent de recherche",
@@ -33,7 +33,7 @@ export default {
   "methodologySteps": [
     {
       "title": "Construire la vue d’ensemble",
-      "text": "Réunissez littérature, informations sur les cibles et preuves des brevets sous une forme consultable."
+      "text": "Réunissez littérature, données de recherche et preuves des brevets sous une forme consultable."
     },
     {
       "title": "Travailler avec la molécule",
@@ -44,9 +44,9 @@ export default {
       "text": "Comparez les sorties et conservez fichiers, sources et limites des méthodes pour la revue."
     }
   ],
-  "proofEyebrow": "Le logiciel en pratique",
-  "proofTitle": "Examiner un candidat dans son contexte.",
-  "proofText": "Découvrez une véritable vue des structures et poches de X-DDE, issue de l’exemple public BRD4–JQ1. Ouvrez la capture complète et lisez comment l’espace relie structures et résultats.",
+  "proofEyebrow": "Des parcours de recherche reliés",
+  "proofTitle": "Des structures à la prochaine étape.",
+  "proofText": "Découvrez comment X-DDE organise les fichiers moléculaires, relie les tableaux de candidats aux résultats 2D / 3D et réutilise les éléments sélectionnés dans la prochaine tâche de recherche. Consultez le guide pour choisir un point de départ.",
   "creatorEyebrow": "Chercheur et développeur",
   "creatorTitle": "Des outils issus du travail de recherche.",
   "creatorText": "Victor Xu est chercheur en découverte de médicaments et développeur indépendant d’outils IA. Il travaille en chimie médicinale, AIDD / CADD, PROTAC et colles moléculaires.",

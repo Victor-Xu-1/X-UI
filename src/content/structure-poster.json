@@ -2,8 +2,8 @@
   "file": "assets/structures/5FQD-preview.webp",
   "pdbId": "5FQD",
   "coordinateSha256": "cc474aa498a5151d63a7d86c196ed83d1f386bfc94b9b27b04f5ba429210e26d",
-  "renderer": "3Dmol.js 2.5.5",
-  "representation": "cartoon",
+  "renderer": "3Dmol.js 2.5.5 + X-Science studio shaders",
+  "representation": "cartoon with translucent molecular surface",
   "displayView": "interface",
   "selection": {
     "or": [
@@ -34,8 +34,8 @@
   "role": "Genuine rendering of unmodified published coordinates; no product computation",
   "width": 1600,
   "height": 800,
-  "bytes": 123662,
-  "sha256": "08d5b74dfd537d4c84ac9abb22a90b555e1c447902345acb0891e214ad86ad4c",
-  "capturedAt": "2026-10-09T04:57:57.150Z",
-  "sourceRenderSha256": "a06ecde6a16d045e32402279b2c4cd72cabb82fdd9987af175061878d5d1335b"
+  "bytes": 149662,
+  "sha256": "b5209864e0ba6fdf77bb2b1adca9e6711562d3e8f7fb975f8199b93e15e6862b",
+  "capturedAt": "2026-10-09T08:00:16.458Z",
+  "sourceRenderSha256": "36eb19a385fcc46e9b63c5bb3c73a36b6d7ddc26a8a4285815b00793b6d2a5ce"
 }

@@ -21,7 +21,7 @@ export function homePage(lang) {
       <p class="hero-description">${escape(d.heroText)}</p>
       <div class="hero-actions"><a class="button button-primary" href="#software">${escape(d.heroCta)}${arrow}</a><a class="button button-outline" href="${productPath(flagship, lang)}">${escape(d.secondaryCta)}${arrow}</a></div>
     </div>
-    <div class="hero-visual hero-molecular">${proteinExplorer(lang)}</div>
+    <div class="hero-visual hero-molecular">${proteinExplorer(lang,{ambient:true})}</div>
   </div><div class="container hero-bottom"><span>${escape(c.heroFoot)}</span><a href="#software">${escape(d.heroCta)}${arrow}</a></div></section>
   <section id="software" class="section software-section"><div class="container">
     <div class="section-head"><div><p class="eyebrow">${escape(d.collectionEyebrow)}</p><h2>${escape(d.collectionTitle)}</h2></div><p class="section-intro">${escape(d.collectionText)}</p></div>
@@ -36,7 +36,7 @@ export function homePage(lang) {
   </div></section>
   <section class="section proof-section"><div class="container proof-grid">
     <div class="proof-copy"><p class="eyebrow">${escape(d.proofEyebrow)}</p><h2>${escape(d.proofTitle)}</h2><p>${escape(d.proofText)}</p><a class="text-link" href="${productPath(dde, lang)}">X-DDE · ${escape(c.details)}${arrow}</a></div>
-    <figure class="workbench-figure"><a class="image-zoom-link" data-image-viewer href="/assets/media/x-dde-structure.jpg" target="_blank" rel="noopener noreferrer" aria-label="${escape(c.fullImage)}"><img src="/assets/media/x-dde-structure.jpg" alt="${escape(dde.caption[lang])}" loading="lazy" width="${dde.imageWidth}" height="${dde.imageHeight}"><span class="image-zoom-label">${escape(c.fullImage)}<span aria-hidden="true">↗</span></span></a><figcaption><span class="capture-dot"></span>${escape(c.actualCaption)}</figcaption></figure>
+    <div class="research-illustration">${imageExperience(lang,{id:'x-dde',compact:true})}</div>
   </div></section>
   <section id="about" class="section about-section"><div class="container about-grid">
     <div><p class="eyebrow">${escape(d.creatorEyebrow)}</p><h2>${escape(d.creatorTitle)}</h2><div class="creator-signature"><span>VX</span><div><strong>Victor Xu</strong><small>${escape(ui.creatorRole)}</small></div></div></div>

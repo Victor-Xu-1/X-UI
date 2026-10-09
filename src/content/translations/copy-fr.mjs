@@ -18,7 +18,6 @@ export default {
   "details": "Voir les tâches prises en charge",
   "count": "produits",
   "openSource": "Open source",
-  "actualCaption": "Interface réelle · X-DDE v0.4.49 · Exemple public BRD4–JQ1",
   "workflowNote": "Chaque produit nécessite sa propre configuration. Vérifiez formats et méthodes scientifiques lors des transferts entre outils.",
   "workflowSteps": [
     "Explorer les preuves",
@@ -49,7 +48,6 @@ export default {
   "releases": "Obtenir la version",
   "guide": "Lire la documentation",
   "boundaryTitle": "Périmètre et prérequis",
-  "imageSource": "Source de l’image & contexte",
   "next": "POURSUIVRE L’EXPLORATION",
   "nextTitle": "Des outils pour les tâches associées.",
   "facts": "Périmètre documenté dans les sources publiques · Vérifié le 2026-10-08.",
@@ -58,7 +56,6 @@ export default {
   "languageLabel": "Choisir la langue",
   "navigationLabel": "Navigation principale",
   "filterLabel": "Filtrer par domaine de recherche",
-  "fullImage": "Voir l’image complète",
   "generatedLabel": "Visuel conceptuel généré par IA",
   "heroAlt": "Logiciels scientifiques & agents de recherche X-Science"
 };

@@ -24,7 +24,6 @@ export const copy = {
   "details": "See what it helps you do",
   "count": "products",
   "openSource": "Open source",
-  "actualCaption": "Actual interface · X-DDE v0.4.49 · Public BRD4–JQ1 research example",
   "workflowNote": "Each product has its own setup. Check file formats and scientific methods when handing material between tools.",
   "workflowSteps": [
     "Explore evidence",
@@ -55,7 +54,6 @@ export const copy = {
   "releases": "Get the release",
   "guide": "Explore the documentation",
   "boundaryTitle": "Scope & requirements",
-  "imageSource": "Image source & context",
   "next": "KEEP EXPLORING",
   "nextTitle": "Tools for related work.",
   "facts": "Product scope documented in the public source · Reviewed 2026-10-08.",
@@ -64,7 +62,6 @@ export const copy = {
   "languageLabel": "Choose language",
   "navigationLabel": "Main navigation",
   "filterLabel": "Filter software by research area",
-  "fullImage": "View the full screenshot",
   "generatedLabel": "AI-generated concept art",
   "heroAlt": "X-Science scientific software & research agents"
 },
@@ -88,7 +85,6 @@ export const copy = {
   "details": "了解它能支持的工作",
   "count": "个产品",
   "openSource": "开放源码",
-  "actualCaption": "实际界面 · X-DDE v0.4.49 · BRD4–JQ1 公开研究案例",
   "workflowNote": "各产品需要独立配置。跨工具交接材料时，请核对文件格式与科学方法。",
   "workflowSteps": [
     "了解证据",
@@ -119,7 +115,6 @@ export const copy = {
   "releases": "获取发行版",
   "guide": "深入了解",
   "boundaryTitle": "适用范围与运行要求",
-  "imageSource": "图片来源与说明",
   "next": "继续探索",
   "nextTitle": "与当前工作相关的工具。",
   "facts": "产品范围见公开来源文档 · 核对日期 2026-10-08。",
@@ -128,7 +123,6 @@ export const copy = {
   "languageLabel": "选择语言",
   "navigationLabel": "主导航",
   "filterLabel": "按研究方向筛选软件",
-  "fullImage": "查看完整截图",
   "generatedLabel": "AI 生成概念图",
   "heroAlt": "X-Science 科学软件与研究 Agent"
 },

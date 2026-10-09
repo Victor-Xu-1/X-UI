@@ -18,7 +18,6 @@ export default {
   "details": "Den praktischen Nutzen ansehen",
   "count": "Produkte",
   "openSource": "Open Source",
-  "actualCaption": "Echte Oberfläche · X-DDE v0.4.49 · Öffentliches BRD4–JQ1-Forschungsbeispiel",
   "workflowNote": "Jedes Produkt wird separat eingerichtet. Prüfen Sie Dateiformate und wissenschaftliche Methoden bei Übergaben zwischen Tools.",
   "workflowSteps": [
     "Evidenz erkunden",
@@ -49,7 +48,6 @@ export default {
   "releases": "Release herunterladen",
   "guide": "Dokumentation erkunden",
   "boundaryTitle": "Umfang und Anforderungen",
-  "imageSource": "Bildquelle & Kontext",
   "next": "WEITER ENTDECKEN",
   "nextTitle": "Werkzeuge für verwandte Aufgaben.",
   "facts": "Produktumfang in öffentlichen Quellen dokumentiert · Geprüft am 2026-10-08.",
@@ -58,7 +56,6 @@ export default {
   "languageLabel": "Sprache auswählen",
   "navigationLabel": "Hauptnavigation",
   "filterLabel": "Produkte nach Forschungsgebiet filtern",
-  "fullImage": "Vollständiges Bild ansehen",
   "generatedLabel": "KI-generierte Konzeptgrafik",
   "heroAlt": "Wissenschaftliche Software & Forschungsagenten von X-Science"
 };

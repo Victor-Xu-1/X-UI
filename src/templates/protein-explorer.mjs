@@ -3,13 +3,16 @@ import { structureCatalog } from '../content/structures.mjs';
 import { glueCopy } from '../content/glue-copy.mjs';
 import { escape } from './layout.mjs';
 import poster from '../content/structure-poster.json' with { type:'json' };
+import ambientPoster from '../content/ambient-poster.json' with { type:'json' };
+import { molecularAtmosphere } from './molecular-atmosphere.mjs';
 
-export function proteinExplorer(lang) {
+export function proteinExplorer(lang,{ambient=false}={}) {
   const c=redesignCopy[lang],g=glueCopy[lang],first=structureCatalog[0];
   const runtimeKeys=['structureLoading','structureReady','pause','spin','structureHint','exportError','cartoon','surface'];
   // Only rendering data enters the page; provenance remains in the source manifest.
-  const models=structureCatalog.map(({id,file,bytes,sha256,atomCount,ligand,views,groups,quaternion})=>({id,file,bytes,sha256,atomCount,ligand:Object.fromEntries(Object.entries(ligand).filter(([key])=>key!=='name')),views:{interface:views.interface},groups:groups.map(({chains,color})=>({chains,color})),quaternion}));
-  const payload=JSON.stringify({structures:models,copy:{...Object.fromEntries(runtimeKeys.map(key=>[key,c[key]])),structureUnsupported:g.unavailable,structureError:g.unavailable,exportReady:g.exportReady},glue:g}).replaceAll('<','\\u003c');
+  const models=(ambient?[structureCatalog.find(model=>model.id===ambientPoster.pdbId)]:structureCatalog).map(({id,file,bytes,sha256,atomCount,ligand,views,groups,quaternion})=>({id,file,bytes,sha256,atomCount,ligand:Object.fromEntries(Object.entries(ligand).filter(([key])=>key!=='name')),views:{interface:views.interface},groups:groups.map(({chains,color})=>({chains,color})),quaternion}));
+  const payload=JSON.stringify(ambient?{structures:models}:{structures:models,copy:{...Object.fromEntries(runtimeKeys.map(key=>[key,c[key]])),structureUnsupported:g.unavailable,structureError:g.unavailable,exportReady:g.exportReady},glue:g}).replaceAll('<','\\u003c');
+  if(ambient)return molecularAtmosphere(lang,payload);
   const hasPoster=poster.pdbId===first.id;
   return `<div id="structures" class="protein-section" data-protein-viewer data-phase="idle" data-background="light">
     <div class="protein-stage">

@@ -3,9 +3,10 @@ import { loadStructure } from './structure-data.js';
 import { ProteinScene } from './protein-scene.js';
 import { downloadProteinImage } from './protein-export.js';
 import { motionAllowed, subscribeMotion } from './motion-policy.js';
+import { mountMolecularAtmosphere } from './molecular-atmosphere.js';
 
 export function initProteinViewer() {
-  document.querySelectorAll('[data-protein-viewer]').forEach(mountProteinViewer);
+  document.querySelectorAll('[data-protein-viewer]').forEach(root=>root.dataset.proteinMode==='ambient'?mountMolecularAtmosphere(root):mountProteinViewer(root));
 }
 
 function mountProteinViewer(root) {
@@ -84,7 +85,7 @@ function mountProteinViewer(root) {
         activeId = model.id;
       }
       // Surface work settles before another selection/style is allowed to mutate models.
-      surfaceAttempted = snapshot.representation === 'surface';
+      surfaceAttempted = true;
       await scene.represent(snapshot.representation);
       if (failedContext) return;
       appliedRepresentation = snapshot.representation;

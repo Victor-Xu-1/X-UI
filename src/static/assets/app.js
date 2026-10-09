@@ -1,7 +1,6 @@
 import { initNavigation } from './modules/navigation.js';
 import { initCatalog } from './modules/catalog.js';
 import { initWorkflow } from './modules/workflow.js';
-import { initImageViewer } from './modules/image-viewer.js';
 import { initMotion } from './modules/motion.js';
 import { initProteinViewer } from './modules/protein-viewer.js';
 import { initMotionPolicy } from './modules/motion-policy.js';
@@ -14,7 +13,6 @@ initMotionPolicy();
 initNavigation();
 initCatalog();
 initWorkflow();
-initImageViewer();
 initMotion();
 initProteinViewer();
 initImageMotion();

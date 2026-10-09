@@ -1,0 +1,17 @@
+.hero-visual.hero-molecular { align-self:center; }
+.molecular-atmosphere { position:relative; isolation:isolate; width:112%; margin-left:-6%; height:650px; min-width:0; }
+.atmosphere-stage { position:absolute; inset:0; z-index:2; }
+.atmosphere-canvas,.atmosphere-poster { position:absolute; inset:0; width:100%; height:100%; object-fit:contain; pointer-events:none; }
+.atmosphere-canvas,.atmosphere-poster { mask-image:radial-gradient(ellipse at center,#000 60%,transparent 76%); }
+.atmosphere-glow { position:absolute; inset:10% 0; z-index:0; border-radius:50%; background:radial-gradient(ellipse at 32% 44%,#78caff18,transparent 56%),radial-gradient(ellipse at 71% 50%,#ffd46718,transparent 60%); filter:blur(20px); animation:atmosphere-breathe 12s ease-in-out infinite paused; }
+[data-protein-mode="ambient"][data-phase="ready"] .atmosphere-poster { opacity:0; transition:opacity .8s; }
+[data-protein-mode="ambient"]:not([data-phase="ready"]) .atmosphere-canvas { visibility:hidden; }
+[data-protein-mode="ambient"][data-spinning="true"] .atmosphere-glow { animation-play-state:running; }
+.atmosphere-status { position:absolute; bottom:12px; left:10%; right:10%; z-index:3; color:var(--muted); font-size:11px; text-align:center; }
+.product-feature-art { max-width:920px; margin:38px auto 0; }
+.research-illustration { min-width:0; }
+@keyframes atmosphere-breathe { 0%,100% { transform:scale(.95) rotate(-4deg); opacity:.8; } 50% { transform:scale(1.06) rotate(4deg); opacity:1; } }
+@media(max-width:1100px) { .molecular-atmosphere { height:540px; } }
+@media(max-width:760px) { .molecular-atmosphere { height:470px; width:100%; margin:0; } }
+@media(max-width:520px) { .molecular-atmosphere { height:370px; } .atmosphere-glow { inset:5% -8%; } }
+@media(prefers-reduced-motion:reduce) { .atmosphere-glow { animation:none; } .atmosphere-poster { transition:none!important; } }

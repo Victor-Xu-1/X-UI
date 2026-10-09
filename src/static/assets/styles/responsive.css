@@ -115,10 +115,6 @@
   .capability-grid { grid-template-columns:1fr; margin-top:36px; }
   .capability h3 { font-size:21px; }
   .capability>span { margin-bottom:15px; }
-  .viewer-caption { flex-direction:column; align-items:flex-start; gap:15px; }
-  .image-viewer { width:calc(100vw - 22px); max-height:calc(100dvh - 24px); }
-  .viewer-toolbar,.viewer-caption { padding:14px 16px; }
-  .viewer-image { max-height:calc(100dvh - 260px); }
   .footer-bottom { font-size:11px; }
 }
 @media(prefers-reduced-motion:reduce) { .will-reveal { opacity:1; translate:0; } }

@@ -12,6 +12,7 @@ const root = resolve(dirname(fileURLToPath(import.meta.url)), '../dist');
 const software = JSON.parse(await readFile(resolve(root, '../package.json'), 'utf8'));
 const paths = languages.flatMap((lang) => [languagePath(lang), ...products.map((p) => productPath(p, lang))]);
 let checks = 0;
+const excludedCopy=/靶[点标]|疾病|病症|肿瘤|癌症|標的|疾患|표적|질병|질환|\b(?:targets?|diseases?|cancers?|cibles?|maladies?|Krankheit\w*|Erkrankung\w*|BRD4|JQ1|CRBN|CK1|DCAF15|RBM39|FKBP12|mTOR|lenalidomide|rapamycin)\b/iu;
 for (const lang of languages) {
   assert.deepEqual(Object.keys(copy[lang]).sort(), Object.keys(copy.en).sort(), `${lang} must translate the complete shared UI`); checks++;
   assert.deepEqual(Object.keys(interactionCopy[lang]).sort(), Object.keys(interactionCopy.en).sort(), `${lang} must translate every interaction`); checks++;
@@ -26,6 +27,10 @@ for (const lang of languages) {
 }
 for (const path of paths) {
   const html = await readFile(resolve(root, '.' + path, 'index.html'), 'utf8');
+  const publicText=html.replace(/<script\b[\s\S]*?<\/script>/gi,'').replace(/<style\b[\s\S]*?<\/style>/gi,'').replace(/<[^>]+>/g,' ');
+  const publicAttributes=[...html.matchAll(/\s(?:alt|title|placeholder|aria-label|content)="([^"]*)"/g)].map(match=>match[1]).join(' ');
+  assert.ok(!excludedCopy.test(publicText+' '+publicAttributes),`${path}: excluded research-object copy`);checks++;
+  assert.ok(!html.includes('x-dde-structure.jpg')&&!html.includes('data-image-viewer'),`${path}: retired named capture`);checks++;
   assert.equal((html.match(/<h1[ >]/g) || []).length, 1, `${path} must have one h1`); checks++;
   assert.match(html, /<meta name="description" content="[^\"]+"/, `${path} needs a description`); checks++;
   assert.ok(html.includes(`rel="canonical" href="${siteOrigin}${path}"`)); checks++;

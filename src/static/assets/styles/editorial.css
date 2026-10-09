@@ -34,17 +34,15 @@
 .main-nav>a:hover::after,.main-nav>a:focus-visible::after { transform:scaleX(1); }
 .stage-panel:not([hidden]) { animation:editorial-arrive .4s ease both; }
 .proof-grid { grid-template-columns:.55fr 1.45fr; gap:60px; }
-.workbench-figure img { max-height:660px; }
 .proof-copy .text-link { gap:10px; }
 .capability:hover>span { color:#27757c; }
 .capability>span { transition:color .25s; }
 .capability:hover { border-top-color:#6d9c9f; }
 .language-options { transform-origin:top right; animation:editorial-arrive .2s ease both; }
-.image-viewer[open] { animation:editorial-arrive .2s ease both; }
 @keyframes editorial-arrive { from { opacity:0; translate:0 10px; } to { opacity:1; translate:0; } }
 @media(max-width:1100px) { .hero-grid { gap:32px; } .hero h1 { font-size:clamp(43px,5.1vw,59px); } .product-hero-art>.image-experience { width:100%; margin-left:0; } }
 @media(max-width:960px) { .main-nav>a:not(.nav-github)::after { bottom:3px; } }
 @media(max-width:760px) { .hero-grid,.product-hero-grid:has([data-protein-viewer]),.proof-grid { grid-template-columns:1fr; gap:38px; } .hero-copy { padding-top:0; } .hero h1 { font-size:clamp(44px,7.2vw,61px); } .hero-visual.hero-molecular { width:100%; } .contact-art { inset:25% -30% 0 10%; opacity:.45; } .contact-inner>div { max-width:570px; } }
 @media(max-width:520px) { .hero-grid { padding-top:38px; } .hero h1 { font-size:43px; } .hero-actions .button { min-height:48px; } .contact-section { min-height:430px; } .contact-art figcaption { display:none; } .contact-inner h2 { font-size:36px; } }
-[data-motion="paused"] .stage-panel,[data-motion="paused"] .language-options,[data-motion="paused"] .image-viewer { animation:none; }
-@media(prefers-reduced-motion:reduce) { .stage-panel,.language-options,.image-viewer { animation:none!important; } }
+[data-motion="paused"] .stage-panel,[data-motion="paused"] .language-options { animation:none; }
+@media(prefers-reduced-motion:reduce) { .stage-panel,.language-options { animation:none!important; } }

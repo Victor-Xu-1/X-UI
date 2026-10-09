@@ -19,11 +19,6 @@
 .capability { border-top:1px solid var(--line); padding-top:22px; }
 .capability>span { display:block; margin-bottom:22px; color:var(--muted); font-size:12px; }
 .capability h3 { max-width:510px; font-size:23px; line-height:1.45; letter-spacing:-.025em; }
-.product-capture { margin-top:58px; }
-.product-capture img { max-height:650px; object-fit:contain; }
-.product-capture figcaption { margin-top:14px; color:var(--muted); font-size:12px; }
-.product-capture figcaption a { text-decoration:underline; text-underline-offset:3px; }
-.product-capture figcaption svg { display:inline-block; vertical-align:middle; width:15px; height:15px; }
 .selection-note { padding-block:78px; border-bottom:1px solid var(--line); }
 .selection-note-inner { display:grid; grid-template-columns:.65fr 1fr; gap:90px; align-items:start; }
 .selection-note h2 { font-size:clamp(30px,3vw,42px); }

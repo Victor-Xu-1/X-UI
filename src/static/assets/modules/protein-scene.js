@@ -1,11 +1,12 @@
 import { proteinPalette,proteinViewerSettings,fittingZoom } from './protein-presets.js';
-import { settleSurface } from './protein-surface.js';
-import { ligandSelection,chainColorScheme } from './protein-selection.js';
+import { ligandSelection } from './protein-selection.js';
+import { renderProteinMaterial,fitAmbientFrame } from './protein-material.js';
 
 // A document owns one persistent renderer; all controls reuse its deposited model.
 export class ProteinScene {
-  constructor(library,element) {
-    this.library=library;this.element=element;this.viewer=library.createViewer(element,proteinViewerSettings);
+  constructor(library,element,{ambient=false}={}) {
+    this.ambient=ambient;
+    this.library=library;this.element=element;this.viewer=library.createViewer(element,ambient?{...proteinViewerSettings,nomouse:true}:proteinViewerSettings);
     if(!this.viewer)throw new Error('webgl_unavailable');
     this.context=this.viewer.getRenderer().getContext();
     if(!this.context||this.context.isContextLost())throw new Error('webgl_unavailable');
@@ -21,12 +22,14 @@ export class ProteinScene {
     for(const data of Object.values(metadata.views))if(this.model.selectedAtoms(data.selection).length!==data.atomCount)throw new Error('display_selection_mismatch');
     this.viewer.setStyle({},{});
     const neutral=[...this.viewer.getView()];neutral.splice(4,4,...metadata.quaternion);this.viewer.setView(neutral);
+    if(this.ambient)this.viewer.rotate(-12,'vz');
     this.selection=metadata.views.interface.selection;
     this.frame();this.initialView=[...this.viewer.getView()];
   }
   frame() {
     this.viewer.zoomTo(this.selection);
     this.viewer.zoom(fittingZoom(this.element.clientWidth,this.element.clientHeight));this.viewer.render();
+    if(this.ambient){fitAmbientFrame(this.viewer,this.element,this.model.selectedAtoms(this.selection));return;}
     const points=this.viewer.modelToScreen(this.model.selectedAtoms(this.selection));
     const xs=points.map(point=>point.x),ys=points.map(point=>point.y);
     const fill=Math.min(this.element.clientWidth*.86/(Math.max(...xs)-Math.min(...xs)),this.element.clientHeight*.8/(Math.max(...ys)-Math.min(...ys)));
@@ -34,20 +37,13 @@ export class ProteinScene {
   }
   async represent(kind) {
     this.viewer.spin(false);this.viewer.removeAllSurfaces();this.viewer.setStyle({},{});
-    const protein={and:[this.selection,{hetflag:false}]},colorscheme=chainColorScheme(this.metadata);
-    if(kind==='surface'){
-      this.viewer.setStyle(protein,{sphere:{hidden:true,colorscheme}});
-      await settleSurface(this.viewer.addSurface(this.library.SurfaceType.VDW,{opacity:.56,colorscheme},protein));
-    }else this.viewer.setStyle(protein,{cartoon:{colorscheme,arrows:true,thickness:.3,opacity:1}});
-    const colors={prop:'elem',map:{C:proteinPalette.ligand,N:'#4264b8',O:'#d45351',S:'#b0983c'}};
-    this.viewer.setStyle(ligandSelection(this.metadata),{stick:{radius:.27,colorscheme:colors},sphere:{scale:.28,colorscheme:colors}});
-    if(this.metadata.id==='5FQD')this.viewer.setStyle({resn:'ZN',chain:'B',resi:1437},{sphere:{radius:.8,color:proteinPalette.zinc}});
+    await renderProteinMaterial(this.viewer,this.library,this.selection,this.metadata,kind);
     this.element.dataset.displayedAtoms=String(this.model.selectedAtoms(this.selection).length);
     this.viewer.render();
   }
   background(light) {
     this.viewer.setBackgroundColor(light?proteinPalette.light:proteinPalette.dark);
-    this.viewer.setViewStyle({style:'outline',width:.009,color:light?'#718b94':'#0b121a',maxpixels:.55});this.viewer.render();
+    this.viewer.render();
   }
   capture() {
     const view = [...this.viewer.getView()];
@@ -78,7 +74,7 @@ export class ProteinScene {
   }
 
 
-  spin(enabled){this.viewer.spin(enabled?'vy':false,.085);}
+  spin(enabled){this.viewer.spin(enabled?(this.ambient?{vx:.13,vy:1,vz:.045}:'vy'):false,this.ambient ? .12 : .085);}
   reset(){if(this.initialView){this.viewer.setView([...this.initialView]);this.frame();this.viewer.render();}}
   rotate(angle,axis){this.viewer.rotate(angle,axis);this.viewer.render();}
   zoom(factor){this.viewer.zoom(factor);this.viewer.render();}

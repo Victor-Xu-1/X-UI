@@ -12,6 +12,7 @@ import { glueCopy } from '../src/content/glue-copy.mjs';
 import { structureCatalog } from '../src/content/structures.mjs';
 import provenance from '../src/content/structure-provenance.json' with { type: 'json' };
 import poster from '../src/content/structure-poster.json' with { type: 'json' };
+import ambientPoster from '../src/content/ambient-poster.json' with { type:'json' };
 import artwork from '../src/content/generated-assets.json' with { type: 'json' };
 import notices from '../ASSET-NOTICES.json' with { type: 'json' };
 
@@ -78,7 +79,9 @@ for (const model of structureCatalog) {
 await exact(poster.file, poster.bytes, poster.sha256);
 assert.equal(poster.pdbId, structureCatalog[0].id); checks++;
 assert.equal(poster.coordinateSha256, structureCatalog[0].sha256); checks++;
-assert.equal(poster.renderer, '3Dmol.js 2.5.5'); checks++;
+assert.equal(poster.renderer, '3Dmol.js 2.5.5 + X-Science studio shaders'); checks++;
+await exact(ambientPoster.file,ambientPoster.bytes,ambientPoster.sha256);
+assert.equal(ambientPoster.coordinateSha256,structureCatalog.find(model=>model.id===ambientPoster.pdbId).sha256);checks++;
 
 for (const language of languages) for (const path of [languagePath(language), ...products.map(product => productPath(product, language))]) {
   const html = await readFile(resolve(dist, '.' + path, 'index.html'), 'utf8');
@@ -87,11 +90,13 @@ for (const language of languages) for (const path of [languagePath(language), ..
   if (!expected) continue;
   const raw = html.match(/<script type="application\/json" data-protein-data>(.*?)<\/script>/s)?.[1];
   const payload = JSON.parse(raw);
-  assert.deepEqual(payload.glue, glueCopy[language]); checks++;
-  assert.equal(payload.structures.length, 3); checks++;
-  for (const text of Object.values(payload.copy)) { assert.ok(typeof text === 'string' && text.trim()); checks++; }
+  const ambient=!path.includes('/products/');
+  if(!ambient){assert.deepEqual(payload.glue, glueCopy[language]);checks++;}
+  assert.equal(payload.structures.length, ambient?1:3); checks++;
+  for (const text of Object.values(payload.copy||{})) { assert.ok(typeof text === 'string' && text.trim()); checks++; }
   for (const item of payload.structures) { assert.equal(item.sha256, structureCatalog.find(model => model.id === item.id).sha256); assert.ok(!('names' in item) && !('name' in item.ligand)); checks+=2; }
-  assert.ok(html.includes('aria-describedby="protein-keyboard-hint"') && html.includes('<noscript>')); checks++;
+  if(ambient){const scene=html.match(/<div class="molecular-atmosphere"[\s\S]+?<script type="application\/json" data-protein-data>/)?.[0];assert.ok(scene&&!/<(?:button|select|input|details|a)\b|tabindex=/i.test(scene));}
+  else assert.ok(html.includes('aria-describedby="protein-keyboard-hint"') && html.includes('<noscript>')); checks++;
   assert.ok(!html.includes('data-protein-view="pocket"')&&!html.includes('data-protein-story')&&!html.includes('data-protein-record'));checks++;
   assert.ok(!/CRBN|CK1|DCAF15|RBM39|FKBP12|mTOR|lenalidomide|E7820|rapamycin/i.test(raw));checks++;
 }
