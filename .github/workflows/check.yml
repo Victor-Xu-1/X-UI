@@ -15,11 +15,13 @@ jobs:
           node-version: '24'
       - name: Build and verify the affected website
         run: |
+          npm ci --ignore-scripts
           node scripts/build.mjs
           node scripts/verify.mjs
           node scripts/verify-assets.mjs
           node scripts/check-cache.mjs
           node scripts/package-transfer.mjs
           python3 scripts/check-release.py
+          python3 scripts/check-asset-store.py
           python3 scripts/check-firewall.py
           bash -n ops/activate.sh ops/renew-nginx.sh

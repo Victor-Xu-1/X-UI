@@ -1,6 +1,6 @@
 @charset "UTF-8";
 @view-transition { navigation:auto; }
-@font-face { font-family:Inter; font-style:normal; font-weight:100 900; font-display:swap; src:url('/assets/fonts/inter-variable.woff2') format('woff2'); }
+@font-face { font-family:Inter; font-style:normal; font-weight:100 900; font-display:swap; src:url('../fonts/inter-variable.woff2') format('woff2'); }
 :root {
   --ink:#111317; --paper:#ffffff; --soft:#f5f6f7; --muted:#626a74;
   --line:#e1e4e8; --accent:#ee6c2c; --blue:#315a74; --container:1360px;

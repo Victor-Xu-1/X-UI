@@ -30,6 +30,7 @@ Default English is served at `/`; the central locale dictionary owns routing.
 | X-DDE molecular illustration × 6 | Lazy/loading/ready, three generically named forms, ribbon/surface, full rotation, reset/zoom, backgrounds, PNG export, error/retry, unavailable/context loss | Actual WebGL pixels, exact source coordinates and bounded views; no visible target/protein/interaction identity in text, alt, ARIA, labels or exports |
 | Molecular motion/export | Visible/offscreen/hidden tab, user pause, reduced-motion changes, keyboard, mobile resize, high DPR | Rotation really stops; control states agree; PNG pixels and generic caption/filename are valid; canvas/view restore exactly |
 | Molecular failure/recovery | Script/coordinate request failure, corrupt exact bytes, timeout, async surface work, page hide/return, WebGL loss | Genuine still illustration and explicit recovery; accessible status, disabled controls, bounded requests and intentional retry; no competing renderer |
+| Performance | Cold/repeat navigation, throttled mobile, clicks during loading, cached language/product navigation, lazy 3D and module/image/coordinate failure | Resource waterfall, actual Event Timing/paint/long tasks, unchanged visual/gesture states, retained old fingerprint URLs and correct MIME/CSP/cache headers |
 | No JavaScript | Five products, all workflow stages, native menus and image/source links | Browser context with JavaScript disabled |
 | 404 | Missing route, English recovery link, noindex | Actual 404 response and usable return link |
 

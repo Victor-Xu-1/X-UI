@@ -82,8 +82,9 @@ export class ProteinScene {
 
   spin(enabled){this.viewer.spin(enabled?(this.ambient?{vx:.13,vy:1,vz:.045}:'vy'):false,this.ambient ? .12 : .085);}
   reset(){if(this.initialView){this.viewer.setView([...this.initialView]);this.frame();this.viewer.render();}}
-  rotate(angle,axis){this.viewer.rotate(angle,axis);this.viewer.render();}
-  zoom(factor){this.viewer.zoom(factor);this.viewer.render();}
+  // These 3Dmol operations already call show(); a second render rebuilds geometry.
+  rotate(angle,axis){this.viewer.rotate(angle,axis);}
+  zoom(factor){this.viewer.zoom(factor);}
   endGesture(event){this.viewer._handleMouseUp(event);}
   resize(){
     const size=[this.element.clientWidth,this.element.clientHeight],view=this.viewer.getView();

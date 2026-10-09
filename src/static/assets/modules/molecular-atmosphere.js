@@ -3,6 +3,7 @@ import { loadStructure } from './structure-data.js';
 import { ProteinScene } from './protein-scene.js';
 import { motionAllowed,subscribeMotion } from './motion-policy.js';
 import { bindMolecularGestures } from './molecular-gestures.js';
+import { yieldForInput } from './yield-task.js';
 
 export function mountMolecularAtmosphere(root) {
   const {structures}=JSON.parse(root.querySelector('[data-protein-data]').textContent);
@@ -18,10 +19,15 @@ export function mountMolecularAtmosphere(root) {
   async function start(){
     started=true;root.dataset.phase='loading';
     try{
-      const library=await loadProteinLibrary();scene=new ProteinScene(library,canvas,{ambient:true});
-      const text=await loadStructure(structures[0],controller.signal);scene.load(text,structures[0]);await scene.represent('ambient');
+      const [library,text]=await Promise.all([loadProteinLibrary(),loadStructure(structures[0],controller.signal)]);
+      await yieldForInput(controller.signal);
+      if(failed)return;
+      scene=new ProteinScene(library,canvas,{ambient:true});scene.load(text,structures[0]);
+      await yieldForInput(controller.signal);
+      await scene.represent('ambient');
+      controller.signal.throwIfAborted();
       if(failed)return;root.dataset.phase='ready';canvas.tabIndex=0;canvas.setAttribute('aria-disabled','false');root.querySelector('[data-ambient-hint]').hidden=false;sync();
-    }catch{fail();}
+    }catch{controller.abort();fail();}
   }
   canvas.addEventListener('protein-context-lost',fail);subscribeMotion(sync);
   document.addEventListener('visibilitychange',sync);

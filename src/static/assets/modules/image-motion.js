@@ -4,7 +4,7 @@ function mount(root) {
   const data=JSON.parse(root.querySelector('[data-image-payload]').textContent);
   let photo=root.querySelector('[data-scene-image]'),visible=false,wanted=true,revision=0,pointerFrame=0,timer;
   const pause=root.querySelector('[data-image-pause]'),retry=root.querySelector('[data-image-retry]'),status=root.querySelector('[data-image-status]');
-  const stage=root.querySelector('.image-stage'),version=new URL(import.meta.url).search;
+  const stage=root.querySelector('.image-stage');
   function sync(){
     const allowed=motionAllowed();
     root.dataset.imagePlaying=String(allowed&&wanted&&visible&&!document.hidden&&root.dataset.imagePhase==='ready');
@@ -17,7 +17,7 @@ function mount(root) {
   }
   async function reload(){
     const attempt=++revision;phase('loading');const image=new Image();
-    try{image.src=data.file+version;await Promise.race([image.decode(),new Promise((_,reject)=>{timer=setTimeout(()=>reject(new Error('image_deadline')),15000);})]);
+    try{image.src=data.file;await Promise.race([image.decode(),new Promise((_,reject)=>{timer=setTimeout(()=>reject(new Error('image_deadline')),15000);})]);
       if(attempt!==revision)return;image.alt=photo.alt;image.width=photo.width;image.height=photo.height;image.dataset.sceneImage='';photo.replaceWith(image);photo=image;wire(image);phase('ready');
     }catch{if(attempt===revision)phase('error');}finally{clearTimeout(timer);}
   }

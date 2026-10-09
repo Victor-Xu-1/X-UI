@@ -19,6 +19,6 @@ export function activeMarker(list){
   }
   marker.hidden=true;
   if('ResizeObserver' in window)new ResizeObserver(()=>place(target,false)).observe(list);
-  document.fonts?.ready.then(()=>place(target,false));
+  queueMicrotask(()=>document.fonts?.ready.then(()=>place(target,false)));
   return place;
 }

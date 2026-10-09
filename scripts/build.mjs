@@ -1,4 +1,4 @@
-import { mkdir, rm, cp, writeFile, readFile, readdir } from 'node:fs/promises';
+import { mkdir, rm, cp, writeFile, readFile } from 'node:fs/promises';
 import { dirname, resolve, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { copy } from '../src/content/copy.mjs';
@@ -9,6 +9,7 @@ import { layout } from '../src/templates/layout.mjs';
 import { languages, languagePath, defaultLanguage } from '../src/content/locales.mjs';
 import { siteOrigin, sourceRepository } from '../src/content/site.mjs';
 import { buildProteinRenderer } from './build-protein-renderer.mjs';
+import { buildFrontend } from './build-frontend.mjs';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const output = resolve(root, 'dist');
@@ -21,17 +22,8 @@ await rm(output, { recursive: true, force: true });
 await mkdir(output, { recursive: true });
 await cp(resolve(root, 'src/static'), output, { recursive: true });
 await buildProteinRenderer(output);
-// Release-specific resource URLs keep earlier browser caches out of a new UI.
-const firstPartyModules = ['assets/app.js', ...(await readdir(resolve(output, 'assets/modules'))).filter(name => name.endsWith('.js')).map(name => `assets/modules/${name}`)];
-for (const file of firstPartyModules) {
-  const target = resolve(output, file);
-  const source = await readFile(target, 'utf8');
-  await writeFile(target, source.replace(/((?:from\s+|import\(\s*)['"])(\.\/[^'"]+\.js)(['"])/g, `$1$2?v=${software.version}$3`));
-}
+const releaseResources = await buildFrontend(root, output);
 const urls = [];
-function releaseResources(html) {
-  return html.replace(/((?:href|src|content)="(?:https:\/\/[^/\"]+)?\/assets\/[^"?]+)(")/g, `$1?v=${software.version}$2`);
-}
 async function page(path, html) {
   const destination = resolve(output, '.' + path);
   if (!destination.startsWith(output + sep) && destination !== output) throw new Error('Page path escapes the output directory');
@@ -43,7 +35,7 @@ for (const lang of languages) {
   await page(languagePath(lang), homePage(lang));
   for (const product of products) await page(productPath(product, lang), productPage(product, lang));
 }
-const notFound = layout({ lang: 'en', path: '/404.html', title: 'Page not found | X-Science', body: `<section class="not-found"><div class="container"><p>404 · X-SCIENCE</p><h1>${copy.en.notFound}</h1><a class="button button-dark" href="/">${copy.en.goHome}</a></div></section>` });
+const notFound = layout({ lang: 'en', path: '/404.html', title: 'Page not found | X-Science', body: `<section class="not-found"><div class="container"><p>404 路 X-SCIENCE</p><h1>${copy.en.notFound}</h1><a class="button button-dark" href="/">${copy.en.goHome}</a></div></section>` });
 await writeFile(resolve(output, '404.html'), releaseResources(notFound.replace('<head>', '<head><meta name="robots" content="noindex">')));
 await writeFile(resolve(output, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${siteOrigin}/sitemap.xml\n`);
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${urls.map((path) => `<url><loc>${siteOrigin}${path}</loc><lastmod>${observedAt}</lastmod></url>`).join('')}</urlset>\n`;

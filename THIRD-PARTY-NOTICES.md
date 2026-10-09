@@ -30,3 +30,5 @@ The served 3Dmol bundle includes four X-Science studio GLSL shaders. The pinned
 upstream bytes and original shaders are build inputs under `src/vendor/3dmol`;
 `scripts/build-protein-renderer.mjs` creates the only runtime bundle.
 The fork notice is shipped alongside the original upstream licenses.
+
+Build tooling: esbuild 0.28.2 (MIT), pinned in package-lock.json, compiles this website's original modules and CSS. It adds no remote runtime service.

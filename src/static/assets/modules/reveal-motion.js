@@ -17,11 +17,13 @@ export function initReveals(){
       if(waiting)enter(element,{delay:Math.min(index++*65,195),distance:26,duration:650});
     }
   },{threshold:.06,rootMargin:'0px 0px 20px 0px'});
-  document.querySelectorAll(selector).forEach(element=>{
-    if(motionAllowed()&&element.getBoundingClientRect().top>innerHeight)element.classList.add('will-reveal');
-    observer.observe(element);
-  });
+  const elements=[...document.querySelectorAll(selector)];
+  const waiting=motionAllowed()?elements.filter(element=>element.getBoundingClientRect().top>innerHeight):[];
+  waiting.forEach(element=>element.classList.add('will-reveal'));
+  elements.forEach(element=>observer.observe(element));
   document.addEventListener('focusin',event=>{
+    // Pointer focus must not move a pressed control before pointerup/click.
+    if(!event.target.matches?.(':focus-visible'))return;
     for(let element=event.target;element&&element!==document.body;element=element.parentElement){
       stopAnimation(element);
       if(element.classList.contains('will-reveal')){element.classList.remove('will-reveal');observer.unobserve(element);}

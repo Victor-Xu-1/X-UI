@@ -94,3 +94,18 @@ To roll back the primary, call `activate.sh` with the previous verified release
 path and current HTTP/TLS mode, then check the deployed `site-info.json` and actual
 pages. The history under `/var/lib/x-science/config-history` retains overwritten
 site configurations; other nginx site files are never modified by the activator.
+
+## Fingerprinted resource cache
+
+For releases with `asset-manifest.json`, activation runs `publish-assets.py`
+before switching the current link. It validates the managed root, real paths,
+file names, byte lengths and SHA-256, then atomically appends immutable files to
+`/var/www/x-science/shared/assets/build`. A private ownership marker protects the
+shared directory. Existing equal bytes are reused; conflicts and symlinks fail.
+Old assets are retained for already-open documents and rollback. Do not clean
+this directory as part of a routine deployment.
+
+The server serves this directory with explicit MIME types and inherited security
+headers. Only fingerprint paths receive long caching; HTML remains `no-cache`.
+HTTP/2 runs on TLS TCP443 and does not change WireGuard's UDP443 listener. Focused
+publication checks are `python3 scripts/check-asset-store.py`.

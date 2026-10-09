@@ -8,7 +8,7 @@ export function enhanceTabset(list,tabs,panels) {
   const marker=activeMarker(list),container=panels[0].parentElement;
   let selected=-1;
   function select(index,focus=false,historyMode=null) {
-    const changed=selected!==index,previous=selected,height=container.getBoundingClientRect().height;
+    const changed=selected!==index,previous=selected,height=previous>=0?container.getBoundingClientRect().height:0;
     if(changed){stopAnimation(container);panels.forEach(panel=>{stopAnimation(panel);[...panel.children].forEach(stopAnimation);});}
     tabs.forEach((tab,i)=>{
       const active=i===index;
