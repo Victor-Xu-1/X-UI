@@ -8,6 +8,7 @@ import { card } from './cards.mjs';
 import { interactionCopy } from '../content/interaction-copy.mjs';
 import { workflowExplorer } from './workflow.mjs';
 import { proteinExplorer } from './protein-explorer.mjs';
+import { cinematicPort } from './cinematic.mjs';
 
 export function homePage(lang) {
   const c = copy[lang];
@@ -21,7 +22,7 @@ export function homePage(lang) {
       <p class="hero-description">${escape(d.heroText)}</p>
       <div class="hero-actions"><a class="button button-primary" href="#software">${escape(d.heroCta)}${arrow}</a><a class="button button-outline" href="${productPath(flagship, lang)}">${escape(d.secondaryCta)}${arrow}</a></div>
     </div>
-    <figure class="hero-visual">${heroArt(lang)}<figcaption class="concept-label">${escape(c.generatedLabel)}</figcaption></figure>
+    <div class="hero-visual">${cinematicPort(lang, { id: 'x-science', poster: heroArt(lang), autostart: true, selector: true })}</div>
   </div><div class="container hero-bottom"><span>${escape(c.heroFoot)}</span><a href="#structures">${escape(d.structureTitle)}${arrow}</a><span>X-SCIENCE.AI</span></div></section>
   <section id="software" class="section software-section"><div class="container">
     <div class="section-head"><div><p class="eyebrow">${escape(d.collectionEyebrow)}</p><h2>${escape(d.collectionTitle)}</h2></div><p class="section-intro">${escape(d.collectionText)}</p></div>

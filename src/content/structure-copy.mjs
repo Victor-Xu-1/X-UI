@@ -1,6 +1,7 @@
 // Structure-control translations; preserve source-owned chemical identifiers.
 export const structureLabels = {
   "en": {
+    "posterReference": "Static reference · 1UBQ",
     "colorLegend": "Color legend",
     "helix": "Helix",
     "sheet": "Sheet",
@@ -18,6 +19,7 @@ export const structureLabels = {
     "iron": "Iron"
   },
   "zh": {
+    "posterReference": "静态参考 · 1UBQ",
     "colorLegend": "颜色图例",
     "helix": "螺旋",
     "sheet": "折叠",
@@ -35,6 +37,7 @@ export const structureLabels = {
     "iron": "铁"
   },
   "ja": {
+    "posterReference": "静的な参照 · 1UBQ",
     "colorLegend": "配色の凡例",
     "helix": "ヘリックス",
     "sheet": "シート",
@@ -52,6 +55,7 @@ export const structureLabels = {
     "iron": "鉄"
   },
   "de": {
+    "posterReference": "Statische Referenz · 1UBQ",
     "colorLegend": "Farblegende",
     "helix": "Helix",
     "sheet": "Faltblatt",
@@ -69,6 +73,7 @@ export const structureLabels = {
     "iron": "Eisen"
   },
   "fr": {
+    "posterReference": "Référence statique · 1UBQ",
     "colorLegend": "Légende des couleurs",
     "helix": "Hélice",
     "sheet": "Feuillet",
@@ -86,6 +91,7 @@ export const structureLabels = {
     "iron": "Fer"
   },
   "ko": {
+    "posterReference": "정적 참조 · 1UBQ",
     "colorLegend": "색상 범례",
     "helix": "나선",
     "sheet": "시트",

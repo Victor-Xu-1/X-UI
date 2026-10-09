@@ -7,3 +7,4 @@ src/static/assets/vendor/** -text -diff
 src/static/assets/fonts/** -text -diff
 licenses/3Dmol-2.5.5-*.txt -text -diff
 licenses/Inter-4.1-LICENSE.txt -text -diff
+licenses/Three-0.186.1-LICENSE.txt -text -diff
