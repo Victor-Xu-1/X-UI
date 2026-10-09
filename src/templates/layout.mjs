@@ -5,9 +5,7 @@ import { locales, languages, defaultLanguage } from '../content/locales.mjs';
 import { languageMenu } from './language-menu.mjs';
 import { imageViewer } from './image-viewer.mjs';
 import { siteOrigin, sourceRepository } from '../content/site.mjs';
-import { motionControl } from './cinematic.mjs';
-import { cinematicCopy } from '../content/cinematic-copy.mjs';
-import sceneEnvironment from '../content/scene-environment.json' with { type:'json' };
+import { motionControl } from './image-experience.mjs';
 
 export const escape = (value) => String(value).replace(/[&<>"']/g, (character) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[character]);
 export const multiline = (value) => escape(value).replaceAll('\n', '<br>');
@@ -32,7 +30,7 @@ export function layout({ lang, body, title, description, path, product }) {
 <link rel="stylesheet" href="/assets/styles/base.css"><link rel="stylesheet" href="/assets/styles/home.css"><link rel="stylesheet" href="/assets/styles/product.css">
 <link rel="stylesheet" href="/assets/styles/interactions.css">
 <link rel="stylesheet" href="/assets/styles/protein.css">
-<link rel="stylesheet" href="/assets/styles/cinematic.css">
+<link rel="stylesheet" href="/assets/styles/experience.css">
 <link rel="stylesheet" href="/assets/styles/responsive.css">
 <script type="application/ld+json">${JSON.stringify(data).replaceAll('<', '\\u003c')}</script>
 <script type="module" src="/assets/app.js"></script></head>
@@ -54,6 +52,5 @@ export function layout({ lang, body, title, description, path, product }) {
   <div class="footer-links"><a href="${home}#software">${c.footerNav[0]}</a>${externalLink(sourceRepository, 'X-UI · MIT')}${externalLink('https://github.com/Victor-Xu-1', 'GitHub')}${externalLink('https://www.linkedin.com/in/victor-xu-416797427', 'LinkedIn')}</div>
 </div><div class="footer-bottom"><span>© 2026 X-Science · Victor Xu</span><span>${c.licenseNote}</span><a href="#main" aria-label="${locales[lang].topLabel}">${arrow}</a></div></div></footer>
 ${imageViewer(lang)}
-<script type="application/json" data-cinematic-copy>${JSON.stringify({ ...Object.fromEntries(['concept','hint','loading','ready','unavailable','explore','paused','pause','resume','reduced'].map(key => [key, cinematicCopy[lang][key]])), environment:sceneEnvironment.asset }).replaceAll('<', '\\u003c')}</script>
 </body></html>`;
 }

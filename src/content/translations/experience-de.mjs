@@ -2,15 +2,10 @@ export default {
   "pause": "Animationen pausieren",
   "resume": "Animationen fortsetzen",
   "reduced": "Reduzierte Bewegung aktiviert",
-  "concept": "Interaktives Konzept · keine Molekülkoordinaten",
-  "loading": "Das 3D-Konzept wird vorbereitet…",
-  "ready": "3D-Konzept bereit",
-  "unavailable": "Interaktives 3D ist nicht verfügbar. Das Konzeptbild bleibt verfügbar.",
-  "retry": "3D neu laden",
-  "image": "Bild anzeigen",
-  "explore": "In 3D erkunden",
-  "reset": "Ansicht zurücksetzen",
-  "hint": "Zum Drehen ziehen · Pfeiltasten bei fokussierter Ansicht",
+  "loading": "Bild wird geladen…",
+  "ready": "Bild bereit",
+  "unavailable": "Das Bild konnte nicht geladen werden. Versuchen Sie es erneut oder öffnen Sie das vollständige Bild.",
+  "retry": "Erneut versuchen",
   "choose": "Eine Forschungsperspektive erkunden",
   "stages": "Den Workflow erkunden",
   "stageNote": "Eine Erläuterung des Workflows. Folgen Sie der Dokumentation, um die Software auszuführen.",
@@ -87,5 +82,8 @@ export default {
       ]
     }
   },
-  "paused": "Animationen pausiert"
+  "paused": "Animationen pausiert",
+  "overview": "Übersicht",
+  "galleryLabel": "Illustration auswählen",
+  "fullImage": "Vollständiges Bild ansehen"
 };

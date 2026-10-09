@@ -17,22 +17,22 @@
 .catalog-empty p { color:var(--muted); max-width:520px; margin:18px auto 24px; font-size:15px; }
 .workflow-prompt { color:var(--muted); font-size:13px; margin-bottom:22px; }
 .workflow-track { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px; }
-.workflow-step { border:1px solid #d6dce3; padding:25px; border-radius:8px; background:#ffffff70; }
+.workflow-step { border-top:1px solid #cbd1d6; padding:25px 16px; }
 .step-top { display:flex; justify-content:space-between; align-items:center; gap:15px; color:var(--muted); font-size:11px; }
 .step-top svg { width:17px; height:17px; }
 .workflow-step h3 { margin-top:26px; font-size:21px; letter-spacing:-.025em; }
 .stage-button { display:block; min-height:45px; }
 .step-products { display:flex; flex-wrap:wrap; gap:12px; margin-top:15px; font-size:12px; color:var(--muted); }
 .has-script .workflow-step { min-height:158px; transition:background .2s,border-color .2s; }
-.has-script .workflow-step.stage-active { background:var(--ink); color:white; border-color:var(--ink); }
-.stage-active .step-top { color:#bac4ce; }
+.has-script .workflow-step.stage-active { background:#e8ecef; border-color:var(--ink); }
+.stage-active .step-top { color:var(--ink); }
 .stage-panel { display:grid; grid-template-columns:1fr 1fr; gap:70px; padding:36px 5px 0; }
 .stage-intro { display:flex; align-items:flex-start; gap:28px; }
 .stage-number { color:#596776; font-size:36px; line-height:1; font-weight:450; letter-spacing:-.06em; }
 .stage-intro h3 { font-size:23px; margin-bottom:15px; }
 .stage-intro p { color:var(--muted); font-size:15px; max-width:500px; }
 .stage-recommendations { display:flex; flex-direction:column; gap:12px; }
-.stage-tool { display:flex; align-items:center; justify-content:space-between; gap:20px; padding:20px 22px; border:1px solid #d6dce3; border-radius:7px; background:white; transition:border-color .2s,transform .2s; }
+.stage-tool { display:flex; align-items:center; justify-content:space-between; gap:20px; padding:20px 0; border-bottom:1px solid #d6dce3; transition:border-color .2s,transform .2s; }
 .stage-tool:hover { border-color:#6c8da3; transform:translateX(3px); }
 .stage-tool strong,.stage-tool small { display:block; }
 .stage-tool strong { font-size:16px; font-weight:550; }
@@ -40,7 +40,8 @@
 .stage-tool svg { width:20px; height:20px; flex-shrink:0; color:var(--blue); }
 .workflow-note { color:var(--muted); font-size:12px; margin-top:30px; max-width:700px; }
 .image-zoom-link { display:block; position:relative; }
-.image-zoom-label { position:absolute; right:12px; bottom:12px; display:inline-flex; align-items:center; gap:14px; padding:9px 13px; background:#111317ec; color:white; border-radius:999px; font-size:11px; }
+.image-zoom-label { display:flex; justify-content:flex-end; align-items:center; gap:14px; min-height:44px; padding-top:8px; color:var(--ink); font-size:11px; }
+.image-zoom-link:hover .image-zoom-label { text-decoration:underline; text-underline-offset:5px; }
 .image-viewer { width:min(1280px,calc(100vw - 60px)); max-width:none; max-height:calc(100dvh - 44px); padding:0; border:1px solid #4a5360; border-radius:12px; background:#14171c; color:white; box-shadow:0 30px 100px #0005; overflow:auto; }
 .image-viewer::backdrop { background:#101317d9; backdrop-filter:blur(8px); }
 .viewer-open { overflow:hidden; }
@@ -59,6 +60,6 @@
 .product-section-nav a { min-height:56px; padding-block:17px; border-bottom:2px solid transparent; color:var(--muted); font-size:13px; white-space:nowrap; }
 .product-section-nav a:hover,.product-section-nav a[aria-current] { color:var(--ink); border-bottom-color:var(--accent); }
 .product-page section[id] { scroll-margin-top:62px; }
-.section-head,.about-grid,.capability,.product-steps li,.research-principle,.proof-grid { transition:opacity .55s,translate .55s; }
+.section-head,.about-grid,.capability,.product-steps li,.research-principle,.proof-grid,.product-explorer { transition:opacity .55s,translate .55s; }
 .product-card { transition:opacity .55s,translate .55s; }
 .will-reveal { opacity:0; translate:0 22px; }

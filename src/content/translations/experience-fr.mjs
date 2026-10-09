@@ -2,15 +2,10 @@ export default {
   "pause": "Mettre les animations en pause",
   "resume": "Reprendre les animations",
   "reduced": "Réduction des mouvements activée",
-  "concept": "Concept interactif · pas de coordonnées moléculaires",
-  "loading": "Préparation du concept 3D…",
-  "ready": "Concept 3D prêt",
-  "unavailable": "La 3D interactive n’est pas disponible. L’image conceptuelle reste accessible.",
-  "retry": "Recharger la 3D",
-  "image": "Afficher l’image",
-  "explore": "Explorer en 3D",
-  "reset": "Réinitialiser la vue",
-  "hint": "Glisser pour faire pivoter · touches fléchées lorsque la vue a le focus",
+  "loading": "Chargement de l’image…",
+  "ready": "Image prête",
+  "unavailable": "L’image n’a pas pu être chargée. Réessayez ou ouvrez l’image complète.",
+  "retry": "Réessayer",
   "choose": "Explorer une perspective de recherche",
   "stages": "Explorer le workflow",
   "stageNote": "Une explication du workflow. Suivez la documentation pour exécuter le logiciel.",
@@ -87,5 +82,8 @@ export default {
       ]
     }
   },
-  "paused": "Animations en pause"
+  "paused": "Animations en pause",
+  "overview": "Vue d’ensemble",
+  "galleryLabel": "Choisir une illustration",
+  "fullImage": "Voir l’image complète"
 };

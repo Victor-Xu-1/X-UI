@@ -36,7 +36,7 @@
 .protein-canvas:active { cursor:grabbing; }
 .protein-canvas canvas { display:block; }
 .protein-poster { position:absolute; inset:40px 0 88px; width:100%; height:calc(100% - 128px); object-fit:contain; }
-.has-script .protein-poster { display:none; }
+
 .protein-stage-top,.protein-stage-bottom { position:absolute; display:flex; justify-content:space-between; align-items:center; gap:24px; left:26px; right:26px; z-index:2; pointer-events:none; }
 .protein-stage-top { top:19px; color:#aebac8; font-size:10px; letter-spacing:.025em; }
 .protein-stage-top>span:first-child { font-size:11px; letter-spacing:.12em; color:#e9eff5; }
@@ -97,3 +97,13 @@ html:not(.has-script) .protein-controls,html:not(.has-script) .protein-status-la
   .protein-figure-controls { grid-column:auto; }
   .protein-legend { left:16px; right:16px; gap:12px; font-size:10px; }
 }
+
+/* Loading keeps source identity and displayed coordinate pixels consistent. */
+.protein-poster-note { position:absolute; top:55px; left:26px; z-index:2; color:#597482; font-size:11px; }
+.has-script .protein-poster { display:block; }
+[data-poster="hidden"] .protein-poster,[data-poster="hidden"] .protein-poster-note { display:none; }
+.protein-status-layer { inset:auto 25px 130px; background:#0d202be8; padding:17px; border-radius:8px; border:1px solid #3c5667; }
+.protein-loader { width:19px; height:19px; }
+
+.has-script .protein-section:not([data-phase="ready"]) .protein-canvas,.has-script .protein-section:not([data-phase="ready"]) .protein-legend { visibility:hidden; }
+.protein-section[data-poster="hidden"]:not([data-phase="ready"]) .protein-status-layer { inset:70px 25px; }
