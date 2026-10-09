@@ -3,6 +3,7 @@ import { createHash } from 'node:crypto';
 import { spawnSync } from 'node:child_process';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { packageOperations } from './package-operations.mjs';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const software = JSON.parse(await readFile(resolve(root, 'package.json'), 'utf8'));
@@ -19,8 +20,7 @@ const filename = `x-science-${software.version}-${sha256.slice(0,12)}.tar.gz`;
 await mkdir(download, { recursive: true });
 await copyFile(archive, resolve(download, filename));
 const operationsArchive = resolve(scratch, 'x-science-ops.tar.gz');
-const operationsResult = spawnSync('tar', ['-czf', operationsArchive, '--exclude=__pycache__', '-C', root, 'ops'], { stdio: 'inherit' });
-if (operationsResult.status !== 0) throw new Error('Unable to package deployment operations');
+await packageOperations(root, scratch, operationsArchive);
 const operationsBytes = await readFile(operationsArchive);
 const operationsSha256 = createHash('sha256').update(operationsBytes).digest('hex');
 const operationsFilename = `x-science-ops-${operationsSha256.slice(0,12)}.tar.gz`;

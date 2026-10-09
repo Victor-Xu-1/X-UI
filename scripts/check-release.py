@@ -31,6 +31,18 @@ def fixture(path, members):
 
 
 class ReleaseChecks(unittest.TestCase):
+    def test_deployment_scripts_have_portable_unix_line_endings(self):
+        operations = MANIFEST['operations']
+        archive = ROOT / 'dist/_transfer' / operations['filename']
+        self.assertEqual(hashlib.sha256(archive.read_bytes()).hexdigest(), operations['sha256'])
+        with tarfile.open(archive, 'r:gz') as source:
+            shells = [item for item in source.getmembers() if item.isfile() and item.name.endswith('.sh')]
+            self.assertGreaterEqual(len(shells), 2)
+            for item in shells:
+                data = source.extractfile(item).read()
+                self.assertTrue(data.startswith(b'#!/usr/bin/env bash\n'))
+                self.assertNotIn(b'\r', data, item.name)
+
     def test_built_backup_contains_english_and_chinese_routes_and_original_logo(self):
         with tempfile.TemporaryDirectory() as tmp:
             receipt = stage(ARCHIVE, SHA, Path(tmp) / 'backup', 'backup')
