@@ -13,8 +13,6 @@
 .case-benefit h3 { font-size:clamp(24px,2.2vw,32px); line-height:1.5; letter-spacing:-.025em; }
 .case-next>p:not(.eyebrow) { color:var(--muted); font-size:17px; line-height:1.75; }
 .case-next .text-link { margin-top:20px; }
-html[data-motion="running"] .has-enhanced-tabs .use-case-panel:not([hidden]) { animation:case-arrive .4s ease both; }
-@keyframes case-arrive { from { opacity:0; translate:0 12px; } to { opacity:1; translate:0; } }
 @media(max-width:760px) { .use-case-tabs { gap:20px; } .use-case-tabs strong { font-size:15px; } .use-case-panel { gap:40px; } }
 @media(max-width:520px) { .use-case-tabs { grid-template-columns:1fr; gap:0; } .use-case-tabs>a { grid-template-columns:24px 1fr 20px; align-items:center; gap:12px; min-height:86px; padding-block:18px; } .case-number { grid-column:auto; } .use-case-panel { grid-template-columns:1fr; gap:25px; padding-top:30px; } .case-next>p:not(.eyebrow) { font-size:16px; } }
-@media(prefers-reduced-motion:reduce) { .use-case-panel { animation:none!important; } .case-arrow { transition:none; } }
+@media(prefers-reduced-motion:reduce) { .case-arrow { transition:none; } }

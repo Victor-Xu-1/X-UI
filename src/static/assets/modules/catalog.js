@@ -1,3 +1,5 @@
+import { captureCatalog,moveCatalog } from './catalog-motion.js';
+import { animate } from './ui-animation.js';
 const normalize = value => value.normalize('NFKC').toLocaleLowerCase().trim();
 
 export function initCatalog() {
@@ -9,7 +11,9 @@ export function initCatalog() {
   const empty = document.querySelector('.catalog-empty');
   const index = new Map(cards.map(card => [card, normalize([...card.querySelectorAll('.card-eyebrow>span:first-child, .card-body h3, .card-body>p, .card-tags')].map(element=>element.textContent).join(' '))]));
   let category = 'all';
-  function render() {
+  const collection=document.querySelector('.catalog-results');
+  function render(animated=true) {
+    const before=animated?captureCatalog(collection,cards):null,oldCount=count.textContent;
     const terms = normalize(search.value).split(/\s+/).filter(Boolean);
     let visible = 0;
     cards.forEach(card => {
@@ -24,6 +28,7 @@ export function initCatalog() {
     });
     count.textContent = String(visible);
     empty.hidden = visible !== 0;
+    if(before){moveCatalog(collection,cards,before);if(oldCount!==count.textContent)animate(count,[{opacity:.3,transform:'translateY(8px)'},{opacity:1,transform:'translateY(0)'}],{duration:280});}
   }
   filters.forEach(button => button.addEventListener('click', () => {
     category = button.dataset.filter;
@@ -37,5 +42,5 @@ export function initCatalog() {
   document.querySelector('[data-reset-catalog]').addEventListener('click', () => {
     category = 'all'; search.value = ''; render(); search.focus({ preventScroll: true });
   });
-  render();
+  render(false);
 }
