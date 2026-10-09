@@ -4,7 +4,7 @@ export default {
   "reduced": "Reduzierte Bewegung aktiviert",
   "loading": "Bild wird geladen…",
   "ready": "Bild bereit",
-  "unavailable": "Das Bild konnte nicht geladen werden. Versuchen Sie es erneut oder öffnen Sie das vollständige Bild.",
+  "unavailable": "Das Bild konnte nicht geladen werden. Bitte erneut versuchen.",
   "retry": "Erneut versuchen",
   "paused": "Animationen pausiert",
   "fullImage": "Vollständiges Bild ansehen"

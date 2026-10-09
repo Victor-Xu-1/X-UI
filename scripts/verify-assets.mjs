@@ -95,7 +95,7 @@ for (const language of languages) for (const path of [languagePath(language), ..
   assert.equal(payload.structures.length, ambient?1:3); checks++;
   for (const text of Object.values(payload.copy||{})) { assert.ok(typeof text === 'string' && text.trim()); checks++; }
   for (const item of payload.structures) { assert.equal(item.sha256, structureCatalog.find(model => model.id === item.id).sha256); assert.ok(!('names' in item) && !('name' in item.ligand)); checks+=2; }
-  if(ambient){const scene=html.match(/<div class="molecular-atmosphere"[\s\S]+?<script type="application\/json" data-protein-data>/)?.[0];assert.ok(scene&&!/<(?:button|select|input|details|a)\b|tabindex=/i.test(scene));}
+  if(ambient){const scene=html.match(/<div class="molecular-atmosphere"[\s\S]+?<script type="application\/json" data-protein-data>/)?.[0];assert.ok(scene&&!/<(?:button|select|input|details|a)\b/i.test(scene)&&scene.includes('id="molecular-gesture-help"')&&scene.includes('tabindex="-1"'));}
   else assert.ok(html.includes('aria-describedby="protein-keyboard-hint"') && html.includes('<noscript>')); checks++;
   assert.ok(!html.includes('data-protein-view="pocket"')&&!html.includes('data-protein-story')&&!html.includes('data-protein-record'));checks++;
   assert.ok(!/CRBN|CK1|DCAF15|RBM39|FKBP12|mTOR|lenalidomide|E7820|rapamycin/i.test(raw));checks++;

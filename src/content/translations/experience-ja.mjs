@@ -4,7 +4,7 @@ export default {
   "reduced": "動きを抑える設定が有効",
   "loading": "画像を読み込み中…",
   "ready": "画像を表示しました",
-  "unavailable": "画像を読み込めませんでした。再試行するか、全体画像を開いてください。",
+  "unavailable": "画像を読み込めませんでした。もう一度お試しください。",
   "retry": "再試行",
   "paused": "アニメーション停止中",
   "fullImage": "画像全体を見る"

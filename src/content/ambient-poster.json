@@ -1,11 +1,11 @@
 {
   "file": "assets/structures/molecular-atmosphere.webp",
   "width": 1600,
-  "height": 1352,
+  "height": 1540,
   "pdbId": "1FAP",
   "coordinateSha256": "77e30d6e7ce518b22c2e8978d2d9315590da454fc5b3d9aeabeebf39bdff6fb4",
   "renderer": "3Dmol.js 2.5.5 + X-Science studio shaders",
   "representation": "Ambient ribbons and translucent molecular surface",
-  "sha256": "f8264249983bc96061e0f34a165ab35fd953fef3b28e61994dbc9c7f6c958937",
-  "bytes": 124260
+  "sha256": "2254e4a2f30345adfee1f585b1671dbb2c0ae702a288a139519670b8013a4fc4",
+  "bytes": 155768
 }
