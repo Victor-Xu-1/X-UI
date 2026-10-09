@@ -88,17 +88,24 @@ ProteinScene and the same bounded, hash-verified coordinate loader. Scientific
 identity, immutable source bytes and upstream citations belong to
 structure-provenance.json, not the public marketing presentation.
 
-The homepage is a noninteractive ambient animation: no local controls, labels,
-legends, dropdowns, keyboard focus or mouse gestures. Blue and gold ribbons,
-a translucent envelope and view-dependent studio highlights form its visual style.
-The compact two-part homepage composition is selected by ambient-poster.json.
-The view rotates on multiple axes. A coordinate bounding sphere reserves room
-for every orientation, with an explicit depth slab and resize-aware fitting.
-A white studio background blends into the page through a soft outer mask;
-mouse input is disabled. Global user
-pause, system reduced motion, document visibility and offscreen state govern it.
-An unavailable animation keeps its genuine static poster and displays a short
-localized status; refresh provides a fresh bounded attempt without hidden loops.
+The homepage has a larger, directly manipulable molecular illustration without
+surrounding button panels. Blue and gold ribbons, a translucent envelope and
+view-dependent studio highlights follow the supplied visual reference. The model
+and genuine poster are selected by ambient-poster.json; a white studio background
+blends into the page through a soft outer mask.
+
+Native 3Dmol handlers own drag and pinch through the documented custom-handler
+hook. molecular-gestures.js owns a single standard-delta wheel path, keyboard
+rotation/zoom/reset and double-click or double-tap reset. No competing native wheel
+handler is installed for this scene. Distance limits keep zoom between 0.7x and
+2.4x the fitted size. During input and for 1.8 seconds afterward, automatic rotation
+pauses; global/system motion policy, visibility and offscreen state remain the
+final authority. A chosen view survives responsive resize; reset restores framing.
+
+The initial fit reserves room for rotation. Localized hints distinguish mouse and
+touch input, with keyboard instructions available to assistive technology. Before
+ready, or after a renderer failure, the canvas is unfocusable and the genuine
+poster remains visible. Failure exposes a short status and page-refresh recovery.
 
 X-DDE retains its generic three-form selector, ribbon/surface controls, zoom,
 background and actual PNG export. It has no public biological identity or

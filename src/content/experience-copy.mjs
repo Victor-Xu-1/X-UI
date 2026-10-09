@@ -8,7 +8,7 @@ export const experienceCopy={en:{
   "reduced": "Reduced motion enabled",
   "loading": "Loading image…",
   "ready": "Image ready",
-  "unavailable": "This image could not load. Try again or open the full image.",
+  "unavailable": "This image could not load. Please try again.",
   "retry": "Try again",
   "paused": "Animations paused",
   "fullImage": "View full image"
@@ -18,7 +18,7 @@ export const experienceCopy={en:{
   "reduced": "已启用减少动态效果",
   "loading": "正在加载图片…",
   "ready": "图片已就绪",
-  "unavailable": "图片未能加载。请重试，或查看完整图片。",
+  "unavailable": "图片未能加载，请重试。",
   "retry": "重试",
   "paused": "动画已暂停",
   "fullImage": "查看完整图片"

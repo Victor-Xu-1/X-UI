@@ -8,6 +8,11 @@ export class ProteinScene {
     this.ambient=ambient;
     this.library=library;this.element=element;this.viewer=library.createViewer(element,ambient?{...proteinViewerSettings,nomouse:true}:proteinViewerSettings);
     if(!this.viewer)throw new Error('webgl_unavailable');
+    if(ambient){
+      // Use the documented custom-handler hook; install no competing native wheel handler.
+      const canvas=this.viewer.getCanvas();
+      for(const [event,handler] of [['mousedown','_handleMouseDown'],['touchstart','_handleMouseDown'],['mousemove','_handleMouseMove'],['touchmove','_handleMouseMove'],['contextmenu','_handleContextMenu']])canvas.addEventListener(event,this.viewer[handler].bind(this.viewer),{passive:false});
+    }
     this.context=this.viewer.getRenderer().getContext();
     if(!this.context||this.context.isContextLost())throw new Error('webgl_unavailable');
     this.context.canvas.addEventListener('webglcontextlost',()=>{this.viewer.spin(false);element.dispatchEvent(new Event('protein-context-lost'));});
@@ -27,9 +32,10 @@ export class ProteinScene {
     this.frame();this.initialView=[...this.viewer.getView()];
   }
   frame() {
+    if(this.ambient)this.viewer.setZoomLimits(1,100000);
     this.viewer.zoomTo(this.selection);
     this.viewer.zoom(fittingZoom(this.element.clientWidth,this.element.clientHeight));this.viewer.render();
-    if(this.ambient){fitAmbientFrame(this.viewer,this.element,this.model.selectedAtoms(this.selection));return;}
+    if(this.ambient){fitAmbientFrame(this.viewer,this.element,this.model.selectedAtoms(this.selection));const distance=this.viewer.getPerceivedDistance();this.viewer.setZoomLimits(distance/2.4,distance/.7);return;}
     const points=this.viewer.modelToScreen(this.model.selectedAtoms(this.selection));
     const xs=points.map(point=>point.x),ys=points.map(point=>point.y);
     const fill=Math.min(this.element.clientWidth*.86/(Math.max(...xs)-Math.min(...xs)),this.element.clientHeight*.8/(Math.max(...ys)-Math.min(...ys)));
@@ -78,5 +84,14 @@ export class ProteinScene {
   reset(){if(this.initialView){this.viewer.setView([...this.initialView]);this.frame();this.viewer.render();}}
   rotate(angle,axis){this.viewer.rotate(angle,axis);this.viewer.render();}
   zoom(factor){this.viewer.zoom(factor);this.viewer.render();}
-  resize(){const size=[this.element.clientWidth,this.element.clientHeight];this.viewer.resize();if(this.model&&size.some((v,i)=>v!==this.size[i])){this.frame();this.viewer.render();}this.size=size;}
+  endGesture(event){this.viewer._handleMouseUp(event);}
+  resize(){
+    const size=[this.element.clientWidth,this.element.clientHeight],view=this.viewer.getView();
+    this.viewer.resize();
+    if(this.model&&size.some((v,i)=>v!==this.size[i])){
+      if(this.ambient&&this.interacted)this.viewer.setView(view);else this.frame();
+      this.viewer.render();
+    }
+    this.size=size;
+  }
 }

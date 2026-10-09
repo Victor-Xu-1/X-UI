@@ -19,7 +19,7 @@ export function fitAmbientFrame(viewer,element,atoms) {
   const radius=Math.max(...atoms.map(a=>Math.hypot(a.x-center.x,a.y-center.y,a.z-center.z)))+4;
   const points=viewer.modelToScreen([center,{...center,x:center.x+1},{...center,y:center.y+1},{...center,z:center.z+1}]);
   const sx=Math.hypot(...points.slice(1).map(p=>p.x-points[0].x)),sy=Math.hypot(...points.slice(1).map(p=>p.y-points[0].y));
-  const scale=Math.min(element.clientWidth*.47/(radius*sx),element.clientHeight*.47/(radius*sy));
+  const scale=Math.min(element.clientWidth*.5/(radius*sx),element.clientHeight*.5/(radius*sy));
   if(!Number.isFinite(scale)||scale<=0)throw new Error('invalid_ambient_frame');
   viewer.zoom(scale);viewer.setSlab(-1.3*radius,1.3*radius);viewer.render();
 }

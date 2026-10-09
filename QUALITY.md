@@ -25,7 +25,7 @@ Default English is served at `/`; the central locale dictionary owns routing.
 | Shared motion preference | OS reduction, user pause/resume, refresh, visible/offscreen/hidden states | Image animation timelines stop; genuine PDB rotation and CSS traces agree; accurate reason labels |
 | Biomedical imagery × 6 | Subject relevance, blended edges, loading/error/retry, pause/pointer/offscreen/no JS | Original native provenance; real image pixels and accurate labels; no generated results |
 | Product use cases × 5 × 6 | Three problem/benefit/next-step panels, official guide, arrows/Home/End, focus, no JS | Complete localized facts, single shared tab contract; no pretend scientific execution |
-| Homepage ambient scene × 6 | Automatic multi-axis rotation; no buttons, menus, captions, pointer gestures or focusable widgets; responsive fit, reduced motion and failure poster | Real camera changes; full rotation bounds; generic accessible name; no visible surrounding UI |
+| Homepage ambient scene × 6 | Automatic multi-axis rotation; larger composition; drag, pinch, wheel, keyboard and double-click/tap reset without a toolbar; input cooldown, responsive view retention, reduced motion and failure poster | Real camera changes and bounded zoom; full default rotation bounds; localized gesture help; no surrounding button panel |
 | All public copy and imagery | All six languages, metadata, labels, placeholders, captions, active panels and visible image text | No target/disease terminology or named research examples; no retired named capture URLs |
 | X-DDE molecular illustration × 6 | Lazy/loading/ready, three generically named forms, ribbon/surface, full rotation, reset/zoom, backgrounds, PNG export, error/retry, unavailable/context loss | Actual WebGL pixels, exact source coordinates and bounded views; no visible target/protein/interaction identity in text, alt, ARIA, labels or exports |
 | Molecular motion/export | Visible/offscreen/hidden tab, user pause, reduced-motion changes, keyboard, mobile resize, high DPR | Rotation really stops; control states agree; PNG pixels and generic caption/filename are valid; canvas/view restore exactly |
@@ -90,7 +90,7 @@ products, contact and footer across all six languages; inspect long labels and
 320 px layouts. Remove dead controls, unused diagrams and construction language.
 Keep scope/licensing/source facts that inform a real adoption decision.
 
-The public 3D review checks a purely illustrative display. Home is a control-free ambient scene; X-DDE keeps generic form controls. Both have
+The public 3D review checks a purely illustrative display. Home offers direct manipulation without a button panel; X-DDE keeps generic form controls. Both have
 no target/protein/interaction descriptions, no residue labels, no scientific
 parameter panels and no identifying export caption or filename. Source manifests
 retain real coordinate provenance. Inspect both representations and full rotation
