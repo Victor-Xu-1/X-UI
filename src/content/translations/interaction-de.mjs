@@ -21,7 +21,7 @@ export default {
   "sectionNavigation": "Auf dieser Seite",
   "sectionLabels": [
     "Funktionen",
-    "Forschungsanwendungen",
-    "Umfang und Anforderungen"
+    "Anwendungen",
+    "Umfang"
   ]
 };
