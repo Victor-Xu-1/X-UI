@@ -3,12 +3,11 @@ import { redesignCopy } from '../content/redesign-copy.mjs';
 import { products, productPath, languagePath } from '../content/products.mjs';
 import { externalLink, escape, layout } from './layout.mjs';
 import { arrow } from './icons.mjs';
-import { heroArt, editorialArt } from './illustrations.mjs';
 import { card } from './cards.mjs';
 import { interactionCopy } from '../content/interaction-copy.mjs';
 import { workflowExplorer } from './workflow.mjs';
 import { proteinExplorer } from './protein-explorer.mjs';
-import { cinematicPort } from './cinematic.mjs';
+import { imageExperience } from './image-experience.mjs';
 
 export function homePage(lang) {
   const c = copy[lang];
@@ -22,7 +21,7 @@ export function homePage(lang) {
       <p class="hero-description">${escape(d.heroText)}</p>
       <div class="hero-actions"><a class="button button-primary" href="#software">${escape(d.heroCta)}${arrow}</a><a class="button button-outline" href="${productPath(flagship, lang)}">${escape(d.secondaryCta)}${arrow}</a></div>
     </div>
-    <div class="hero-visual">${cinematicPort(lang, { id: 'x-science', poster: heroArt(lang), autostart: true, selector: true })}</div>
+    <div class="hero-visual">${imageExperience(lang, { gallery: true, priority: true })}</div>
   </div><div class="container hero-bottom"><span>${escape(c.heroFoot)}</span><a href="#structures">${escape(d.structureTitle)}${arrow}</a><span>X-SCIENCE.AI</span></div></section>
   <section id="software" class="section software-section"><div class="container">
     <div class="section-head"><div><p class="eyebrow">${escape(d.collectionEyebrow)}</p><h2>${escape(d.collectionTitle)}</h2></div><p class="section-intro">${escape(d.collectionText)}</p></div>
@@ -34,7 +33,7 @@ export function homePage(lang) {
   ${proteinExplorer(lang)}
   <section id="workflow" class="section research-section"><div class="container">
     <div class="research-intro"><div><p class="eyebrow">${escape(d.methodologyEyebrow)}</p><h2>${escape(d.methodologyTitle)}</h2></div><p>${escape(d.methodologyText)}</p></div>
-    <figure class="editorial-band">${editorialArt(lang)}<figcaption><span>${escape(c.generatedLabel)}</span><span>X-Science · ${escape(d.methodologyEyebrow)}</span></figcaption></figure>
+    <div class="editorial-band">${imageExperience(lang, { id: 'science-editorial', wide: true })}</div>
     <div class="principle-grid">${d.methodologySteps.map((step, index) => `<article class="research-principle"><span>0${index + 1}</span><h3>${escape(step.title)}</h3><p>${escape(step.text)}</p></article>`).join('')}</div>
     ${workflowExplorer(lang)}<p class="workflow-note">${escape(c.workflowNote)}</p>
   </div></section>

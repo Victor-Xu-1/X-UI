@@ -5,7 +5,7 @@ import { initImageViewer } from './modules/image-viewer.js';
 import { initMotion } from './modules/motion.js';
 import { initProteinViewer } from './modules/protein-viewer.js';
 import { initMotionPolicy } from './modules/motion-policy.js';
-import { initCinematic } from './modules/cinematic.js';
+import { initImageMotion } from './modules/image-motion.js';
 import { initProductExplorer } from './modules/product-explorer.js';
 
 document.documentElement.classList.add('has-script');
@@ -17,5 +17,5 @@ initWorkflow();
 initImageViewer();
 initMotion();
 initProteinViewer();
-initCinematic();
+initImageMotion();
 initProductExplorer();

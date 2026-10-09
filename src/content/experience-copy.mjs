@@ -1,23 +1,17 @@
-import ja from './translations/cinematic-ja.mjs';
-import de from './translations/cinematic-de.mjs';
-import fr from './translations/cinematic-fr.mjs';
-import ko from './translations/cinematic-ko.mjs';
+import ja from './translations/experience-ja.mjs';
+import de from './translations/experience-de.mjs';
+import fr from './translations/experience-fr.mjs';
+import ko from './translations/experience-ko.mjs';
 
-// Shared concept controls and factual workflow explanations.
-export const cinematicCopy = {
+export const experienceCopy = {
   "en": {
     "pause": "Pause animations",
     "resume": "Resume animations",
     "reduced": "Reduced motion enabled",
-    "concept": "Interactive concept · not molecular coordinates",
-    "loading": "Preparing the 3D concept…",
-    "ready": "3D concept ready",
-    "unavailable": "Interactive 3D is unavailable. The concept image remains available.",
-    "retry": "Reload 3D",
-    "image": "Show image",
-    "explore": "Explore in 3D",
-    "reset": "Reset view",
-    "hint": "Drag to rotate · arrow keys when focused",
+    "loading": "Loading image…",
+    "ready": "Image ready",
+    "unavailable": "This image could not load. Try again or open the full image.",
+    "retry": "Try again",
     "choose": "Explore a research perspective",
     "stages": "Explore the workflow",
     "stageNote": "An explanation of the workflow. Follow the documentation to run the software.",
@@ -94,21 +88,19 @@ export const cinematicCopy = {
         ]
       }
     },
-    "paused": "Animations paused"
+    "paused": "Animations paused",
+    "overview": "Overview",
+    "galleryLabel": "Choose an illustration",
+    "fullImage": "View full image"
   },
   "zh": {
     "pause": "暂停动画",
     "resume": "恢复动画",
     "reduced": "已启用减少动态效果",
-    "concept": "交互概念场景 · 非分子坐标",
-    "loading": "正在准备三维概念场景…",
-    "ready": "三维概念场景已就绪",
-    "unavailable": "当前无法显示交互式三维。你仍可查看概念图片。",
-    "retry": "重新加载三维",
-    "image": "查看图片",
-    "explore": "探索三维",
-    "reset": "重置视图",
-    "hint": "拖动旋转 · 聚焦后可用方向键",
+    "loading": "正在加载图片…",
+    "ready": "图片已就绪",
+    "unavailable": "图片未能加载。请重试，或查看完整图片。",
+    "retry": "重试",
     "choose": "探索不同研究视角",
     "stages": "探索工作流程",
     "stageNote": "这里展示工作流程说明；运行软件请参考使用文档。",
@@ -185,7 +177,10 @@ export const cinematicCopy = {
         ]
       }
     },
-    "paused": "动画已暂停"
+    "paused": "动画已暂停",
+    "overview": "总览",
+    "galleryLabel": "选择概念图片",
+    "fullImage": "查看完整图片"
   },
   ja, de, fr, ko
 };

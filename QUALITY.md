@@ -23,8 +23,8 @@ Default English is served at `/`; the central locale dictionary owns routing.
 | Image viewer | Loading, loaded, failure, original link, close, Escape, focus wrap/restore | Real image pixels and source caption; controlled failed/delayed requests |
 | Product section navigation | Each anchor, active location, sticky header, back to top | Heading remains visible; same product route retained |
 | Motion | Reveal, pointer response, reading progress, reduced-motion changes | Real scroll/pointer state; reduced motion and touch remain usable |
-| Cinematic scene on every page | Five presets, drag/arrows/reset, card-host transfer, static image, pause, loading/failure/context loss | Genuine Three WebGL pixels, one persistent concept canvas, finite geometry and explicit deferred local import |
-| Shared motion preference | OS reduction, user pause/resume, refresh, visible/offscreen/hidden states | Actual render counters stop; concept, PDB rotation and CSS traces agree; accurate reason labels |
+| Shared motion preference | OS reduction, user pause/resume, refresh, visible/offscreen/hidden states | Image animation timelines stop; genuine PDB rotation and CSS traces agree; accurate reason labels |
+| Image illustration/gallery × 6 | Original overview/product assets, decoded swap, keyboard, full-image link, loading/error/retry, pause/pointer/offscreen/no JS | Actual image pixels and matching captions/links; original hashes retained; no abstract Three renderer requested |
 | Product workflow × 5 × 6 | Three stages, source material/review/guide, arrows/Home/End, focus, no JS | Every panel has complete localized facts; SVG concepts never stand in for results |
 | Protein viewer on home/X-DDE × 6 | Lazy/loading/ready, three structures × three representations, full rotation, reset/zoom, backgrounds, PNG export, source/legend, error/retry, unavailable/context loss | Actual local WebGL pixels, exact deposited coordinates, bounded/unclipped views, single-instance lifecycle; no generated molecular results |
 | Molecular motion/export | Visible/offscreen/hidden tab, user pause, reduced-motion changes, keyboard, mobile resize, high DPR | Rotation really stops; control states agree; PNG pixels/source/legend are valid and canvas/view restore exactly |
@@ -65,13 +65,12 @@ and motion enhancements. `app.js` initializes these modules. Shared styling is
 split by page and interaction responsibility. The website adds no scientific
 execution, remote analytics, fake live results or duplicate runtime framework.
 
-The conceptual Three worker and deposited-coordinate 3Dmol viewer have separate
-scientific meanings and renderers, coordinated by the shared motion preference.
-Their offscreen loops must be idle. Each document caps the concept renderer to
-one instance and 1.6 million physical pixels; compare actual draw cadence, long
-tasks and layout shifts under the recorded Chrome/device/network conditions.
-Performance samples do not establish real-device mobile speed or award judging.
-The Three library, geometry and shader preparation run in one dedicated worker,
-with a bounded command boundary and no second document-thread rendering path.
-Inspect the five presets and selected workflow panels, not only the default home
-view. Review controlled failure pixels and the readable static-image/source path.
+The image-based promotional visuals and deposited-coordinate 3Dmol viewer have
+separate scientific meanings and share one motion preference. Verify original
+image hashes, actual animation timelines, decoded gallery changes and stale
+request handling. The previous abstract Three path is retired; do not retain a
+competing renderer/dependency or relabel concept art as screenshots. Verify that
+loading/error states hide stale protein pixels and legends. Inspect complete
+pages and selected workflow/gallery states, not only the default hero. Record
+layout, interaction and public-deployment evidence; automated checks do not
+establish award judging or untested physical-device performance.

@@ -8,7 +8,6 @@
 .hero-actions { display:flex; flex-wrap:wrap; align-items:center; gap:12px; margin-top:34px; }
 .hero-visual { position:relative; min-width:0; }
 .hero-visual img { aspect-ratio:1.12; object-fit:cover; object-position:63% center; border-radius:6px;  }
-.concept-label { display:inline-block; margin-top:15px; color:var(--muted); font-size:11px; letter-spacing:.015em; }
 .hero-bottom { display:flex; align-items:center; justify-content:space-between; padding-block:22px; border-top:1px solid var(--line); color:var(--muted); font-size:12px; }
 .hero-bottom a { display:flex; align-items:center; gap:12px; min-height:38px; color:var(--ink); }
 .hero-bottom svg { width:19px; height:19px; transform:rotate(90deg); }
@@ -16,10 +15,6 @@
 .product-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:50px 30px; }
 .product-card { min-width:0; background:white; border:1px solid transparent; border-radius:10px; overflow:hidden; }
 .art-link { display:block; overflow:hidden; border-radius:8px; background:var(--soft); }
-.product-art { position:relative; overflow:hidden; }
-.product-art img { width:100%; aspect-ratio:1.5; object-fit:cover; transition:transform .7s cubic-bezier(.2,.65,.3,1); }
-.art-link:hover img { transform:scale(1.045); }
-.art-caption { position:absolute; left:16px; bottom:14px; padding:5px 8px; background:#fffffff0; color:#49535e; font-size:10px; border-radius:3px; }
 .card-body { display:flex; flex-direction:column; padding:25px 0 0; }
 .card-eyebrow { display:flex; align-items:center; justify-content:space-between; gap:12px; color:var(--muted); font-size:12px; }
 .card-number { font-size:11px; font-variant-numeric:tabular-nums; }
@@ -30,7 +25,6 @@
 .card-link { display:flex; align-items:center; justify-content:space-between; min-height:55px; margin-top:22px; padding-block:14px; border-top:1px solid var(--line); font-size:13px; font-weight:550; }
 .collection-grid .product-card[data-product="x-science"] { grid-column:1/-1; display:grid; grid-template-columns:1fr 1.04fr; gap:46px; padding:34px; background:var(--soft); border-radius:10px; }
 .collection-grid .product-card[data-product="x-science"] .art-link { order:2; align-self:stretch; }
-.collection-grid .product-card[data-product="x-science"] .product-art,.collection-grid .product-card[data-product="x-science"] .product-art img { height:100%; min-height:350px; }
 .collection-grid .product-card[data-product="x-science"] .card-body { padding:12px 5px 0; }
 .collection-grid .product-card[data-product="x-science"] h3 { font-size:52px; margin-top:27px; }
 .collection-grid .product-card[data-product="x-science"] .card-body>p { font-size:17px; }

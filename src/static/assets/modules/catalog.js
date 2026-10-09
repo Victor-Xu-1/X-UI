@@ -7,7 +7,7 @@ export function initCatalog() {
   const cards = [...document.querySelectorAll('#product-collection [data-product]')];
   const count = document.querySelector('#product-count');
   const empty = document.querySelector('.catalog-empty');
-  const index = new Map(cards.map(card => [card, normalize(card.textContent)]));
+  const index = new Map(cards.map(card => [card, normalize([...card.querySelectorAll('.card-eyebrow>span:first-child, .card-body h3, .card-body>p, .card-tags')].map(element=>element.textContent).join(' '))]));
   let category = 'all';
   function render() {
     const terms = normalize(search.value).split(/\s+/).filter(Boolean);

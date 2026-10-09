@@ -77,8 +77,6 @@
   .facts-grid>div+div { padding-left:0; padding-top:19px; border-left:0; border-top:1px solid #d3d8df; }
   .capability-grid { gap:30px; }
   .capability h3 { font-size:20px; }
-  .product-steps { grid-template-columns:1fr; gap:30px; }
-  .product-steps span { margin-bottom:16px; }
   .product-capture { padding:12px; }
   .selection-note { padding-block:58px; }
   .footer-main { grid-template-columns:1fr; gap:30px; }
@@ -106,7 +104,6 @@
   .collection-grid .product-card[data-product="x-science"] .card-body>p { font-size:15px; }
   .card-body { padding-top:20px; }
   .card-body h3 { font-size:31px; }
-  .art-caption { font-size:9px; left:10px; bottom:10px; }
   .filter { font-size:11px; padding-inline:12px; }
   .research-intro { margin-bottom:30px; }
   .editorial-band img { aspect-ratio:1.7; }

@@ -2,12 +2,11 @@ import { copy } from '../content/copy.mjs';
 import { products, languagePath, productPath } from '../content/products.mjs';
 import { layout, escape, multiline, externalLink } from './layout.mjs';
 import { arrow, glyph } from './icons.mjs';
-import { productArt } from './illustrations.mjs';
 import { card } from './cards.mjs';
 import { interactionCopy } from '../content/interaction-copy.mjs';
 import { redesignCopy } from '../content/redesign-copy.mjs';
 import { proteinExplorer } from './protein-explorer.mjs';
-import { cinematicPort } from './cinematic.mjs';
+import { imageExperience } from './image-experience.mjs';
 import { productExplorer } from './product-explorer.mjs';
 
 export function productPage(product, lang) {
@@ -22,7 +21,7 @@ export function productPage(product, lang) {
     <div class="product-hero-grid"><div><p class="eyebrow">${escape(product.label[lang])}</p><div class="product-name">${glyph(product.id)}<span>${escape(product.name)}</span></div><h1>${multiline(product.headline[lang])}</h1><p class="product-lead">${escape(product.summary[lang])}</p>
       <div class="hero-actions">${externalLink(product.release?.url || product.docs, product.release ? c.releases : c.install, 'button button-primary', arrow)}${externalLink(product.repository, c.source, 'button button-outline')}</div>
       <div class="product-license">${c.openSource} · ${product.license}${product.release ? ` · ${product.release.version}` : ''}</div>
-    </div><div class="product-hero-art">${cinematicPort(lang, { id: product.id, poster: productArt(product, lang, { priority: true }), autostart: true })}</div></div>
+    </div><div class="product-hero-art">${imageExperience(lang, { id: product.id, priority: true })}</div></div>
   </div></section>
   <section class="product-facts"><div class="container facts-grid"><div><span>${c.audience}</span><p>${escape(product.audience[lang])}</p></div><div><span>${c.environment}</span><p>${escape(product.environment[lang])}</p></div><div><span>${c.license}</span><p>${product.license}</p></div></div></section>
   <nav class="product-section-nav" aria-label="${ui.sectionNavigation}"><div class="container">${sections.map(([id, label]) => `<a href="#${id}" data-section-link>${escape(label)}</a>`).join('')}</div></nav>
