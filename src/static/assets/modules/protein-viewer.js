@@ -2,7 +2,6 @@ import { loadProteinLibrary } from './protein-library.js';
 import { loadStructure } from './structure-data.js';
 import { ProteinScene } from './protein-scene.js';
 import { downloadProteinImage } from './protein-export.js';
-import { proteinLegend } from './protein-presets.js';
 import { motionAllowed, subscribeMotion } from './motion-policy.js';
 
 export function initProteinViewer() {
@@ -11,7 +10,7 @@ export function initProteinViewer() {
 
 function mountProteinViewer(root) {
   const data = JSON.parse(root.querySelector('[data-protein-data]').textContent);
-  const { copy, language, structures, labels } = data;
+  const { copy, structures } = data;
   const canvas = root.querySelector('[data-protein-canvas]');
   const controls = root.querySelector('[data-protein-controls]');
   const select = root.querySelector('[data-protein-select]');
@@ -60,30 +59,6 @@ function mountProteinViewer(root) {
     spinButton.disabled = !motionAllowed() || root.dataset.phase !== 'ready';
     root.querySelector('[data-protein-motion-note]').hidden = motionAllowed();
   }
-  function updateIdentity(model) {
-    root.querySelector('[data-protein-id]').textContent = model.id;
-    root.querySelector('[data-stage-model]').textContent = model.id;
-    root.querySelector('[data-protein-name]').textContent = model.names[language];
-    root.querySelector('[data-protein-organism]').textContent = model.organism;
-    root.querySelector('[data-protein-resolution]').textContent = model.resolution.toFixed(2) + ' Å';
-    root.querySelector('[data-protein-chains]').textContent = String(model.chainCount);
-    root.querySelector('[data-protein-atoms]').textContent = model.atomCount.toLocaleString(language);
-    root.querySelector('[data-protein-record]').href = model.source;
-    canvas.setAttribute('aria-label', `${model.names[language]} · ${model.id} · ${copy.structureHint}`);
-  }
-  function updateLegend(model, representation) {
-    const legend = root.querySelector('[data-protein-legend]');
-    legend.replaceChildren();
-    for (const { color, label } of proteinLegend(model, representation, labels)) {
-      const item = document.createElement('span');
-      const swatch = document.createElement('i');
-      swatch.className = 'protein-swatch';
-      swatch.style.backgroundColor = color;
-      swatch.setAttribute('aria-hidden', 'true');
-      item.append(swatch, document.createTextNode(label));
-      legend.append(item);
-    }
-  }
   async function applyWanted() {
     if (busy || failedContext || reloadRequired) return;
     busy = true;
@@ -93,7 +68,6 @@ function mountProteinViewer(root) {
     if (!model) { busy = false; setPhase('error'); return; }
     setPhase('loading');
     exportStatus.hidden = true;
-    updateIdentity(model);
     try {
       const library = await loadProteinLibrary();
       if (!scene) {
@@ -114,10 +88,8 @@ function mountProteinViewer(root) {
       await scene.represent(snapshot.representation);
       if (failedContext) return;
       appliedRepresentation = snapshot.representation;
-      updateIdentity(model);
       select.value = model.id;
       representationButtons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.representation === snapshot.representation)));
-      updateLegend(model, snapshot.representation);
       setPhase('ready');
     } catch {
       // An aborted page-hide fetch must remain recoverable if the document returns.
@@ -129,7 +101,7 @@ function mountProteinViewer(root) {
     }
   }
 
-  select.addEventListener('change', () => { wanted.id = select.value; void applyWanted(); });
+  select.addEventListener('change', () => { wanted.id = select.value; wanted.representation='cartoon'; void applyWanted(); });
   representationButtons.forEach(button => button.addEventListener('click', () => {
     const kind = button.dataset.representation;
     if (kind === appliedRepresentation && root.dataset.phase === 'ready') return;
@@ -151,8 +123,7 @@ function mountProteinViewer(root) {
     canvas.style.pointerEvents = 'none';
     exportStatus.hidden = true;
     try {
-      const model = structures.find(item => item.id === activeId);
-      await downloadProteinImage(scene.capture(), { id: model.id, name: model.names[language], representation: copy[appliedRepresentation], light: lightBackground, legend: proteinLegend(model, appliedRepresentation, labels) });
+      await downloadProteinImage(scene.capture(), {caption:data.glue.caption,form:structures.findIndex(item=>item.id===activeId)+1,light:lightBackground});
       exportStatus.textContent = copy.exportReady;
     } catch {
       exportStatus.textContent = copy.exportError;

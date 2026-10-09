@@ -14,7 +14,7 @@
 .facts-grid>div+div { border-left:1px solid #d3d8df; padding-left:35px; }
 .facts-grid span { color:var(--muted); font-size:11px; }
 .facts-grid p { margin-top:9px; font-size:14px; line-height:1.65; }
-.product-features .eyebrow,.product-workflow .eyebrow { color:var(--muted); margin-bottom:20px; }
+.product-features .eyebrow { color:var(--muted); margin-bottom:20px; }
 .capability-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:35px 50px; margin-top:50px; }
 .capability { border-top:1px solid var(--line); padding-top:22px; }
 .capability>span { display:block; margin-bottom:22px; color:var(--muted); font-size:12px; }
@@ -24,7 +24,6 @@
 .product-capture figcaption { margin-top:14px; color:var(--muted); font-size:12px; }
 .product-capture figcaption a { text-decoration:underline; text-underline-offset:3px; }
 .product-capture figcaption svg { display:inline-block; vertical-align:middle; width:15px; height:15px; }
-.product-workflow { background:var(--soft); }
 .selection-note { padding-block:78px; border-bottom:1px solid var(--line); }
 .selection-note-inner { display:grid; grid-template-columns:.65fr 1fr; gap:90px; align-items:start; }
 .selection-note h2 { font-size:clamp(30px,3vw,42px); }

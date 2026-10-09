@@ -1,44 +1,98 @@
 export default {
-  'x-science': {
-    label: 'Biomedizinischer Forschungsagent', headline: 'Forschung voranbringen.\nEvidenz im Blick behalten.',
-    summary: 'Verbinden Sie Forschungsgespräche, Literatur, wissenschaftliche Werkzeuge und Projektartefakte. Forschungsfrage und Belege bleiben zusammen.',
-    audience: 'Biomedizinische Forschende, Fachleute für wissenschaftliches Rechnen und F&E-Teams', environment: 'Ubuntu / WSL; Modellanbieter und wissenschaftliche Umgebungen konfigurieren',
-    features: ['Gespräche, Eingaben und Ausgabedateien im Projektkontext organisieren', 'Unterstützte Strukturen, Sequenzen, Alignments, Notebooks und Tabellen prüfen', 'Experten, Skills, Konnektoren und Rechenumgebungen passend zur Aufgabe wählen', 'Ausführung verfolgen, Artefakte prüfen und die Untersuchung fortsetzen'],
-    steps: ['Eine Forschungsfrage stellen', 'Material und Werkzeuge wählen', 'Artefakte prüfen'],
-    boundary: 'Verfügbare Abläufe hängen von konfigurierten Modellen, Konnektoren, Umgebungen und Berechtigungen ab. Datenziele ergeben sich aus der Konfiguration; wissenschaftliche Schlussfolgerungen werden von Forschenden geprüft.',
+  "x-science": {
+    "label": "Biomedizinischer Forschungsagent",
+    "headline": "Von der Forschungsfrage\nzu prüfbaren Ergebnissen.",
+    "summary": "Verbinden Sie Literatur, wissenschaftliche Dateien und werkzeuggestützte Analysen in einem Projekt. Verfolgen Sie die Arbeit, prüfen Sie Ausgabedateien und bewahren Sie die Belege für die nächste Frage.",
+    "audience": "Biomedizinische Forschende, Fachleute für wissenschaftliches Rechnen und F&E-Teams",
+    "environment": "Ubuntu / WSL; Modellanbieter und wissenschaftliche Umgebungen konfigurieren",
+    "boundary": "Verfügbare Abläufe hängen von konfigurierten Modellen, Konnektoren, Umgebungen und Berechtigungen ab. Datenziele ergeben sich aus der Konfiguration; wissenschaftliche Schlussfolgerungen werden von Forschenden geprüft.",
+    "features": [
+      "Publikationen, Diskussionen und Dateien mit der Forschungsfrage verbinden",
+      "Unterstützte Strukturen, Sequenzen und Tabellen im Projektkontext prüfen",
+      "Passende Experten, Skills, Konnektoren und konfigurierte wissenschaftliche Umgebungen wählen",
+      "Werkzeugmeldungen verfolgen und Ausgabedateien prüfen"
+    ],
+    "steps": [
+      "Forschungsfrage festlegen",
+      "Eingaben und Werkzeuge wählen",
+      "Entstandene Dateien prüfen"
+    ]
   },
-  'x-pharma': {
-    label: 'Pharma-Informationen & Evidenz', headline: 'Aus Informationen\nwerden belegte Erkenntnisse.',
-    summary: 'Eine Plattform für Pharma-Informationen für Menschen und Agenten. Untersuchen Sie Wirkstoffe, Targets, Studien, Patente und Transaktionen mit nachvollziehbaren Belegen.',
-    audience: 'Teams für Wirkstoffentwicklung, Pharma-Informationen und Daten', environment: 'Linux x86-64 / WSL2; Docker und Datendienste',
-    features: ['Bereichsübergreifende Recherche, Entitätsprofile, Struktursuche und Vergleiche', 'Quellstellen, Datenversionen, Prüfprotokolle und Organisationsrechte erhalten', 'Forschungsdaten durch kontrollierte Aufnahme und Prüfung aufbauen', 'Agenten über Standard-MCP dieselben fachlichen Dienste bereitstellen'],
-    steps: ['Autorisierte Quellen verbinden', 'Fakten und Evidenz ordnen', 'Mit Menschen und Agenten recherchieren'],
-    boundary: 'Eine Entwicklungsversion. Datenlizenzen, Unternehmensidentität, LLM / OCR und Produktionsreife werden pro Installation geprüft. Apache-2.0 gewährt keinen Zugriff auf Daten Dritter.',
+  "x-pharma": {
+    "label": "Pharma-Informationen und Evidenz",
+    "headline": "Das Target verstehen.\nDie Belege verfolgen.",
+    "summary": "Untersuchen Sie Wirkstoffe, Targets, Studien, Patente und Transaktionen anhand verbundener Profile und belegter Einträge. Forschende und Agenten erhalten Zugang zu Pharma-Informationen mit sichtbarer Evidenz.",
+    "audience": "Teams für Wirkstoffentwicklung, Pharma-Informationen und Daten",
+    "environment": "Linux x86-64 / WSL2; Docker und Datendienste",
+    "boundary": "Eine Entwicklungsversion. Datenlizenzen, Unternehmensidentität, LLM / OCR und Produktionsreife werden pro Installation geprüft. Apache-2.0 gewährt keinen Zugriff auf Daten Dritter.",
+    "features": [
+      "Zusammengehörige Wirkstoffe, Targets, Studien, Patente und Transaktionen vergleichen",
+      "Quellenpositionen und Datenversionen hinter Fakten prüfen",
+      "Forschungsdaten durch autorisierte Aufnahme und Prüfung aufbauen",
+      "Dieselben Fachdienste und Berechtigungen in der Workbench oder über MCP nutzen"
+    ],
+    "steps": [
+      "Autorisierte Quellen verbinden",
+      "Fakten und Belege ordnen",
+      "Mit Workbench oder MCP untersuchen"
+    ]
   },
-  'x-dde': {
-    label: 'Vernetzte Wirkstoffforschung', headline: 'Von Forschungsmaterial\nzur nächsten Entdeckung.',
-    summary: 'Targets, Strukturen, Bindungstaschen und Kandidaten verbinden. Geführte Aufgaben und 2D / 3D-Arbeitsbereiche unterstützen kleine Moleküle, Biologika, Screening und DEL.',
-    audience: 'Forschende in medizinischer Chemie, Biologika und wissenschaftlichem Rechnen', environment: 'Windows / Linux / WSL; separate Installation wissenschaftlicher Engines',
-    features: ['Aufgaben nach Forschungsfrage vorbereiten, Modelle wählen und Ergebnisse prüfen', 'Strukturen, Molekültabellen, Sequenzen und 2D / 3D-Ergebnisse verknüpfen', 'Kleine Moleküle, Biologika, Hochdurchsatz-Screening und DEL untersuchen', 'Originalmaterial, abgeleitete Versionen und Aufgabenherkunft erhalten'],
-    steps: ['Targets und Strukturen vorbereiten', 'Eine Forschungsaufgabe ausführen', 'Kandidaten und Ergebnisse vergleichen'],
-    boundary: 'Die Ausführung hängt von Engine, Modellen, Eingaben und Hardware ab. Modellkonfidenz, Geometrie, Docking-Scores und experimentell gemessene Aktivität haben unterschiedliche Bedeutungen.',
-    caption: 'Echte X-DDE-Oberfläche v0.4.49: Strukturen und Bindungstaschen aus dem öffentlichen BRD4–JQ1-Beispiel.',
+  "x-dde": {
+    "label": "Visuelle Wirkstoffforschung",
+    "headline": "Das Molekül sehen.\nDie nächste Aufgabe verbinden.",
+    "summary": "Bereiten Sie Targets, Strukturen und Kandidaten für kleine Moleküle, Biologika, Screening und DEL vor. Vergleichen Sie Kandidaten in verknüpften Tabellen und 2D-/3D-Ergebnissen und nutzen Sie gewähltes Material in der nächsten Aufgabe.",
+    "audience": "Forschende in medizinischer Chemie, Biologika und wissenschaftlichem Rechnen",
+    "environment": "Windows / Linux / WSL; separate Installation wissenschaftlicher Engines",
+    "boundary": "Die Ausführung hängt von Engine, Modellen, Eingaben und Hardware ab. Modellkonfidenz, Geometrie, Docking-Scores und experimentell gemessene Aktivität haben unterschiedliche Bedeutungen.",
+    "caption": "Echte X-DDE-Oberfläche v0.4.49: Strukturen und Bindungstaschen aus dem öffentlichen BRD4–JQ1-Beispiel.",
+    "features": [
+      "Eingaben schrittweise vorbereiten und Methoden ausdrücklich wählen",
+      "Kandidaten über verknüpfte Molekültabellen und 2D-/3D-Ergebnisse prüfen",
+      "Gewählte Strukturen, Moleküle oder Sequenzen in die nächste Aufgabe übernehmen",
+      "Ergebnisse auf Originaldateien, abgeleitete Versionen und Eingaben zurückführen"
+    ],
+    "steps": [
+      "Target und Eingaben vorbereiten",
+      "Gewählte Forschungsaufgabe ausführen",
+      "Kandidaten vergleichen und den nächsten Schritt wählen"
+    ]
   },
-  'x-synth': {
-    label: 'Retrosynthese & Syntheseforschung', headline: 'Vom Zielmolekül\nzur prüfbaren Syntheseroute.',
-    summary: 'Eine strukturorientierte Arbeitsumgebung für Syntheseforschung. Zielmoleküle, Ausgangsstoffe, Reaktionsschritte und Beschaffungsbelege in einem Ablauf untersuchen.',
-    audience: 'Forschende in medizinischer, synthetischer und Prozesschemie', environment: 'Linux / WSL; konfigurierte ASKCOS-Modelle und Bestandsdaten',
-    features: ['Zielstruktur zeichnen oder importieren und mehrere Suchstrategien nutzen', 'Ausgangsstoffe, Reaktionsschritte, Bedingungsreferenzen und Routen prüfen', 'Strukturspezifische Beschaffungsbelege anhand von Bestandssnapshots prüfen', 'Routenkopien bearbeiten und Abbildungen, Stofflisten und Forschungsnotizen exportieren'],
-    steps: ['Zielstruktur bestätigen', 'Routen suchen und prüfen', 'Stoffe und Schritte untersuchen'],
-    boundary: 'ASKCOS ist die aktuell integrierte Engine zur Routengenerierung. Modellscores, Katalogbelege zur Beschaffung und experimentelle Machbarkeit werden getrennt bewertet; Routen müssen chemisch und experimentell geprüft werden.',
+  "x-synth": {
+    "label": "Retrosynthese und Syntheseforschung",
+    "headline": "Wege vergleichen.\nVon der Struktur aus planen.",
+    "summary": "Zeichnen Sie ein Ziel, erkunden Sie ASKCOS-Vorschläge und prüfen Sie Reaktionen zusammen mit Belegen zu Ausgangsstoffen. Halten Sie Alternativen und Forschungsaufzeichnungen für die chemische Bewertung zusammen.",
+    "audience": "Forschende in medizinischer, synthetischer und Prozesschemie",
+    "environment": "Linux / WSL; konfigurierte ASKCOS-Modelle und Bestandsdaten",
+    "boundary": "ASKCOS ist die aktuell integrierte Engine zur Routengenerierung. Modellscores, Katalogbelege zur Beschaffung und experimentelle Machbarkeit werden getrennt bewertet; Routen müssen chemisch und experimentell geprüft werden.",
+    "features": [
+      "Ein Ziel zeichnen oder importieren und Suchstrategien vergleichen",
+      "Reaktionen, Ausgangsstoffe und Bedingungsreferenzen gemeinsam prüfen",
+      "Strukturbezogene Beschaffungsbelege mit Bestandsaufnahmen abgleichen",
+      "Wegkopien bearbeiten und Diagramme, Materialien und Aufzeichnungen exportieren"
+    ],
+    "steps": [
+      "Zielstruktur bestätigen",
+      "Wege suchen und vergleichen",
+      "Ausgangsstoffe und Reaktionsschritte prüfen"
+    ]
   },
-  'x-patentsar': {
-    label: 'Patentstrukturen & Aktivitätsdaten', headline: 'Patentchemie\nfür Ihre Forschung nutzbar machen.',
-    summary: 'Chemische Strukturen und Aktivitäten aus Patent-PDFs in Struktur–Aktivitäts-Tabellen übertragen. Mit Quellenbelegen, manueller Korrektur und anschließender Eigenschaftsanalyse.',
-    audience: 'Medizinische Chemiker, Patentanalysten und SAR-Forschende', environment: 'Linux / WSL2; DECIMER und RDKit',
-    features: ['Strukturen, Kennungen, Aktivitätswerte und ursprüngliche Einheiten extrahieren', 'Quellstellen zuordnen und Beziehungen zwischen Struktur und Aktivität prüfen', 'Strukturen und Datensätze mit erhaltenen Versionen und Belegen korrigieren', 'Excel, SDF, Strukturausschnitte und QA-Berichte exportieren'],
-    steps: ['Patent-PDF hochladen', 'Extrahieren und Belege prüfen', 'Struktur–Aktivitäts-Tabellen erstellen'],
-    boundary: 'Der Produktionsadapter unterstützt WIPO-Patent-PDFs. Ein formaler Abschluss setzt bestandene Kern-QA voraus; unsicheres, widersprüchliches oder minderwertiges Quellenmaterial muss geprüft werden. Vorhergesagte Eigenschaften sind nachgelagerte Forschungskennzahlen.',
-  },
-
+  "x-patentsar": {
+    "label": "Patentchemie und Aktivitätsextraktion",
+    "headline": "Von Patentseiten\nzu strukturierten SAR-Daten.",
+    "summary": "Extrahieren Sie Strukturen, Kennungen und Aktivitätswerte aus unterstützten WIPO-Patent-PDFs in prüfbare Struktur–Aktivitäts-Tabellen. Prüfen Sie Originalseiten, korrigieren Sie Einträge und exportieren Sie Material für weitere Forschung.",
+    "audience": "Medizinische Chemiker, Patentanalysten und SAR-Forschende",
+    "environment": "Linux / WSL2; DECIMER und RDKit",
+    "boundary": "Der Produktionsadapter unterstützt WIPO-Patent-PDFs. Ein formaler Abschluss setzt bestandene Kern-QA voraus; unsicheres, widersprüchliches oder minderwertiges Quellenmaterial muss geprüft werden. Vorhergesagte Eigenschaften sind nachgelagerte Forschungskennzahlen.",
+    "features": [
+      "Strukturen, Kennungen und originale Aktivitätswerte in einer Tabelle zusammenführen",
+      "Struktur–Aktivitäts-Zuordnungen anhand der Quellenposition prüfen",
+      "Strukturen und Einträge unter Erhalt von Belegen und Versionen korrigieren",
+      "Excel, SDF, Strukturausschnitte und QA-Berichte exportieren"
+    ],
+    "steps": [
+      "Unterstütztes Patent-PDF hochladen",
+      "Extraktion mit der Quelle abgleichen",
+      "Struktur–Aktivitäts-Ergebnisse exportieren"
+    ]
+  }
 };

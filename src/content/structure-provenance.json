@@ -50,336 +50,904 @@
     "inter_woff2_valid": true,
     "downloaded_code_executed": false
   },
+  "parser_options": {
+    "keepH": false,
+    "altLoc": "A"
+  },
   "structures": [
     {
-      "id": "1UBQ",
-      "pdb_path": "structures/1UBQ.pdb",
-      "source_url": "https://files.rcsb.org/download/1UBQ.pdb",
-      "record_url": "https://www.rcsb.org/structure/1UBQ",
-      "bytes": 78570,
-      "sha256": "d4a6812d8951cf6594e6a0763f089e35f5a80b62acb3c117b2c5565228a7b161",
-      "title": "STRUCTURE OF UBIQUITIN REFINED AT 1.8 ANGSTROMS RESOLUTION",
+      "id": "5FQD",
+      "title": "CRBN · CK1α · S-lenalidomide",
+      "source_url": "https://files.rcsb.org/download/5FQD.pdb",
+      "record_url": "https://www.rcsb.org/structure/5FQD",
+      "bytes": 3918132,
+      "sha256": "cc474aa498a5151d63a7d86c196ed83d1f386bfc94b9b27b04f5ba429210e26d",
       "experimental_method": [
         "X-RAY DIFFRACTION"
       ],
       "resolution_angstrom": [
-        1.8
+        2.45
       ],
-      "total_atom_records": 660,
-      "atom_records": 602,
-      "hetatm_records": 58,
-      "protein_chains": {
-        "A": 602
-      },
-      "modeled_residues_per_protein_chain": {
-        "A": 76
-      },
-      "nonpolymer_atom_records_by_residue": {
-        "HOH": 58
-      },
-      "deposited_model_count": 1,
-      "revision": {
-        "data_content_type": "Structure model",
-        "major_revision": 1,
-        "minor_revision": 3,
-        "ordinal": 4,
-        "revision_date": "2024-02-14T00:00:00.000+00:00"
-      },
-      "primary_citation": {
-        "country": "UK",
-        "id": "primary",
-        "journal_abbrev": "J.Mol.Biol.",
-        "journal_id_ASTM": "JMOBAK",
-        "journal_id_CSD": "0070",
-        "journal_id_ISSN": "0022-2836",
-        "journal_volume": "194",
-        "page_first": "531",
-        "page_last": "544",
-        "pdbx_database_id_DOI": "10.1016/0022-2836(87)90679-6",
-        "pdbx_database_id_PubMed": 3041007,
-        "rcsb_ORCID_identifiers": [
-          "?",
-          "?",
-          "?"
-        ],
-        "rcsb_authors": [
-          "Vijay-Kumar, S.",
-          "Bugg, C.E.",
-          "Cook, W.J."
-        ],
-        "rcsb_journal_abbrev": "J Mol Biol",
-        "title": "Structure of ubiquitin refined at 1.8 A resolution.",
-        "year": 1987
-      },
-      "protein_entities": [
-        {
+      "raw_atom_count": 23544,
+      "parsed_atom_count": 23544,
+      "chain_roles": {
+        "A": {
+          "role": "DDB1 ΔBPB adaptor",
           "entity_id": "1",
-          "name": "UBIQUITIN",
-          "protein_chain_ids": [
-            "A"
+          "uniprot_ids": [
+            "Q16531"
           ],
-          "sequence_length": 76,
-          "organisms": [
-            {
-              "scientific_name": "Homo sapiens",
-              "ncbi_taxonomy_id": 9606
-            }
+          "atom_count": 6128,
+          "modeled_residue_count": 789,
+          "author_residue_range": [
+            1,
+            1140
+          ]
+        },
+        "B": {
+          "role": "CRBN substrate receptor",
+          "entity_id": "2",
+          "uniprot_ids": [
+            "Q96SW2"
           ],
-          "source_api_url": "https://data.rcsb.org/rest/v1/core/polymer_entity/1UBQ/1"
+          "atom_count": 3068,
+          "modeled_residue_count": 381,
+          "author_residue_range": [
+            47,
+            436
+          ]
+        },
+        "C": {
+          "role": "CK1α recruited substrate",
+          "entity_id": "3",
+          "uniprot_ids": [
+            "P48729"
+          ],
+          "atom_count": 2423,
+          "modeled_residue_count": 294,
+          "author_residue_range": [
+            10,
+            303
+          ]
+        },
+        "D": {
+          "role": "DDB1 ΔBPB adaptor, second crystal copy",
+          "entity_id": "1",
+          "uniprot_ids": [
+            "Q16531"
+          ],
+          "atom_count": 6196,
+          "modeled_residue_count": 790,
+          "author_residue_range": [
+            1,
+            1140
+          ]
+        },
+        "E": {
+          "role": "CRBN, second crystal copy",
+          "entity_id": "2",
+          "uniprot_ids": [
+            "Q96SW2"
+          ],
+          "atom_count": 2949,
+          "modeled_residue_count": 367,
+          "author_residue_range": [
+            47,
+            436
+          ]
+        },
+        "F": {
+          "role": "CK1α, second crystal copy",
+          "entity_id": "3",
+          "uniprot_ids": [
+            "P48729"
+          ],
+          "atom_count": 2435,
+          "modeled_residue_count": 294,
+          "author_residue_range": [
+            10,
+            303
+          ]
         }
-      ],
-      "coordinate_bounds_angstrom": {
-        "x": [
-          14.882,
-          45.747
-        ],
-        "y": [
-          13.048,
-          46.814
-        ],
-        "z": [
-          -1.744,
-          36.251
-        ]
       },
-      "data_license": "CC0-1.0",
-      "license_source_url": "https://www.rcsb.org/pages/usage-policy",
-      "provenance_statement": "Unmodified RCSB PDB experimental structure coordinates, used as a visualization example; not an output of X-Science or its software products.",
-      "unmodified": true,
-      "atom_count_matches_rcsb_api": true,
-      "displayed_elements": [
-        "C",
-        "N",
-        "O",
-        "S"
-      ]
-    },
-    {
-      "id": "4HHB",
-      "pdb_path": "structures/4HHB.pdb",
-      "source_url": "https://files.rcsb.org/download/4HHB.pdb",
-      "record_url": "https://www.rcsb.org/structure/4HHB",
-      "bytes": 473850,
-      "sha256": "abf382e0fd84b53bd4c08b373d37c0d7fe9fbe1a9a9c3851b2f5f2fbbe627101",
-      "title": "THE CRYSTAL STRUCTURE OF HUMAN DEOXYHAEMOGLOBIN AT 1.74 ANGSTROMS RESOLUTION",
-      "experimental_method": [
-        "X-RAY DIFFRACTION"
-      ],
-      "resolution_angstrom": [
-        1.74
-      ],
-      "total_atom_records": 4779,
-      "atom_records": 4384,
-      "hetatm_records": 395,
-      "protein_chains": {
-        "A": 1069,
-        "B": 1123,
-        "C": 1069,
-        "D": 1123
+      "ligand": {
+        "name": "S-lenalidomide",
+        "selector": {
+          "chain": "B",
+          "resi": 1438,
+          "resn": "LVY",
+          "hetflag": true
+        },
+        "parsed_heavy_atom_count": 19,
+        "geometry": {
+          "atom_count": 19,
+          "centroid_angstrom": [
+            45.224947,
+            130.843947,
+            16.554053
+          ],
+          "bounds_angstrom": [
+            [
+              42.273,
+              128.433,
+              12.916
+            ],
+            [
+              48.867,
+              132.323,
+              20.549
+            ]
+          ],
+          "max_radius_from_centroid_angstrom": 5.434552
+        }
       },
-      "modeled_residues_per_protein_chain": {
-        "A": 141,
-        "B": 146,
-        "C": 141,
-        "D": 146
-      },
-      "nonpolymer_atom_records_by_residue": {
-        "HEM": 172,
-        "HOH": 221,
-        "PO4": 2
-      },
-      "deposited_model_count": 1,
-      "revision": {
-        "data_content_type": "Structure model",
-        "major_revision": 4,
-        "minor_revision": 3,
-        "ordinal": 9,
-        "revision_date": "2026-08-12T00:00:00.000+00:00"
-      },
-      "primary_citation": {
-        "country": "UK",
-        "id": "primary",
-        "journal_abbrev": "J.Mol.Biol.",
-        "journal_id_ASTM": "JMOBAK",
-        "journal_id_CSD": "0070",
-        "journal_id_ISSN": "0022-2836",
-        "journal_volume": "175",
-        "page_first": "159",
-        "page_last": "174",
-        "pdbx_database_id_DOI": "10.1016/0022-2836(84)90472-8",
-        "pdbx_database_id_PubMed": 6726807,
-        "rcsb_ORCID_identifiers": [
-          "?",
-          "?",
-          "?",
-          "?"
-        ],
-        "rcsb_authors": [
-          "Fermi, G.",
-          "Perutz, M.F.",
-          "Shaanan, B.",
-          "Fourme, R."
-        ],
-        "rcsb_journal_abbrev": "J Mol Biol",
-        "title": "The crystal structure of human deoxyhaemoglobin at 1.74 A resolution",
-        "year": 1984
-      },
-      "protein_entities": [
-        {
-          "entity_id": "1",
-          "name": "Hemoglobin subunit alpha",
-          "protein_chain_ids": [
-            "A",
+      "views": {
+        "interface": {
+          "name": "CRBN–CK1α interface",
+          "chains": [
+            "B",
             "C"
           ],
-          "sequence_length": 141,
-          "organisms": [
-            {
-              "scientific_name": "Homo sapiens",
-              "ncbi_taxonomy_id": 9606
-            }
+          "selection": {
+            "or": [
+              {
+                "chain": [
+                  "B",
+                  "C"
+                ],
+                "hetflag": false
+              },
+              {
+                "chain": "B",
+                "resi": 1438,
+                "resn": "LVY",
+                "hetflag": true
+              },
+              {
+                "chain": "B",
+                "resi": 1437,
+                "resn": "ZN",
+                "hetflag": true
+              }
+            ]
+          },
+          "parsed_atom_count": 5511,
+          "protein_atom_count": 5491,
+          "elements": [
+            "C",
+            "N",
+            "O",
+            "S",
+            "ZN"
           ],
-          "source_api_url": "https://data.rcsb.org/rest/v1/core/polymer_entity/4HHB/1"
+          "element_counts": {
+            "N": 947,
+            "C": 3528,
+            "O": 996,
+            "S": 39,
+            "ZN": 1
+          },
+          "bounds_angstrom": [
+            [
+              8.367,
+              98.426,
+              -42.281
+            ],
+            [
+              78.518,
+              187.337,
+              58.233
+            ]
+          ],
+          "centroid_angstrom": [
+            44.258901,
+            140.231288,
+            11.797867
+          ],
+          "waters_hidden": true,
+          "source_coordinates_modified": false,
+          "camera": {
+            "ligand_center_angstrom": [
+              45.224947,
+              130.843947,
+              16.554053
+            ],
+            "left_partner_centroid_angstrom": [
+              40.932316,
+              123.137295,
+              -2.523422
+            ],
+            "right_partner_centroid_angstrom": [
+              48.464558,
+              161.946754,
+              29.89776
+            ],
+            "partner_centroid_distance_angstrom": 51.127701,
+            "view_basis_rows_world_to_view": [
+              [
+                0.147322133,
+                0.759069118,
+                0.634121646
+              ],
+              [
+                -0.158286473,
+                0.650947765,
+                -0.742436799
+              ],
+              [
+                -0.976340915,
+                0.009004495,
+                0.216049387
+              ]
+            ],
+            "view_bounds_about_ligand_angstrom": [
+              [
+                -59.001549,
+                -20.248331,
+                -30.75687
+              ],
+              [
+                58.528923,
+                38.182729,
+                33.100696
+              ]
+            ],
+            "suggested_orthographic_padding": 1.18,
+            "status": "Geometric candidate; parent must inspect the actual rendered ligand visibility and label clearance.",
+            "world_to_view_quaternion_xyzw": [
+              0.264728626,
+              0.567357084,
+              -0.323179319,
+              0.709633582
+            ]
+          }
         },
-        {
-          "entity_id": "2",
-          "name": "Hemoglobin subunit beta",
-          "protein_chain_ids": [
+        "assembly": {
+          "name": "DDB1ΔBPB–CRBN–CK1α complex, assembly 1 without waters",
+          "chains": [
+            "A",
             "B",
-            "D"
+            "C"
           ],
-          "sequence_length": 146,
-          "organisms": [
-            {
-              "scientific_name": "Homo sapiens",
-              "ncbi_taxonomy_id": 9606
-            }
+          "selection": {
+            "or": [
+              {
+                "chain": [
+                  "A",
+                  "B",
+                  "C"
+                ],
+                "hetflag": false
+              },
+              {
+                "chain": "B",
+                "resi": 1438,
+                "resn": "LVY",
+                "hetflag": true
+              },
+              {
+                "chain": "B",
+                "resi": 1437,
+                "resn": "ZN",
+                "hetflag": true
+              }
+            ]
+          },
+          "parsed_atom_count": 11639,
+          "protein_atom_count": 11619,
+          "elements": [
+            "C",
+            "N",
+            "O",
+            "S",
+            "ZN"
           ],
-          "source_api_url": "https://data.rcsb.org/rest/v1/core/polymer_entity/4HHB/2"
+          "element_counts": {
+            "N": 1971,
+            "C": 7420,
+            "O": 2174,
+            "S": 73,
+            "ZN": 1
+          },
+          "bounds_angstrom": [
+            [
+              -6.741,
+              67.645,
+              -73.619
+            ],
+            [
+              78.518,
+              187.337,
+              58.233
+            ]
+          ],
+          "centroid_angstrom": [
+            39.233684,
+            124.187404,
+            -16.130603
+          ],
+          "waters_hidden": true,
+          "source_coordinates_modified": false
         }
-      ],
-      "coordinate_bounds_angstrom": {
-        "x": [
-          -24.242,
-          46.081
-        ],
-        "y": [
-          -15.297,
-          41.915
-        ],
-        "z": [
-          10.19,
-          70.977
-        ]
       },
-      "data_license": "CC0-1.0",
-      "license_source_url": "https://www.rcsb.org/pages/usage-policy",
-      "provenance_statement": "Unmodified RCSB PDB experimental structure coordinates, used as a visualization example; not an output of X-Science or its software products.",
-      "unmodified": true,
-      "atom_count_matches_rcsb_api": true,
-      "displayed_elements": [
-        "C",
-        "FE",
-        "N",
-        "O",
-        "S"
-      ]
+      "primary_citation": {
+        "title": "Structural Basis of Lenalidomide-Induced Ck1Alpha Degradation by the Crl4(Crbn) Ubiquitin Ligase.",
+        "rcsb_authors": [
+          "Petzold, G.",
+          "Fischer, E.S.",
+          "Thoma, N.H."
+        ],
+        "rcsb_journal_abbrev": "Nature",
+        "year": 2016,
+        "pdbx_database_id_DOI": "10.1038/NATURE16979",
+        "pdbx_database_id_PubMed": 26909574
+      },
+      "license": "CC0-1.0",
+      "license_source_url": "https://www.rcsb.org/pages/usage-policy"
     },
     {
-      "id": "2LYZ",
-      "pdb_path": "structures/2LYZ.pdb",
-      "source_url": "https://files.rcsb.org/download/2LYZ.pdb",
-      "record_url": "https://www.rcsb.org/structure/2LYZ",
-      "bytes": 133569,
-      "sha256": "722b8b6fb7d465ee577ad5af676f94c5a857360f1bee50559ce9c67af6399965",
-      "title": "Real-space refinement of the structure of hen egg-white lysozyme",
+      "id": "6Q0R",
+      "title": "DCAF15 · RBM39 · E7820",
+      "source_url": "https://files.rcsb.org/download/6Q0R.pdb",
+      "record_url": "https://www.rcsb.org/structure/6Q0R",
+      "bytes": 1769526,
+      "sha256": "7b745827da80df609155e9998a6b25413825865a332a31ecd57dcc8df422330d",
       "experimental_method": [
         "X-RAY DIFFRACTION"
       ],
       "resolution_angstrom": [
-        2
+        2.9
       ],
-      "total_atom_records": 1102,
-      "atom_records": 1001,
-      "hetatm_records": 101,
-      "protein_chains": {
-        "A": 1001
+      "raw_atom_count": 10249,
+      "parsed_atom_count": 10249,
+      "chain_roles": {
+        "A": {
+          "role": "DDB1 ΔBPB adaptor",
+          "entity_id": "1",
+          "uniprot_ids": [
+            "Q16531"
+          ],
+          "atom_count": 6034,
+          "modeled_residue_count": 783,
+          "author_residue_range": [
+            1,
+            1140
+          ]
+        },
+        "B": {
+          "role": "DCAF15 split construct, first fragment",
+          "entity_id": "2",
+          "uniprot_ids": [
+            "Q66K64"
+          ],
+          "atom_count": 1639,
+          "modeled_residue_count": 208,
+          "author_residue_range": [
+            34,
+            259
+          ]
+        },
+        "C": {
+          "role": "DCAF15 split construct, second fragment",
+          "entity_id": "3",
+          "uniprot_ids": [
+            "Q66K64"
+          ],
+          "atom_count": 1460,
+          "modeled_residue_count": 183,
+          "author_residue_range": [
+            383,
+            600
+          ]
+        },
+        "D": {
+          "role": "RBM39 RRM2 substrate fragment",
+          "entity_id": "4",
+          "uniprot_ids": [
+            "Q14498"
+          ],
+          "atom_count": 612,
+          "modeled_residue_count": 82,
+          "author_residue_range": [
+            248,
+            329
+          ]
+        },
+        "E": {
+          "role": "DDA1 accessory protein",
+          "entity_id": "5",
+          "uniprot_ids": [
+            "Q9BW61"
+          ],
+          "atom_count": 457,
+          "modeled_residue_count": 56,
+          "author_residue_range": [
+            3,
+            70
+          ]
+        }
       },
-      "modeled_residues_per_protein_chain": {
-        "A": 129
+      "ligand": {
+        "name": "E7820",
+        "selector": {
+          "chain": "B",
+          "resi": 302,
+          "resn": "O6M",
+          "hetflag": true
+        },
+        "parsed_heavy_atom_count": 24,
+        "geometry": {
+          "atom_count": 24,
+          "centroid_angstrom": [
+            -39.938542,
+            -13.989417,
+            -55.711083
+          ],
+          "bounds_angstrom": [
+            [
+              -42.867,
+              -15.982,
+              -61.729
+            ],
+            [
+              -36.872,
+              -8.645,
+              -51.857
+            ]
+          ],
+          "max_radius_from_centroid_angstrom": 6.447644
+        }
       },
-      "nonpolymer_atom_records_by_residue": {
-        "HOH": 101
-      },
-      "deposited_model_count": 1,
-      "revision": {
-        "data_content_type": "Structure model",
-        "major_revision": 1,
-        "minor_revision": 4,
-        "ordinal": 5,
-        "revision_date": "2024-10-23T00:00:00.000+00:00"
+      "views": {
+        "interface": {
+          "name": "DCAF15 split construct–RBM39 RRM2 interface",
+          "chains": [
+            "B",
+            "C",
+            "D"
+          ],
+          "selection": {
+            "or": [
+              {
+                "chain": [
+                  "B",
+                  "C",
+                  "D"
+                ],
+                "hetflag": false
+              },
+              {
+                "chain": "B",
+                "resi": 302,
+                "resn": "O6M",
+                "hetflag": true
+              }
+            ]
+          },
+          "parsed_atom_count": 3735,
+          "protein_atom_count": 3711,
+          "elements": [
+            "C",
+            "N",
+            "O",
+            "S"
+          ],
+          "element_counts": {
+            "N": 625,
+            "C": 2405,
+            "O": 682,
+            "S": 23
+          },
+          "bounds_angstrom": [
+            [
+              -68.51,
+              -47.385,
+              -86.039
+            ],
+            [
+              -0.833,
+              22.348,
+              -22.695
+            ]
+          ],
+          "centroid_angstrom": [
+            -32.296366,
+            -17.291884,
+            -54.44227
+          ],
+          "waters_hidden": true,
+          "source_coordinates_modified": false,
+          "camera": {
+            "ligand_center_angstrom": [
+              -39.938542,
+              -13.989417,
+              -55.711083
+            ],
+            "left_partner_centroid_angstrom": [
+              -31.398021,
+              -19.580386,
+              -51.690636
+            ],
+            "right_partner_centroid_angstrom": [
+              -36.545645,
+              -5.833051,
+              -68.326031
+            ],
+            "partner_centroid_distance_angstrom": 22.186113,
+            "view_basis_rows_world_to_view": [
+              [
+                -0.232020091,
+                0.619636927,
+                -0.749811147
+              ],
+              [
+                0.941731547,
+                -0.049898997,
+                -0.332643628
+              ],
+              [
+                -0.2435331,
+                -0.783300817,
+                -0.571954072
+              ]
+            ],
+            "view_bounds_about_ligand_angstrom": [
+              [
+                -38.764285,
+                -19.251104,
+                -42.692333
+              ],
+              [
+                27.06046,
+                35.034476,
+                38.210456
+              ]
+            ],
+            "suggested_orthographic_padding": 1.18,
+            "status": "Geometric candidate; parent must inspect the actual rendered ligand visibility and label clearance.",
+            "world_to_view_quaternion_xyzw": [
+              -0.589455888,
+              -0.662207514,
+              0.421297109,
+              0.191132702
+            ]
+          }
+        },
+        "assembly": {
+          "name": "Deposited protein construct context plus the molecular glue, waters and other additives hidden",
+          "chains": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "selection": {
+            "or": [
+              {
+                "hetflag": false
+              },
+              {
+                "chain": "B",
+                "resi": 302,
+                "resn": "O6M",
+                "hetflag": true
+              }
+            ]
+          },
+          "parsed_atom_count": 10226,
+          "protein_atom_count": 10202,
+          "elements": [
+            "C",
+            "N",
+            "O",
+            "S"
+          ],
+          "element_counts": {
+            "N": 1709,
+            "C": 6530,
+            "O": 1931,
+            "S": 56
+          },
+          "bounds_angstrom": [
+            [
+              -94.515,
+              -47.385,
+              -86.039
+            ],
+            [
+              2.998,
+              42.389,
+              13.237
+            ]
+          ],
+          "centroid_angstrom": [
+            -40.422107,
+            -3.331615,
+            -33.992514
+          ],
+          "waters_hidden": true,
+          "source_coordinates_modified": false
+        }
       },
       "primary_citation": {
-        "country": "UK",
-        "id": "primary",
-        "journal_abbrev": "J.Mol.Biol.",
-        "journal_id_ASTM": "JMOBAK",
-        "journal_id_CSD": "0070",
-        "journal_id_ISSN": "0022-2836",
-        "journal_volume": "82",
-        "page_first": "371",
-        "page_last": "391",
-        "pdbx_database_id_DOI": "10.1016/0022-2836(74)90598-1",
-        "pdbx_database_id_PubMed": 4856347,
+        "title": "Structural complementarity facilitates E7820-mediated degradation of RBM39 by DCAF15.",
         "rcsb_authors": [
-          "Diamond, R."
+          "Faust, T.B.",
+          "Yoon, H.",
+          "Nowak, R.P.",
+          "Donovan, K.A.",
+          "Li, Z.",
+          "Cai, Q.",
+          "Eleuteri, N.A.",
+          "Zhang, T.",
+          "Gray, N.S.",
+          "Fischer, E.S."
         ],
-        "rcsb_journal_abbrev": "J Mol Biol",
-        "title": "Real-space refinement of the structure of hen egg-white lysozyme.",
-        "year": 1974
+        "rcsb_journal_abbrev": "Nat Chem Biol",
+        "year": 2020,
+        "pdbx_database_id_DOI": "10.1038/s41589-019-0378-3",
+        "pdbx_database_id_PubMed": 31686031
       },
-      "protein_entities": [
-        {
-          "entity_id": "1",
-          "name": "HEN EGG WHITE LYSOZYME",
-          "protein_chain_ids": [
-            "A"
-          ],
-          "sequence_length": 129,
-          "organisms": [
-            {
-              "scientific_name": "Gallus gallus",
-              "ncbi_taxonomy_id": 9031
-            }
-          ],
-          "source_api_url": "https://data.rcsb.org/rest/v1/core/polymer_entity/2LYZ/1"
-        }
+      "license": "CC0-1.0",
+      "license_source_url": "https://www.rcsb.org/pages/usage-policy"
+    },
+    {
+      "id": "1FAP",
+      "title": "FKBP12 · mTOR FRB · Rapamycin",
+      "source_url": "https://files.rcsb.org/download/1FAP.pdb",
+      "record_url": "https://www.rcsb.org/structure/1FAP",
+      "bytes": 209223,
+      "sha256": "77e30d6e7ce518b22c2e8978d2d9315590da454fc5b3d9aeabeebf39bdff6fb4",
+      "experimental_method": [
+        "X-RAY DIFFRACTION"
       ],
-      "coordinate_bounds_angstrom": {
-        "x": [
-          -18.237,
-          21.502
-        ],
-        "y": [
-          2.991,
-          40.137
-        ],
-        "z": [
-          -2.616,
-          40.946
-        ]
+      "resolution_angstrom": [
+        2.7
+      ],
+      "raw_atom_count": 2154,
+      "parsed_atom_count": 1727,
+      "chain_roles": {
+        "A": {
+          "role": "FKBP12",
+          "entity_id": "1",
+          "uniprot_ids": [
+            "P62942"
+          ],
+          "atom_count": 832,
+          "modeled_residue_count": 107,
+          "author_residue_range": [
+            1,
+            107
+          ]
+        },
+        "B": {
+          "role": "mTOR (FRAP) FRB binding domain",
+          "entity_id": "2",
+          "uniprot_ids": [
+            "P42345"
+          ],
+          "atom_count": 807,
+          "modeled_residue_count": 95,
+          "author_residue_range": [
+            2018,
+            2112
+          ]
+        }
       },
-      "data_license": "CC0-1.0",
-      "license_source_url": "https://www.rcsb.org/pages/usage-policy",
-      "provenance_statement": "Unmodified RCSB PDB experimental structure coordinates, used as a visualization example; not an output of X-Science or its software products.",
-      "unmodified": true,
-      "atom_count_matches_rcsb_api": true,
-      "displayed_elements": [
-        "C",
-        "N",
-        "O",
-        "S"
-      ]
+      "ligand": {
+        "name": "rapamycin",
+        "selector": {
+          "chain": "A",
+          "resi": 108,
+          "resn": "RAP",
+          "hetflag": true
+        },
+        "parsed_heavy_atom_count": 65,
+        "geometry": {
+          "atom_count": 65,
+          "centroid_angstrom": [
+            -8.688723,
+            26.856938,
+            36.817877
+          ],
+          "bounds_angstrom": [
+            [
+              -15.819,
+              22.968,
+              28.459
+            ],
+            [
+              -1.167,
+              31.014,
+              44.055
+            ]
+          ],
+          "max_radius_from_centroid_angstrom": 8.735821
+        }
+      },
+      "views": {
+        "interface": {
+          "name": "FKBP12–rapamycin–mTOR FRB ternary complex",
+          "chains": [
+            "A",
+            "B"
+          ],
+          "selection": {
+            "or": [
+              {
+                "chain": [
+                  "A",
+                  "B"
+                ],
+                "hetflag": false
+              },
+              {
+                "chain": "A",
+                "resi": 108,
+                "resn": "RAP",
+                "hetflag": true
+              }
+            ]
+          },
+          "parsed_atom_count": 1704,
+          "protein_atom_count": 1639,
+          "elements": [
+            "C",
+            "N",
+            "O",
+            "S"
+          ],
+          "element_counts": {
+            "N": 290,
+            "C": 1092,
+            "O": 311,
+            "S": 11
+          },
+          "bounds_angstrom": [
+            [
+              -33.396,
+              -1.415,
+              5.664
+            ],
+            [
+              8.954,
+              48.015,
+              59.638
+            ]
+          ],
+          "centroid_angstrom": [
+            -11.519277,
+            24.829001,
+            35.369886
+          ],
+          "waters_hidden": true,
+          "source_coordinates_modified": false,
+          "camera": {
+            "ligand_center_angstrom": [
+              -8.688723,
+              26.856938,
+              36.817877
+            ],
+            "left_partner_centroid_angstrom": [
+              -4.93525,
+              20.117174,
+              44.93032
+            ],
+            "right_partner_centroid_angstrom": [
+              -18.535258,
+              29.523454,
+              25.396652
+            ],
+            "partner_centroid_distance_angstrom": 25.593017,
+            "view_basis_rows_world_to_view": [
+              [
+                -0.531395268,
+                0.367533069,
+                -0.763242106
+              ],
+              [
+                -0.561291355,
+                -0.827582222,
+                -0.007725286
+              ],
+              [
+                -0.634484896,
+                0.424296016,
+                0.646066411
+              ]
+            ],
+            "view_bounds_about_ligand_angstrom": [
+              [
+                -25.164314,
+                -16.017754,
+                -18.778227
+              ],
+              [
+                32.584001,
+                20.300052,
+                21.899771
+              ]
+            ],
+            "suggested_orthographic_padding": 1.18,
+            "status": "Geometric candidate; parent must inspect the actual rendered ligand visibility and label clearance.",
+            "world_to_view_quaternion_xyzw": [
+              0.403150264,
+              -0.120152648,
+              -0.866753122,
+              0.267903397
+            ]
+          }
+        },
+        "assembly": {
+          "name": "Deposited protein construct context plus the molecular glue, waters and other additives hidden",
+          "chains": [
+            "A",
+            "B"
+          ],
+          "selection": {
+            "or": [
+              {
+                "hetflag": false
+              },
+              {
+                "chain": "A",
+                "resi": 108,
+                "resn": "RAP",
+                "hetflag": true
+              }
+            ]
+          },
+          "parsed_atom_count": 1704,
+          "protein_atom_count": 1639,
+          "elements": [
+            "C",
+            "N",
+            "O",
+            "S"
+          ],
+          "element_counts": {
+            "N": 290,
+            "C": 1092,
+            "O": 311,
+            "S": 11
+          },
+          "bounds_angstrom": [
+            [
+              -33.396,
+              -1.415,
+              5.664
+            ],
+            [
+              8.954,
+              48.015,
+              59.638
+            ]
+          ],
+          "centroid_angstrom": [
+            -11.519277,
+            24.829001,
+            35.369886
+          ],
+          "waters_hidden": true,
+          "source_coordinates_modified": false
+        }
+      },
+      "primary_citation": {
+        "title": "Structure of the FKBP12-rapamycin complex interacting with the binding domain of human FRAP.",
+        "rcsb_authors": [
+          "Choi, J.",
+          "Chen, J.",
+          "Schreiber, S.L.",
+          "Clardy, J."
+        ],
+        "rcsb_journal_abbrev": "Science",
+        "year": 1996,
+        "pdbx_database_id_DOI": "10.1126/science.273.5272.239",
+        "pdbx_database_id_PubMed": 8662507
+      },
+      "license": "CC0-1.0",
+      "license_source_url": "https://www.rcsb.org/pages/usage-policy"
     }
   ]
 }

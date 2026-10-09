@@ -1,30 +1,23 @@
 export default {
   "heroLines": [
-    "Observer de plus près.",
-    "Penser plus loin."
+    "Des articles et des molécules",
+    "à la prochaine étape de recherche."
   ],
-  "heroText": "Des logiciels libres et des agents de recherche pour les sciences biomédicales. Explorer les sources, examiner les molécules et approfondir la prochaine question.",
-  "heroEyebrow": "Logiciels scientifiques & agents",
-  "heroCta": "Explorer la collection",
-  "secondaryCta": "Découvrir X-Science",
-  "collectionEyebrow": "La collection",
-  "collectionTitle": "Cinq outils. Plusieurs points de départ.",
-  "collectionText": "Agents de recherche, veille pharmaceutique, découverte de médicaments, synthèse et analyse de brevets. Trouvez l’outil adapté à votre question.",
-  "structureEyebrow": "À l’échelle moléculaire",
-  "structureTitle": "La biologie en trois dimensions.",
-  "structureText": "Faites tourner une structure. Changez sa représentation. Observez la même molécule sous un autre angle.",
-  "structureScope": "Coordonnées de référence publiques de RCSB PDB. Les eaux cristallographiques sont masquées ; les cofacteurs hème déposés restent visibles. Ces exemples ne sont pas des résultats calculés par les produits.",
+  "heroText": "Trouvez les outils pour étudier une cible, examiner les structures moléculaires, comparer les voies de synthèse et transformer la chimie des brevets en données utilisables.",
+  "heroEyebrow": "Outils open source pour la recherche biomédicale",
+  "heroCta": "Trouver votre outil de recherche",
+  "secondaryCta": "Découvrir l’agent de recherche",
+  "collectionEyebrow": "Logiciels et agents",
+  "collectionTitle": "Choisissez l’outil de votre prochaine tâche.",
+  "collectionText": "Organisez une question, étudiez les preuves pharmaceutiques, examinez des candidats, explorez des voies ou extrayez des données de brevets. Commencez là où votre travail a besoin d’aide.",
   "structureControls": "Commandes de la vue structurale",
-  "proteinLabel": "Protéine",
   "representationLabel": "Représentation",
   "cartoon": "Rubans",
   "surface": "Surface",
-  "atoms": "Atomes",
   "spin": "Rotation automatique",
   "pause": "Suspendre la rotation",
   "lightBackground": "Fond clair",
   "exportImage": "Télécharger le PNG",
-  "exportReady": "Image téléchargée avec sa référence PDB.",
   "exportError": "Impossible d’exporter l’image. Veuillez réessayer.",
   "resetView": "Réinitialiser la vue",
   "zoomIn": "Agrandir",
@@ -33,37 +26,33 @@ export default {
   "structureKeyboardHint": "Placez le focus sur la structure : les flèches la font tourner, + ou − changent le zoom. Tab parcourt les commandes.",
   "structureLoading": "Chargement de la structure…",
   "structureReady": "Structure chargée",
-  "structureError": "La structure n’a pas pu être chargée. Réessayez ou ouvrez sa fiche PDB.",
-  "structureUnsupported": "La vue 3D interactive est indisponible dans ce navigateur. Vous pouvez consulter la structure publiée dans sa fiche PDB.",
   "retry": "Réessayer",
-  "pdbSource": "Voir la fiche PDB",
-  "modelAttribution": "Coordonnées publiées · RCSB PDB",
-  "methodologyEyebrow": "Une démarche de recherche",
-  "methodologyTitle": "Relier les questions aux sources.",
-  "methodologyText": "Chaque produit possède ses méthodes et son environnement. Partir des sources, examiner le contexte moléculaire et vérifier les résultats avant de poursuivre.",
+  "methodologyEyebrow": "Des preuves à l’action",
+  "methodologyTitle": "Choisir une prochaine étape utile.",
+  "methodologyText": "Partez de vos documents et de la question à résoudre. Ces outils vous aident à examiner les preuves, travailler avec les molécules et préparer la suite de vos recherches.",
   "methodologySteps": [
     {
-      "title": "Partir des sources",
-      "text": "Lisez les documents originaux et conservez le contexte de chaque affirmation."
+      "title": "Construire la vue d’ensemble",
+      "text": "Réunissez littérature, informations sur les cibles et preuves des brevets sous une forme consultable."
     },
     {
-      "title": "Explorer le contexte moléculaire",
-      "text": "Examinez les structures, l’activité et la synthèse avec des outils adaptés à la question."
+      "title": "Travailler avec la molécule",
+      "text": "Examinez structures, candidats et suggestions de voies dans leur contexte scientifique."
     },
     {
-      "title": "Évaluer la prochaine étape",
-      "text": "Vérifiez les résultats, leur provenance et les limites des méthodes avant de poursuivre."
+      "title": "Préparer la prochaine décision",
+      "text": "Comparez les sorties et conservez fichiers, sources et limites des méthodes pour la revue."
     }
   ],
-  "proofEyebrow": "Au cœur des produits",
-  "proofTitle": "Voir le travail derrière les outils.",
-  "proofText": "De véritables captures des produits, des dépôts publics et une documentation pratique. Découvrez les usages, puis examinez le code source.",
-  "creatorEyebrow": "Le chercheur derrière les logiciels",
-  "creatorTitle": "Des outils nés de la recherche.",
+  "proofEyebrow": "Le logiciel en pratique",
+  "proofTitle": "Examiner un candidat dans son contexte.",
+  "proofText": "Découvrez une véritable vue des structures et poches de X-DDE, issue de l’exemple public BRD4–JQ1. Ouvrez la capture complète et lisez comment l’espace relie structures et résultats.",
+  "creatorEyebrow": "Chercheur et développeur",
+  "creatorTitle": "Des outils issus du travail de recherche.",
   "creatorText": "Victor Xu est chercheur en découverte de médicaments et développeur indépendant d’outils IA. Il travaille en chimie médicinale, AIDD / CADD, PROTAC et colles moléculaires.",
-  "contactEyebrow": "Engager la conversation",
-  "contactTitle": "Quelle question explorez-vous ?",
-  "contactText": "Découvrez les logiciels, lisez le code source ou échangeons sur vos recherches.",
-  "sourceLink": "Explorer le code source",
-  "productCapabilitiesLabel": "Fonctionnalités"
+  "contactEyebrow": "Collaboration de recherche",
+  "contactTitle": "Partons d’un problème de recherche concret.",
+  "contactText": "Consultez le code et les guides, ou échangeons sur vos besoins de recherche.",
+  "sourceLink": "Voir les projets sur GitHub",
+  "productCapabilitiesLabel": "Fonctionnalités pratiques"
 };

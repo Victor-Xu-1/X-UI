@@ -3,7 +3,6 @@ import { interactionCopy } from '../content/interaction-copy.mjs';
 import { products, productPath } from '../content/products.mjs';
 import { arrow } from './icons.mjs';
 import { escape } from './layout.mjs';
-import { workflowMap } from './workflow-map.mjs';
 
 const stages = [
   ['x-pharma', 'x-patentsar'], ['x-science', 'x-dde'],
@@ -21,7 +20,7 @@ export function workflowExplorer(lang) {
       <div class="step-products">${ids.map(id => { const p = products.find(p => p.id === id); return `<a href="${productPath(p, lang)}">${p.name}</a>`; }).join('')}</div>
     </div>`).join('')}</div>
     <div class="stage-panels">${stages.map((ids, i) => `<section class="stage-panel" id="stage-panel-${i}" data-stage-panel="${i}" aria-labelledby="stage-${i}">
-      <div class="stage-intro"><span class="stage-number" aria-hidden="true">0${i + 1}</span><div><h3>${c.workflowSteps[i]}</h3><p>${ui.stageDescriptions[i]}</p>${workflowMap(i)}</div></div>
+      <div class="stage-intro"><span class="stage-number" aria-hidden="true">0${i + 1}</span><div><h3>${c.workflowSteps[i]}</h3><p>${ui.stageDescriptions[i]}</p></div></div>
       <div class="stage-recommendations" aria-label="${ui.stageTools}">${ids.map(id => { const p = products.find(p => p.id === id); return `<a class="stage-tool" href="${productPath(p, lang)}"><span><strong>${p.name}</strong><small>${escape(p.label[lang])}</small></span>${arrow}</a>`; }).join('')}</div>
     </section>`).join('')}</div>
   </div>`;

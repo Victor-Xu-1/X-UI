@@ -23,11 +23,11 @@ after replacement checks and remains recoverable in Git and prior releases.
 | --- | --- | --- |
 | `assets/vendor/3dmol-2.5.5/3Dmol-min.js` | [3Dmol.js, pinned official source](https://github.com/3dmol/3Dmol.js/tree/c26e390544b6388f86e50387cd4565759b4da0df) and verified `3dmol@2.5.5` package | [BSD-3-Clause and incorporated GLmol/Three.js/jQuery notices](licenses/3Dmol-2.5.5-LICENSE.txt), [EDTSurf source notice](licenses/3Dmol-2.5.5-EDTSurf-LICENSE.txt) |
 | `assets/fonts/inter-variable.woff2` | [Inter 4.1, pinned official source](https://github.com/rsms/inter/tree/e3a3d4c57d5ecc01453a575621882a384c1995a3) | [SIL Open Font License 1.1](licenses/Inter-4.1-LICENSE.txt) |
-| `assets/structures/1UBQ.pdb`, `4HHB.pdb`, `2LYZ.pdb` | Unmodified experimental reference coordinates from [RCSB PDB](https://www.rcsb.org/pages/usage-policy) | CC0 1.0; retain PDB IDs, primary citations and provenance |
+| `assets/structures/5FQD.pdb`, `6Q0R.pdb`, `1FAP.pdb` | Unmodified experimental reference coordinates from [RCSB PDB](https://www.rcsb.org/pages/usage-policy) | CC0 1.0; retain PDB IDs, primary citations and provenance |
 
 Full runtime/font notices are also served beside the browser assets. Exact hashes,
 official source revisions, file origins and citations are in `ASSET-NOTICES.json`
-and its referenced structure manifests. The 1UBQ poster and downloaded PNGs are
+and its referenced structure manifests. The 5FQD poster and downloaded PNGs are
 genuine coordinate renders with PDB source identity, separate from the generated
 editorial concepts. MIT covers this website's original presentation code and
 artwork and does not replace these upstream terms.

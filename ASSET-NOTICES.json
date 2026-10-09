@@ -7,7 +7,7 @@
       "revision": "be94cc2dfcbea1bd09e63a19a4820c7278792733",
       "path": "docs/images/structure-and-pocket.jpg",
       "license": "Apache-2.0",
-      "kind": "Actual interface capture; v0.4.49 public BRD4鈥揓Q1 example",
+      "kind": "Actual interface capture; v0.4.49 public BRD4–JQ1 example",
       "source": "https://github.com/Victor-Xu-1/X-DDE/blob/be94cc2dfcbea1bd09e63a19a4820c7278792733/docs/images/structure-and-pocket.jpg",
       "sha256": "4e7a8883713e130df68424688347678632435f0c3526cddeff3ecd5023411ef2",
       "size": 122293
@@ -16,73 +16,69 @@
   "generatedAssets": {
     "hero": {
       "file": "editorial/hero.webp",
-      "width": 1440,
-      "height": 960,
-      "bytes": 196870,
-      "sha256": "af848566919970d0f55be819575949c5d87efc9aa06d5b3499d7195c922a81f1",
-      "originalSha256": "4aae4f59f288050cd4e19d98d1eaa5c7efafa572bfe5b90c89d668321ad16cdb",
-      "original": "../generated-images-redesign/hero.png",
-      "role": "Native AI-generated concept visual; not identified structures, application captures or experimental evidence"
+      "width": 1600,
+      "height": 900,
+      "bytes": 44956,
+      "sha256": "5864681441662553a177ab2807d47d4c6aeb27b54863b0fe04c686931920522c",
+      "originalSha256": "171b2a67bb15325b046804d6ac617407e233f9397cdca885724c4f07d91ff691",
+      "original": "../generated-images-biomedical/hero.png",
+      "role": "Native AI-generated biomedical editorial concept; not a real experiment, product capture or deposited structure",
+      "subject": "Biomedical research landing backdrop with headline negative space"
     },
     "x-science": {
       "file": "editorial/x-science.webp",
-      "width": 1440,
-      "height": 960,
-      "bytes": 233546,
-      "sha256": "73354e4b0a021368d1c9783e736b91e2fc8948e05b3b6b79a49d0d43993f9a48",
-      "originalSha256": "ce0ab5d2058e6075610d203bfa8673d057b6a2847ceb08a57e902dc022f93f19",
-      "original": "../generated-images-redesign/x-science.png",
-      "role": "Native AI-generated concept visual; not identified structures, application captures or experimental evidence"
+      "width": 1600,
+      "height": 900,
+      "bytes": 52546,
+      "sha256": "41cb17fab8e33835f1f50553cbd52c6efe0eafe6bfc3c245b8a7a39c2301d6ff",
+      "originalSha256": "38c98901cdd7d144210943e0b0f3e0062322fffe5c24179d74a2265255c7b87b",
+      "original": "../generated-images-biomedical/x-science.png",
+      "role": "Native AI-generated biomedical editorial concept; not a real experiment, product capture or deposited structure",
+      "subject": "Connect literature review and documented research planning to experimental samples"
     },
     "x-pharma": {
       "file": "editorial/x-pharma.webp",
-      "width": 1440,
-      "height": 960,
-      "bytes": 114168,
-      "sha256": "b604775db64f5ca36ceee022992063e4f321a62d2de3ac13afd14a045cc4e4e5",
-      "originalSha256": "23efcd363edbaa3978191757253a7bfa7c7886f233f7611d5304cf57eaeaa6d7",
-      "original": "../generated-images-redesign/x-pharma.png",
-      "role": "Native AI-generated concept visual; not identified structures, application captures or experimental evidence"
+      "width": 1600,
+      "height": 900,
+      "bytes": 39782,
+      "sha256": "a6dca7b8a6cff1beb280c8d0d83b02a30b8654ccdbc313ac976ffee6d79d5666",
+      "originalSha256": "518a5d596b9d65856746170ff0bf887b8e6395dc45ec3160835fe749b5d24092",
+      "original": "../generated-images-biomedical/x-pharma.png",
+      "role": "Native AI-generated biomedical editorial concept; not a real experiment, product capture or deposited structure",
+      "subject": "Pharmaceutical evidence review and source traceability"
     },
     "x-dde": {
       "file": "editorial/x-dde.webp",
-      "width": 1440,
-      "height": 960,
-      "bytes": 190118,
-      "sha256": "b66cde4ccb5f9995975b218bab9dc149060506f4e7c331952288e94dd4a8616e",
-      "originalSha256": "62facc3aa2c2dbab34e121b429a475a096ff619b11c174b956ae9289bf21df66",
-      "original": "../generated-images-redesign/x-dde.png",
-      "role": "Native AI-generated concept visual; not identified structures, application captures or experimental evidence"
+      "width": 1600,
+      "height": 900,
+      "bytes": 70322,
+      "sha256": "43b04760cbc67bb0852fb1d7e091120a530c4ac14f61042336871f5216355087",
+      "originalSha256": "b79a9bde41ac3fd2cc8267533bf987d913cadc29ac0a9c378c92c0523132c8df",
+      "original": "../generated-images-biomedical/x-dde.png",
+      "role": "Native AI-generated biomedical editorial concept; not a real experiment, product capture or deposited structure",
+      "subject": "Protein preparation and structure-based research context beside genuine coordinate-based viewer"
     },
     "x-synth": {
       "file": "editorial/x-synth.webp",
-      "width": 1440,
-      "height": 960,
-      "bytes": 182326,
-      "sha256": "bc851545f8e6dcd499666aaff995bf2833871ec7363e5bd7088cec75c08739da",
-      "originalSha256": "38099705033b3758269ea709ff886347d8b84363ee87787f11585358e3e0f5db",
-      "original": "../generated-images-redesign/x-synth.png",
-      "role": "Native AI-generated concept visual; not identified structures, application captures or experimental evidence"
+      "width": 1600,
+      "height": 900,
+      "bytes": 55198,
+      "sha256": "aae49c57dff6047821277393fcb64350f88a89105ebb31a6c4f3eae2abd8124b",
+      "originalSha256": "b5f24f063f3d31039d5b4318fabc97adc9ccee2d74c335b8adcd207a27af26f1",
+      "original": "../generated-images-biomedical/x-synth.png",
+      "role": "Native AI-generated biomedical editorial concept; not a real experiment, product capture or deposited structure",
+      "subject": "Organize a medicinal chemistry synthesis plan and bench materials"
     },
     "x-patentsar": {
       "file": "editorial/x-patentsar.webp",
-      "width": 1440,
-      "height": 960,
-      "bytes": 276586,
-      "sha256": "2166749fb6f0d30be24a3f2c39a25d42afcdf6cdd551c4996bb87638bd97732f",
-      "originalSha256": "f2a92ddd03e454c0a0c4a77a2418839a7635d4e78f8f821534a48ee0bfbd1cdb",
-      "original": "../generated-images-redesign/x-patentsar.png",
-      "role": "Native AI-generated concept visual; not identified structures, application captures or experimental evidence"
-    },
-    "science-editorial": {
-      "file": "editorial/science-editorial.webp",
-      "width": 1800,
-      "height": 600,
-      "bytes": 292190,
-      "sha256": "f9f422e31e54a42a8f6c33ed2fcae4348aeed04e2d4deb517741bb90fbbdc6de",
-      "originalSha256": "1e0971e815e6639f4c88cb311ff66ea57dfcf3027508331b73b03398bd42acb2",
-      "original": "../generated-images-redesign/science-editorial.png",
-      "role": "Native AI-generated concept visual; not identified structures, application captures or experimental evidence"
+      "width": 1600,
+      "height": 900,
+      "bytes": 54522,
+      "sha256": "d6f25dd69ebfb1155da0d1c05041f973a841da731ca429fa0213ce6f41ccef61",
+      "originalSha256": "3ec18aa895c770423aed944f6c560290521d77f599be9bbc37f0d05883b401c5",
+      "original": "../generated-images-biomedical/x-patentsar.png",
+      "role": "Native AI-generated biomedical editorial concept; not a real experiment, product capture or deposited structure",
+      "subject": "Compare two patent source groups alongside chemistry research context"
     }
   },
   "generatedPrompts": "IMAGE-PROMPTS.json",
@@ -156,9 +152,9 @@
     "usagePolicy": "https://www.rcsb.org/pages/usage-policy",
     "license": "CC0-1.0",
     "ids": [
-      "1UBQ",
-      "4HHB",
-      "2LYZ"
+      "5FQD",
+      "6Q0R",
+      "1FAP"
     ],
     "role": "Unmodified published experimental reference coordinates, not generated product results"
   },

@@ -24,9 +24,9 @@ Default English is served at `/`; the central locale dictionary owns routing.
 | Product section navigation | Each anchor, active location, sticky header, back to top | Heading remains visible; same product route retained |
 | Motion | Reveal, pointer response, reading progress, reduced-motion changes | Real scroll/pointer state; reduced motion and touch remain usable |
 | Shared motion preference | OS reduction, user pause/resume, refresh, visible/offscreen/hidden states | Image animation timelines stop; genuine PDB rotation and CSS traces agree; accurate reason labels |
-| Image illustration/gallery × 6 | Original overview/product assets, decoded swap, keyboard, full-image link, loading/error/retry, pause/pointer/offscreen/no JS | Actual image pixels and matching captions/links; original hashes retained; no abstract Three renderer requested |
-| Product workflow × 5 × 6 | Three stages, source material/review/guide, arrows/Home/End, focus, no JS | Every panel has complete localized facts; SVG concepts never stand in for results |
-| Protein viewer on home/X-DDE × 6 | Lazy/loading/ready, three structures × three representations, full rotation, reset/zoom, backgrounds, PNG export, source/legend, error/retry, unavailable/context loss | Actual local WebGL pixels, exact deposited coordinates, bounded/unclipped views, single-instance lifecycle; no generated molecular results |
+| Biomedical imagery × 6 | Subject relevance, blended edges, loading/error/retry, pause/pointer/offscreen/no JS | Original native provenance; real image pixels and accurate labels; no generated results |
+| Product use cases × 5 × 6 | Three problem/benefit/next-step panels, official guide, arrows/Home/End, focus, no JS | Complete localized facts, single shared tab contract; no pretend scientific execution |
+| Protein viewer on home/X-DDE × 6 | Lazy/loading/ready, three molecular-glue references, interface/context ribbon and surface views, annotated ligand close-ups, full rotation, reset/zoom, backgrounds, PNG export, source/legend, error/retry, unavailable/context loss | Actual local WebGL pixels, exact deposited coordinates, bounded/unclipped views, single-instance lifecycle; no generated molecular results |
 | Molecular motion/export | Visible/offscreen/hidden tab, user pause, reduced-motion changes, keyboard, mobile resize, high DPR | Rotation really stops; control states agree; PNG pixels/source/legend are valid and canvas/view restore exactly |
 | Molecular failure/recovery | Script/PDB request failure, corrupt exact bytes, timeout, async surface work, page hide/return, WebGL loss | Source link remains available; explicit accessible status, disabled controls, bounded requests and intentional retry; no competing renderer |
 | No JavaScript | Five products, all workflow stages, native menus and image/source links | Browser context with JavaScript disabled |
@@ -47,7 +47,7 @@ Default English is served at `/`; the central locale dictionary owns routing.
 
 Every completed optimization round includes production deployment and affected
 public-path acceptance. Generated artwork, genuine UI captures and deposited
-coordinate renders have distinct provenance. Inspect all nine molecular views
+coordinate renders have distinct provenance. Inspect every meaningful molecular view
 for silhouette, chain/fold distinction, clipping, representation and chemical
 context. Treat journal-figure quality as a rendering objective, not external
 publication acceptance, new experimental evidence or molecular dynamics.
@@ -67,11 +67,10 @@ execution, remote analytics, fake live results or duplicate runtime framework.
 
 The image-based promotional visuals and deposited-coordinate 3Dmol viewer have
 separate scientific meanings and share one motion preference. Verify original
-image hashes, actual animation timelines, decoded gallery changes and stale
-request handling. The previous abstract Three path is retired; do not retain a
+image hashes, actual animation timelines, explicit image recovery and genuine molecular state changes. The previous abstract Three path is retired; do not retain a
 competing renderer/dependency or relabel concept art as screenshots. Verify that
-loading/error states hide stale protein pixels and legends. Inspect complete
-pages and selected workflow/gallery states, not only the default hero. Record
+loading/error states hide stale molecular pixels. Inspect complete
+pages and selected workflow/use-case states, not only the default hero. Record
 layout, interaction and public-deployment evidence; automated checks do not
 establish award judging or untested physical-device performance.
 
@@ -79,6 +78,22 @@ Image placement follows an open, minimal editorial treatment: white page,
 unframed original illustrations, calm typography and controls beneath images.
 Inspect the real desktop/mobile positions, including error/retry states, to
 confirm that controls never obscure the picture and remain usable at 320 px.
-Keep decorative movement restrained; functional focus, status and real PDB
-identity must remain explicit. OpenAI's public pages are a design reference,
+Keep decorative movement restrained; functional focus and status must remain explicit. The public 3D illustration must not disclose target, protein or interaction descriptions; preserve provenance in the source manifests. OpenAI's public pages are a design reference,
 not a source of copied logos, proprietary assets or product claims.
+
+## Current commercial review contracts
+
+Every product must make its practical problem, benefit and guide action clear.
+Audit home, hero, navigation, catalog, use cases, capabilities, scope, related
+products, contact and footer across all six languages; inspect long labels and
+320 px layouts. Remove dead controls, unused diagrams and construction language.
+Keep scope/licensing/source facts that inform a real adoption decision.
+
+The public 3D review checks a purely illustrative display: generic form names,
+no target/protein/interaction descriptions, no residue labels, no scientific
+parameter panels and no identifying export caption or filename. Source manifests
+retain real coordinate provenance. Inspect both representations and full rotation
+for clipping; check loading, corrupt bytes, request failure, explicit retry,
+unavailable WebGL and pause/visibility changes.
+Design improvements follow observed screenshot findings. Automated checks and
+self-review do not establish external awards or scientific publication acceptance.

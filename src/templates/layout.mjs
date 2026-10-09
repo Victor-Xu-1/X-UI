@@ -31,7 +31,9 @@ export function layout({ lang, body, title, description, path, product }) {
 <link rel="stylesheet" href="/assets/styles/interactions.css">
 <link rel="stylesheet" href="/assets/styles/protein.css">
 <link rel="stylesheet" href="/assets/styles/experience.css">
+<link rel="stylesheet" href="/assets/styles/use-cases.css">
 <link rel="stylesheet" href="/assets/styles/responsive.css">
+<link rel="stylesheet" href="/assets/styles/editorial.css">
 <script type="application/ld+json">${JSON.stringify(data).replaceAll('<', '\\u003c')}</script>
 <script type="module" src="/assets/app.js"></script></head>
 <body class="${product ? 'product-page' : 'home-page'}" data-language="${lang}">
