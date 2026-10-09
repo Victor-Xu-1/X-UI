@@ -7,7 +7,7 @@
 .product-glyph { width:34px; height:34px; flex-shrink:0; object-fit:contain; color:var(--blue); }
 .product-hero h1 { font-size:clamp(42px,4.3vw,63px); line-height:1.13; letter-spacing:-.05em; }
 .product-lead { margin-top:26px; color:var(--muted); font-size:17px; max-width:570px; }
-.product-hero-art { overflow:hidden; border-radius:8px; }
+.product-hero-art { min-width:0; }
 .product-license { margin-top:22px; font-size:12px; color:var(--muted); }
 .product-facts { background:var(--soft); border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:32px 0; }
 .facts-grid { display:grid; grid-template-columns:1.15fr 1.2fr .7fr; gap:40px; }
@@ -19,7 +19,7 @@
 .capability { border-top:1px solid var(--line); padding-top:22px; }
 .capability>span { display:block; margin-bottom:22px; color:var(--muted); font-size:12px; }
 .capability h3 { max-width:510px; font-size:23px; line-height:1.45; letter-spacing:-.025em; }
-.product-capture { margin-top:58px; padding:22px; border-radius:8px; background:var(--soft); border:1px solid var(--line); }
+.product-capture { margin-top:58px; }
 .product-capture img { max-height:650px; object-fit:contain; }
 .product-capture figcaption { margin-top:14px; color:var(--muted); font-size:12px; }
 .product-capture figcaption a { text-decoration:underline; text-underline-offset:3px; }

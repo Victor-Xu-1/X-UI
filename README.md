@@ -76,6 +76,13 @@ original overview or one of five product illustrations; full-image links keep
 uncropped files available. Images remain clearly identified as AI-generated
 concept art, separately from genuine interface captures and deposited PDB data.
 
+The layout uses a white editorial canvas, clear type and open image placement,
+informed by the restraint of OpenAI's public research pages. Image frames have
+no decorative border, corner rounding or shadow. Captions, motion controls,
+original-image links and gallery choices sit below the picture. Product cards
+and workflow stages use spacing and thin rules rather than enclosing panels.
+The genuine molecular workspace keeps its functional control boundaries.
+
 `image-experience.mjs` owns the accessible frame/gallery; `image-motion.js` owns
 selection, loaded/error/retry states and visibility. A gallery image is decoded
 before the actual DOM image, caption and link change together; stale requests

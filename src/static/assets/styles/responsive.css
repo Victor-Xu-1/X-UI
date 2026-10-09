@@ -6,7 +6,7 @@
   .hero-description { font-size:16px; }
   .main-nav { gap:19px; font-size:12px; }
   .proof-grid,.about-grid { gap:48px; }
-  .collection-grid .product-card[data-product="x-science"] { gap:30px; padding:26px; }
+  .collection-grid .product-card[data-product="x-science"] { gap:30px; }
   .collection-grid .product-card[data-product="x-science"] h3 { font-size:43px; }
   .product-hero-grid { gap:40px; }
   .product-hero h1 { font-size:44px; }
@@ -42,7 +42,6 @@
   .hero-copy { max-width:650px; }
   .hero h1 { font-size:clamp(54px,8.5vw,74px); }
   .hero-description { max-width:560px; }
-  .hero-visual img { aspect-ratio:1.6; object-position:65% center; }
   .hero-bottom { font-size:11px; gap:20px; }
   .section-head { display:block; }
   .section-intro { max-width:560px; margin-top:25px; }
@@ -51,7 +50,6 @@
   .card-body>p { font-size:14px; }
   .collection-grid .product-card[data-product="x-science"] { grid-template-columns:1fr; gap:24px; }
   .collection-grid .product-card[data-product="x-science"] .art-link { order:0; }
-  .collection-grid .product-card[data-product="x-science"] .product-art,.collection-grid .product-card[data-product="x-science"] .product-art img { min-height:0; }
   .collection-grid .product-card[data-product="x-science"] .card-body { padding:0; }
   .collection-grid .product-card[data-product="x-science"] h3 { margin-top:18px; }
   .collection-grid .product-card[data-product="x-science"] .card-link { margin-top:22px; }
@@ -68,16 +66,13 @@
   .workflow-track { grid-template-columns:repeat(2,minmax(0,1fr)); }
   .stage-panel { grid-template-columns:1fr; }
   .proof-copy>p,.about-copy>p { max-width:none; }
-  .workbench-figure { padding:14px; }
   .contact-inner { flex-direction:column; align-items:flex-start; gap:30px; }
   .product-hero { padding-bottom:50px; }
   .product-hero h1 { font-size:clamp(40px,6.5vw,58px); }
-  .product-hero-art .product-art img { min-height:0; aspect-ratio:1.5; }
   .facts-grid { grid-template-columns:1fr; gap:22px; }
   .facts-grid>div+div { padding-left:0; padding-top:19px; border-left:0; border-top:1px solid #d3d8df; }
   .capability-grid { gap:30px; }
   .capability h3 { font-size:20px; }
-  .product-capture { padding:12px; }
   .selection-note { padding-block:58px; }
   .footer-main { grid-template-columns:1fr; gap:30px; }
   .footer-bottom { flex-wrap:wrap; justify-content:flex-start; }
@@ -99,14 +94,12 @@
   h2 { font-size:36px; }
   .section-head { margin-bottom:34px; }
   .product-grid,.related-grid { grid-template-columns:1fr; gap:35px; }
-  .collection-grid .product-card[data-product="x-science"] { padding:18px; }
   .collection-grid .product-card[data-product="x-science"] h3 { font-size:39px; }
   .collection-grid .product-card[data-product="x-science"] .card-body>p { font-size:15px; }
   .card-body { padding-top:20px; }
   .card-body h3 { font-size:31px; }
   .filter { font-size:11px; padding-inline:12px; }
   .research-intro { margin-bottom:30px; }
-  .editorial-band img { aspect-ratio:1.7; }
   .editorial-band figcaption { display:block; }
   .principle-grid { margin-bottom:44px; }
   .workflow-step { padding:19px 16px; }
@@ -132,4 +125,4 @@
   .viewer-image { max-height:calc(100dvh - 260px); }
   .footer-bottom { font-size:11px; }
 }
-@media(prefers-reduced-motion:reduce) { .will-reveal { opacity:1; translate:0; } .hero-visual img,.product-hero-art .product-art img { transform:none; } }
+@media(prefers-reduced-motion:reduce) { .will-reveal { opacity:1; translate:0; } }

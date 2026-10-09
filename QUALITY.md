@@ -74,3 +74,11 @@ loading/error states hide stale protein pixels and legends. Inspect complete
 pages and selected workflow/gallery states, not only the default hero. Record
 layout, interaction and public-deployment evidence; automated checks do not
 establish award judging or untested physical-device performance.
+
+Image placement follows an open, minimal editorial treatment: white page,
+unframed original illustrations, calm typography and controls beneath images.
+Inspect the real desktop/mobile positions, including error/retry states, to
+confirm that controls never obscure the picture and remain usable at 320 px.
+Keep decorative movement restrained; functional focus, status and real PDB
+identity must remain explicit. OpenAI's public pages are a design reference,
+not a source of copied logos, proprietary assets or product claims.

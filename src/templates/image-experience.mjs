@@ -22,9 +22,9 @@ export function imageExperience(lang,{id='hero',gallery=false,compact=false,prio
       <div class="image-light" aria-hidden="true"></div>
       ${link?`<a class="image-card-link" href="${escape(link)}" tabindex="-1" aria-hidden="true"></a>`:''}
       <div class="image-status" data-image-status role="status"></div>
-      <div class="image-scene-controls">${compact?'':`<button type="button" data-image-pause data-script-only hidden aria-pressed="false"><span data-image-pause-label>${escape(c.pause)}</span><span aria-hidden="true">◌</span></button>`}<button type="button" data-image-retry data-script-only hidden>${escape(c.retry)}</button>${compact?'':`<a href="/assets/media/${asset.file}" data-full-concept target="_blank" rel="noopener noreferrer">${escape(c.fullImage)}<span aria-hidden="true">↗</span></a>`}</div>
     </div>
     <figcaption><span data-image-name>${escape(name)}</span><span>${escape(shared.generatedLabel)}</span></figcaption>
+    <div class="image-scene-controls">${compact?'':`<button type="button" data-image-pause data-script-only hidden aria-pressed="false"><span data-image-pause-label>${escape(c.pause)}</span><span aria-hidden="true">◌</span></button>`}<button type="button" data-image-retry data-script-only hidden>${escape(c.retry)}</button>${compact?'':`<a href="/assets/media/${asset.file}" data-full-concept target="_blank" rel="noopener noreferrer">${escape(c.fullImage)}<span aria-hidden="true">↗</span></a>`}</div>
     ${gallery?`<div class="image-perspectives" role="tablist" aria-label="${escape(c.galleryLabel)}" data-script-only hidden>${entries.map((entry,i)=>`<button id="image-choice-${i}" type="button" role="tab" data-image-choice="${entry.id}" aria-selected="${entry.id===id}" aria-controls="${frameId}" tabindex="${entry.id===id?'0':'-1'}"><small>0${i+1}</small><span>${escape(entry.name)}</span></button>`).join('')}</div>`:''}
     <script type="application/json" data-image-payload>${JSON.stringify(payload).replaceAll('<','\\u003c')}</script>
   </figure>`;
