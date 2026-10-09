@@ -110,6 +110,8 @@
   .product-lead { font-size:16px; }
   .product-section-nav .container { gap:25px; }
   .product-section-nav a { font-size:12px; }
+  .product-section-nav .container { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; overflow:visible; }
+  .product-section-nav a { display:flex; align-items:center; min-width:0; white-space:normal; line-height:1.45; padding-block:12px; overflow-wrap:anywhere; hyphens:auto; }
   .capability-grid { grid-template-columns:1fr; margin-top:36px; }
   .capability h3 { font-size:21px; }
   .capability>span { margin-bottom:15px; }

@@ -1,6 +1,6 @@
 import { copy } from '../content/copy.mjs';
 import { products, languagePath, productPath } from '../content/products.mjs';
-import { layout, escape, multiline, externalLink } from './layout.mjs';
+import { layout, escape, headlineLines, externalLink } from './layout.mjs';
 import { arrow, glyph } from './icons.mjs';
 import { card } from './cards.mjs';
 import { interactionCopy } from '../content/interaction-copy.mjs';
@@ -18,7 +18,7 @@ export function productPage(product, lang) {
   const image = product.imageKind === 'screenshot' ? `<figure class="product-capture"><a class="image-zoom-link" data-image-viewer href="/assets/media/${product.image}" target="_blank" rel="noopener noreferrer" aria-label="${c.fullImage}"><img src="/assets/media/${product.image}" alt="${escape(product.caption[lang])}" loading="lazy" width="${product.imageWidth}" height="${product.imageHeight}"><span class="image-zoom-label">${c.fullImage}<span aria-hidden="true">↗</span></span></a><figcaption>${escape(product.caption[lang])} ${externalLink(product.imageSource, c.imageSource)}</figcaption></figure>` : '';
   const body = `<section class="product-hero"><div class="container">
     <a class="back-link" href="${languagePath(lang)}#software">${arrow}${c.back}</a>
-    <div class="product-hero-grid"><div><p class="eyebrow">${escape(product.label[lang])}</p><div class="product-name">${glyph(product.id)}<span>${escape(product.name)}</span></div><h1>${multiline(product.headline[lang])}</h1><p class="product-lead">${escape(product.summary[lang])}</p>
+    <div class="product-hero-grid"><div><p class="eyebrow">${escape(product.label[lang])}</p><div class="product-name">${glyph(product.id)}<span>${escape(product.name)}</span></div><h1>${headlineLines(product.headline[lang])}</h1><p class="product-lead">${escape(product.summary[lang])}</p>
       <div class="hero-actions">${externalLink(product.release?.url || product.docs, product.release ? c.releases : c.install, 'button button-primary', arrow)}${externalLink(product.repository, c.source, 'button button-outline')}</div>
       <div class="product-license">${c.openSource} · ${product.license}${product.release ? ` · ${product.release.version}` : ''}</div>
     </div><div class="product-hero-art">${product.id==='x-dde'?proteinExplorer(lang):imageExperience(lang, { id: product.id, priority: true })}</div></div>

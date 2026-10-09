@@ -82,7 +82,7 @@ export default {
     "summary": "Extrahieren Sie Strukturen, Kennungen und Aktivitätswerte aus unterstützten WIPO-Patent-PDFs in prüfbare Struktur–Aktivitäts-Tabellen. Prüfen Sie Originalseiten, korrigieren Sie Einträge und exportieren Sie Material für weitere Forschung.",
     "audience": "Medizinische Chemiker, Patentanalysten und SAR-Forschende",
     "environment": "Linux / WSL2; DECIMER und RDKit",
-    "boundary": "Der Produktionsadapter unterstützt WIPO-Patent-PDFs. Ein formaler Abschluss setzt bestandene Kern-QA voraus; unsicheres, widersprüchliches oder minderwertiges Quellenmaterial muss geprüft werden. Vorhergesagte Eigenschaften sind nachgelagerte Forschungskennzahlen.",
+    "boundary": "WIPO-Patent-PDFs werden unterstützt. Klären Sie vor der Nutzung exportierter Tabellen Qualitätshinweise, unsichere Strukturen, widersprüchliche Aktivitätswerte und unklare Quellseiten. Prüfen Sie vorhergesagte Eigenschaften separat als Forschungsschätzungen.",
     "features": [
       "Strukturen, Kennungen und originale Aktivitätswerte in einer Tabelle zusammenführen",
       "Struktur–Aktivitäts-Zuordnungen anhand der Quellenposition prüfen",

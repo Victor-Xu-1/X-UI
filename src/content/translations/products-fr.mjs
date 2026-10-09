@@ -82,7 +82,7 @@ export default {
     "summary": "Extrayez structures, identifiants et valeurs d’activité des brevets WIPO PDF pris en charge en tableaux structure–activité vérifiables. Examinez les pages originales, corrigez les fiches et exportez les données pour poursuivre la recherche.",
     "audience": "Chimistes médicinaux, analystes de brevets et chercheurs en SAR",
     "environment": "Linux / WSL2 ; DECIMER et RDKit",
-    "boundary": "L’adaptateur de production cible les brevets PDF de l’OMPI. La validation formelle exige la réussite du QA central ; les sources incertaines, contradictoires ou de faible qualité doivent être examinées. Les propriétés prédites servent aux recherches ultérieures.",
+    "boundary": "Les brevets PDF de l’OMPI sont pris en charge. Avant d’utiliser un tableau exporté, examinez les alertes de qualité, les structures incertaines, les valeurs d’activité contradictoires et les pages peu lisibles. Interprétez séparément les propriétés prédites comme des estimations de recherche.",
     "features": [
       "Réunir structures, identifiants et valeurs d’activité originales dans un tableau",
       "Vérifier les associations structure–activité aux emplacements sources",
